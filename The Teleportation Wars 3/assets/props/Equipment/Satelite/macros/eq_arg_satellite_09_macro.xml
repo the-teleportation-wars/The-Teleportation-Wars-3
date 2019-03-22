@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+  <macro name="eq_arg_satellite_09_macro" class="satellite">
+    <component ref="eq_arg_satellite_01" />
+    <properties>
+      <identification name="Unstable Trade Receiver Satellite" description="Receive trade subscriptions from every station in the sector.  Decays over time." deployable="1" icon="mapob_satellite_02" />
+      <explosioneffect strength="0" />
+      <radar range="0" />
+      <hull max="250" />
+    </properties>
+  </macro>
+</macros>

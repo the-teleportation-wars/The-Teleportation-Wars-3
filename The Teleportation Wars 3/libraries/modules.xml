@@ -1,0 +1,1782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/modules">
+    <module id="tpwar_countermeasure_factory" group="tpwar_countermeasure_factory">
+      <category ware="tpwar_engine_arg_l_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="8" />
+        <!-- <production ware="tpwar_engine_arg_l_allround_01_mk1" chance="65" />
+        <production ware="tpwar_engine_arg_l_travel_01_mk1" chance="65" />
+        <production ware="tpwar_engine_arg_m_allround_01_mk1" chance="65" />
+        <production ware="tpwar_engine_arg_m_allround_01_mk2" chance="65" />
+        <production ware="tpwar_engine_arg_m_allround_01_mk3" chance="65" /> -->
+        <production ware="tpwar_countermeasure_flares_01" chance="65" />
+        <!-- <production ware="weaponcomponents" chance="65"/> -->
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_l_allround_01_mk1_factory" group="tpwar_engine_arg_l_allround_01_mk1_factory">
+      <category ware="tpwar_engine_arg_l_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="8" />
+        <production ware="tpwar_engine_arg_l_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_l_travel_01_mk1_factory" group="tpwar_engine_arg_l_travel_01_mk1_factory">
+      <category ware="tpwar_countermeasure_flares_01" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="8" />
+        <production ware="tpwar_engine_arg_l_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_m_allround_01_mk1_factory" group="tpwar_engine_arg_m_allround_01_mk1_factory">
+      <category ware="tpwar_engine_arg_m_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="8" />
+        <production ware="tpwar_engine_arg_m_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_m_allround_01_mk2_factory" group="tpwar_engine_arg_m_allround_01_mk2_factory">
+      <category ware="tpwar_engine_arg_m_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="8" />
+        <production ware="tpwar_engine_arg_m_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_m_allround_01_mk3_factory" group="tpwar_engine_arg_m_allround_01_mk3_factory">
+      <category ware="tpwar_engine_arg_m_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="8" />
+        <production ware="tpwar_engine_arg_m_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_m_combat_01_mk1_factory" group="tpwar_engine_arg_m_combat_01_mk1_factory">
+      <category ware="tpwar_engine_arg_m_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_m_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_m_combat_01_mk2_factory" group="tpwar_engine_arg_m_combat_01_mk2_factory">
+      <category ware="tpwar_engine_arg_m_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_m_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_engine_arg_m_combat_01_mk3_factory" group="tpwar_engine_arg_m_combat_01_mk3_factory">
+      <category ware="tpwar_engine_arg_m_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_m_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_m_travel_01_mk1_factory" group="tpwar_engine_arg_m_travel_01_mk1_factory">
+      <category ware="tpwar_engine_arg_m_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_m_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_m_travel_01_mk2_factory" group="tpwar_engine_arg_m_travel_01_mk2_factory">
+      <category ware="tpwar_engine_arg_m_travel_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_m_travel_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_m_travel_01_mk3_factory" group="tpwar_engine_arg_m_travel_01_mk3_factory">
+      <category ware="tpwar_engine_arg_m_travel_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_m_travel_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_allround_01_mk1_factory" group="tpwar_engine_arg_s_allround_01_mk1_factory">
+      <category ware="tpwar_engine_arg_s_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_allround_01_mk2_factory" group="tpwar_engine_arg_s_allround_01_mk2_factory">
+      <category ware="tpwar_engine_arg_s_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_allround_01_mk3_factory" group="tpwar_engine_arg_s_allround_01_mk3_factory">
+      <category ware="tpwar_engine_arg_s_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_combat_01_mk1_factory" group="tpwar_engine_arg_s_combat_01_mk1_factory">
+      <category ware="tpwar_engine_arg_s_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_combat_01_mk2_factory" group="tpwar_engine_arg_s_combat_01_mk2_factory">
+      <category ware="tpwar_engine_arg_s_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_combat_01_mk3_factory" group="tpwar_engine_arg_s_combat_01_mk3_factory">
+      <category ware="tpwar_engine_arg_s_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_travel_01_mk1_factory" group="tpwar_engine_arg_s_travel_01_mk1_factory">
+      <category ware="tpwar_engine_arg_s_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_travel_01_mk2_factory" group="tpwar_engine_arg_s_travel_01_mk2_factory">
+      <category ware="tpwar_engine_arg_s_travel_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_travel_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_s_travel_01_mk3_factory" group="tpwar_engine_arg_s_travel_01_mk3_factory">
+      <category ware="tpwar_engine_arg_s_travel_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_s_travel_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_xl_allround_01_mk1_factory" group="tpwar_engine_arg_xl_allround_01_mk1_factory">
+      <category ware="tpwar_engine_arg_xl_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_xl_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_arg_xl_travel_01_mk1_factory" group="tpwar_engine_arg_xl_travel_01_mk1_factory">
+      <category ware="tpwar_engine_arg_xl_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_arg_xl_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_l_allround_01_mk1_factory" group="tpwar_engine_par_l_allround_01_mk1_factory">
+      <category ware="tpwar_engine_par_l_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_l_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_l_travel_01_mk1_factory" group="tpwar_engine_par_l_travel_01_mk1_factory">
+      <category ware="tpwar_engine_par_l_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_l_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_allround_01_mk1_factory" group="tpwar_engine_par_m_allround_01_mk1_factory">
+      <category ware="tpwar_engine_par_m_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_allround_01_mk2_factory" group="tpwar_engine_par_m_allround_01_mk2_factory">
+      <category ware="tpwar_engine_par_m_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_allround_01_mk3_factory" group="tpwar_engine_par_m_allround_01_mk3_factory">
+      <category ware="tpwar_engine_par_m_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_combat_01_mk1_factory" group="tpwar_engine_par_m_combat_01_mk1_factory">
+      <category ware="tpwar_engine_par_m_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_combat_01_mk2_factory" group="tpwar_engine_par_m_combat_01_mk2_factory">
+      <category ware="tpwar_engine_par_m_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_combat_01_mk3_factory" group="tpwar_engine_par_m_combat_01_mk3_factory">
+      <category ware="tpwar_engine_par_m_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_travel_01_mk1_factory" group="tpwar_engine_par_m_travel_01_mk1_factory">
+      <category ware="tpwar_engine_par_m_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_travel_01_mk2_factory" group="tpwar_engine_par_m_travel_01_mk2_factory">
+      <category ware="tpwar_engine_par_m_travel_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_travel_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_m_travel_01_mk3_factory" group="tpwar_engine_par_m_travel_01_mk3_factory">
+      <category ware="tpwar_engine_par_m_travel_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_m_travel_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_allround_01_mk1_factory" group="tpwar_engine_par_s_allround_01_mk1_factory">
+      <category ware="tpwar_engine_par_s_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_allround_01_mk2_factory" group="tpwar_engine_par_s_allround_01_mk2_factory">
+      <category ware="tpwar_engine_par_s_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_allround_01_mk3_factory" group="tpwar_engine_par_s_allround_01_mk3_factory">
+      <category ware="tpwar_engine_par_s_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_combat_01_mk1_factory" group="tpwar_engine_par_s_combat_01_mk1_factory">
+      <category ware="tpwar_engine_par_s_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_combat_01_mk2_factory" group="tpwar_engine_par_s_combat_01_mk2_factory">
+      <category ware="tpwar_engine_par_s_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_combat_01_mk3_factory" group="tpwar_engine_par_s_combat_01_mk3_factory">
+      <category ware="tpwar_engine_par_s_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_travel_01_mk1_factory" group="tpwar_engine_par_s_travel_01_mk1_factory">
+      <category ware="tpwar_engine_par_s_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_travel_01_mk2_factory" group="tpwar_engine_par_s_travel_01_mk2_factory">
+      <category ware="tpwar_engine_par_s_travel_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_travel_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_s_travel_01_mk3_factory" group="tpwar_engine_par_s_travel_01_mk3_factory">
+      <category ware="tpwar_engine_par_s_travel_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_s_travel_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_xl_allround_01_mk1_factory" group="tpwar_engine_par_xl_allround_01_mk1_factory">
+      <category ware="tpwar_engine_par_xl_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_xl_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_par_xl_travel_01_mk1_factory" group="tpwar_engine_par_xl_travel_01_mk1_factory">
+      <category ware="tpwar_engine_par_xl_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_par_xl_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_l_allround_01_mk1_factory" group="tpwar_engine_tel_l_allround_01_mk1_factory">
+      <category ware="tpwar_engine_tel_l_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_l_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_l_travel_01_mk1_factory" group="tpwar_engine_tel_l_travel_01_mk1_factory">
+      <category ware="tpwar_engine_tel_l_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_l_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_allround_01_mk1_factory" group="tpwar_engine_tel_m_allround_01_mk1_factory">
+      <category ware="tpwar_engine_tel_m_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_allround_01_mk2_factory" group="tpwar_engine_tel_m_allround_01_mk2_factory">
+      <category ware="tpwar_engine_tel_m_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_allround_01_mk3_factory" group="tpwar_engine_tel_m_allround_01_mk3_factory">
+      <category ware="tpwar_engine_tel_m_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_combat_01_mk1_factory" group="tpwar_engine_tel_m_combat_01_mk1_factory">
+      <category ware="tpwar_engine_tel_m_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_combat_01_mk2_factory" group="tpwar_engine_tel_m_combat_01_mk2_factory">
+      <category ware="tpwar_engine_tel_m_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_combat_01_mk3_factory" group="tpwar_engine_tel_m_combat_01_mk3_factory">
+      <category ware="tpwar_engine_tel_m_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_travel_01_mk1_factory" group="tpwar_engine_tel_m_travel_01_mk1_factory">
+      <category ware="tpwar_engine_tel_m_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_travel_01_mk2_factory" group="tpwar_engine_tel_m_travel_01_mk2_factory">
+      <category ware="tpwar_engine_tel_m_travel_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_travel_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_m_travel_01_mk3_factory" group="tpwar_engine_tel_m_travel_01_mk3_factory">
+      <category ware="tpwar_engine_tel_m_travel_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_m_travel_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_allround_01_mk1_factory" group="tpwar_engine_tel_s_allround_01_mk1_factory">
+      <category ware="tpwar_engine_tel_s_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_allround_01_mk2_factory" group="tpwar_engine_tel_s_allround_01_mk2_factory">
+      <category ware="tpwar_engine_tel_s_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="ttpwar_engine_tel_s_allround_01_mk3_factory" group="ttpwar_engine_tel_s_allround_01_mk3_factory">
+      <category ware="tpwar_engine_tel_s_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_combat_01_mk1_factory" group="tpwar_engine_tel_s_combat_01_mk1_factory">
+      <category ware="tpwar_engine_tel_s_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_combat_01_mk2_factory" group="tpwar_engine_tel_s_combat_01_mk2_factory">
+      <category ware="tpwar_engine_tel_s_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_combat_01_mk3_factory" group="tpwar_engine_tel_s_combat_01_mk3_factory">
+      <category ware="tpwar_engine_tel_s_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_travel_01_mk1_factory" group="tpwar_engine_tel_s_travel_01_mk1_factory">
+      <category ware="tpwar_engine_tel_s_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_travel_01_mk2_factory" group="tpwar_engine_tel_s_travel_01_mk2_factory">
+      <category ware="tpwar_engine_tel_s_travel_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_travel_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_s_travel_01_mk3_factory" group="tpwar_engine_tel_s_travel_01_mk3_factory">
+      <category ware="tpwar_engine_tel_s_travel_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="5" />
+        <production ware="tpwar_engine_tel_s_travel_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_xl_allround_01_mk1_factory" group="tpwar_engine_tel_xl_allround_01_mk1_factory">
+      <category ware="tpwar_engine_tel_xl_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_engine_tel_xl_allround_01_mk1" chance="65" />
+        <production ware="tpwar_engine_tel_xl_travel_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_engine_tel_xl_travel_01_mk1_factory" group="tpwar_engine_tel_xl_travel_01_mk1_factory">
+      <category ware="tpwar_engine_tel_xl_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_engine_tel_xl_travel_01_mk1" chance="65" />
+        <production ware="tpwar_engine_tel_xl_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_cluster_heavy_mk1_factory" group="tpwar_missile_cluster_heavy_mk1_factory">
+      <category ware="tpwar_missile_cluster_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_cluster_heavy_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_cluster_light_mk1_factory" group="tpwar_missile_cluster_light_mk1_factory">
+      <category ware="tpwar_missile_cluster_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_cluster_light_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_dumbfire_heavy_mk1_factory" group="tpwar_missile_dumbfire_heavy_mk1_factory">
+      <category ware="tpwar_missile_dumbfire_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_dumbfire_heavy_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_dumbfire_heavy_mk2_factory" group="tpwar_missile_dumbfire_heavy_mk2_factory">
+      <category ware="tpwar_missile_dumbfire_heavy_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_dumbfire_heavy_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_dumbfire_light_mk1_factory" group="tpwar_missile_dumbfire_light_mk1_factory">
+      <category ware="tpwar_missile_dumbfire_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_dumbfire_light_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_dumbfire_light_mk2_factory" group="tpwar_missile_dumbfire_light_mk2_factory">
+      <category ware="tpwar_missile_dumbfire_light_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_dumbfire_light_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_emp_mk1_factory" group="tpwar_missile_emp_mk1_factory">
+      <category ware="tpwar_missile_emp_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_emp_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_guided_heavy_mk1_factory" group="tpwar_missile_guided_heavy_mk1_factory">
+      <category ware="tpwar_missile_guided_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_guided_heavy_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_guided_light_mk1_factory" group="tpwar_missile_guided_light_mk1_factory">
+      <category ware="tpwar_missile_guided_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_guided_light_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_heatseeker_heavy_mk1_factory" group="tpwar_missile_heatseeker_heavy_mk1_factory">
+      <category ware="tpwar_missile_heatseeker_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_heatseeker_heavy_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_heatseeker_light_mk1_factory" group="tpwar_missile_heatseeker_light_mk1_factory">
+      <category ware="tpwar_missile_heatseeker_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_heatseeker_light_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_smart_heavy_mk1_factory" group="tpwar_missile_smart_heavy_mk1_factory">
+      <category ware="tpwar_missile_smart_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_smart_heavy_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_smart_light_mk1_factory" group="tpwar_missile_smart_light_mk1_factory">
+      <category ware="tpwar_missile_smart_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_smart_light_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_swarm_heavy_mk1_factory" group="tpwar_missile_swarm_heavy_mk1_factory">
+      <category ware="tpwar_missile_swarm_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_swarm_heavy_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_swarm_light_mk1_factory" group="tpwar_missile_swarm_light_mk1_factory">
+      <category ware="tpwar_missile_swarm_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_swarm_light_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_torpedo_heavy_mk1_factory" group="tpwar_missile_torpedo_heavy_mk1_factory">
+      <category ware="tpwar_missile_torpedo_heavy_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_torpedo_heavy_mk1" chance="65" />
+        <!-- <production ware="tpwar_missile_torpedo_light_mk1" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <!-- god -->
+    <module id="tpwar_missile_torpedo_light_mk1_factory" group="tpwar_missile_torpedo_light_mk1_factory">
+      <category ware="tpwar_missile_torpedo_light_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_missile_torpedo_light_mk1" chance="65" />
+        <!-- <production ware="tpwar_missile_torpedo_heavy_mk1" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_resourceprobe_01_factory" group="tpwar_resourceprobe_01_factory">
+      <category ware="tpwar_resourceprobe_01" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_resourceprobe_01" chance="65" />
+        <!-- <production ware="tpwar_satellite_mk1" chance="65" />
+        <production ware="tpwar_satellite_mk2" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_satellite_mk1_factory" group="tpwar_satellite_mk1_factory">
+      <category ware="tpwar_satellite_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <!-- <production ware="tpwar_resourceprobe_01" chance="65" /> -->
+        <production ware="tpwar_satellite_mk1" chance="65" />
+        <!-- <production ware="tpwar_satellite_mk2" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_satellite_mk2_factory" group="tpwar_satellite_mk2_factory">
+      <category ware="tpwar_satellite_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <!-- <production ware="tpwar_resourceprobe_01" chance="65" />
+        <production ware="tpwar_satellite_mk1" chance="65" /> -->
+        <production ware="tpwar_satellite_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_l_standard_01_mk1_factory" group="tpwar_shield_arg_l_standard_01_mk1_factory">
+      <category ware="tpwar_shield_arg_l_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_l_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_l_standard_01_mk2_factory" group="tpwar_shield_arg_l_standard_01_mk2_factory">
+      <category ware="tpwar_shield_arg_l_standard_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_l_standard_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_m_standard_02_mk1_factory" group="tpwar_shield_arg_m_standard_02_mk1_factory">
+      <category ware="tpwar_shield_arg_m_standard_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_m_standard_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_m_standard_02_mk2_factory" group="tpwar_shield_arg_m_standard_02_mk2_factory">
+      <category ware="tpwar_shield_arg_m_standard_02_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_m_standard_02_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_s_standard_01_mk1_factory" group="tpwar_shield_arg_s_standard_01_mk1_factory">
+      <category ware="tpwar_shield_arg_s_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_s_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_s_standard_01_mk2_factory" group="tpwar_shield_arg_s_standard_01_mk2_factory">
+      <category ware="tpwar_shield_arg_s_standard_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_s_standard_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_s_standard_01_mk3_factory" group="tpwar_shield_arg_s_standard_01_mk3_factory">
+      <category ware="tpwar_shield_arg_s_standard_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_s_standard_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_arg_xl_standard_01_mk1_factory" group="tpwar_shield_arg_xl_standard_01_mk1_factory">
+      <category ware="tpwar_shield_arg_xl_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_arg_xl_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_l_standard_01_mk1_factory" group="tpwar_shield_par_l_standard_01_mk1_factory">
+      <category ware="tpwar_shield_par_l_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_l_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_l_standard_01_mk2_factory" group="tpwar_shield_par_l_standard_01_mk2_factory">
+      <category ware="tpwar_shield_par_l_standard_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_l_standard_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_m_standard_02_mk1_factory" group="tpwar_shield_par_m_standard_02_mk1_factory">
+      <category ware="tpwar_shield_par_m_standard_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_m_standard_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_m_standard_02_mk2_factory" group="tpwar_shield_par_m_standard_02_mk2_factory">
+      <category ware="tpwar_shield_par_m_standard_02_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_m_standard_02_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_s_standard_01_mk1_factory" group="tpwar_shield_par_s_standard_01_mk1_factory">
+      <category ware="tpwar_shield_par_s_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_s_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_s_standard_01_mk2_factory" group="tpwar_shield_par_s_standard_01_mk2_factory">
+      <category ware="tpwar_shield_par_s_standard_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_s_standard_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_s_standard_01_mk3_factory" group="tpwar_shield_par_s_standard_01_mk3_factory">
+      <category ware="tpwar_shield_par_s_standard_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_s_standard_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_par_xl_standard_01_mk1_factory" group="tpwar_shield_par_xl_standard_01_mk1_factory">
+      <category ware="tpwar_shield_par_xl_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_par_xl_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_l_standard_01_mk1_factory" group="tpwar_shield_tel_l_standard_01_mk1_factory">
+      <category ware="tpwar_shield_tel_l_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_l_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_l_standard_01_mk2_factory" group="tpwar_shield_tel_l_standard_01_mk2_factory">
+      <category ware="tpwar_shield_tel_l_standard_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_l_standard_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_m_standard_02_mk1_factory" group="tpwar_shield_tel_m_standard_02_mk1_factory">
+      <category ware="tpwar_shield_tel_m_standard_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_m_standard_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_m_standard_02_mk2_factory" group="tpwar_shield_tel_m_standard_02_mk2_factory">
+      <category ware="tpwar_shield_tel_m_standard_02_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_m_standard_02_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_s_standard_01_mk1_factory" group="tpwar_shield_tel_s_standard_01_mk1_factory">
+      <category ware="tpwar_shield_tel_s_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_s_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_s_standard_01_mk2_factory" group="tpwar_shield_tel_s_standard_01_mk2_factory">
+      <category ware="tpwar_shield_tel_s_standard_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_s_standard_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_s_standard_01_mk3_factory" group="tpwar_shield_tel_s_standard_01_mk3_factory">
+      <category ware="tpwar_shield_tel_s_standard_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_s_standard_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_shield_tel_xl_standard_01_mk1_factory" group="tpwar_shield_tel_xl_standard_01_mk1_factory">
+      <category ware="tpwar_shield_tel_xl_standard_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_shield_tel_xl_standard_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_s_fightingdrone_01_a_factory" group="tpwar_ship_gen_s_fightingdrone_01_a_factory">
+      <category ware="tpwar_ship_gen_s_fightingdrone_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_s_lasertower_01_a_factory" group="tpwar_ship_gen_s_lasertower_01_a_factory">
+      <category ware="tpwar_ship_gen_s_lasertower_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_s_miningdrone_liquid_01_a_factory" group="tpwar_ship_gen_s_miningdrone_liquid_01_a_factory">
+      <category ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_s_miningdrone_solid_01_a_factory" group="tpwar_ship_gen_s_miningdrone_solid_01_a_factory">
+      <category ware="tpwar_ship_gen_s_miningdrone_solid_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_xs_buildingdrone_01_a_factory" group="tpwar_ship_gen_xs_buildingdrone_01_a_factory">
+      <category ware="tpwar_ship_gen_xs_buildingdrone_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_xs_cargodrone_empty_01_a_factory" group="tpwar_ship_gen_xs_cargodrone_empty_01_a_factory">
+      <category ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_xs_lasertower_01_a_factory" group="tpwar_ship_gen_xs_lasertower_01_a_factory">
+      <category ware="tpwar_ship_gen_xs_lasertower_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" />
+        <!-- <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" /> -->
+      </compatibilities>
+    </module>
+    <module id="tpwar_ship_gen_xs_repairdrone_01_a_factory" group="tpwar_ship_gen_xs_repairdrone_01_a_factory">
+      <category ware="tpwar_ship_gen_xs_repairdrone_01_a" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="3" />
+        <!-- <production ware="tpwar_ship_gen_s_fightingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_lasertower_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_liquid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_s_miningdrone_solid_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_buildingdrone_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_cargodrone_empty_01_a" chance="65" />
+        <production ware="tpwar_ship_gen_xs_lasertower_01_a" chance="65" /> -->
+        <production ware="tpwar_ship_gen_xs_repairdrone_01_a" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_l_allround_01_mk1_factory" group="tpwar_thruster_gen_l_allround_01_mk1_factory">
+      <category ware="tpwar_thruster_gen_l_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_l_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_l_allround_01_mk2_factory" group="tpwar_thruster_gen_l_allround_01_mk2_factory">
+      <category ware="tpwar_thruster_gen_l_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_l_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_l_allround_01_mk3_factory" group="tpwar_thruster_gen_l_allround_01_mk3_factory">
+      <category ware="tpwar_thruster_gen_l_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_l_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_m_allround_01_mk1_factory" group="tpwar_thruster_gen_m_allround_01_mk1_factory">
+      <category ware="tpwar_thruster_gen_m_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_m_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_m_allround_01_mk2_factory" group="tpwar_thruster_gen_m_allround_01_mk2_factory">
+      <category ware="tpwar_thruster_gen_m_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_m_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_m_allround_01_mk3_factory" group="tpwar_thruster_gen_m_allround_01_mk3_factory">
+      <category ware="tpwar_thruster_gen_m_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_m_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_m_combat_01_mk1_factory" group="tpwar_thruster_gen_m_combat_01_mk1_factory">
+      <category ware="tpwar_thruster_gen_m_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_m_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_m_combat_01_mk2_factory" group="tpwar_thruster_gen_m_combat_01_mk2_factory">
+      <category ware="tpwar_thruster_gen_m_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_m_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_m_combat_01_mk3_factory" group="tpwar_thruster_gen_m_combat_01_mk3_factory">
+      <category ware="tpwar_thruster_gen_m_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_m_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_s_allround_01_mk1_factory" group="tpwar_thruster_gen_s_allround_01_mk1_factory">
+      <category ware="tpwar_thruster_gen_s_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_s_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_s_allround_01_mk2_factory" group="tpwar_thruster_gen_s_allround_01_mk2_factory">
+      <category ware="tpwar_thruster_gen_s_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_s_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_s_allround_01_mk3_factory" group="tpwar_thruster_gen_s_allround_01_mk3_factory">
+      <category ware="tpwar_thruster_gen_s_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_s_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_s_combat_01_mk1_factory" group="tpwar_thruster_gen_s_combat_01_mk1_factory">
+      <category ware="tpwar_thruster_gen_s_combat_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_s_combat_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_s_combat_01_mk2_factory" group="tpwar_thruster_gen_s_combat_01_mk2_factory">
+      <category ware="tpwar_thruster_gen_s_combat_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_s_combat_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_s_combat_01_mk3_factory" group="tpwar_thruster_gen_s_combat_01_mk3_factory">
+      <category ware="tpwar_thruster_gen_s_combat_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_s_combat_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_xl_allround_01_mk1_factory" group="tpwar_thruster_gen_xl_allround_01_mk1_factory">
+      <category ware="tpwar_thruster_gen_xl_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_xl_allround_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_xl_allround_01_mk2_factory" group="tpwar_thruster_gen_xl_allround_01_mk2_factory">
+      <category ware="tpwar_thruster_gen_xl_allround_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_xl_allround_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_thruster_gen_xl_allround_01_mk3_factory" group="tpwar_thruster_gen_xl_allround_01_mk3_factory">
+      <category ware="tpwar_thruster_gen_xl_allround_01_mk3" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_thruster_gen_xl_allround_01_mk3" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_l_beam_01_mk1_factory" group="tpwar_turret_arg_l_beam_01_mk1_factory">
+      <category ware="tpwar_turret_arg_l_beam_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_l_beam_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_l_dumbfire_01_mk1_factory" group="tpwar_turret_arg_l_dumbfire_01_mk1_factory">
+      <category ware="tpwar_turret_arg_l_dumbfire_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_l_dumbfire_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_l_guided_01_mk1_factory" group="tpwar_turret_arg_l_guided_01_mk1_factory">
+      <category ware="tpwar_turret_arg_l_guided_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_l_guided_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_l_laser_01_mk1_factory" group="tpwar_turret_arg_l_laser_01_mk1_factory">
+      <category ware="tpwar_turret_arg_l_laser_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_l_laser_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_l_mining_01_mk1_factory" group="tpwar_turret_arg_l_mining_01_mk1_factory">
+      <category ware="tpwar_turret_arg_l_mining_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_l_mining_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_l_plasma_01_mk1_factory" group="tpwar_turret_arg_l_plasma_01_mk1_factory">
+      <category ware="tpwar_turret_arg_l_plasma_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_l_plasma_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_beam_02_mk1_factory" group="tpwar_turret_arg_m_beam_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_beam_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_beam_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_dumbfire_02_mk1_factory" group="tpwar_turret_arg_m_dumbfire_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_dumbfire_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_dumbfire_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_gatling_02_mk1_factory" group="tpwar_turret_arg_m_gatling_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_gatling_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_gatling_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_guided_02_mk1_factory" group="tpwar_turret_arg_m_guided_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_guided_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_guided_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_laser_02_mk1_factory" group="tpwar_turret_arg_m_laser_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_laser_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_laser_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_mining_02_mk1_factory" group="tpwar_turret_arg_m_mining_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_mining_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_mining_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_plasma_02_mk1_factory" group="tpwar_turret_arg_m_plasma_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_plasma_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_plasma_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_arg_m_shotgun_02_mk1_factory" group="tpwar_turret_arg_m_shotgun_02_mk1_factory">
+      <category ware="tpwar_turret_arg_m_shotgun_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_arg_m_shotgun_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_l_beam_01_mk1_factory" group="tpwar_turret_par_l_beam_01_mk1_factory">
+      <category ware="tpwar_turret_par_l_beam_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_l_beam_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_l_dumbfire_01_mk1_factory" group="tpwar_turret_par_l_dumbfire_01_mk1_factory">
+      <category ware="tpwar_turret_par_l_dumbfire_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_l_dumbfire_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_l_guided_01_mk1_factory" group="tpwar_turret_par_l_guided_01_mk1_factory">
+      <category ware="tpwar_turret_par_l_guided_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_l_guided_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_l_laser_01_mk1_factory" group="tpwar_turret_par_l_laser_01_mk1_factory">
+      <category ware="tpwar_turret_par_l_laser_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_l_laser_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_l_mining_01_mk1_factory" group="tpwar_turret_par_l_mining_01_mk1_factory">
+      <category ware="tpwar_turret_par_l_mining_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_l_mining_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_l_plasma_01_mk1_factory" group="tpwar_turret_par_l_plasma_01_mk1_factory">
+      <category ware="tpwar_turret_par_l_plasma_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_l_plasma_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_beam_02_mk1_factory" group="tpwar_turret_par_m_beam_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_beam_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_beam_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_dumbfire_02_mk1_factory" group="tpwar_turret_par_m_dumbfire_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_dumbfire_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_dumbfire_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_gatling_02_mk1_factory" group="tpwar_turret_par_m_gatling_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_gatling_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_gatling_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_guided_02_mk1_factory" group="tpwar_turret_par_m_guided_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_guided_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_guided_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_laser_02_mk1_factory" group="tpwar_turret_par_m_laser_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_laser_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_laser_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_mining_02_mk1_factory" group="tpwar_turret_par_m_mining_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_mining_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_mining_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_plasma_02_mk1_factory" group="tpwar_turret_par_m_plasma_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_plasma_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_plasma_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_par_m_shotgun_02_mk1_factory" group="tpwar_turret_par_m_shotgun_02_mk1_factory">
+      <category ware="tpwar_turret_par_m_shotgun_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_par_m_shotgun_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_l_beam_01_mk1_factory" group="tpwar_turret_tel_l_beam_01_mk1_factory">
+      <category ware="tpwar_turret_tel_l_beam_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_l_beam_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_l_dumbfire_01_mk1_factory" group="tpwar_turret_tel_l_dumbfire_01_mk1_factory">
+      <category ware="tpwar_turret_tel_l_dumbfire_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_l_dumbfire_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_l_guided_01_mk1_factory" group="tpwar_turret_tel_l_guided_01_mk1_factory">
+      <category ware="tpwar_turret_tel_l_guided_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_l_guided_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_l_laser_01_mk1_factory" group="tpwar_turret_tel_l_laser_01_mk1_factory">
+      <category ware="tpwar_turret_tel_l_laser_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_l_laser_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_l_mining_01_mk1_factory" group="tpwar_turret_tel_l_mining_01_mk1_factory">
+      <category ware="tpwar_turret_tel_l_mining_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_l_mining_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_l_plasma_01_mk1_factory" group="tpwar_turret_tel_l_plasma_01_mk1_factory">
+      <category ware="tpwar_turret_tel_l_plasma_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_l_plasma_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_beam_02_mk1_factory" group="tpwar_turret_tel_m_beam_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_beam_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_beam_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_dumbfire_02_mk1_factory" group="tpwar_turret_tel_m_dumbfire_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_dumbfire_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_dumbfire_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_gatling_02_mk1_factory" group="tpwar_turret_tel_m_gatling_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_gatling_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_gatling_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_guided_02_mk1_factory" group="tpwar_turret_tel_m_guided_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_guided_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_guided_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_laser_02_mk1_factory" group="tpwar_turret_tel_m_laser_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_laser_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_laser_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_mining_02_mk1_factory" group="tpwar_turret_tel_m_mining_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_mining_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_mining_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_plasma_02_mk1_factory" group="tpwar_turret_tel_m_plasma_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_plasma_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_plasma_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_turret_tel_m_shotgun_02_mk1_factory" group="tpwar_turret_tel_m_shotgun_02_mk1_factory">
+      <category ware="tpwar_turret_tel_m_shotgun_02_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_turret_tel_m_shotgun_02_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_arg_l_destroyer_01_mk1_factory" group="tpwar_weapon_arg_l_destroyer_01_mk1_factory">
+      <category ware="tpwar_weapon_arg_l_destroyer_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_arg_l_destroyer_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_arg_m_ion_01_mk1_factory" group="tpwar_weapon_arg_m_ion_01_mk1_factory">
+      <category ware="tpwar_weapon_arg_m_ion_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_arg_m_ion_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_arg_m_ion_01_mk2_factory" group="tpwar_weapon_arg_m_ion_01_mk2_factory">
+      <category ware="tpwar_weapon_arg_m_ion_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_arg_m_ion_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_arg_s_ion_01_mk1_factory" group="tpwar_weapon_arg_s_ion_01_mk1_factory">
+      <category ware="tpwar_weapon_arg_s_ion_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_arg_s_ion_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_arg_s_ion_01_mk2_factory" group="tpwar_weapon_arg_s_ion_01_mk2_factory">
+      <category ware="tpwar_weapon_arg_s_ion_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_arg_s_ion_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_mine_01_factory" group="tpwar_weapon_gen_mine_01_factory">
+      <category ware="tpwar_weapon_gen_mine_01" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_mine_01" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_mine_03_factory" group="tpwar_weapon_gen_mine_03_factory">
+      <category ware="tpwar_weapon_gen_mine_03" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_mine_03" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_beam_01_mk1_factory" group="tpwar_weapon_gen_m_beam_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_beam_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_beam_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_beam_01_mk2_factory" group="tpwar_weapon_gen_m_beam_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_beam_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_beam_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_dumbfire_01_mk1_factory" group="tpwar_weapon_gen_m_dumbfire_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_dumbfire_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_dumbfire_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_dumbfire_01_mk2_factory" group="tpwar_weapon_gen_m_dumbfire_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_dumbfire_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_dumbfire_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_gatling_01_mk1_factory" group="tpwar_weapon_gen_m_gatling_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_gatling_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_gatling_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_gatling_01_mk2_factory" group="tpwar_weapon_gen_m_gatling_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_gatling_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_gatling_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_guided_01_mk1_factory" group="tpwar_weapon_gen_m_guided_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_guided_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_guided_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_guided_01_mk2_factory" group="tpwar_weapon_gen_m_guided_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_guided_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_guided_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_laser_01_mk1_factory" group="tpwar_weapon_gen_m_laser_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_laser_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_laser_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_laser_01_mk2_factory" group="tpwar_weapon_gen_m_laser_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_laser_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_laser_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_mining_01_mk1_factory" group="tpwar_weapon_gen_m_mining_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_mining_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_mining_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_mining_01_mk2_factory" group="tpwar_weapon_gen_m_mining_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_mining_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_mining_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_plasma_01_mk1_factory" group="tpwar_weapon_gen_m_plasma_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_plasma_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_plasma_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_plasma_01_mk2_factory" group="tpwar_weapon_gen_m_plasma_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_plasma_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_plasma_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_shotgun_01_mk1_factory" group="tpwar_weapon_gen_m_shotgun_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_shotgun_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_shotgun_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_shotgun_01_mk2_factory" group="tpwar_weapon_gen_m_shotgun_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_shotgun_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_shotgun_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_torpedo_01_mk1_factory" group="tpwar_weapon_gen_m_torpedo_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_m_torpedo_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_torpedo_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_m_torpedo_01_mk2_factory" group="tpwar_weapon_gen_m_torpedo_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_m_torpedo_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_m_torpedo_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_beam_01_mk1_factory" group="tpwar_weapon_gen_s_beam_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_beam_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_beam_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_beam_01_mk2_factory" group="tpwar_weapon_gen_s_beam_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_beam_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_beam_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_dumbfire_01_mk1_factory" group="tpwar_weapon_gen_s_dumbfire_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_dumbfire_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_dumbfire_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_dumbfire_01_mk2_factory" group="tpwar_weapon_gen_s_dumbfire_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_dumbfire_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_dumbfire_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_gatling_01_mk1_factory" group="tpwar_weapon_gen_s_gatling_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_gatling_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_gatling_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_gatling_01_mk2_factory" group="tpwar_weapon_gen_s_gatling_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_gatling_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_gatling_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_guided_01_mk1_factory" group="tpwar_weapon_gen_s_guided_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_guided_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_guided_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_guided_01_mk2_factory" group="tpwar_weapon_gen_s_guided_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_guided_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_guided_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_laser_01_mk1_factory" group="tpwar_weapon_gen_s_laser_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_laser_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_laser_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_laser_01_mk2_factory" group="tpwar_weapon_gen_s_laser_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_laser_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_laser_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_mining_01_mk1_factory" group="tpwar_weapon_gen_s_mining_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_mining_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_mining_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_mining_01_mk2_factory" group="tpwar_weapon_gen_s_mining_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_mining_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_mining_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_plasma_01_mk1_factory" group="tpwar_weapon_gen_s_plasma_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_plasma_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_plasma_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_plasma_01_mk2_factory" group="tpwar_weapon_gen_s_plasma_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_plasma_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_plasma_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_shotgun_01_mk1_factory" group="tpwar_weapon_gen_s_shotgun_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_shotgun_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_shotgun_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_shotgun_01_mk2_factory" group="tpwar_weapon_gen_s_shotgun_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_shotgun_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_shotgun_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_torpedo_01_mk1_factory" group="tpwar_weapon_gen_s_torpedo_01_mk1_factory">
+      <category ware="tpwar_weapon_gen_s_torpedo_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_torpedo_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_gen_s_torpedo_01_mk2_factory" group="tpwar_weapon_gen_s_torpedo_01_mk2_factory">
+      <category ware="tpwar_weapon_gen_s_torpedo_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_gen_s_torpedo_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_par_l_destroyer_01_mk1_factory" group="tpwar_weapon_par_l_destroyer_01_mk1_factory">
+      <category ware="tpwar_weapon_par_l_destroyer_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_par_l_destroyer_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_par_m_railgun_01_mk1_factory" group="tpwar_weapon_par_m_railgun_01_mk1_factory">
+      <category ware="tpwar_weapon_par_m_railgun_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_par_m_railgun_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_par_m_railgun_01_mk2_factory" group="tpwar_weapon_par_m_railgun_01_mk2_factory">
+      <category ware="tpwar_weapon_par_m_railgun_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_par_m_railgun_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_par_s_railgun_01_mk1_factory" group="tpwar_weapon_par_s_railgun_01_mk1_factory">
+      <category ware="tpwar_weapon_par_s_railgun_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_par_s_railgun_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_par_s_railgun_01_mk2_factory" group="tpwar_weapon_par_s_railgun_01_mk2_factory">
+      <category ware="tpwar_weapon_par_s_railgun_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_par_s_railgun_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_tel_l_destroyer_01_mk1_factory" group="tpwar_weapon_tel_l_destroyer_01_mk1_factory">
+      <category ware="tpwar_weapon_tel_l_destroyer_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_tel_l_destroyer_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_tel_m_charge_01_mk1_factory" group="tpwar_weapon_tel_m_charge_01_mk1_factory">
+      <category ware="tpwar_weapon_tel_m_charge_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_tel_m_charge_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_tel_m_charge_01_mk2_factory" group="tpwar_weapon_tel_m_charge_01_mk2_factory">
+      <category ware="tpwar_weapon_tel_m_charge_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_tel_m_charge_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_tel_s_charge_01_mk1_factory" group="tpwar_weapon_tel_s_charge_01_mk1_factory">
+      <category ware="tpwar_weapon_tel_s_charge_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_tel_s_charge_01_mk1" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="tpwar_weapon_tel_s_charge_01_mk2_factory" group="tpwar_weapon_tel_s_charge_01_mk2_factory">
+      <category ware="tpwar_weapon_tel_s_charge_01_mk2" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <compatibilities>
+        <limits production="2" />
+        <production ware="tpwar_weapon_tel_s_charge_01_mk2" chance="65" />
+      </compatibilities>
+    </module>
+    <module id="stor_pirate" group="stor_pirate">
+      <category tags="[storage, module]" race="argon" faction="pirate" />
+    </module>
+    <module id="dockarea_pirate" group="dockarea_pirate">
+      <category tags="[dockarea, module, standard]" race="argon" faction="pirate" />
+    </module>
+    <module id="dockarea_pirate_hightech" group="dockarea_pirate_hightech">
+      <category tags="[dockarea, module, hightech]" race="argon" faction="pirate" />
+    </module>
+    <module id="dockarea_pirate_lowtech" group="dockarea_pirate_lowtech">
+      <category tags="[dockarea, module, lowtech]" race="argon" faction="pirate" />
+    </module>
+    <module id="pier_base_pirate" group="pier_base_pirate">
+      <category tags="[pier, base, module]" race="argon" faction="pirate" />
+    </module>
+    <module id="pier_add_pirate" group="pier_add_pirate">
+      <category tags="[pier, add, module]" race="argon" faction="pirate" />
+    </module>
+    <module id="def_pirate" group="def_pirate">
+      <category tags="[defence, module]" race="argon" faction="pirate" />
+    </module>
+    <module id="claim_pirate" group="claim_pirateg">
+      <category tags="[claim, module]" race="argon" faction="pirate" />
+    </module>
+    <!-- Argon Connection Modules -->
+    <module id="conn_pirate" group="conn_pirate">
+      <category tags="[connection, module]" race="argon" faction="pirate" />
+    </module>
+    <module id="stor_meditech" group="stor_meditech">
+      <category tags="[storage, module]" race="argon" faction="meditech" />
+    </module>
+    <module id="dockarea_meditech" group="dockarea_meditech">
+      <category tags="[dockarea, module, standard]" race="argon" faction="meditech" />
+    </module>
+    <module id="dockarea_meditech_hightech" group="dockarea_meditech_hightech">
+      <category tags="[dockarea, module, hightech]" race="argon" faction="meditech" />
+    </module>
+    <module id="dockarea_meditech_lowtech" group="dockarea_meditech_lowtech">
+      <category tags="[dockarea, module, lowtech]" race="argon" faction="meditech" />
+    </module>
+    <module id="pier_base_meditech" group="pier_base_meditech">
+      <category tags="[pier, base, module]" race="argon" faction="meditech" />
+    </module>
+    <module id="pier_add_meditech" group="pier_add_meditech">
+      <category tags="[pier, add, module]" race="argon" faction="meditech" />
+    </module>
+    <module id="def_meditech" group="def_meditech">
+      <category tags="[defence, module]" race="argon" faction="meditech" />
+    </module>
+    <module id="claim_meditech" group="claim_meditechg">
+      <category tags="[claim, module]" race="argon" faction="meditech" />
+    </module>
+    <!-- Argon Connection Modules -->
+    <module id="conn_meditech" group="conn_meditech">
+      <category tags="[connection, module]" race="argon" faction="meditech" />
+    </module>
+  </add>
+</diff>

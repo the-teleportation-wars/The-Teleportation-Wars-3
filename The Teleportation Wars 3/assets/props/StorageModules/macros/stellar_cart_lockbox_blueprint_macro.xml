@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Markus (192.168.3.139) at 16.10.2018_10-23-12-->
+<macros>
+  <macro name="stellar_cart_lockbox_blueprint_macro" class="lockbox">
+    <component ref="sm_gen_lockbox_rare_01" />
+    <properties>
+      <identification name="{20109,4001}" />
+      <hull max="50" />
+      <effects>
+        <longrangescan ref="scfx_result_good_01" />
+      </effects>
+      <drop ref="stellar_cart_blueprint" />
+      <longrangescan minlevel="3" />
+    </properties>
+    <connections>
+      <connection ref="ConnectionFor_sm_gen_lock_rare_01_macro">
+        <macro ref="sm_gen_lock_rare_01_macro" connection="position" />
+      </connection>
+      <connection ref="ConnectionFor_sm_gen_lock_rare_01_macro1">
+        <macro ref="sm_gen_lock_rare_01_macro" connection="position" />
+      </connection>
+      <connection ref="ConnectionFor_sm_gen_lock_rare_01_macro2">
+        <macro ref="sm_gen_lock_rare_01_macro" connection="position" />
+      </connection>
+      <connection ref="ConnectionFor_sm_gen_lock_rare_01_macro3">
+        <macro ref="sm_gen_lock_rare_01_macro" connection="position" />
+      </connection>
+    </connections>
+  </macro>
+</macros>

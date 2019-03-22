@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<diff>
+
+    <add sel="/mdscript/cues/cue[@name='Start']/actions/set_value[@name='md.$EquipmentTable']" pos="after">
+        <get_ware_definition result="md.$EquipmentTable.{faction.pirate}" faction="faction.pirate" />   
+        <get_ware_definition result="md.$EquipmentTable.{faction.meditech}" faction="faction.meditech" /> 
+    </add>
+
+
+</diff>

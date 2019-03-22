@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<diff>
+
+  <add sel="/god/stations">
+    <station id="ringstation89" race="teladi" owner="pirate" type="tradingstation">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_89_sector001_macro" />
+      <position x="18152.45703125" y="-24" z="130038.3740234375" pitch="0" roll="0" />
+      <station ref="tradestation_tel_ring">
+        <loadout>
+          <level exact="0.75"/>
+        </loadout>
+      </station>
+    </station>
+    <station id="ringstation81" race="teladi" owner="pirate" type="tradingstation">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_81_sector001_macro" />
+      <position x="-108152.45703125" y="-24" z="30038.3740234375" pitch="0" roll="0" />
+      <station ref="tradestation_tel_ring">
+        <loadout>
+          <level exact="0.75"/>
+        </loadout>
+      </station>
+    </station>
+    <station id="ringstation85" race="teladi" owner="pirate" type="tradingstation">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_85_sector001_macro" />
+      <position x="103125" y="-24" z="-90038.3740234375" pitch="0" roll="0" />
+      <station ref="tradestation_tel_ring">
+        <loadout>
+          <level exact="0.75"/>
+        </loadout>
+      </station>
+    </station>
+
+    <station id="shipyard_pirate_03" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_85_sector001_macro" />
+      <position x="18152.45703125" y="1000" z="30038.3740234375" pitch="0" roll="0" />
+      <station>
+        <select faction="argon" tags="[shipyard]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="shipyard_pirate_02" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_81_sector001_macro" />
+      <position x="-18152.45703125" y="-2400" z="-70038.3740234375" pitch="0" roll="0" />
+      <station>
+        <select faction="argon" tags="[shipyard]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="shipyard_pirate_01" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_89_sector001_macro" />
+      <position x="98152.45703125" y="-240" z="130038.3740234375" pitch="0" roll="0" />
+      <station>
+        <select faction="argon" tags="[shipyard]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+    <station id="wharf_pirate_01" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_90_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+    <station id="wharf_pirate_02" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_91_sector001_macro" />
+      <station>
+        <select faction="paranid" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <!-- <station id="wharf_pirate_03" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_97_sector001_macro" />
+      <station>
+        <select faction="paranid" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station> -->
+    <!-- </station> -->
+    <station id="wharf_pirate_04" race="argon" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_87_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="wharf_pirate_05" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_84_sector001_macro" />
+      <station>
+        <select faction="paranid" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="wharf_pirate_06" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_83_sector001_macro" />
+      <station>
+        <select faction="paranid" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="wharf_pirate_07" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_95_sector001_macro" />
+      <station>
+        <select faction="paranid" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+
+    <station id="equipmentdock_pirate_01" race="teladi" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_92_sector001_macro" />
+      <station>
+        <select faction="teladi" tags="[equipmentdock]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>    
+    <station id="equipmentdock_pirate_02" race="teladi" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_94_sector001_macro" />
+      <station>
+        <select faction="teladi" tags="[equipmentdock]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>    
+    <station id="equipmentdock_pirate_09" race="teladi" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_93_sector001_macro" />
+      <station>
+        <select faction="teladi" tags="[equipmentdock]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+
+
+    <station id="pirate_defence_00" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_88_sector001_macro" />
+      <position x="-25048.342" y="-1501.066" z="-9616.051" pitch="0" yaw="-114.59042" roll="0" />
+      <station>
+        <select faction="paranid" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="pirate_defence_01" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_98_sector001_macro" />
+      <position x="-25048.342" y="-1501.066" z="-9616.051" pitch="0" yaw="-114.59042" roll="0" />
+      <station>
+        <select faction="paranid" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="pirate_defence_02" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_86_sector001_macro" />
+      <position x="-25048.342" y="-1501.066" z="-9616.051" pitch="0" yaw="-114.59042" roll="0" />
+      <station>
+        <select faction="paranid" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="pirate_defence_03" race="paranid" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="tppirate_zone001_cluster_82_sector001_macro" />
+      <position x="-25048.342" y="-1501.066" z="-9616.051" pitch="0" yaw="-114.59042" roll="0" />
+      <station>
+        <select faction="paranid" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+
+  </add>
+
+  <add sel="/god/products">
+
+
+
+
+    <product id="pirate_advancedcomposites" ware="advancedcomposites" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="advancedcomposites" race="argon" faction="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_advancedelectronics" ware="advancedelectronics" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="advancedelectronics" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_antimattercells" ware="antimattercells" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <region ware="hydrogen" max="80000" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="antimattercells" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_antimatterconverters" ware="antimatterconverters" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="antimatterconverters" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_claytronics" ware="claytronics" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="6" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="claytronics" race="argon" />
+      </module>
+    </product>
+
+    <product id="pirate_dronecomponents" ware="dronecomponents" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="dronecomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_energycells" ware="energycells" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="10" sector="6" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.6" maxbound="false" />
+        <sunlight min="1" max="3" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="energycells" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_engineparts" ware="engineparts" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="engineparts" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_fieldcoils" ware="fieldcoils" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="fieldcoils" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_foodrations" ware="foodrations" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="8" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="foodrations" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_graphene" ware="graphene" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="6" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <region ware="methane" max="80000" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="graphene" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_hullparts" ware="hullparts" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="16" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="hullparts" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_meat" ware="meat" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.25" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="meat" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_medicalsupplies" ware="medicalsupplies" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="18" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="medicalsupplies" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_microchips" ware="microchips" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="8" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="microchips" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_missilecomponents" ware="missilecomponents" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="missilecomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_plasmaconductors" ware="plasmaconductors" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="plasmaconductors" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_quantumtubes" ware="quantumtubes" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="quantumtubes" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_refinedmetals" ware="refinedmetals" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="6" sector="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <region ware="ore" max="80000" />
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="refinedmetals" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_scanningarrays" ware="scanningarrays" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="scanningarrays" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_shieldcomponents" ware="shieldcomponents" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="shieldcomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_siliconwafers" ware="siliconwafers" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="6" sector="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <region ware="silicon" max="80000"/>
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="siliconwafers" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_smartchips" ware="smartchips" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="smartchips" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_spacefuel" ware="spacefuel" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge" solitary="true" excluderinghighway="true">
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="spacefuel" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_spices" ware="spices" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="6" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.25" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="spices" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_superfluidcoolant" ware="superfluidcoolant" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <region ware="helium" max="80000" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="superfluidcoolant" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_turretcomponents" ware="turretcomponents" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="turretcomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_water" ware="water" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <region ware="ice" max="80000" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="water" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_weaponcomponents" ware="weaponcomponents" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="weaponcomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="pirate_wheat" ware="wheat" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge">
+        <economy max="0.25" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="wheat" race="argon"/>
+      </module>
+    </product>
+
+
+
+
+
+
+
+
+  
+    <!-- <product id="pirate_medicalsupplies" ware="medicalsupplies" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="20" />
+      </quotas>  -->
+      <!-- <location class="galaxy" macro="xu_ep2_universe_macro" faction="[pirate]"> -->
+      <!-- <location class="galaxy" macro="xu_ep2_universe_macro" faction="[pirate]" relation="self" comparison="ge">       -->
+      <!-- <location class="sector" macro="tppirate_Cluster_99_Sector001_macro" >
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <module>
+        <select ware="medicalsupplies" race="argon"/> -->
+        <!-- <select tags="[dockarea]" race="argon"/>
+        <select id="stor_tel"/> -->
+      <!-- </module>
+    </product> -->
+
+    <!-- <product id="pirate_energycells" ware="energycells" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="8" sector="6" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="[pirate]">
+      <economy max="0.6" maxbound="false" />
+        <sunlight min="1" max="3" />
+      </location>
+      <module>
+        <select ware="energycells" race="argon"/>
+      </module>
+    </product> -->
+
+    <!-- <product id="pirate_spices" ware="spices" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas> -->
+      <!-- <location class="galaxy" macro="xu_ep2_universe_macro" faction="[pirate]"/> -->
+      <!-- <location class="sector" macro="tppirate_Cluster_99_Sector001_macro"/>
+      <module>
+        <select ware="spices" race="paranid"/>
+      </module>
+    </product> -->
+
+    <!-- <product id="pirate_water" ware="water" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="[pirate]">
+        <region ware="ice" max="80000" />
+      </location>
+      <module>
+        <select ware="water" race="paranid"/>
+      </module>
+    </product> -->
+
+    <!-- <product id="pirate_wheat" ware="wheat" owner="pirate" type="factory">
+      <quotas>
+        <quota galaxy="4" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="[pirate]">
+        <economy max="0.25" />
+      </location>
+      <module>
+        <select ware="wheat" race="argon"/>
+      </module>
+    </product> -->
+
+
+  </add>
+
+  <add sel="/god/stations">
+
+    <!-- <station id="shipyard_meditech_01" race="argon" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="meditech_zone002_cluster_01_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[shipyard]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+    <station id="wharf_meditech_01" race="argon" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="meditech_zone002_cluster_01_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[wharf]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station> -->
+
+    <station id="equipmentdock_meditech_01" race="argon" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="meditech_zone002_cluster_01_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[equipmentdock]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>    
+
+    <station id="meditech_defence_00" race="argon" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="meditech_zone002_cluster_01_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="meditech_defence_01" race="argon" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="meditech_zone002_cluster_01_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+    <station id="meditech_defence_02" race="argon" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" zone="1" />
+      </quotas>
+      <location class="zone" macro="meditech_zone002_cluster_01_sector001_macro" />
+      <station>
+        <select faction="argon" tags="[defence]" />
+        <loadout>
+          <level exact="1.0" />
+        </loadout>
+      </station>
+    </station>
+
+
+
+  </add>
+
+  <add sel="/god/products">
+
+    <product id="meditech_advancedelectronics" ware="advancedelectronics" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="advancedelectronics" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_antimattercells" ware="antimattercells" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <region ware="hydrogen" max="80000" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="antimattercells" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_energycells" ware="energycells" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="2" sector="6" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.6" maxbound="false" />
+        <sunlight min="1" max="3" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="energycells" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_foodrations" ware="foodrations" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="3" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="foodrations" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_meat" ware="meat" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.25" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="meat" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_medicalsupplies" ware="medicalsupplies" owner="meditech" type="factory" >
+      <quotas>
+        <quota galaxy="20" sector="1"/>
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" >
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="medicalsupplies" race="argon"/>
+      </module>
+    </product>
+    
+    <product id="meditech_missilecomponents" ware="missilecomponents" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="missilecomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_spacefuel" ware="spacefuel" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.5" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="spacefuel" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_spices" ware="spices" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.25" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="spices" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_water" ware="water" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="3" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <region ware="ice" max="80000" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="water" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_weaponcomponents" ware="weaponcomponents" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="1" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.75" maxbound="false" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="weaponcomponents" race="argon"/>
+      </module>
+    </product>
+
+    <product id="meditech_wheat" ware="wheat" owner="meditech" type="factory">
+      <quotas>
+        <quota galaxy="2" />
+      </quotas>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="meditech" >
+        <economy max="0.25" />
+      </location>
+      <loadout>
+        <level exact="1.0" />
+      </loadout>
+      <module>
+        <select ware="wheat" race="argon"/>
+      </module>
+    </product>
+
+  </add>
+
+</diff>
+

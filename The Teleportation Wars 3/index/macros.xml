@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/index">
+        <entry name="tpwar_countermeasure_flares_01_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_countermeasure_flares_01_module_macro"/>
+        <entry name="tpwar_engine_arg_l_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_l_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_l_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_l_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_m_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_m_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_arg_m_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_arg_m_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_m_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_arg_m_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_arg_m_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_m_travel_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_travel_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_arg_m_travel_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_m_travel_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_arg_s_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_s_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_arg_s_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_arg_s_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_s_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_arg_s_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_arg_s_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_s_travel_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_travel_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_arg_s_travel_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_s_travel_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_arg_xl_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_xl_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_arg_xl_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_arg_xl_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_l_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_l_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_l_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_l_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_m_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_m_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_par_m_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_par_m_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_m_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_par_m_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_par_m_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_m_travel_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_travel_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_par_m_travel_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_m_travel_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_par_s_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_s_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_par_s_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_par_s_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_s_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_par_s_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_par_s_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_s_travel_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_travel_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_par_s_travel_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_s_travel_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_par_xl_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_xl_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_par_xl_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_par_xl_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_l_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_l_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_l_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_l_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_m_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_m_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_tel_m_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_tel_m_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_m_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_tel_m_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_tel_m_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_m_travel_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_travel_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_tel_m_travel_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_m_travel_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_tel_s_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_s_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_tel_s_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_tel_s_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_s_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_tel_s_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_tel_s_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_s_travel_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_travel_01_mk2_module_macro"/>
+        <entry name="tpwar_engine_tel_s_travel_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_s_travel_01_mk3_module_macro"/>
+        <entry name="tpwar_engine_tel_xl_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_xl_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_engine_tel_xl_travel_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_engine_tel_xl_travel_01_mk1_module_macro"/>
+        <entry name="tpwar_missile_cluster_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_cluster_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_cluster_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_cluster_light_mk1_module_macro"/>
+        <entry name="tpwar_missile_dumbfire_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_dumbfire_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_dumbfire_heavy_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_dumbfire_heavy_mk2_module_macro"/>
+        <entry name="tpwar_missile_dumbfire_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_dumbfire_light_mk1_module_macro"/>
+        <entry name="tpwar_missile_dumbfire_light_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_dumbfire_light_mk2_module_macro"/>
+        <entry name="tpwar_missile_emp_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_emp_mk1_module_macro"/>
+        <entry name="tpwar_missile_guided_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_guided_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_guided_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_guided_light_mk1_module_macro"/>
+        <entry name="tpwar_missile_heatseeker_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_heatseeker_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_heatseeker_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_heatseeker_light_mk1_module_macro"/>
+        <entry name="tpwar_missile_smart_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_smart_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_smart_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_smart_light_mk1_module_macro"/>
+        <entry name="tpwar_missile_swarm_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_swarm_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_swarm_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_swarm_light_mk1_module_macro"/>
+        <entry name="tpwar_missile_torpedo_heavy_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_torpedo_heavy_mk1_module_macro"/>
+        <entry name="tpwar_missile_torpedo_light_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_missile_torpedo_light_mk1_module_macro"/>
+        <entry name="tpwar_resourceprobe_01_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_resourceprobe_01_module_macro"/>
+        <entry name="tpwar_satellite_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_satellite_mk1_module_macro"/>
+        <entry name="tpwar_satellite_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_satellite_mk2_module_macro"/>
+        <entry name="tpwar_shield_arg_l_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_l_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_arg_l_standard_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_l_standard_01_mk2_module_macro"/>
+        <entry name="tpwar_shield_arg_m_standard_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_m_standard_02_mk1_module_macro"/>
+        <entry name="tpwar_shield_arg_m_standard_02_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_m_standard_02_mk2_module_macro"/>
+        <entry name="tpwar_shield_arg_s_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_s_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_arg_s_standard_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_s_standard_01_mk2_module_macro"/>
+        <entry name="tpwar_shield_arg_s_standard_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_s_standard_01_mk3_module_macro"/>
+        <entry name="tpwar_shield_arg_xl_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_arg_xl_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_par_l_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_l_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_par_l_standard_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_l_standard_01_mk2_module_macro"/>
+        <entry name="tpwar_shield_par_m_standard_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_m_standard_02_mk1_module_macro"/>
+        <entry name="tpwar_shield_par_m_standard_02_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_m_standard_02_mk2_module_macro"/>
+        <entry name="tpwar_shield_par_s_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_s_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_par_s_standard_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_s_standard_01_mk2_module_macro"/>
+        <entry name="tpwar_shield_par_s_standard_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_s_standard_01_mk3_module_macro"/>
+        <entry name="tpwar_shield_par_xl_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_par_xl_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_tel_l_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_l_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_tel_l_standard_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_l_standard_01_mk2_module_macro"/>
+        <entry name="tpwar_shield_tel_m_standard_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_m_standard_02_mk1_module_macro"/>
+        <entry name="tpwar_shield_tel_m_standard_02_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_m_standard_02_mk2_module_macro"/>
+        <entry name="tpwar_shield_tel_s_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_s_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_shield_tel_s_standard_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_s_standard_01_mk2_module_macro"/>
+        <entry name="tpwar_shield_tel_s_standard_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_s_standard_01_mk3_module_macro"/>
+        <entry name="tpwar_shield_tel_xl_standard_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_shield_tel_xl_standard_01_mk1_module_macro"/>
+        <entry name="tpwar_ship_gen_s_fightingdrone_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_s_fightingdrone_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_s_lasertower_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_s_lasertower_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_s_miningdrone_liquid_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_s_miningdrone_liquid_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_s_miningdrone_solid_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_s_miningdrone_solid_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_xs_buildingdrone_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_xs_buildingdrone_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_xs_cargodrone_empty_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_xs_cargodrone_empty_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_xs_lasertower_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_xs_lasertower_01_a_module_macro"/>
+        <entry name="tpwar_ship_gen_xs_repairdrone_01_a_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_ship_gen_xs_repairdrone_01_a_module_macro"/>
+        <entry name="tpwar_thruster_gen_l_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_l_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_thruster_gen_l_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_l_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_thruster_gen_l_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_l_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_thruster_gen_m_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_m_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_thruster_gen_m_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_m_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_thruster_gen_m_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_m_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_thruster_gen_m_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_m_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_thruster_gen_m_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_m_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_thruster_gen_m_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_m_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_thruster_gen_s_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_s_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_thruster_gen_s_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_s_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_thruster_gen_s_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_s_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_thruster_gen_s_combat_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_s_combat_01_mk1_module_macro"/>
+        <entry name="tpwar_thruster_gen_s_combat_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_s_combat_01_mk2_module_macro"/>
+        <entry name="tpwar_thruster_gen_s_combat_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_s_combat_01_mk3_module_macro"/>
+        <entry name="tpwar_thruster_gen_xl_allround_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_xl_allround_01_mk1_module_macro"/>
+        <entry name="tpwar_thruster_gen_xl_allround_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_xl_allround_01_mk2_module_macro"/>
+        <entry name="tpwar_thruster_gen_xl_allround_01_mk3_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_thruster_gen_xl_allround_01_mk3_module_macro"/>
+        <entry name="tpwar_turret_arg_l_beam_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_l_beam_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_l_dumbfire_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_l_dumbfire_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_l_guided_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_l_guided_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_l_laser_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_l_laser_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_l_mining_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_l_mining_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_l_plasma_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_l_plasma_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_beam_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_beam_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_dumbfire_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_dumbfire_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_gatling_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_gatling_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_guided_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_guided_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_laser_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_laser_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_mining_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_mining_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_plasma_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_plasma_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_arg_m_shotgun_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_arg_m_shotgun_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_l_beam_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_l_beam_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_l_dumbfire_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_l_dumbfire_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_l_guided_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_l_guided_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_l_laser_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_l_laser_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_l_mining_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_l_mining_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_l_plasma_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_l_plasma_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_beam_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_beam_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_dumbfire_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_dumbfire_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_gatling_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_gatling_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_guided_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_guided_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_laser_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_laser_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_mining_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_mining_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_plasma_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_plasma_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_par_m_shotgun_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_par_m_shotgun_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_l_beam_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_l_beam_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_l_dumbfire_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_l_dumbfire_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_l_guided_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_l_guided_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_l_laser_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_l_laser_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_l_mining_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_l_mining_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_l_plasma_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_l_plasma_01_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_beam_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_beam_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_dumbfire_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_dumbfire_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_gatling_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_gatling_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_guided_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_guided_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_laser_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_laser_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_mining_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_mining_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_plasma_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_plasma_02_mk1_module_macro"/>
+        <entry name="tpwar_turret_tel_m_shotgun_02_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_turret_tel_m_shotgun_02_mk1_module_macro"/>
+        <entry name="tpwar_weapon_arg_l_destroyer_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_arg_l_destroyer_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_arg_m_ion_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_arg_m_ion_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_arg_m_ion_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_arg_m_ion_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_arg_s_ion_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_arg_s_ion_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_arg_s_ion_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_arg_s_ion_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_mine_01_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_mine_01_module_macro"/>
+        <entry name="tpwar_weapon_gen_mine_03_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_mine_03_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_beam_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_beam_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_beam_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_beam_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_dumbfire_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_dumbfire_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_dumbfire_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_dumbfire_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_gatling_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_gatling_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_gatling_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_gatling_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_guided_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_guided_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_guided_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_guided_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_laser_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_laser_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_laser_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_laser_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_mining_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_mining_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_mining_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_mining_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_plasma_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_plasma_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_plasma_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_plasma_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_shotgun_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_shotgun_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_shotgun_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_shotgun_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_torpedo_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_torpedo_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_m_torpedo_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_m_torpedo_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_beam_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_beam_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_beam_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_beam_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_dumbfire_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_dumbfire_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_dumbfire_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_dumbfire_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_gatling_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_gatling_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_gatling_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_gatling_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_guided_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_guided_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_guided_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_guided_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_laser_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_laser_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_laser_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_laser_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_mining_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_mining_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_mining_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_mining_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_plasma_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_plasma_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_plasma_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_plasma_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_shotgun_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_shotgun_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_shotgun_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_shotgun_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_torpedo_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_torpedo_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_gen_s_torpedo_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_gen_s_torpedo_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_par_l_destroyer_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_par_l_destroyer_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_par_m_railgun_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_par_m_railgun_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_par_m_railgun_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_par_m_railgun_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_par_s_railgun_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_par_s_railgun_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_par_s_railgun_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_par_s_railgun_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_tel_l_destroyer_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_tel_l_destroyer_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_tel_m_charge_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_tel_m_charge_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_tel_m_charge_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_tel_m_charge_01_mk2_module_macro"/>
+        <entry name="tpwar_weapon_tel_s_charge_01_mk1_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_tel_s_charge_01_mk1_module_macro"/>
+        <entry name="tpwar_weapon_tel_s_charge_01_mk2_module_macro" value="extensions\The Teleportation Wars 3\assets\structures\production\macros\tpwar_weapon_tel_s_charge_01_mk2_module_macro"/>
+        <entry name="eq_arg_satellite_09_macro" value="extensions\The Teleportation Wars 3\assets\props\Equipment\Satelite\macros\eq_arg_satellite_09_macro"/>
+        <entry name="eq_arg_satellite_10_macro" value="extensions\The Teleportation Wars 3\assets\props\Equipment\Satelite\macros\eq_arg_satellite_10_macro"/> 
+        <entry name="stellar_cart_lockbox_blueprint_macro" value="Extensions\The Teleportation Wars 3\assets\props\StorageModules\macros\stellar_cart_lockbox_blueprint_macro" />
+        <entry name="stellar_cart_lockbox_crew_macro" value="Extensions\The Teleportation Wars 3\assets\props\StorageModules\macros\stellar_cart_lockbox_crew_macro" />
+        <entry name="stellar_cart_lockbox_treasure_macro" value="Extensions\The Teleportation Wars 3\assets\props\StorageModules\macros\stellar_cart_lockbox_treasure_macro" />
+        <entry name="stellar_cart_lockbox_station_macro" value="Extensions\The Teleportation Wars 3\assets\props\StorageModules\macros\stellar_cart_lockbox_station_macro" />        
+        <entry name="stellar_cartography_module_macro" value="Extensions\The Teleportation Wars 3\assets\structures\storage\macros\stellar_cartography_module_macro"/>
+        <entry name="sc_prison_module_macro" value="Extensions\The Teleportation Wars 3\assets\structures\storage\macros\sc_prison_module_macro"/> 
+        <entry name="meditech_Cluster_01_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="meditech_Zone001_Cluster_01_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="meditech_Zone001_Cluster_01_Sector002_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="meditech_Zone001_Cluster_01_Sector003_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="meditech_Zone001_Cluster_01_Sector004_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="meditech_Zone001_Cluster_01_Sector005_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="meditech_Zone001_Cluster_01_Sector006_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="meditech_cluster_01_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+    <!-- set index file to list out all clusters individually, because tppirate_cluster* also applies to all sector macros..... -->
+        <!-- <entry name="tppirate_cluster*" value="maps\XU_ep2_universe\clusters"/> -->
+        <entry name="tppirate_cluster_99_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_98_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_97_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_96_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_95_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_94_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_93_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_92_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_91_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_90_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_89_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_88_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_87_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_86_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_85_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_84_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_83_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_82_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_81_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_80_macro" value="maps\XU_ep2_universe\clusters"/>
+        <entry name="tppirate_cluster_99_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_98_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_97_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_96_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_95_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_94_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_93_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_92_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_91_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_90_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_89_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_88_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_87_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_86_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_85_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_84_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_83_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_82_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_81_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_80_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+    <!-- hid bc not using these cluster IDs -->
+        <!-- <entry name="tppirate_cluster_79_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_78_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_77_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_76_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_75_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_74_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_73_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_72_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_71_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_70_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_69_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_68_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_67_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_66_sector001_macro" value="maps\XU_ep2_universe\sectors"/>
+        <entry name="tppirate_cluster_65_sector001_macro" value="maps\XU_ep2_universe\sectors"/> -->
+
+        <entry name="tppirate_Zone002_Cluster_99_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_99_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_99_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_99_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_98_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_98_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_98_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_97_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_97_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_97_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_96_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_96_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_96_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_96_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_95_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_95_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_95_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_95_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_94_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_94_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_94_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_94_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_93_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_93_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_93_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_92_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_92_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_92_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_91_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_91_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone005_Cluster_91_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_91_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_91_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_90_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_90_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_90_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_89_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone005_Cluster_89_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_89_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_89_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_89_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_88_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_88_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_88_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_87_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_87_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_87_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_87_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone005_Cluster_87_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_86_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_86_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_86_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_85_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_85_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_85_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_84_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_84_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_84_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_84_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_83_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_83_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_83_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_83_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone005_Cluster_83_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_82_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_82_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_82_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_81_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_81_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone003_Cluster_81_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone004_Cluster_81_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone001_Cluster_80_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <entry name="tppirate_Zone002_Cluster_80_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
+        <!-- jumpdrive -->
+        <entry name="tpwar_jump_beacon_t1_macro" value="extensions\The Teleportation Wars 3\assets\environments\deco\macros\tpwar_jump_beacon_t1_macro" />
+    </add>
+</diff>

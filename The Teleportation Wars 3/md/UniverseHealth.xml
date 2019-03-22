@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="UH" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+    <cues>
+        <!-- 
+        INTERVAL IS 10 MINUTES
+        checkinterval="10min"
+        CHANGE TO SUIT YOUR NEEDS
+
+        TODO
+        track attack strength and stuff getting shot
+        breakdown warebakets
+        clean up the nulls
+        count transits for each gate
+        warevelocity
+         -->
+        <cue name="InitUH" instantiate="true">
+            <conditions>
+                <event_long_range_scan_sent object="player.entity" />
+                <!-- <event_cue_signalled cue="md.Setup.GameStart" /> -->
+            </conditions>
+            <actions>
+                <debug_text text="'WHERE AM I?' + player.entity.galaxy.position" />
+                <debug_text text="'UH Active'" />
+                <find_sector groupname="$UH_Every_Sector" space="player.galaxy" multiple="true" />
+                <find_sector groupname="$UH_Arg_Sectors" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_sector groupname="$UH_Ant_Sectors" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_sector groupname="$UH_Par_Sectors" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_sector groupname="$UH_Hol_Sectors" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_sector groupname="$UH_Tel_Sectors" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_sector groupname="$UH_Min_Sectors" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_sector groupname="$UH_Hat_Sectors" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_sector groupname="$UH_Sca_Sectors" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_sector groupname="$UH_Ali_Sectors" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_sector groupname="$UH_Pir_Sectors" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_sector groupname="$UH_Med_Sectors" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_sector groupname="$UH_Xen_Sectors" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_sector groupname="$UH_Civ_Sectors" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_sector groupname="$UH_Cri_Sectors" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_sector groupname="$UH_kha_Sectors" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_sector groupname="$UH_Unk_Sectors" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_sector groupname="$UH_Pla_Sectors" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_sector groupname="$UH_Smu_Sectors" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <find_ship groupname="$UH_All_Ships" space="player.galaxy" multiple="true" />
+                <find_ship groupname="$UH_Arg_Ships" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_ship groupname="$UH_Ant_Ships" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_ship groupname="$UH_Par_Ships" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_ship groupname="$UH_Hol_Ships" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_ship groupname="$UH_Tel_Ships" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_ship groupname="$UH_Min_Ships" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_ship groupname="$UH_Hat_Ships" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_ship groupname="$UH_Sca_Ships" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_ship groupname="$UH_Ali_Ships" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_ship groupname="$UH_Pir_Ships" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_ship groupname="$UH_Med_Ships" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_ship groupname="$UH_Xen_Ships" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_ship groupname="$UH_Civ_Ships" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_ship groupname="$UH_Cri_Ships" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_ship groupname="$UH_kha_Ships" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_ship groupname="$UH_Unk_Ships" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_ship groupname="$UH_Pla_Ships" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_ship groupname="$UH_Smu_Ships" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <find_ship groupname="$UH_All_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" />
+                <find_ship groupname="$UH_Arg_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.argon" />
+                <find_ship groupname="$UH_Ant_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.antigone" />
+                <find_ship groupname="$UH_Par_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.paranid" />
+                <find_ship groupname="$UH_Hol_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.holyorder" />
+                <find_ship groupname="$UH_Tel_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.teladi" />
+                <find_ship groupname="$UH_Min_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.ministry" />
+                <find_ship groupname="$UH_Hat_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.hatikvah" />
+                <find_ship groupname="$UH_Sca_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.scaleplate" />
+                <find_ship groupname="$UH_Ali_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.alliance" />
+                <find_ship groupname="$UH_Pir_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.pirate" />
+                <find_ship groupname="$UH_Med_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.meditech" />
+                <find_ship groupname="$UH_Xen_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.xenon" />
+                <find_ship groupname="$UH_Civ_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.civilian" />
+                <find_ship groupname="$UH_Cri_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.criminal" />
+                <find_ship groupname="$UH_kha_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.khaak" />
+                <find_ship groupname="$UH_Unk_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.ownerless" />
+                <find_ship groupname="$UH_Pla_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.player" />
+                <find_ship groupname="$UH_Smu_TradeShips" space="player.galaxy" multiple="true" primarypurpose="purpose.trade" owner="faction.smuggler" />
+                <find_station groupname="$UH_All_Stations" space="player.galaxy" multiple="true" />
+                <find_station groupname="$UH_Arg_Stations" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_station groupname="$UH_Ant_Stations" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_station groupname="$UH_Par_Stations" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_station groupname="$UH_Hol_Stations" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_station groupname="$UH_Tel_Stations" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_station groupname="$UH_Min_Stations" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_station groupname="$UH_Hat_Stations" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_station groupname="$UH_Sca_Stations" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_station groupname="$UH_Ali_Stations" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_station groupname="$UH_Pir_Stations" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_station groupname="$UH_Med_Stations" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_station groupname="$UH_Xen_Stations" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_station groupname="$UH_Civ_Stations" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_station groupname="$UH_Cri_Stations" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_station groupname="$UH_kha_Stations" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_station groupname="$UH_Unk_Stations" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_station groupname="$UH_Pla_Stations" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_station groupname="$UH_Smu_Stations" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <find_station groupname="$UH_All_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" />
+                <find_station groupname="$UH_Arg_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_station groupname="$UH_Ant_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_station groupname="$UH_Par_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_station groupname="$UH_Hol_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_station groupname="$UH_Tel_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_station groupname="$UH_Min_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_station groupname="$UH_Hat_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_station groupname="$UH_Sca_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_station groupname="$UH_Ali_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_station groupname="$UH_Pir_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_station groupname="$UH_Med_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_station groupname="$UH_Xen_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_station groupname="$UH_Civ_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_station groupname="$UH_Cri_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_station groupname="$UH_kha_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_station groupname="$UH_Unk_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_station groupname="$UH_Pla_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_station groupname="$UH_Smu_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <find_station groupname="$UH_All_StationWharf" wharf="true" space="player.galaxy" multiple="true" />
+                <find_station groupname="$UH_Arg_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_station groupname="$UH_Ant_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_station groupname="$UH_Par_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_station groupname="$UH_Hol_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_station groupname="$UH_Tel_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_station groupname="$UH_Min_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_station groupname="$UH_Hat_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_station groupname="$UH_Sca_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_station groupname="$UH_Ali_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_station groupname="$UH_Pir_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_station groupname="$UH_Med_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_station groupname="$UH_Xen_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_station groupname="$UH_Civ_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_station groupname="$UH_Cri_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_station groupname="$UH_kha_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_station groupname="$UH_Unk_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_station groupname="$UH_Pla_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_station groupname="$UH_Smu_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <!--********************************************Launched******************************************** -->
+                <set_value name="$MissilesLaunched" exact="0" />
+                <set_value name="$SatellitesLaunched" exact="0" />
+                <set_value name="$MinesLaunched" exact="0" />
+                <set_value name="$LasertowersLaunched" exact="0" />
+                <set_value name="$NavbeaconLaunched" exact="0" />
+                <set_value name="$ResourceprobeLaunched" exact="0" />
+                <set_value name="$CountermeasureLaunched" exact="0" />
+                <!--********************************************StationsKilled******************************************** -->
+                <set_value name="$UH_All_Stations_KIlled" exact="0" />
+                <set_value name="$UH_Arg_Stations_Killed" exact="0" />
+                <set_value name="$UH_Ant_Stations_Killed" exact="0" />
+                <set_value name="$UH_Par_Stations_Killed" exact="0" />
+                <set_value name="$UH_Hol_Stations_Killed" exact="0" />
+                <set_value name="$UH_Tel_Stations_Killed" exact="0" />
+                <set_value name="$UH_Min_Stations_Killed" exact="0" />
+                <set_value name="$UH_Hat_Stations_Killed" exact="0" />
+                <set_value name="$UH_Sca_Stations_Killed" exact="0" />
+                <set_value name="$UH_Ali_Stations_Killed" exact="0" />
+                <set_value name="$UH_Pir_Stations_Killed" exact="0" />
+                <set_value name="$UH_Med_Stations_Killed" exact="0" />
+                <set_value name="$UH_Xen_Stations_Killed" exact="0" />
+                <set_value name="$UH_Civ_Stations_Killed" exact="0" />
+                <set_value name="$UH_Cri_Stations_Killed" exact="0" />
+                <set_value name="$UH_kha_Stations_Killed" exact="0" />
+                <set_value name="$UH_Unk_Stations_Killed" exact="0" />
+                <set_value name="$UH_Pla_Stations_Killed" exact="0" />
+                <set_value name="$UH_Smu_Stations_Killed" exact="0" />
+                <!--********************************************ShipsKilled******************************************** -->
+                <set_value name="$UH_All_Ships_KIlled" exact="0" />
+                <set_value name="$UH_Arg_Ships_Killed" exact="0" />
+                <set_value name="$UH_Ant_Ships_Killed" exact="0" />
+                <set_value name="$UH_Par_Ships_Killed" exact="0" />
+                <set_value name="$UH_Hol_Ships_Killed" exact="0" />
+                <set_value name="$UH_Tel_Ships_Killed" exact="0" />
+                <set_value name="$UH_Min_Ships_Killed" exact="0" />
+                <set_value name="$UH_Hat_Ships_Killed" exact="0" />
+                <set_value name="$UH_Sca_Ships_Killed" exact="0" />
+                <set_value name="$UH_Ali_Ships_Killed" exact="0" />
+                <set_value name="$UH_Pir_Ships_Killed" exact="0" />
+                <set_value name="$UH_Med_Ships_Killed" exact="0" />
+                <set_value name="$UH_Xen_Ships_Killed" exact="0" />
+                <set_value name="$UH_Civ_Ships_Killed" exact="0" />
+                <set_value name="$UH_Cri_Ships_Killed" exact="0" />
+                <set_value name="$UH_kha_Ships_Killed" exact="0" />
+                <set_value name="$UH_Unk_Ships_Killed" exact="0" />
+                <set_value name="$UH_Pla_Ships_Killed" exact="0" />
+                <set_value name="$UH_Smu_Ships_Killed" exact="0" />
+                <!--********************************************TradeShipsKilled******************************************** -->
+                <set_value name="$UH_All_TradeShips_KIlled" exact="0" />
+                <set_value name="$UH_Arg_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Ant_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Par_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Hol_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Tel_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Min_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Hat_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Sca_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Ali_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Pir_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Med_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Xen_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Civ_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Cri_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_kha_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Unk_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Pla_TradeShips_Killed" exact="0" />
+                <set_value name="$UH_Smu_TradeShips_Killed" exact="0" />
+                <create_list name="$FactionStations" />
+                <append_to_list name="$FactionStations" exact="$UH_Arg_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Ant_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Par_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Hol_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Tel_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Min_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Hat_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Sca_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Ali_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Pir_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Med_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Xen_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Civ_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Cri_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_kha_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Unk_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Pla_Stations" />
+                <append_to_list name="$FactionStations" exact="$UH_Smu_Stations" />
+            </actions>
+            <cues>
+                <!-- <cue name="Weapon_Damage_Report" instantiate="true">
+                    <conditions>
+                        <event_object_attacked group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$hull" exact="event.object.hull" />
+                        <set_value name="$shield" exact="event.object.shield" />
+                        <set_value name="$maxhull" exact="event.object.maxhull" />
+                        <set_value name="$maxshield" exact="event.object.maxshield" />
+                        <debug_text text="'object' + event.object.knownname" />
+                        <debug_text text="'attacker' + event.param.knownname + event.param.dps.all" />
+                        <debug_text text="'gunmaybe' + event.param2.knownname" />
+                        <debug_text text="'what got attacked' + event.param3.knownname" />
+                        <debug_text text="'playerhull' + event.object.hull" />
+                    </actions>
+                </cue> -->
+                <cue name="UH_Missile_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_object_launched_missile group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$MissilesLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="UH_Satellite_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_satellite_launched group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$SatellitesLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="UH_Mine_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_mine_launched group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$MinesLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="UH_Lasertower_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_lasertower_launched group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$LasertowersLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="UH_Navbeacon_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_navbeacon_launched group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$NavbeaconLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="UH_Resourceprobe_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_object_launched_resourceprobe group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$ResourceprobeLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="UH_Countermeasure_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_object_launched_countermeasure group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$CountermeasureLaunched" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <!-- <cue name="UH_attackstrength" instantiate="true" checkinterval="30s">
+                    
+                    <actions>
+                        <set_value name="$SelectedTarget" exact="$UH_All_Ships.random"/>
+                        <debug_text text="'TARGET ' + $SelectedTarget.knownname" />
+                        <do_all exact="$UH_All_Ships.count" counter="$allships">
+                            <get_attackstrength object="$UH_All_Ships.{$allships}" target="$SelectedTarget" result="$result" />
+                            <do_if value="$result gt 0">
+                                <debug_text text="'Ship: %s Value: %s DPS: %s Target: %s'.[$UH_All_Ships.{$allships}.knownname,$result,$UH_All_Ships.{$allships}.dps.all,$SelectedTarget.knownname]" />
+                            </do_if>
+                            <remove_value name="$result" />
+                        </do_all>
+                    </actions>
+                </cue> -->
+                <cue name="UH_Ware_Report" instantiate="true" checkinterval="10min">
+                    <actions>
+                        <set_value name="$NeedWares" exact="table[]" />
+                        <set_value name="$CurrentWares" exact="table[]" />
+                        <do_all exact="$UH_All_Stations.count" counter="$station">
+                            <find_buy_offer result="$Needed" buyer="$UH_All_Stations.{$station}" multiple="true"></find_buy_offer>
+                            <find_sell_offer result="$Current" seller="$UH_All_Stations.{$station}" multiple="true"></find_sell_offer>
+                            <do_all exact="$Needed.count" counter="$n">
+                                <set_value name="$NeedWares.{$Needed.{$n}.ware}" exact="$Needed.{$n}.amount" operation="add" />
+                            </do_all>
+                            <do_all exact="$Current.count" counter="$c">
+                                <set_value name="$CurrentWares.{$Current.{$c}.ware}" exact="$Current.{$c}.amount" operation="add" />
+                            </do_all>
+                        </do_all>
+                        <debug_text text="'UNICurrentWares:'" />
+                        <set_value name="$keys" exact="$CurrentWares.keys.list" />
+                        <do_all exact="$keys.count" counter="$cw">
+                            <debug_text text="'Current: %s / Value: %s'.[$keys.{$cw},$CurrentWares.{$keys.{$cw}}]" />
+                        </do_all>
+                        <remove_value name="$keys" />
+                        <debug_text text="'UNINeededWares:'" />
+                        <set_value name="$keys" exact="$NeedWares.keys.list" />
+                        <do_all exact="$keys.count" counter="$nw">
+                            <debug_text text="'Need: %s / Value: %s'.[$keys.{$nw},$NeedWares.{$keys.{$nw}}]" />
+                        </do_all>
+                        <remove_value name="$NeedWares" />
+                        <remove_value name="$CurrentWares" />
+                        <do_all exact="$FactionStations.count" counter="$factioncounter">
+                            <debug_text text="$FactionStations.{$factioncounter}.random.owner" />
+                            <debug_text text="$FactionStations.{$factioncounter}.random.owner" />
+                            <debug_text text="$FactionStations.{$factioncounter}.random.owner" />
+                            <set_value name="$TRFaction" exact="$FactionStations.{$factioncounter}" />
+                            <set_value name="$NeedWares" exact="table[]" />
+                            <set_value name="$CurrentWares" exact="table[]" />
+                            <do_all exact="$TRFaction.count" counter="$station">
+                                <find_buy_offer result="$Needed" buyer="$TRFaction.{$station}" multiple="true"></find_buy_offer>
+                                <find_sell_offer result="$Current" seller="$TRFaction.{$station}" multiple="true"></find_sell_offer>
+                                <do_all exact="$Needed.count" counter="$n">
+                                    <set_value name="$NeedWares.{$Needed.{$n}.ware}" exact="$Needed.{$n}.amount" operation="add" />
+                                </do_all>
+                                <do_all exact="$Current.count" counter="$c">
+                                    <set_value name="$CurrentWares.{$Current.{$c}.ware}" exact="$Current.{$c}.amount" operation="add" />
+                                </do_all>
+                            </do_all>
+                            <debug_text text="'UNICurrentWares:'" />
+                            <set_value name="$keys" exact="$CurrentWares.keys.list" />
+                            <do_all exact="$keys.count" counter="$cw">
+                                <debug_text text="'Current: %s / Value: %s'.[$keys.{$cw},$CurrentWares.{$keys.{$cw}}]" />
+                            </do_all>
+                            <remove_value name="$keys" />
+                            <debug_text text="'UNINeededWares:'" />
+                            <set_value name="$keys" exact="$NeedWares.keys.list" />
+                            <do_all exact="$keys.count" counter="$nw">
+                                <debug_text text="'Need: %s / Value: %s'.[$keys.{$nw},$NeedWares.{$keys.{$nw}}]" />
+                            </do_all>
+                            <remove_value name="$NeedWares" />
+                            <remove_value name="$CurrentWares" />
+                        </do_all>
+                    </actions>
+                </cue>
+                <cue name="UH_FindShip_Upkeep" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_build_finished group="$UH_All_StationShipyard" />
+                            <event_build_finished group="$UH_Arg_StationShipyard" />
+                            <event_build_finished group="$UH_Ant_StationShipyard" />
+                            <event_build_finished group="$UH_Par_StationShipyard" />
+                            <event_build_finished group="$UH_Hol_StationShipyard" />
+                            <event_build_finished group="$UH_Tel_StationShipyard" />
+                            <event_build_finished group="$UH_Min_StationShipyard" />
+                            <event_build_finished group="$UH_Hat_StationShipyard" />
+                            <event_build_finished group="$UH_Sca_StationShipyard" />
+                            <event_build_finished group="$UH_Ali_StationShipyard" />
+                            <event_build_finished group="$UH_Pir_StationShipyard" />
+                            <event_build_finished group="$UH_Med_StationShipyard" />
+                            <event_build_finished group="$UH_Xen_StationShipyard" />
+                            <event_build_finished group="$UH_Civ_StationShipyard" />
+                            <event_build_finished group="$UH_Cri_StationShipyard" />
+                            <event_build_finished group="$UH_kha_StationShipyard" />
+                            <event_build_finished group="$UH_Unk_StationShipyard" />
+                            <event_build_finished group="$UH_Pla_StationShipyard" />
+                            <event_build_finished group="$UH_Smu_StationShipyard" />
+                            <event_build_finished group="$UH_All_StationWharf" />
+                            <event_build_finished group="$UH_Arg_StationWharf" />
+                            <event_build_finished group="$UH_Ant_StationWharf" />
+                            <event_build_finished group="$UH_Par_StationWharf" />
+                            <event_build_finished group="$UH_Hol_StationWharf" />
+                            <event_build_finished group="$UH_Tel_StationWharf" />
+                            <event_build_finished group="$UH_Min_StationWharf" />
+                            <event_build_finished group="$UH_Hat_StationWharf" />
+                            <event_build_finished group="$UH_Sca_StationWharf" />
+                            <event_build_finished group="$UH_Ali_StationWharf" />
+                            <event_build_finished group="$UH_Pir_StationWharf" />
+                            <event_build_finished group="$UH_Med_StationWharf" />
+                            <event_build_finished group="$UH_Xen_StationWharf" />
+                            <event_build_finished group="$UH_Civ_StationWharf" />
+                            <event_build_finished group="$UH_Cri_StationWharf" />
+                            <event_build_finished group="$UH_kha_StationWharf" />
+                            <event_build_finished group="$UH_Unk_StationWharf" />
+                            <event_build_finished group="$UH_Pla_StationWharf" />
+                            <event_build_finished group="$UH_Smu_StationWharf" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <add_to_group groupname="$UH_All_Ships" object="event.param3.buildobject" />
+                        <do_if value="event.param3.buildobject.owner == faction.argon">
+                            <add_to_group groupname="$UH_Arg_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.antigone">
+                            <add_to_group groupname="$UH_Ant_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.paranid">
+                            <add_to_group groupname="$UH_Par_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.holyorder">
+                            <add_to_group groupname="$UH_Hol_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.teladi">
+                            <add_to_group groupname="$UH_Tel_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.ministry">
+                            <add_to_group groupname="$UH_Min_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.hatikvah">
+                            <add_to_group groupname="$UH_Hat_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.scaleplate">
+                            <add_to_group groupname="$UH_Sca_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.alliance">
+                            <add_to_group groupname="$UH_Ali_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.pirate">
+                            <add_to_group groupname="$UH_Pir_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.meditech">
+                            <add_to_group groupname="$UH_Med_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.xenon">
+                            <add_to_group groupname="$UH_Xen_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.civilian">
+                            <add_to_group groupname="$UH_Civ_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.criminal">
+                            <add_to_group groupname="$UH_Cri_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.khaak">
+                            <add_to_group groupname="$UH_kha_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.ownerless">
+                            <add_to_group groupname="$UH_Unk_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.player">
+                            <add_to_group groupname="$UH_Pla_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.smuggler">
+                            <add_to_group groupname="$UH_Smu_Ships" object="event.param3.buildobject" />
+                        </do_if>
+                        <!--  -->
+                        <do_if value="event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_All_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.argon and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Arg_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.antigone and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Ant_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.paranid and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Par_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.holyorder and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Hol_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.teladi and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Tel_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.ministry and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Min_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.hatikvah and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Hat_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.scaleplate and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Sca_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.alliance and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Ali_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.pirate and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Pir_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.meditech and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Med_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.xenon and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Xen_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.civilian and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Civ_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.criminal and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Cri_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.khaak and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_kha_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.ownerless and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Unk_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.player and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Pla_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.smuggler and event.param3.buildobject.primarypurpose == purpose.trade">
+                            <add_to_group groupname="$UH_Smu_TradeShips" object="event.param3.buildobject" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="UH_FindStation_Upkeep" instantiate="true" checkinterval="10min">
+                    <actions>
+                        <find_station groupname="$UH_All_Stations" space="player.galaxy" multiple="true" />
+                        <find_station groupname="$UH_Arg_Stations" space="player.galaxy" multiple="true" owner="faction.argon" />
+                        <find_station groupname="$UH_Ant_Stations" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                        <find_station groupname="$UH_Par_Stations" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                        <find_station groupname="$UH_Hol_Stations" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                        <find_station groupname="$UH_Tel_Stations" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                        <find_station groupname="$UH_Min_Stations" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                        <find_station groupname="$UH_Hat_Stations" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                        <find_station groupname="$UH_Sca_Stations" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                        <find_station groupname="$UH_Ali_Stations" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                        <find_station groupname="$UH_Pir_Stations" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                        <find_station groupname="$UH_Med_Stations" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                        <find_station groupname="$UH_Xen_Stations" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                        <find_station groupname="$UH_Civ_Stations" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                        <find_station groupname="$UH_Cri_Stations" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                        <find_station groupname="$UH_kha_Stations" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                        <find_station groupname="$UH_Unk_Stations" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                        <find_station groupname="$UH_Pla_Stations" space="player.galaxy" multiple="true" owner="faction.player" />
+                        <find_station groupname="$UH_Smu_Stations" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                        <find_station groupname="$UH_All_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" />
+                        <find_station groupname="$UH_Arg_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.argon" />
+                        <find_station groupname="$UH_Ant_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                        <find_station groupname="$UH_Par_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                        <find_station groupname="$UH_Hol_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                        <find_station groupname="$UH_Tel_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                        <find_station groupname="$UH_Min_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                        <find_station groupname="$UH_Hat_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                        <find_station groupname="$UH_Sca_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                        <find_station groupname="$UH_Ali_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                        <find_station groupname="$UH_Pir_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                        <find_station groupname="$UH_Med_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                        <find_station groupname="$UH_Xen_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                        <find_station groupname="$UH_Civ_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                        <find_station groupname="$UH_Cri_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                        <find_station groupname="$UH_kha_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                        <find_station groupname="$UH_Unk_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                        <find_station groupname="$UH_Pla_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.player" />
+                        <find_station groupname="$UH_Smu_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                        <find_station groupname="$UH_All_StationWharf" wharf="true" space="player.galaxy" multiple="true" />
+                        <find_station groupname="$UH_Arg_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.argon" />
+                        <find_station groupname="$UH_Ant_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                        <find_station groupname="$UH_Par_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                        <find_station groupname="$UH_Hol_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                        <find_station groupname="$UH_Tel_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                        <find_station groupname="$UH_Min_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                        <find_station groupname="$UH_Hat_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                        <find_station groupname="$UH_Sca_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                        <find_station groupname="$UH_Ali_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                        <find_station groupname="$UH_Pir_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                        <find_station groupname="$UH_Med_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                        <find_station groupname="$UH_Xen_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                        <find_station groupname="$UH_Civ_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                        <find_station groupname="$UH_Cri_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                        <find_station groupname="$UH_kha_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                        <find_station groupname="$UH_Unk_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                        <find_station groupname="$UH_Pla_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.player" />
+                        <find_station groupname="$UH_Smu_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                        <!-- <add_to_group groupname="$UH_All_Stations" object="event.param3.buildobject" />
+                        <do_if value="event.param3.buildobject.owner == faction.argon">
+                            <add_to_group groupname="$UH_Arg_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.antigone">
+                            <add_to_group groupname="$UH_Ant_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.paranid">
+                            <add_to_group groupname="$UH_Par_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.holyorder">
+                            <add_to_group groupname="$UH_Hol_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.teladi">
+                            <add_to_group groupname="$UH_Tel_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.ministry">
+                            <add_to_group groupname="$UH_Min_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.hatikvah">
+                            <add_to_group groupname="$UH_Hat_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.scaleplate">
+                            <add_to_group groupname="$UH_Sca_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.alliance">
+                            <add_to_group groupname="$UH_Ali_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.pirate">
+                            <add_to_group groupname="$UH_Pir_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.meditech">
+                            <add_to_group groupname="$UH_Med_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.xenon">
+                            <add_to_group groupname="$UH_Xen_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.civilian">
+                            <add_to_group groupname="$UH_Civ_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.criminal">
+                            <add_to_group groupname="$UH_Cri_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.khaak">
+                            <add_to_group groupname="$UH_kha_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.ownerless">
+                            <add_to_group groupname="$UH_Unk_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.player">
+                            <add_to_group groupname="$UH_Pla_Stations" object="event.param3.buildobject" />
+                        </do_if>
+                        <do_if value="event.param3.buildobject.owner == faction.smuggler">
+                            <add_to_group groupname="$UH_Smu_Stations" object="event.param3.buildobject" />
+                        </do_if> -->
+                        <debug_text text="'Station Building' + event.param3.buildobject.knownname" />
+                    </actions>
+                </cue>
+                <cue name="UH_Ship_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_object_destroyed group="$UH_All_Ships" />
+                    </conditions>
+                    <actions>
+                        <do_if value="event.object.owner == faction.argon">
+                            <set_value name="$UH_Arg_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Arg_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.antigone">
+                            <set_value name="$UH_Ant_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Ant_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.paranid">
+                            <set_value name="$UH_Par_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Par_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.holyorder">
+                            <set_value name="$UH_Hol_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Hol_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.teladi">
+                            <set_value name="$UH_Tel_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Tel_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.ministry">
+                            <set_value name="$UH_Min_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Min_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.hatikvah">
+                            <set_value name="$UH_Hat_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Min_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.scaleplate">
+                            <set_value name="$UH_Sca_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Sca_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.alliance">
+                            <set_value name="$UH_Ali_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Ali_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.pirate">
+                            <set_value name="$UH_Pir_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Pir_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.meditech">
+                            <set_value name="$UH_Med_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Med_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.xenon">
+                            <set_value name="$UH_Xen_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Xen_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.civilian">
+                            <set_value name="$UH_Civ_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Civ_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.criminal">
+                            <set_value name="$UH_Cri_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Cri_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.khaak">
+                            <set_value name="$UH_kha_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_kha_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.ownerless">
+                            <set_value name="$UH_Unk_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Unk_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.player">
+                            <set_value name="$UH_Pla_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Pla_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="event.object.owner == faction.smuggler">
+                            <set_value name="$UH_Smu_Ships_Killed" exact="1" operation="add" />
+                            <do_if value="event.object.primarypurpose == purpose.trade">
+                                <set_value name="$UH_Smu_TradeShips_Killed" exact="1" operation="add" />
+                            </do_if>
+                        </do_if>
+                        <set_value name="$UH_All_Ships_KIlled" exact="1" operation="add" />
+                        <do_if value="event.object.primarypurpose == purpose.trade">
+                            <set_value name="$UH_All_TradeShips_Killed" exact="1" operation="add" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="UH_Station_Upkeep" instantiate="true">
+                    <conditions>
+                        <event_object_destroyed group="$UH_All_Stations" />
+                    </conditions>
+                    <actions>
+                        <do_if value="event.object.owner == faction.argon">
+                            <set_value name="$UH_Arg_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.antigone">
+                            <set_value name="$UH_Ant_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.paranid">
+                            <set_value name="$UH_Par_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.holyorder">
+                            <set_value name="$UH_Hol_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.teladi">
+                            <set_value name="$UH_Tel_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.ministry">
+                            <set_value name="$UH_Min_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.hatikvah">
+                            <set_value name="$UH_Hat_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.scaleplate">
+                            <set_value name="$UH_Sca_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.alliance">
+                            <set_value name="$UH_Ali_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.pirate">
+                            <set_value name="$UH_Pir_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.meditech">
+                            <set_value name="$UH_Med_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.xenon">
+                            <set_value name="$UH_Xen_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.civilian">
+                            <set_value name="$UH_Civ_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.criminal">
+                            <set_value name="$UH_Cri_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.khaak">
+                            <set_value name="$UH_kha_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.ownerless">
+                            <set_value name="$UH_Unk_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.player">
+                            <set_value name="$UH_Pla_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.smuggler">
+                            <set_value name="$UH_Smu_Stations_Killed" exact="1" operation="add" />
+                        </do_if>
+                        <set_value name="$UH_All_Stations_Killed" exact="1" operation="add" />
+                    </actions>
+                </cue>
+                <cue name="ReportToLog" instantiate="true" checkinterval="10min">
+                    <actions>
+                        <debug_text text="'MissilesLaunched ' + $MissilesLaunched" />
+                        <debug_text text="'SatellitesLaunched ' + $SatellitesLaunched" />
+                        <debug_text text="'MinesLaunched ' + $MinesLaunched" />
+                        <debug_text text="'LasertowersLaunched ' + $LasertowersLaunched" />
+                        <debug_text text="'NavbeaconLaunched ' + $NavbeaconLaunched" />
+                        <debug_text text="'ResourceprobeLaunched ' + $ResourceprobeLaunched" />
+                        <debug_text text="'CountermeasureLaunched ' + $CountermeasureLaunched" />
+                        <!-- *************************************** -->
+                        <debug_text text="'UH_All_Stations_KIlled ' + $UH_All_Stations_KIlled" />
+                        <debug_text text="'UH_Arg_Stations_Killed ' + $UH_Arg_Stations_Killed" />
+                        <debug_text text="'UH_Ant_Stations_Killed ' + $UH_Ant_Stations_Killed" />
+                        <debug_text text="'UH_Par_Stations_Killed ' + $UH_Par_Stations_Killed" />
+                        <debug_text text="'UH_Hol_Stations_Killed ' + $UH_Hol_Stations_Killed" />
+                        <debug_text text="'UH_Tel_Stations_Killed ' + $UH_Tel_Stations_Killed" />
+                        <debug_text text="'UH_Min_Stations_Killed ' + $UH_Min_Stations_Killed" />
+                        <debug_text text="'UH_Hat_Stations_Killed ' + $UH_Hat_Stations_Killed" />
+                        <debug_text text="'UH_Sca_Stations_Killed ' + $UH_Sca_Stations_Killed" />
+                        <debug_text text="'UH_Ali_Stations_Killed ' + $UH_Ali_Stations_Killed" />
+                        <debug_text text="'UH_Pir_Stations_Killed ' + $UH_Pir_Stations_Killed" />
+                        <debug_text text="'UH_Med_Stations_Killed ' + $UH_Med_Stations_Killed" />
+                        <debug_text text="'UH_Xen_Stations_Killed ' + $UH_Xen_Stations_Killed" />
+                        <debug_text text="'UH_Civ_Stations_Killed ' + $UH_Civ_Stations_Killed" />
+                        <debug_text text="'UH_Cri_Stations_Killed ' + $UH_Cri_Stations_Killed" />
+                        <debug_text text="'UH_kha_Stations_Killed ' + $UH_kha_Stations_Killed" />
+                        <debug_text text="'UH_Unk_Stations_Killed ' + $UH_Unk_Stations_Killed" />
+                        <debug_text text="'UH_Pla_Stations_Killed ' + $UH_Pla_Stations_Killed" />
+                        <debug_text text="'UH_Smu_Stations_Killed ' + $UH_Smu_Stations_Killed" />
+                        <!-- *************************************** -->
+                        <debug_text text="'UH_All_Ships_KIlled ' + $UH_All_Ships_KIlled" />
+                        <debug_text text="'UH_Arg_Ships_Killed ' + $UH_Arg_Ships_Killed" />
+                        <debug_text text="'UH_Ant_Ships_Killed ' + $UH_Ant_Ships_Killed" />
+                        <debug_text text="'UH_Par_Ships_Killed ' + $UH_Par_Ships_Killed" />
+                        <debug_text text="'UH_Hol_Ships_Killed ' + $UH_Hol_Ships_Killed" />
+                        <debug_text text="'UH_Tel_Ships_Killed ' + $UH_Tel_Ships_Killed" />
+                        <debug_text text="'UH_Min_Ships_Killed ' + $UH_Min_Ships_Killed" />
+                        <debug_text text="'UH_Hat_Ships_Killed ' + $UH_Hat_Ships_Killed" />
+                        <debug_text text="'UH_Sca_Ships_Killed ' + $UH_Sca_Ships_Killed" />
+                        <debug_text text="'UH_Ali_Ships_Killed ' + $UH_Ali_Ships_Killed" />
+                        <debug_text text="'UH_Pir_Ships_Killed ' + $UH_Pir_Ships_Killed" />
+                        <debug_text text="'UH_Med_Ships_Killed ' + $UH_Med_Ships_Killed" />
+                        <debug_text text="'UH_Xen_Ships_Killed ' + $UH_Xen_Ships_Killed" />
+                        <debug_text text="'UH_Civ_Ships_Killed ' + $UH_Civ_Ships_Killed" />
+                        <debug_text text="'UH_Cri_Ships_Killed ' + $UH_Cri_Ships_Killed" />
+                        <debug_text text="'UH_kha_Ships_Killed ' + $UH_kha_Ships_Killed" />
+                        <debug_text text="'UH_Unk_Ships_Killed ' + $UH_Unk_Ships_Killed" />
+                        <debug_text text="'UH_Pla_Ships_Killed ' + $UH_Pla_Ships_Killed" />
+                        <debug_text text="'UH_Smu_Ships_Killed ' + $UH_Smu_Ships_Killed" />
+                        <!-- *************************************** -->
+                        <debug_text text="'UH_All_TradeShips_KIlled ' + $UH_All_TradeShips_KIlled" />
+                        <debug_text text="'UH_Arg_TradeShips_Killed ' + $UH_Arg_TradeShips_Killed" />
+                        <debug_text text="'UH_Ant_TradeShips_Killed ' + $UH_Ant_TradeShips_Killed" />
+                        <debug_text text="'UH_Par_TradeShips_Killed ' + $UH_Par_TradeShips_Killed" />
+                        <debug_text text="'UH_Hol_TradeShips_Killed ' + $UH_Hol_TradeShips_Killed" />
+                        <debug_text text="'UH_Tel_TradeShips_Killed ' + $UH_Tel_TradeShips_Killed" />
+                        <debug_text text="'UH_Min_TradeShips_Killed ' + $UH_Min_TradeShips_Killed" />
+                        <debug_text text="'UH_Hat_TradeShips_Killed ' + $UH_Hat_TradeShips_Killed" />
+                        <debug_text text="'UH_Sca_TradeShips_Killed ' + $UH_Sca_TradeShips_Killed" />
+                        <debug_text text="'UH_Ali_TradeShips_Killed ' + $UH_Ali_TradeShips_Killed" />
+                        <debug_text text="'UH_Pir_TradeShips_Killed ' + $UH_Pir_TradeShips_Killed" />
+                        <debug_text text="'UH_Med_TradeShips_Killed ' + $UH_Med_TradeShips_Killed" />
+                        <debug_text text="'UH_Xen_TradeShips_Killed ' + $UH_Xen_TradeShips_Killed" />
+                        <debug_text text="'UH_Civ_TradeShips_Killed ' + $UH_Civ_TradeShips_Killed" />
+                        <debug_text text="'UH_Cri_TradeShips_Killed ' + $UH_Cri_TradeShips_Killed" />
+                        <debug_text text="'UH_kha_TradeShips_Killed ' + $UH_kha_TradeShips_Killed" />
+                        <debug_text text="'UH_Unk_TradeShips_Killed ' + $UH_Unk_TradeShips_Killed" />
+                        <debug_text text="'UH_Pla_TradeShips_Killed ' + $UH_Pla_TradeShips_Killed" />
+                        <debug_text text="'UH_Smu_TradeShips_Killed ' + $UH_Smu_TradeShips_Killed" />
+                        <!-- ******************COUNT********************* -->
+                        <debug_text text="'UH_All_Stations ' + $UH_All_Stations.count" />
+                        <debug_text text="'UH_Arg_Stations ' + $UH_Arg_Stations.count" />
+                        <debug_text text="'UH_Ant_Stations ' + $UH_Ant_Stations.count" />
+                        <debug_text text="'UH_Par_Stations ' + $UH_Par_Stations.count" />
+                        <debug_text text="'UH_Hol_Stations ' + $UH_Hol_Stations.count" />
+                        <debug_text text="'UH_Tel_Stations ' + $UH_Tel_Stations.count" />
+                        <debug_text text="'UH_Min_Stations ' + $UH_Min_Stations.count" />
+                        <debug_text text="'UH_Hat_Stations ' + $UH_Hat_Stations.count" />
+                        <debug_text text="'UH_Sca_Stations ' + $UH_Sca_Stations.count" />
+                        <debug_text text="'UH_Ali_Stations ' + $UH_Ali_Stations.count" />
+                        <debug_text text="'UH_Pir_Stations ' + $UH_Pir_Stations.count" />
+                        <debug_text text="'UH_Med_Stations ' + $UH_Med_Stations.count" />
+                        <debug_text text="'UH_Xen_Stations ' + $UH_Xen_Stations.count" />
+                        <debug_text text="'UH_Civ_Stations ' + $UH_Civ_Stations.count" />
+                        <debug_text text="'UH_Cri_Stations ' + $UH_Cri_Stations.count" />
+                        <debug_text text="'UH_kha_Stations ' + $UH_kha_Stations.count" />
+                        <debug_text text="'UH_Unk_Stations ' + $UH_Unk_Stations.count" />
+                        <debug_text text="'UH_Pla_Stations ' + $UH_Pla_Stations.count" />
+                        <debug_text text="'UH_Smu_Stations ' + $UH_Smu_Stations.count" />
+                        <!-- *************************************** -->
+                        <debug_text text="'UH_All_Ships ' + $UH_All_Ships.count" />
+                        <debug_text text="'UH_Arg_Ships ' + $UH_Arg_Ships.count" />
+                        <debug_text text="'UH_Ant_Ships ' + $UH_Ant_Ships.count" />
+                        <debug_text text="'UH_Par_Ships ' + $UH_Par_Ships.count" />
+                        <debug_text text="'UH_Hol_Ships ' + $UH_Hol_Ships.count" />
+                        <debug_text text="'UH_Tel_Ships ' + $UH_Tel_Ships.count" />
+                        <debug_text text="'UH_Min_Ships ' + $UH_Min_Ships.count" />
+                        <debug_text text="'UH_Hat_Ships ' + $UH_Hat_Ships.count" />
+                        <debug_text text="'UH_Sca_Ships ' + $UH_Sca_Ships.count" />
+                        <debug_text text="'UH_Ali_Ships ' + $UH_Ali_Ships.count" />
+                        <debug_text text="'UH_Pir_Ships ' + $UH_Pir_Ships.count" />
+                        <debug_text text="'UH_Med_Ships ' + $UH_Med_Ships.count" />
+                        <debug_text text="'UH_Xen_Ships ' + $UH_Xen_Ships.count" />
+                        <debug_text text="'UH_Civ_Ships ' + $UH_Civ_Ships.count" />
+                        <debug_text text="'UH_Cri_Ships ' + $UH_Cri_Ships.count" />
+                        <debug_text text="'UH_kha_Ships ' + $UH_kha_Ships.count" />
+                        <debug_text text="'UH_Unk_Ships ' + $UH_Unk_Ships.count" />
+                        <debug_text text="'UH_Pla_Ships ' + $UH_Pla_Ships.count" />
+                        <debug_text text="'UH_Smu_Ships ' + $UH_Smu_Ships.count" />
+                        <!-- *************************************** -->
+                        <debug_text text="'UH_All_TradeShips ' + $UH_All_TradeShips.count" />
+                        <debug_text text="'UH_Arg_TradeShips ' + $UH_Arg_TradeShips.count" />
+                        <debug_text text="'UH_Ant_TradeShips ' + $UH_Ant_TradeShips.count" />
+                        <debug_text text="'UH_Par_TradeShips ' + $UH_Par_TradeShips.count" />
+                        <debug_text text="'UH_Hol_TradeShips ' + $UH_Hol_TradeShips.count" />
+                        <debug_text text="'UH_Tel_TradeShips ' + $UH_Tel_TradeShips.count" />
+                        <debug_text text="'UH_Min_TradeShips ' + $UH_Min_TradeShips.count" />
+                        <debug_text text="'UH_Hat_TradeShips ' + $UH_Hat_TradeShips.count" />
+                        <debug_text text="'UH_Sca_TradeShips ' + $UH_Sca_TradeShips.count" />
+                        <debug_text text="'UH_Ali_TradeShips ' + $UH_Ali_TradeShips.count" />
+                        <debug_text text="'UH_Pir_TradeShips ' + $UH_Pir_TradeShips.count" />
+                        <debug_text text="'UH_Med_TradeShips ' + $UH_Med_TradeShips.count" />
+                        <debug_text text="'UH_Xen_TradeShips ' + $UH_Xen_TradeShips.count" />
+                        <debug_text text="'UH_Civ_TradeShips ' + $UH_Civ_TradeShips.count" />
+                        <debug_text text="'UH_Cri_TradeShips ' + $UH_Cri_TradeShips.count" />
+                        <debug_text text="'UH_kha_TradeShips ' + $UH_kha_TradeShips.count" />
+                        <debug_text text="'UH_Unk_TradeShips ' + $UH_Unk_TradeShips.count" />
+                        <debug_text text="'UH_Pla_TradeShips ' + $UH_Pla_TradeShips.count" />
+                        <debug_text text="'UH_Smu_TradeShips ' + $UH_Smu_TradeShips.count" />
+                        <!-- *************************************** -->
+                    </actions>
+                </cue>
+            </cues>
+        </cue>
+    </cues>
+</mdscript>

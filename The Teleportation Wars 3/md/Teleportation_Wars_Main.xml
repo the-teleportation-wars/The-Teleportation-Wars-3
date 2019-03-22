@@ -1,0 +1,2071 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+    <cues>
+        <!-- 
+        JUMPDRIVE
+            make jumpdrive not need a gate....
+        FIND A WAY TO BETTER SPAWN THE FUCKING STATIONS IN POSTIONS THAT ARE NOT TOTAL SHIT
+        MATH
+        1 Value scale and control
+        2 elemental fleetscale tags
+        XENONHOMEWORLD
+        0 set xenon homeworld force table
+        1 create shipyard
+        2 create megafactory
+        3 create homefleet
+        5 create home patrol
+        6 create unknown patrol
+        7 create jump patrol
+        8 upkeep the force table
+        INVASTION
+        1 sector quality from invasion value
+        2 select buildup sector
+        3 tp invastion station
+        4 smooth tp invasion fleet to gate
+        5 start invasion timer
+        6 notify player
+        7 time up 
+        8a remove existing faction stations
+        8a tp holding fleet
+        8a tally reamining invasion force and yoink it
+        8a add sector to jump patrol route
+        or if tp invastion station dead
+        8b tally reamining invasion force
+        8b destroy force
+        8b signal event 
+        BEACONS
+        1 inital value of create beacon
+        2 beacon events
+        3 beacon rate
+        PRODUCTION
+        1 create stations
+        2 create traders
+        3 add wares to tradebaskets
+        SALVAGE
+        1 integrate conversation loop with beacon
+        2 find the reward table i made
+        STELLAR CART
+        1 take notes on what it does
+        2 change inventory item reward values
+        CHECK SHUULO WEPS
+        CHECK SHUULO VARIANTS
+        CONTACT OTHER PEOPLE FOR PERMISSION TO INTEGRATE 
+        1 whoever imports or makes ships
+        2 any new space mod
+        3 new paintjobs
+
+
+        TRADEWARESPAWN
+        1 do the set owner
+        2 do the upkeep maybe sco?
+    
+         -->
+        <cue name="Set_Globals" instantiate="true">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart" />
+            </conditions>
+            <delay exact="10s" />
+            <actions>
+                <!--******************************FIND*******************************  -->
+                <find_sector groupname="$TP_Sectors" space="player.galaxy" multiple="true" />
+                <find_sector groupname="$TP_Sectors_Argon" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_sector groupname="$TP_Sectors_Teladi" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_sector groupname="$TP_Sectors_Paranid" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_sector groupname="$TP_Sectors_antigone" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_sector groupname="$TP_Sectors_ministry" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_sector groupname="$TP_Sectors_holyorder" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_sector groupname="$TP_Sectors_ownerless" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_ship groupname="$TP_X_Ships" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_ship groupname="$TP_Player_Ships" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_station groupname="$TP_X_Stations" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_station groupname="$TP_Player_Stations" space="player.galaxy" multiple="true" owner="faction.player" />
+                <!--******************************FLEETTABLE*******************************  -->
+                <set_value name="$BeaconsTable" exact="table[
+                    {1}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {2}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {3}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {4}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {5}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {6}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {7}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {8}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {9}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {10}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {11}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {12}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {13}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {14}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {15}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {16}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {17}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {18}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {19}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {20}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {21}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {22}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {23}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {24}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {25}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {26}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {27}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {28}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {29}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {30}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {31}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {32}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {33}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {34}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {35}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {36}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {37}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {38}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {39}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {40}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {41}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {42}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {43}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {44}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {45}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {46}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {47}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {48}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {49}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {50}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {51}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {52}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {53}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {54}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {55}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {56}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {57}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {58}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {59}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {60}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {61}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {62}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {63}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {64}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {65}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {66}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {67}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {68}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {69}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {70}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {71}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {72}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {73}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {74}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {75}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {76}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {77}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {78}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {79}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {80}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {81}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {82}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {83}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {84}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {85}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {86}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {87}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {88}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {89}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {90}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {91}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {92}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {93}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {94}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {95}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {96}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {97}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {98}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {99}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {100}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {101}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {102}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {103}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {104}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {105}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {106}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {107}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {108}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {109}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {110}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {111}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {112}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {113}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {114}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {115}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {116}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {117}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {118}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {119}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {120}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {121}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {122}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {123}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {124}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {125}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {126}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {127}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {128}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {129}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {130}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {131}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {132}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {133}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {134}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {135}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {136}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {137}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {138}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {139}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {140}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {141}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {142}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
+                    {143}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []]
+                        ]" />
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ***********************************************************SET VALUE*********************************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+                <!--******************************CONSTANT*******************************  -->
+                <set_value name="$ConstantFleethop" exact="10f" />
+                <set_value name="$ConstantPlayerAttack" exact="1f" />
+                <set_value name="$ConstantInvasion" exact="10f" />
+                <set_value name="$BeaconRate" exact="2f" />
+                <!--******************************VALUES*******************************  -->
+                <set_value name="$XenonSuccess" exact="1f" />
+                <set_value name="$PlayerSuccess" exact="1f" />
+                <set_value name="$PHQ" exact="1f" />
+                <set_value name="$Time" exact="(player.age)f" />
+                <set_value name="$DeltaTime" exact="$Time" />
+                <!--******************************CALC VALUES*******************************  -->
+                <set_value name="$Fleethop" exact="1000" />
+                <set_value name="$Invasion" exact="1000" />
+                <set_value name="$PlayerAttack" exact="1000" />
+                <set_value name="$Piratehop" exact="1000" />
+                <set_value name="$XenonSuccess" exact="1f" />
+                <set_value name="$PlayerSuccess" exact="1f" />
+                <!--******************************CREATE GROUP*******************************  -->
+                <create_group groupname="$TP_beacons" />
+                <!--******************************CREATE LIST*******************************  -->
+                <do_all>
+                    <create_list name="$missilewares" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_cluster_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_cluster_light_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_dumbfire_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_dumbfire_heavy_mk2" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_dumbfire_light_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_dumbfire_light_mk2" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_emp_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_guided_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_guided_light_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_heatseeker_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_heatseeker_light_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_smart_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_smart_light_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_swarm_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_swarm_light_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_torpedo_heavy_mk1" />
+                    <append_to_list name="$missilewares" exact="ware.tpwar_missile_torpedo_light_mk1" />
+                    <!-- shieldwares -->
+                    <create_list name="$shieldwares" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_l_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_l_standard_01_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_m_standard_02_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_m_standard_02_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_s_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_s_standard_01_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_s_standard_01_mk3" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_arg_xl_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_l_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_l_standard_01_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_m_standard_02_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_m_standard_02_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_s_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_s_standard_01_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_s_standard_01_mk3" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_par_xl_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_l_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_l_standard_01_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_m_standard_02_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_m_standard_02_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_s_standard_01_mk1" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_s_standard_01_mk2" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_s_standard_01_mk3" />
+                    <append_to_list name="$shieldwares" exact="ware.tpwar_shield_tel_xl_standard_01_mk1" />
+                    <!-- enginewares -->
+                    <create_list name="$enginewares" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_l_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_l_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_allround_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_allround_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_combat_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_combat_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_combat_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_travel_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_m_travel_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_allround_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_allround_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_combat_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_combat_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_combat_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_travel_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_s_travel_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_xl_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_arg_xl_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_l_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_l_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_allround_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_allround_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_combat_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_combat_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_combat_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_travel_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_m_travel_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_allround_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_allround_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_combat_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_combat_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_combat_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_travel_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_s_travel_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_xl_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_par_xl_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_l_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_l_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_allround_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_allround_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_combat_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_combat_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_combat_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_travel_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_m_travel_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_allround_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_allround_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_combat_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_combat_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_combat_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_travel_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_travel_01_mk2" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_s_travel_01_mk3" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_xl_allround_01_mk1" />
+                    <append_to_list name="$enginewares" exact="ware.tpwar_engine_tel_xl_travel_01_mk1" />
+                    <!-- deployablewares -->
+                    <create_list name="$deployablewares" />
+                    <append_to_list name="$deployablewares" exact="ware.tpwar_resourceprobe_01" />
+                    <append_to_list name="$deployablewares" exact="ware.tpwar_satellite_mk1" />
+                    <append_to_list name="$deployablewares" exact="ware.tpwar_satellite_mk2" />
+                    <!-- dronewares -->
+                    <create_list name="$dronewares" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_s_fightingdrone_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_s_lasertower_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_s_miningdrone_liquid_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_s_miningdrone_solid_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_xs_buildingdrone_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_xs_cargodrone_empty_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_xs_lasertower_01_a" />
+                    <append_to_list name="$dronewares" exact="ware.tpwar_ship_gen_xs_repairdrone_01_a" />
+                    <!-- thrusterwares -->
+                    <create_list name="$thrusterwares" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_l_allround_01_mk1" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_l_allround_01_mk2" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_l_allround_01_mk3" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_m_allround_01_mk1" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_m_allround_01_mk2" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_m_allround_01_mk3" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_m_combat_01_mk1" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_m_combat_01_mk2" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_m_combat_01_mk3" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_s_allround_01_mk1" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_s_allround_01_mk2" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_s_allround_01_mk3" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_s_combat_01_mk1" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_s_combat_01_mk2" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_s_combat_01_mk3" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_xl_allround_01_mk1" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_xl_allround_01_mk2" />
+                    <append_to_list name="$thrusterwares" exact="ware.tpwar_thruster_gen_xl_allround_01_mk3" />
+                    <!-- turretwares -->
+                    <create_list name="$turretwares" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_l_beam_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_l_dumbfire_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_l_guided_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_l_laser_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_l_mining_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_l_plasma_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_beam_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_dumbfire_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_gatling_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_guided_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_laser_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_mining_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_plasma_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_arg_m_shotgun_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_l_beam_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_l_dumbfire_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_l_guided_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_l_laser_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_l_mining_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_l_plasma_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_beam_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_dumbfire_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_gatling_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_guided_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_laser_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_mining_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_plasma_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_par_m_shotgun_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_l_beam_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_l_dumbfire_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_l_guided_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_l_laser_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_l_mining_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_l_plasma_01_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_beam_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_gatling_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_guided_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_guided_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_guided_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_laser_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_mining_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_plasma_02_mk1" />
+                    <append_to_list name="$turretwares" exact="ware.tpwar_turret_tel_m_shotgun_02_mk1" />
+                    <!-- weaponwares -->
+                    <create_list name="$weaponwares" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_arg_l_destroyer_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_arg_m_ion_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_arg_m_ion_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_arg_s_ion_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_arg_s_ion_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_mine_01" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_mine_03" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_beam_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_beam_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_dumbfire_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_dumbfire_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_gatling_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_gatling_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_guided_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_guided_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_laser_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_laser_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_mining_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_mining_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_plasma_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_plasma_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_shotgun_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_shotgun_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_torpedo_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_m_torpedo_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_beam_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_beam_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_dumbfire_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_dumbfire_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_gatling_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_gatling_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_guided_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_guided_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_laser_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_laser_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_mining_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_mining_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_plasma_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_plasma_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_shotgun_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_shotgun_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_torpedo_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_gen_s_torpedo_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_par_l_destroyer_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_par_m_railgun_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_par_m_railgun_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_par_s_railgun_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_par_s_railgun_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_tel_l_destroyer_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_tel_m_charge_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_tel_m_charge_01_mk2" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_tel_s_charge_01_mk1" />
+                    <append_to_list name="$weaponwares" exact="ware.tpwar_weapon_tel_s_charge_01_mk2" />
+                    <create_list name="$Factions" />
+                    <create_list name="$CoreFactions" />
+                    <append_to_list name="$CoreFactions" exact="faction.argon" />
+                    <append_to_list name="$CoreFactions" exact="faction.antigone" />
+                    <append_to_list name="$CoreFactions" exact="faction.paranid" />
+                    <append_to_list name="$CoreFactions" exact="faction.holyorder" />
+                    <append_to_list name="$CoreFactions" exact="faction.teladi" />
+                    <append_to_list name="$CoreFactions" exact="faction.ministry" />
+                    <append_to_list name="$Factions" exact="faction.argon" />
+                    <append_to_list name="$Factions" exact="faction.antigone" />
+                    <append_to_list name="$Factions" exact="faction.paranid" />
+                    <append_to_list name="$Factions" exact="faction.holyorder" />
+                    <append_to_list name="$Factions" exact="faction.teladi" />
+                    <append_to_list name="$Factions" exact="faction.ministry" />
+                    <append_to_list name="$Factions" exact="faction.hatikvah" />
+                    <append_to_list name="$Factions" exact="faction.scaleplate" />
+                    <append_to_list name="$Factions" exact="faction.alliance" />
+                    <append_to_list name="$Factions" exact="faction.pirate" />
+                    <append_to_list name="$Factions" exact="faction.meditech" />
+                    <append_to_list name="$Factions" exact="faction.xenon" />
+                    <append_to_list name="$Factions" exact="faction.civilian" />
+                    <append_to_list name="$Factions" exact="faction.criminal" />
+                    <append_to_list name="$Factions" exact="faction.khaak" />
+                    <append_to_list name="$Factions" exact="faction.ownerless" />
+                    <append_to_list name="$Factions" exact="faction.player" />
+                    <append_to_list name="$Factions" exact="faction.smuggler" />
+                    <create_list name="$Piratetags" />
+                    <append_to_list name="$Piratetags" exact="tag.courierpirate" />
+                    <append_to_list name="$Piratetags" exact="tag.fighterpirate" />
+                    <append_to_list name="$Piratetags" exact="tag.frigatepirate" />
+                    <append_to_list name="$Piratetags" exact="tag.freighterpirate" />
+                    <append_to_list name="$Piratetags" exact="tag.traderpirate" />
+                    <append_to_list name="$Piratetags" exact="tag.carrierpirate" />
+                    <append_to_list name="$Piratetags" exact="tag.destroyerpirate" />
+                    <create_list name="$InvasionStations" />
+                    <append_to_list name="$InvasionStations" exact="false" />
+                    <append_to_list name="$InvasionStations" exact="false" />
+                    <append_to_list name="$InvasionStations" exact="false" />
+                </do_all>
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ***********************************************************CREATE STATIONS, BEACONS******************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+                <do_all>
+                    <get_module_definition tags="[tag.production]" faction="faction.argon" macro="$ARGResultprod" multiple="true" />
+                    <get_module_definition tags="[tag.connection]" faction="faction.argon" macro="$ARGResultcon" multiple="true" />
+                    <get_module_definition tags="[tag.storage]" faction="faction.argon" macro="$ARGResultstorage" multiple="true" />
+                    <get_module_definition tags="[tag.production]" faction="faction.teladi" macro="$TelResultprod" multiple="true" />
+                    <get_module_definition tags="[tag.connection]" faction="faction.teladi" macro="$TelResultcon" multiple="true" />
+                    <get_module_definition tags="[tag.storage]" faction="faction.teladi" macro="$TelResultstorage" multiple="true" />
+                    <get_module_definition tags="[tag.production]" faction="faction.paranid" macro="$ParResultprod" multiple="true" />
+                    <get_module_definition tags="[tag.connection]" faction="faction.paranid" macro="$ParResultcon" multiple="true" />
+                    <get_module_definition tags="[tag.storage]" faction="faction.paranid" macro="$ParResultstorage" multiple="true" />
+                    <do_all exact="20">
+                        <create_list name="$Prod" />
+                        <create_list name="$Con" />
+                        <create_list name="$Stor" />
+                        <do_all exact="12">
+                            <append_to_list name="$Prod" exact="$ARGResultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$ARGResultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$ARGResultstorage.random" />
+                        </do_all>
+                        <find_zone groupname="$zones" multiple="true" space="$TP_Sectors_Argon.random"></find_zone>
+                        <create_station groupname="$CoolNewTest" name="$ThisStation" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.argon">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <remove_value name="$zones" />
+                        <extend_build_plot object="$ThisStation" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$ThisStation" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$ThisStation" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$ThisStation" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$ThisStation" enabled="true" />
+                        <add_workforce object="$ThisStation" race="race.argon" exact="500" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_text text="$ThisStation.knownname" />
+                    </do_all>
+                    <do_all exact="20">
+                        <create_list name="$Prod" />
+                        <create_list name="$Con" />
+                        <create_list name="$Stor" />
+                        <do_all exact="12">
+                            <append_to_list name="$Prod" exact="$TelResultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$TelResultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$TelResultstorage.random" />
+                        </do_all>
+                        <find_zone groupname="$zones" multiple="true" space="$TP_Sectors_Teladi.random"></find_zone>
+                        <create_station groupname="$CoolNewTest" name="$ThisStation" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.teladi">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <remove_value name="$zones" />
+                        <extend_build_plot object="$ThisStation" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$ThisStation" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$ThisStation" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$ThisStation" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$ThisStation" enabled="true" />
+                        <add_workforce object="$ThisStation" race="race.argon" exact="500" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_text text="$ThisStation.knownname" />
+                    </do_all>
+                    <do_all exact="20">
+                        <create_list name="$Prod" />
+                        <create_list name="$Con" />
+                        <create_list name="$Stor" />
+                        <do_all exact="12">
+                            <append_to_list name="$Prod" exact="$ParResultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$ParResultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$ParResultstorage.random" />
+                        </do_all>
+                        <find_zone groupname="$zones" multiple="true" space="$TP_Sectors_Paranid.random"></find_zone>
+                        <create_station groupname="$CoolNewTest" name="$ThisStation" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.paranid">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <remove_value name="$zones" />
+                        <extend_build_plot object="$ThisStation" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$ThisStation" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$ThisStation" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$ThisStation" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$ThisStation" enabled="true" />
+                        <add_workforce object="$ThisStation" race="race.argon" exact="500" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_text text="$ThisStation.knownname" />
+                    </do_all>
+                    <do_all exact="20">
+                        <create_list name="$Prod" />
+                        <create_list name="$Con" />
+                        <create_list name="$Stor" />
+                        <do_all exact="12">
+                            <append_to_list name="$Prod" exact="$ARGResultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$ARGResultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$ARGResultstorage.random" />
+                        </do_all>
+                        <find_zone groupname="$zones" multiple="true" space="$TP_Sectors_antigone.random"></find_zone>
+                        <create_station groupname="$CoolNewTest" name="$ThisStation" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.antigone">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <remove_value name="$zones" />
+                        <extend_build_plot object="$ThisStation" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$ThisStation" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$ThisStation" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$ThisStation" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$ThisStation" enabled="true" />
+                        <add_workforce object="$ThisStation" race="race.argon" exact="500" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_text text="$ThisStation.knownname" />
+                    </do_all>
+                    <do_all exact="20">
+                        <create_list name="$Prod" />
+                        <create_list name="$Con" />
+                        <create_list name="$Stor" />
+                        <do_all exact="12">
+                            <append_to_list name="$Prod" exact="$TelResultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$TelResultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$TelResultstorage.random" />
+                        </do_all>
+                        <find_zone groupname="$zones" multiple="true" space="$TP_Sectors_Teladi.random"></find_zone>
+                        <create_station groupname="$CoolNewTest" name="$ThisStation" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.ministry">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <remove_value name="$zones" />
+                        <extend_build_plot object="$ThisStation" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$ThisStation" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$ThisStation" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$ThisStation" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$ThisStation" enabled="true" />
+                        <add_workforce object="$ThisStation" race="race.argon" exact="500" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_text text="$ThisStation.knownname" />
+                    </do_all>
+                    <do_all exact="20">
+                        <create_list name="$Prod" />
+                        <create_list name="$Con" />
+                        <create_list name="$Stor" />
+                        <do_all exact="12">
+                            <append_to_list name="$Prod" exact="$ParResultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$ParResultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$ParResultstorage.random" />
+                        </do_all>
+                        <find_zone groupname="$zones" multiple="true" space="$TP_Sectors_holyorder.random"></find_zone>
+                        <create_station groupname="$CoolNewTest" name="$ThisStation" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.holyorder">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <remove_value name="$zones" />
+                        <extend_build_plot object="$ThisStation" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$ThisStation" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$ThisStation" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$ThisStation" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$ThisStation" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$ThisStation" enabled="true" />
+                        <add_workforce object="$ThisStation" race="race.argon" exact="500" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_text text="$ThisStation.knownname" />
+                    </do_all>
+                    <do_all exact="$CoolNewTest.count" counter="$stations">
+                        <debug_text text="'cool new test station in my log ' + $CoolNewTest.{$stations}.knownname" />
+                        <debug_text text="'cool new test station in my log ' + $CoolNewTest.{$stations}.productions" />
+                        <debug_text text="'cool new test station in my log ' + $CoolNewTest.{$stations}.controlposts.all" />
+                        <debug_text text="'cool new test station in my log ' + $CoolNewTest.{$stations}.controlposts.free" />
+                        <debug_text text="'cool new test station in my log ' + $CoolNewTest.{$stations}.zone.position" />
+                        <set_owner object="$CoolNewTest.{$stations}" faction="faction.player" overridenpc="true" />
+                        <set_known object="$CoolNewTest.{$stations}" known="true" />
+                        <set_known object="$CoolNewTest.{$stations}.zone" known="true" />
+                        <set_known object="$CoolNewTest.{$stations}.sector" known="true" />
+                        <set_known object="$CoolNewTest.{$stations}.cluster" known="true" />
+                    </do_all>
+                </do_all>
+                <remove_value name="$ThisStation" />
+                <!--*******************************************************************OWNERLESS****************************************************************  -->
+                <do_all exact="10">
+                    <set_value name="$PtagSelected" exact="$Piratetags.random" />
+                    <create_ship name="$Derelict" groupname="$DerelictShips" sector="$TP_Sectors_ownerless.random">
+                        <select faction="faction.pirate" tags="[$PtagSelected]" />
+                        <loadout>
+                            <level exact="0.2" />
+                        </loadout>
+                        <owner exact="faction.ownerless" overridenpc="true" />
+                        <safepos min="-1000km" max="1000km" />
+                    </create_ship>
+                    <set_owner object="$Fighter" faction="faction.player" overridenpc="true" />
+                    <remove_value name="$Fighter" />
+                    <remove_value name="$PtagSelected" />
+                </do_all>
+                <!--*******************************************************************JUMPBEACONS****************************************************************  -->
+                <!-- <do_all exact="$TP_Sectors.count" counter="$sectors">
+                    <create_object groupname="$JumpBeacons" macro="" sector="$TP_Sectors.{$sectors}" owner="faction.ownerless"></create_object>
+                </do_all> -->
+                <!--*******************************************************************PIRATESTATION****************************************************************  -->
+                <!-- <do_all exact="8">
+                    <create_station groupname="$PirateStations" macro="" constructionplan="" owner="faction.pirate">
+                        <safepos min="1km" max="10km" />
+                    </create_station>
+                </do_all> -->
+                <!--*******************************************************************TRADESTATIONS****************************************************************  -->
+                <do_all exact="1">
+                    <!-- arg -->
+                    <create_station groupname="$ThisStation" name="$ArgWeaponStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Argon.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$ArgMissileStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Argon.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$ArgShieldStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Argon.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$ArgEngineStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Argon.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <!-- tel -->
+                    <create_station groupname="$ThisStation" name="$TelWeaponStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Teladi.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$TelMissileStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Teladi.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$TelShieldStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Teladi.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$TelEngineStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Teladi.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <!-- par -->
+                    <create_station groupname="$ThisStation" name="$ParWeaponStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Paranid.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$ParMissileStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Paranid.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$ParShieldStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Paranid.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                    <create_station groupname="$ThisStation" name="$ParEngineStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$TP_Sectors_Paranid.random" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                        <safepos min="-100km" max="100km" />
+                    </create_station>
+                </do_all>
+                <do_all exact="$ThisStation.count" counter="$pasta">
+                    <create_cue_actor cue="this" name="$Manager">
+                        <select race="race.teladi" tags="controlpost.manager.tag" />
+                        <owner exact="faction.argon" />
+                        <skills>
+                            <skill type="management" exact="1" />
+                        </skills>
+                    </create_cue_actor>
+                    <create_cue_actor cue="this" name="$Def">
+                        <select race="race.drone" tags="tag.defence" />
+                        <owner exact="faction.argon" />
+                        <skills>
+                            <skill type="management" exact="1" />
+                        </skills>
+                    </create_cue_actor>
+                    <create_cue_actor cue="this" name="$Eng">
+                        <select race="race.drone" tags="tag.engineer" />
+                        <owner exact="faction.argon" />
+                        <skills>
+                            <skill type="management" exact="1" />
+                        </skills>
+                    </create_cue_actor>
+                    <debug_text text="$Manager.knownname" />
+                    <assign_control_entity object="$ThisStation.{$pasta}" actor="$Manager" post="controlpost.manager" transfer="true" />
+                    <assign_control_entity object="$ThisStation.{$pasta}" actor="$Def" post="controlpost.defence" transfer="true" />
+                    <assign_control_entity object="$ThisStation.{$pasta}" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                    <remove_value name="$Manager" />
+                    <remove_value name="$Def" />
+                    <remove_value name="$Eng" />
+                    <set_owner object="$ThisStation.{$pasta}" faction="faction.player" overridenpc="true" />
+                    <debug_text text="'TRADESTATION ' + $ThisStation.{$pasta}.knownname" />
+                    <debug_text text="'TRADESTATION ' + $ThisStation.{$pasta}.productions" />
+                    <debug_text text="'TRADESTATION ' + $ThisStation.{$pasta}.controlposts.all" />
+                    <debug_text text="'TRADESTATION ' + $ThisStation.{$pasta}.controlposts.free" />
+                    <debug_text text="'TRADESTATION ' + $ThisStation.{$pasta}.zone.position" />
+                    <set_known object="$ThisStation.{$pasta}" known="true" />
+                    <set_known object="$ThisStation.{$pasta}.zone" known="true" />
+                    <set_known object="$ThisStation.{$pasta}.sector" known="true" />
+                    <set_known object="$ThisStation.{$pasta}.cluster" known="true" />
+                </do_all>
+            </actions>
+            <cues>
+                <!--*************************************************************TRADEWARE**************************************************************  -->
+                <cue name="AddTradeWare">
+                    <delay exact="30s" />
+                    <actions>
+                        <do_all exact="$missilewares.count" counter="$m">
+                            <add_tradeware object="$ArgMissileStation" ware="$missilewares.{$m}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$TelMissileStation" ware="$missilewares.{$m}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$ParMissileStation" ware="$missilewares.{$m}" allowbuy="true" allowsell="true" />
+                            <add_cargo object="$ArgMissileStation" ware="$missilewares.{$m}" exact="10" />
+                            <add_cargo object="$TelMissileStation" ware="$missilewares.{$m}" exact="10" />
+                            <add_cargo object="$ParMissileStation" ware="$missilewares.{$m}" exact="10" />
+                        </do_all>
+                        <do_all exact="$turretwares.count" counter="$t">
+                            <add_tradeware object="$ArgWeaponStation" ware="$turretwares.{$t}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$TelWeaponStation" ware="$turretwares.{$t}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$ParWeaponStation" ware="$turretwares.{$t}" allowbuy="true" allowsell="true" />
+                            <add_cargo object="$ArgWeaponStation" ware="$turretwares.{$t}" exact="10" />
+                            <add_cargo object="$TelWeaponStation" ware="$turretwares.{$t}" exact="10" />
+                            <add_cargo object="$ParWeaponStation" ware="$turretwares.{$t}" exact="10" />
+                        </do_all>
+                        <do_all exact="$weaponwares.count" counter="$gun">
+                            <add_tradeware object="$ArgWeaponStation" ware="$weaponwares.{$gun}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$TelWeaponStation" ware="$weaponwares.{$gun}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$ParWeaponStation" ware="$weaponwares.{$gun}" allowbuy="true" allowsell="true" />
+                            <add_cargo object="$ArgWeaponStation" ware="$weaponwares.{$gun}" exact="10" />
+                            <add_cargo object="$TelWeaponStation" ware="$weaponwares.{$gun}" exact="10" />
+                            <add_cargo object="$ParWeaponStation" ware="$weaponwares.{$gun}" exact="10" />
+                        </do_all>
+                        <do_all exact="$shieldwares.count" counter="$s">
+                            <add_tradeware object="$ArgShieldStation" ware="$shieldwares.{$s}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$TelShieldStation" ware="$shieldwares.{$s}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$ParShieldStation" ware="$shieldwares.{$s}" allowbuy="true" allowsell="true" />
+                            <add_cargo object="$ArgShieldStation" ware="$shieldwares.{$s}" exact="10" />
+                            <add_cargo object="$TelShieldStation" ware="$shieldwares.{$s}" exact="10" />
+                            <add_cargo object="$ParShieldStation" ware="$shieldwares.{$s}" exact="10" />
+                        </do_all>
+                        <do_all exact="$thrusterwares.count" counter="$th">
+                            <add_tradeware object="$ArgEngineStation" ware="$thrusterwares.{$th}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$TelEngineStation" ware="$thrusterwares.{$th}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$ParEngineStation" ware="$thrusterwares.{$th}" allowbuy="true" allowsell="true" />
+                            <add_cargo object="$ArgEngineStation" ware="$thrusterwares.{$th}" exact="10" />
+                            <add_cargo object="$TelEngineStation" ware="$thrusterwares.{$th}" exact="10" />
+                            <add_cargo object="$ParEngineStation" ware="$thrusterwares.{$th}" exact="10" />
+                        </do_all>
+                        <do_all exact="$enginewares.count" counter="$e">
+                            <add_tradeware object="$ArgEngineStation" ware="$enginewares.{$e}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$TelEngineStation" ware="$enginewares.{$e}" allowbuy="true" allowsell="true" />
+                            <add_tradeware object="$ParEngineStation" ware="$enginewares.{$e}" allowbuy="true" allowsell="true" />
+                            <add_cargo object="$ArgEngineStation" ware="$enginewares.{$e}" exact="10" />
+                            <add_cargo object="$TelEngineStation" ware="$enginewares.{$e}" exact="10" />
+                            <add_cargo object="$ParEngineStation" ware="$enginewares.{$e}" exact="10" />
+                        </do_all>
+                        <debug_text text="'TRADEWARESBLOW' + $ParEngineStation.tradewares.list" />
+                        <debug_text text="'TRADEWARESBLOW' + $weaponwares" />
+                        <debug_text text="'TRADEWARESBLOW' + $ParEngineStation" />
+                    </actions>
+                </cue>
+                <cue name="TradeStationUpkeep" instantiate="true" checkinterval="60s">
+                    <actions>
+                        <do_all exact="$ThisStation.count" counter="$station">
+                            <debug_text text="'tradware list' + $ThisStation.{$station}.tradewares.list" />
+                            <do_all exact="$ThisStation.{$station}.tradewares.list.count" counter="$trade">
+                                <set_value name="$ware" exact="$ThisStation.{$station}.tradewares.list.{$trade}" />
+                                <debug_text text="'tradware list' + $ware" />
+                                <debug_text text="'tradware list' + $ThisStation.{$station}.cargo.{$ware}.count" />
+                                <do_if value="$ThisStation.{$station}.cargo.{$ware}.count lt 50">
+                                    <set_value name="$RandomFeel" min="0" max="12" />
+                                    <add_cargo object="$ThisStation.{$station}" ware="$ware" exact="$RandomFeel" />
+                                </do_if>
+                            </do_all>
+                        </do_all>
+                    </actions>
+                </cue>
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ***********************************************************STELLAR CART, FOS, TRS********************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+                <cue name="Stellar_Cartography_Start" instantiate="true">
+                    <conditions>
+                        <event_object_docked object="player.entity" />
+                    </conditions>
+                    <actions>
+                        <check_object result="$Result" object="event.param">
+                            <match owner="faction.player" />
+                            <match_content macro="macro.stellar_cartography_module_macro" min="1" />
+                        </check_object>
+                        <do_if value="$Result">
+                            <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <!-- ***********************************************************INVENTORY CONTROL****************************************************************** 
+                1. Set Known 
+                    a. new wares for all the sectors
+                    b. droplists
+                    c. set known event handler
+                    d. notificatiom
+                2. Blueprint Reward
+                    a. test blueprint waredropping
+                    b. droplists
+                    c. notificaton
+                3. .{1} should be .random
+                4. FOS inventory
+                    a. make inven item
+                    b. droplists for blueprint
+                    c. event player constructed station with scan module
+                    d. integrate
+                5. TRS 
+                    a. make inventory item
+                    b. droplists for blueprint
+                    c. event player constructed station with trde module
+                    d. integrate
+
+                -->
+                <cue name="Stellar_Cartography_Inventory_Check" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <set_value name="$InventoryKeys" exact="player.entity.inventory.list" />
+                        <do_all exact="$InventoryKeys.count" counter="$i">
+                            <do_if value="$InventoryKeys.{$i} == ware.inv_treasuremap">
+                                <remove_inventory entity="player.entity" ware="ware.inv_treasuremap" exact="1" />
+                                <signal_cue_instantly cue="Pirate_Treasure_Map_Start" />
+                            </do_if>
+                            <do_if value="$InventoryKeys.{$i} == ware.inv_distressbeaconfreq">
+                                <remove_inventory entity="player.entity" ware="ware.inv_distressbeaconfreq" exact="1" />
+                                <signal_cue_instantly cue="Distress_Beacon_Freq_Start" />
+                            </do_if>
+                            <do_if value="$InventoryKeys.{$i} == ware.inv_forgottenresearch">
+                                <remove_inventory entity="player.entity" ware="ware.inv_forgottenresearch" exact="1" />
+                                <signal_cue_instantly cue="Forgotten_Research_Start" />
+                            </do_if>
+                            <do_if value="$InventoryKeys.{$i} == ware.inv_battlelog">
+                                <remove_inventory entity="player.entity" ware="ware.inv_battlelog" exact="1" />
+                                <signal_cue_instantly cue="Battle_Log_Start" />
+                            </do_if>
+                            <do_if value="$InventoryKeys.{$i} == ware.inv_stellarmap">
+                                <remove_inventory entity="player.entity" ware="ware.inv_stellarmap" exact="1" />
+                                <signal_cue_instantly cue="Stellar_Map" />
+                            </do_if>
+                            <do_if value="$InventoryKeys.{$i} == ware.inv_locationpiratehideout">
+                                <remove_inventory entity="player.entity" ware="ware.inv_locationpiratehideout" exact="1" />
+                                <signal_cue_instantly cue="Pirate_Hideout_Find" />
+                            </do_if>
+                        </do_all>
+                        <remove_value name="$InventoryKeys" />
+                    </actions>
+                </cue>
+                <!-- ***********************************************************PIRATE TREASURE****************************************************************** -->
+                <cue name="Pirate_Treasure_Map_Start" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="1s" max="3s" />
+                    <actions>
+                        <find_sector groupname="$SectorGroup" space="player.galaxy" multiple="true" />
+                        <create_lockbox name="$Crate" macro="macro.stellar_cart_lockbox_treasure_macro" sector="$SectorGroup.random">
+                            <safepos min="-300km" max="300km" />
+                        </create_lockbox>
+                        <!-- POSITION DATA PLEASE -->
+                        <set_value name="$textHeader" exact="'\033B' + 'PIRATE TREASURE!\n'" />
+                        <set_value name="$textBody" exact="'X marks the spot in %1 at position x=%2 y=%3 z=%4\n'.[$Crate.sector.name, $Crate.zone.position.x, $Crate.zone.position.y, $Crate.zone.position.z]" />
+                        <show_notification text="$textHeader + $textBody" timeout="10s" />
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$Crate" category="missions" />
+                        <remove_value name="$SectorGroup" />
+                        <remove_value name="$textHeader" />
+                        <remove_value name="$textBody" />
+                        <remove_value name="$Crate" />
+                        <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                    </actions>
+                </cue>
+                <!-- ***********************************************************BLUEPRINTS****************************************************************** -->
+                <cue name="Forgotten_Research_Start" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="1s" max="3s" />
+                    <actions>
+                        <find_sector groupname="$SectorGroup" space="player.galaxy" multiple="true" />
+                        <create_lockbox name="$Crate" macro="macro.stellar_cart_lockbox_treasure_macro" sector="$SectorGroup.random">
+                            <safepos min="-300km" max="300km" />
+                        </create_lockbox>
+                        <set_value name="$textHeader" exact="'Forgotten Data Found!\n'" />
+                        <set_value name="$textBody" exact="'Stolen blueprints left behind in %1 at position x=%2 y=%3 z=%4\n'.[$Crate.sector.name, $Crate.zone.position.x, $Crate.zone.position.y, $Crate.zone.position.z]" />
+                        <show_notification text="$textHeader + $textBody" timeout="10s" />
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$Crate" category="missions" />
+                        <remove_value name="$SectorGroup" />
+                        <remove_value name="$textHeader" />
+                        <remove_value name="$textBody" />
+                        <remove_value name="$Crate" />
+                        <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                    </actions>
+                </cue>
+                <!-- ***********************************************************CREW LOCKBOX****************************************************************** -->
+                <cue name="Distress_Beacon_Freq_Start" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="1s" max="3s" />
+                    <actions>
+                        <find_sector groupname="$SectorGroup" space="player.galaxy" multiple="true" />
+                        <create_lockbox name="$Crate" macro="macro.stellar_cart_lockbox_treasure_macro" sector="$SectorGroup.random">
+                            <safepos min="-300km" max="300km" />
+                        </create_lockbox>
+                        <set_value name="$textHeader" exact="'\033G' + 'DISTRESS BEACON!\n'" />
+                        <set_value name="$textBody" exact="'Save the stranded crew in %1 at position x=%2 y=%3 z=%4\n'.[$Crate.sector.name, $Crate.zone.position.x, $Crate.zone.position.y, $Crate.zone.position.z]" />
+                        <show_notification text="$textHeader + $textBody" timeout="10s" />
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$Crate" category="missions" />
+                        <remove_value name="$SectorGroup" />
+                        <remove_value name="$textHeader" />
+                        <remove_value name="$textBody" />
+                        <remove_value name="$Crate" />
+                        <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                    </actions>
+                </cue>
+                <!-- ***********************************************************DERELICT SHIP****************************************************************** -->
+                <cue name="Battle_Log_Start" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="1s" max="3s" />
+                    <actions>
+                        <find_ship groupname="$ShipGroup" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                        <add_to_group groupname="$Crate" object="$ShipGroup.random" />
+                        <set_value name="$textHeader" exact="'\033R' + 'BATTLE LOG!\n'" />
+                        <set_value name="$textBody" exact="'Look for abandoned ships in %1 at position x=%2 y=%3 z=%4\n'.[$Crate.{1}.sector.name, $Crate.{1}.zone.position.x, $Crate.{1}.zone.position.y, $Crate.{1}.zone.position.z]" />
+                        <show_notification text="$textHeader + $textBody" timeout="10s" />
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$Crate.{1}" category="missions" />
+                        <remove_value name="$ShipGroup" />
+                        <remove_value name="$textHeader" />
+                        <remove_value name="$textBody" />
+                        <remove_value name="$Crate" />
+                        <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                    </actions>
+                </cue>
+                <!-- ***********************************************************CREW CONVERSION****************************************************************** -->
+                <cue name="Crew_Start" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_object_docked object="player.entity" />
+                    </conditions>
+                    <actions>
+                        <set_value name="$ThisStation" exact="event.param" />
+                        <!-- Station is player owned and has module -->
+                        <check_object result="$Result" object="event.param">
+                            <match owner="faction.player" />
+                            <match_content macro="macro.sc_prison_module_macro" min="1" />
+                        </check_object>
+                        <do_if value="$Result">
+                            <signal_cue_instantly cue="Crew_Inventory_Check" param="$ThisStation" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="Crew_Inventory_Check" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <do_if value="player.ship.people.free gt 0">
+                            <set_value name="$ThisStation" exact="event.param" />
+                            <set_value name="$InventoryKeys" exact="player.entity.inventory.list" />
+                            <do_all exact="$InventoryKeys.count" counter="$i">
+                                <do_if value="$InventoryKeys.{$i} == ware.inv_prisonerzero">
+                                    <remove_inventory entity="player.entity" ware="ware.inv_prisonerzero" exact="1" />
+                                    <signal_cue_instantly cue="Set_Free_Prisoner_Start" param="$ThisStation" />
+                                </do_if>
+                            </do_all>
+                            <remove_value name="$InventoryKeys" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="Set_Free_Prisoner_Start" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <do_if value="player.ship.people.free gt 0">
+                            <create_npc_template name="$crew" object="player.ship" macro="macro.character_argon_male_engineer_01_macro" role="entityrole.service" />
+                            <do_if value="$crew">
+                                <set_npc_template_traits object="player.ship" template="$crew" skillsvisible="true" />
+                                <set_skill object="player.ship" template="$crew" type="skilltype.boarding" min="1" max="15" />
+                                <set_skill object="player.ship" template="$crew" type="skilltype.engineering" min="1" max="15" />
+                                <set_skill object="player.ship" template="$crew" type="skilltype.management" min="1" max="15" />
+                                <set_skill object="player.ship" template="$crew" type="skilltype.piloting" min="1" max="15" />
+                                <set_skill object="player.ship" template="$crew" type="skilltype.morale" min="1" max="15" />
+                            </do_if>
+                            <set_value name="$textHeader" exact="'\033Y' + 'PRISONER FREED!\n'" />
+                            <set_value name="$textBody" exact="'The enemy of your enemy is your friend - you have freed a prisoner of your enemy.  They are now a member of your crew.\n'" />
+                            <show_notification text="$textHeader + $textBody" timeout="10s" />
+                            <write_to_logbook title="$textHeader" text="$textBody" category="general" />
+                            <remove_value name="$textHeader" />
+                            <remove_value name="$textBody" />
+                            <signal_cue_instantly cue="Crew_Inventory_Check" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <!-- ***********************************************************STELLAR CARTO****************************************************************** -->
+                <cue name="Stellar_Map" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="1s" max="10s" />
+                    <actions>
+                        <find_sector groupname="$SectorGroup" space="player.galaxy" multiple="true" />
+                        <do_all exact="1">
+                            <add_to_group groupname="$SectorGroupRandom" object="$SectorGroup.random" />
+                        </do_all>
+                        <do_if value="$SectorGroupRandom.count">
+                            <set_known object="$SectorGroupRandom.{1}" known="true" updatesnapshot="true" />
+                            <set_known object="$SectorGroupRandom.{1}.cluster" known="true" />
+                            <set_value name="$textHeader" exact="'\033O' + 'SECTOR DISCOVERED!\n'" />
+                            <set_value name="$textBody" exact="'Unknown Sector Discovered. You can now visit %1\n'.[$SectorGroupRandom.{1}.name]" />
+                            <!-- <set_value name="$textBody" exact="$SectorGroupRandom.{1}.name"/> -->
+                            <show_notification text="$textHeader + $textBody" timeout="10s" />
+                            <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" faction="$SectorGroupRandom.{1}.owner" category="missions" />
+                        </do_if>
+                        <remove_from_group group="$SectorGroupRandom" object="$SectorGroupRandom.{1}" />
+                        <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                    </actions>
+                </cue>
+                <!-- *********************************************************** PIRATE HIDEOUT ****************************************************************** -->
+                <cue name="Pirate_Hideout_Find" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="1s" max="10s" />
+                    <actions>
+                        <find_station name="$PirateBase" space="player.galaxy" multiple="true" macro="macro.station_gen_piratebase_base_01_macro" />
+                        <do_all exact="1">
+                            <add_to_group groupname="$Crate" object="$PirateBase.random" />
+                        </do_all>
+                        <set_known object="$Crate.{1}" known="true" updatesnapshot="true" />
+                        <add_to_group groupname="$Crate" object="$PirateBase.random" />
+                        <set_value name="$textHeader" exact="'\033#FF1BA1E2' + 'HIDEOUT!\n'" />
+                        <set_value name="$textBody" exact="'Pirate hideout discovered in %1 at position x=%2 y=%3 z=%4\n'.[$Crate.{1}.sector.name, $Crate.{1}.zone.position.x, $Crate.{1}.zone.position.y, $Crate.{1}.zone.position.z]" />
+                        <show_notification text="$textHeader + $textBody" timeout="10s" />
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$Crate.{1}" category="missions" />
+                        <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
+                    </actions>
+                </cue>
+                <!--   *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ***********************************************************EVENT UPDATE******************************************************************
+                        *****************************************************************************************************************************************
+                        ***************************************************************************************************************************************** -->
+                <!-- Beaconpass -->
+                <!-- <cue name="Maintain_Globals_Beacons" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_object_destroyed group="$JumpBeacons" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <create_object groupname="$JumpBeacons" macro="" sector="event.object.sector" owner="faction.ownerless"></create_object>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_TP_Beacons" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_object_destroyed group="$TP_Beacons" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <set_value name="$XenonSuccess" exact="100" operation="subtract" />
+                        <do_if value="event.param.owner == faction.player">
+                            <set_value name="$PlayerSuccess" exact="100" operation="add" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- salvage -->
+                <!-- <cue name="Maintain_Globals_WreckTable" instantiate="true">
+                    <conditions>
+                        <event_navbeacon_launched launcher="player.ship" />
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param.owner == faction.player">
+                            <add_to_group groupname="$TP_PlayerTargets" object="event.param" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_A" instantiate="true">
+                    <conditions>
+                        <event_player_built_station />
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param.owner == faction.player">
+                            <add_to_group groupname="$TP_PlayerTargets" object="event.param" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_B" instantiate="true">
+                    <conditions>
+                        <event_object_changed_owner group="$TP_Sectors" />
+                    </conditions>
+                    <actions>
+                        <do_if value="event.object.owner == faction.xenon">
+                            <set_value name="$XenonSuccess" exact="100" operation="add" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.player">
+                            <set_value name="$PlayerSuccess" exact="50" operation="add" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_C" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_god_created_factory space="player.galaxy" />
+                            <event_god_created_station space="player.galaxy" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param.owner == faction.xenon">
+                            <add_to_group groupname="$TP_X_Stations" object="event.param" />
+                            <set_value name="$XenonSuccess" exact="10" operation="add" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_D" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_object_destroyed group="$TP_X_Ships" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                       
+                        <do_if value="event.param.owner == faction.player">
+                            <set_value name="$PlayerSuccess" exact="1" operation="add" />
+                            <set_value name="$XenonSuccess" exact="1" operation="subtract" />
+                        </do_if>
+                        <do_if value="event.object.owner == faction.player and event.param.owner == faction.xenon">
+                            <set_value name="$xenonSuccess" exact="100" operation="add" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_E" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_object_destroyed group="$TP_Player_Ships" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param.owner == faction.xenon">
+                            <set_value name="$PlayerSuccess" exact="1" operation="subtract" />
+                            <set_value name="$XenonSuccess" exact="1" operation="add" />
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- PiratePass -->
+                <!-- <cue name="Maintain_Globals_F" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_object_destroyed group="$PirateStations" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param.owner == faction.pirate">
+                            <create_station groupname="$PirateStations" macro="" sector="$TP_Sectors" constructionplan="" owner="faction.pirate">
+                                <safepos value="" />
+                            </create_station>
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- AI FINALS -->
+                <!-- <cue name="Maintain_Globals_PHQ" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_object_changed_owner object="" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <set_value name="$PHQ" exact="19" operation="add" />
+                    </actions>
+                </cue> -->
+                <!-- check -->
+                <cue name="Maintain_Globals_PlayerShips" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_player_built_ship />
+                            <event_player_owned_claimed_object />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <add_to_group groupname="$TP_Player_Ships" object="event.param" />
+                    </actions>
+                </cue>
+                <!-- check -->
+                <!-- 
+                INVASION AI
+                1. Sector Macro list
+                2. Define Sector tiers
+                3. Set $StagingSector
+                4. Set $InvasionSector from Value Function
+                5. Set $InvasionStrength from Value Function
+                6. Set $InvasionStation from Value Function $InvasionStation.{1} - Xenon Shipyard $InvasionStation.{2} - Xenon Corruption $InvasionStation.{3} - Xenon Corruption Spawner
+                7. Start buildup to $InvasionStrength
+                8. Recieve $BuildupComplete
+                9. Spawn $InvasionStation.{1}
+                10. Begin $SmoothWarp of $InvasionFleet at $InvasionStation.{1}
+                11. Recieve $SmoothWarpComplete
+                12. Give Patrol to $InvasionFleet
+                13. $SmoothSpawn $InvasionStation.{1} $GuardFleet
+                14. EVENT $InvasionFleet destroys station spawn $InvasionStation.{2} add to $Reinforce
+                15. If $Reinforce Value gt 3 Spawn $InvasionStation.{3} remove 3 from $Reinforce
+                    REINFORCE
+                    1. Group of $InvasionStation.{3}
+                    2. Use $InvasionStrength Value Function to scale spawn
+                    3. $SmoothSpawn around $InvasionStation.{3} 
+                    4. Give Patrol from $InvasionSector to neighbor sectors
+                16. VICTORY - All ENEMY CLAIMS KILLED - Spawn normal faction Xenon Claimstations - Warp out $InvasionFleet and $InvasionStation.{1}
+                17. DEFEAT - $InvasionFleet lt 30% - Warp out $InvasionFleet and $InvasionStation.{1}
+                    
+                   
+                 -->
+                <!-- <cue name="InvasionAI" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <set_value name="$StagingSector" exact="$XenonBorder.random" />
+                        <set_value name="$InvasionSector" exact="$InvasionTier" />
+                        <set_value name="$InvasionStrength" exact="" />
+                        <set_value name="$InvasionStation" />
+                    </actions>
+                </cue>
+                <cue name="InvasionStationSpawn" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <do_if value="$InvasionStations.{1} == true">
+                            <create_station groupname="$ThisStation" name="$ParEngineStation" macro="macro.station_arg_tradestation_base_01_macro" sector="$InvasionSector" constructionplan="'arg_tradestation'" owner="faction.argon" state="componentstate.operational">
+                                <safepos min="-100km" max="100km" />
+                            </create_station>
+                            <create_cue_actor cue="this" name="$Manager">
+                                <select race="race.teladi" tags="controlpost.manager.tag" />
+                                <owner exact="faction.argon" />
+                                <skills>
+                                    <skill type="management" exact="1" />
+                                </skills>
+                            </create_cue_actor>
+                            <create_cue_actor cue="this" name="$Def">
+                                <select race="race.drone" tags="tag.defence" />
+                                <owner exact="faction.argon" />
+                                <skills>
+                                    <skill type="management" exact="1" />
+                                </skills>
+                            </create_cue_actor>
+                            <create_cue_actor cue="this" name="$Eng">
+                                <select race="race.drone" tags="tag.engineer" />
+                                <owner exact="faction.argon" />
+                                <skills>
+                                    <skill type="management" exact="1" />
+                                </skills>
+                            </create_cue_actor>
+                            <debug_text text="$Manager.knownname" />
+                            <assign_control_entity object="$ThisStation.{$pasta}" actor="$Manager" post="controlpost.manager" transfer="true" />
+                            <assign_control_entity object="$ThisStation.{$pasta}" actor="$Def" post="controlpost.defence" transfer="true" />
+                            <assign_control_entity object="$ThisStation.{$pasta}" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                            <remove_value name="$Manager" />
+                            <remove_value name="$Def" />
+                            <remove_value name="$Eng" />
+                        </do_if>
+                        <do_if value="$InvasionStations.{2} == true"></do_if>
+                        <do_if value="$InvasionStations.{3} == true"></do_if>
+                    </actions>
+                </cue> -->
+                <!-- beaconpass -->
+                <!-- <cue name="Beacon_Rate" instantiate="true" checkinterval="">
+                    <conditions>
+                        <check_value value="TP_beacons lt 200" />
+                    </conditions>
+                    <actions>
+                        <create_object groupname="$TP_beacons" macro="" sector="$TP_Sectors.random" owner="faction.xenon"></create_object>
+                    </actions>
+                </cue> -->
+                <!--   *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ***********************************************************XENON AI**********************************************************************
+                        *****************************************************************************************************************************************
+                        ***************************************************************************************************************************************** -->
+                <cue name="XenonAI_Master" instantiate="true" checkinterval="60s">
+                    <actions>
+                        <set_value name="$XenonForce" exact="10" />
+                        <set_value name="$DeltaTime" exact="($Time * 1.03f)" operation="add" />
+                        <set_value name="$Utilization" exact="$XenonForce / ($XenonForce  + $Time  + $XenonSuccess )" />
+                        <!-- calc -->
+                        <set_value name="$Fleethop" exact="$ConstantFleethop * ((( $XenonSuccess/$PlayerSuccess ) * ($BeaconRate * $DeltaTime)) /  $Utilization)" />
+                        <set_value name="$PlayerAttack" exact="$ConstantPlayerAttack * ((( $PlayerSuccess/$XenonSuccess ) * ($PHQ * $DeltaTime)) /  $Utilization)" />
+                        <set_value name="$Invasion" exact="$ConstantInvasion * ((($XenonSuccess - $Time ) * $Utilization) + $DeltaTime)" />
+                        <set_value name="$ForcePool" exact="$Fleethop + $PlayerAttack + $Invasion" />
+                        <debug_text text="'ConstantFleethop' + $ConstantFleethop" />
+                        <debug_text text="'ConstantPlayerAttack' + $ConstantPlayerAttack" />
+                        <debug_text text="'ConstantInvasion' + $ConstantInvasion" />
+                        <debug_text text="'XenonSuccess' + $XenonSuccess" />
+                        <debug_text text="'PlayerSuccess' + $PlayerSuccess" />
+                        <debug_text text="'BeaconRate' + $BeaconRate" />
+                        <debug_text text="'DeltaTime' + $DeltaTime" />
+                        <debug_text text="'Utilization' + $Utilization" />
+                        <debug_text text="'Time' + $Time" />
+                        <debug_text text="'PHQ' + $PHQ" />
+                        <!-- scale -->
+                        <set_value name="$OverPool" exact="$ForcePool - ($Fleethop + $PlayerAttack + $Invasion)" />
+                        <set_value name="$Scaler" exact="$ForcePool - ($ForcePool * $Utilization)" />
+                        <debug_text text="'fh' + $Fleethop" />
+                        <debug_text text="'pi' + $Invasion" />
+                        <debug_text text="'pa' + $PlayerAttack" />
+                        <debug_text text="'ph' + $Piratehop" />
+                    </actions>
+                </cue>
+                <!-- done -->
+                <cue name="FleetCheck" instantiate="true" checkinterval="30s">
+                    <actions>
+                        <do_all exact="$BeaconsTable.keys.count" counter="$a">
+                            <do_if value="$BeaconsTable.{$a}.$Active == true">
+                                <do_if value="$BeaconsTable.{$a}.$FleetHop == true">
+                                    <do_if value="(player.age - $BeaconsTable.{$a}.$Startime) gt 1min">
+                                        <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                        <add_to_group groupname="$EndShips" list="$BeaconsTable.{$a}.$Ships" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$BeaconsTable.{$a}.$Ships" />
+                                        <set_value name="$BeaconsTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$BeaconsTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$BeaconsTable.{$a}.$FleetHop" exact="false" />
+                                    </do_if>
+                                </do_if>
+                                <do_if value="$BeaconsTable.{$a}.$PirateHop == true">
+                                    <do_if value="(player.age - $BeaconsTable.{$a}.$Startime) gt 1min">
+                                        <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                        <add_to_group groupname="$EndShips" list="$BeaconsTable.{$a}.$Ships" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$BeaconsTable.{$a}.$Ships" />
+                                        <set_value name="$BeaconsTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$BeaconsTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$BeaconsTable.{$a}.$PirateHop" exact="false" />
+                                    </do_if>
+                                </do_if>
+                                <do_if value="$BeaconsTable.{$a}.$PlayerAttack == true">
+                                    <do_if value="(player.age - $BeaconsTable.{$a}.$Startime) gt 1min">
+                                        <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                        <add_to_group groupname="$EndShips" list="$BeaconsTable.{$a}.$Ships" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$BeaconsTable.{$a}.$Ships" />
+                                        <set_value name="$BeaconsTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$BeaconsTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$BeaconsTable.{$a}.$PlayerAttack" exact="false" />
+                                    </do_if>
+                                </do_if>
+                                <do_if value="$BeaconsTable.{$a}.$Invasion == true">
+                                    <do_if value="(player.age - $BeaconsTable.{$a}.$Startime) gt 1min">
+                                        <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                        <add_to_group groupname="$EndShips" list="$BeaconsTable.{$a}.$Ships" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$BeaconsTable.{$a}.$Ships" />
+                                        <set_value name="$BeaconsTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$BeaconsTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$BeaconsTable.{$a}.$Invasion" exact="false" />
+                                    </do_if>
+                                </do_if>
+                            </do_if>
+                        </do_all>
+                    </actions>
+                </cue>
+                <!-- connect selected and sector to ai -->
+                <cue name="SpawnValueControl" checkinterval="60s" instantiate="true">
+                    <actions>
+                        <debug_text text="'fh' + $Fleethop" />
+                        <debug_text text="'pi' + $Invasion" />
+                        <debug_text text="'pa' + $PlayerAttack" />
+                        <debug_text text="'ph' + $Piratehop" />
+                        <!-- <set_value name="$Fleethop" exact="5000" />
+                        <set_value name="$Invasion" exact="20000" />
+                        <set_value name="$PlayerAttack" exact="5000" />
+                        <set_value name="$Piratehop" exact="5000" /> -->
+                        <set_value name="$PirateHopSelected" exact="false" />
+                        <set_value name="$FleetHopSelected" exact="true" />
+                        <set_value name="$InvasionSelected" exact="false" />
+                        <set_value name="$PlayerAttackSelected" exact="false" />
+                        <do_if value="$PirateHopSelected == true">
+                            <set_value name="$FleetPower" exact="$Piratehop" />
+                            <set_value name="$SectorSelected" exact="$TP_Sectors.random" />
+                        </do_if>
+                        <do_if value="$FleetHopSelected == true">
+                            <set_value name="$FleetPower" exact="$Fleethop" />
+                            <set_value name="$SectorSelected" exact="$TP_Sectors.random" />
+                        </do_if>
+                        <do_if value="$InvasionSelected == true">
+                            <set_value name="$FleetPower" exact="$Invasion" />
+                            <set_value name="$SectorSelected" exact="$TP_Sectors.random" />
+                        </do_if>
+                        <do_if value="$PlayerAttackSelected == true">
+                            <set_value name="$FleetPower" exact="$PlayerAttack" />
+                            <set_value name="$SectorSelected" exact="$TP_Sectors.random" />
+                        </do_if>
+                    </actions>
+                    <cues>
+                        <!-- winnow values -->
+                        <cue name="FleetAI">
+                            <actions>
+                                <debug_text text="'look at me' + $FleetPower" />
+                                <set_value name="$Beacon" exact="player.zone" />
+                                <set_value name="$Faction" exact="faction.player" />
+                                <set_value name="$Faction_Selected" exact="faction.pirate" />
+                                <set_value name="$tag" exact="tag.fighterpirate" />
+                                <set_value name="$LeaderNeeded" exact="true" />
+                                <set_value name="$FleetHopComplete" exact="false" />
+                                <set_value name="$ElementalFleets" exact="true" />
+                                <create_list name="$ElementalFleetScaleList" />
+                                <set_value name="$BeaconActive" exact="10" />
+                                <set_value name="$Fleethopdivbeacons" exact="$FleetPower / $BeaconActive" />
+                                <set_value name="$ElementalPool" exact="$Fleethopdivbeacons / 100" />
+                                <set_value name="$ElementalMod" exact="$ElementalPool" />
+                                <set_value name="$ElementalScale" exact="3" />
+                                <set_value name="$Quantity" min="$ElementalPool" max="$ElementalPool * $ElementalScale" />
+                                <set_value name="$SearchComplete" exact="false" />
+                                <set_value name="$LargeSearchComplete" exact="false" />
+                                <set_value name="$MediumSearchComplete" exact="false" />
+                                <!-- <set_value name="$SpawnedShip" exact="1" /> -->
+                                <debug_text text="$Fleethopdivbeacons" />
+                                <debug_text text="$ElementalPool" />
+                                <debug_text text="$ElementalMod" />
+                                <debug_text text="$ElementalScale" />
+                                <debug_text text="$Quantity" />
+                            </actions>
+                            <cues>
+                                <!-- Fleet Comp -->
+                                <cue name="ElementalConfig">
+                                    <actions>
+                                        <do_if value="$ElementalFleets == true">
+                                            <do_all exact="$ElementalScale">
+                                                <do_if value="$FleetHopSelected == true">
+                                                    <do_if value="$Faction_Selected == faction.pirate">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.courierpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="10 + $ElementalMod" exact="tag.frigatepirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.traderpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                    <do_if value="$Faction_Selected == faction.xenon">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="25 + $ElementalMod" exact="tag.medium" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="2 + $ElementalMod" exact="tag.miner" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyer" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                </do_if>
+                                                <do_if value="$PirateHopSelected == true">
+                                                    <do_if value="$Faction_Selected == faction.pirate">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.courierpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="10 + $ElementalMod" exact="tag.frigatepirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.traderpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                    <do_if value="$Faction_Selected == faction.xenon">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="25 + $ElementalMod" exact="tag.medium" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="2 + $ElementalMod" exact="tag.miner" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyer" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                </do_if>
+                                                <do_if value="$PlayerAttackSelected == true">
+                                                    <do_if value="$Faction_Selected == faction.pirate">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.courierpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="10 + $ElementalMod" exact="tag.frigatepirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.traderpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                    <do_if value="$Faction_Selected == faction.xenon">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="25 + $ElementalMod" exact="tag.medium" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="2 + $ElementalMod" exact="tag.miner" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyer" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                </do_if>
+                                                <do_if value="$InvasionSelected == true">
+                                                    <do_if value="$Faction_Selected == faction.pirate">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.courierpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="10 + $ElementalMod" exact="tag.frigatepirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="6 + $ElementalMod" exact="tag.traderpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                    <do_if value="$Faction_Selected == faction.xenon">
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.freighterpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="50 + $ElementalMod" exact="tag.fighter" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="25 + $ElementalMod" exact="tag.medium" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="2 + $ElementalMod" exact="tag.miner" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.destroyerpirate" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="5 + $ElementalMod" exact="tag.destroyer" />
+                                                        <append_to_list name="$ElementalFleetScaleList" chance="1 + $ElementalMod" exact="tag.carrierpirate" />
+                                                    </do_if>
+                                                </do_if>
+                                            </do_all>
+                                        </do_if>
+                                        <debug_text text="'fleet tag list' + $ElementalFleetScaleList" />
+                                    </actions>
+                                </cue>
+                                <!-- done -->
+                                <cue name="FleetDelay">
+                                    <delay exact="10s" />
+                                    <actions>
+                                        <signal_cue_instantly cue="FleetSpawn" />
+                                        <do_if value="$FleetHopComplete == false">
+                                            <reset_cue cue="this" />
+                                            <debug_text text="'fleetdelay'" />
+                                        </do_if>
+                                    </actions>
+                                </cue>
+                                <!-- review controls -->
+                                <cue name="FleetSpawn" instantiate="true">
+                                    <conditions>
+                                        <event_cue_signalled />
+                                    </conditions>
+                                    <delay min="10s" max="15s" />
+                                    <actions>
+                                        <set_value name="$tagspawn" exact="$ElementalFleetScaleList.random" />
+                                        <do_if value="$SpawnedShip.count gt 100">
+                                            <signal_cue_instantly cue="AnointLeader" />
+                                            <set_value name="$FleetHopComplete" exact="true" />
+                                        </do_if>
+                                        <do_if value="$Quantity == 0">
+                                            <signal_cue_instantly cue="AnointLeader" />
+                                            <set_value name="$FleetHopComplete" exact="true" />
+                                        </do_if>
+                                        <include_actions ref="SpawnLIB" />
+                                    </actions>
+                                </cue>
+                                <!-- done -->
+                                <cue name="AnointLeader" instantiate="true">
+                                    <conditions>
+                                        <event_cue_signalled />
+                                    </conditions>
+                                    <delay min="10s" max="15s" />
+                                    <actions>
+                                        <debug_text text="$SpawnedShip" />
+                                        <do_all exact="$SpawnedShip.count" counter="$current">
+                                            <do_if value="$SearchComplete == false">
+                                                <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_xl]">
+                                                    <set_value name="$SearchComplete" exact="true" />
+                                                    <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                                </do_if>
+                                                <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_l]">
+                                                    <set_value name="$LargeSearchComplete" exact="true" />
+                                                    <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                                </do_if>
+                                                <do_if value="$LargeSearchComplete == false">
+                                                    <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_m]">
+                                                        <set_value name="$MediumSearchComplete" exact="true" />
+                                                        <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                                    </do_if>
+                                                    <do_if value="$MediumSearchComplete == false">
+                                                        <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_s]">
+                                                            <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                                        </do_if>
+                                                    </do_if>
+                                                </do_if>
+                                            </do_if>
+                                        </do_all>
+                                        <signal_cue_instantly cue="Leaderisdumb" />
+                                    </actions>
+                                </cue>
+                                <!-- done -->
+                                <cue name="Leaderisdumb" instantiate="true">
+                                    <conditions>
+                                        <event_cue_signalled />
+                                    </conditions>
+                                    <delay min="10s" max="15s" />
+                                    <actions>
+                                        <debug_text text="$SpawnedShip" />
+                                        <debug_text text="$LeaderSelected" />
+                                        <set_object_commander object="$LeaderSelected" commander="$LeaderSelected" />
+                                        <create_order id="'Patrol'" object="$LeaderSelected" default="true">
+                                            <param name="space" value="$SectorSelected" />
+                                        </create_order>
+                                        <remove_from_group group="$SpawnedShip" object="$LeaderSelected" />
+                                        <do_all exact="$SpawnedShip.count" counter="$follower">
+                                            <set_object_commander object="$SpawnedShip.{$follower}" commander="$LeaderSelected" />
+                                            <create_order id="'Escort'" object="$SpawnedShip.{$follower}" default="true">
+                                                <param name="target" value="$LeaderSelected" />
+                                                <param name="formation" value="formationshape.pointguard" />
+                                                <param name="formationparam" value="200m" />
+                                            </create_order>
+                                        </do_all>
+                                        <add_to_group groupname="$SpawnedShip" object="$LeaderSelected" />
+                                        <!-- done -->
+                                        <do_all exact="$BeaconsTable.keys.count" counter="$a">
+                                            <do_if value="$FleetHopSelected == true">
+                                                <do_if value="$BeaconsTable.{$a}.$Active == false">
+                                                    <do_all exact="$SpawnedShip.count" counter="$Spawned">
+                                                        <append_to_list name="$BeaconsTable.{$a}.$Ships" exact="$SpawnedShip.{$Spawned}" />
+                                                    </do_all>
+                                                    <set_value name="$BeaconsTable.{$a}.$FleetHop" exact="true" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Startime" exact="player.age" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Active" exact="true" />
+                                                    <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                                    <break />
+                                                </do_if>
+                                            </do_if>
+                                            <do_if value="$PirateHopSelected == true">
+                                                <do_if value="$BeaconsTable.{$a}.$Active == false">
+                                                    <do_all exact="$SpawnedShip.count" counter="$Spawned">
+                                                        <append_to_list name="$BeaconsTable.{$a}.$Ships" exact="$SpawnedShip.{$Spawned}" />
+                                                    </do_all>
+                                                    <set_value name="$BeaconsTable.{$a}.$PirateHop" exact="true" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Startime" exact="player.age" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Active" exact="true" />
+                                                    <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                                    <break />
+                                                </do_if>
+                                            </do_if>
+                                            <do_if value="$PlayerAttackSelected == true">
+                                                <do_if value="$BeaconsTable.{$a}.$Active == false">
+                                                    <do_all exact="$SpawnedShip.count" counter="$Spawned">
+                                                        <append_to_list name="$BeaconsTable.{$a}.$Ships" exact="$SpawnedShip.{$Spawned}" />
+                                                    </do_all>
+                                                    <set_value name="$BeaconsTable.{$a}.$PlayerAttack" exact="true" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Startime" exact="player.age" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Active" exact="true" />
+                                                    <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                                    <break />
+                                                </do_if>
+                                            </do_if>
+                                            <do_if value="$InvasionSelected == true">
+                                                <do_if value="$BeaconsTable.{$a}.$Active == false">
+                                                    <do_all exact="$SpawnedShip.count" counter="$Spawned">
+                                                        <append_to_list name="$BeaconsTable.{$a}.$Ships" exact="$SpawnedShip.{$Spawned}" />
+                                                    </do_all>
+                                                    <set_value name="$BeaconsTable.{$a}.$Invasion" exact="true" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Startime" exact="player.age" />
+                                                    <set_value name="$BeaconsTable.{$a}.$Active" exact="true" />
+                                                    <debug_text text="$BeaconsTable.{$a}.$Ships" />
+                                                    <break />
+                                                </do_if>
+                                            </do_if>
+                                        </do_all>
+                                        <remove_value name="$SpawnedShip" />
+                                    </actions>
+                                </cue>
+                            </cues>
+                        </cue>
+                    </cues>
+                </cue>
+                <!-- done -->
+                <library name="SpawnLIB">
+                    <delay exact="8s" />
+                    <actions>
+                        <do_all exact="1">
+                            <create_ship name="$Fighter" groupname="$SpawnedShip" zone="$Beacon">
+                                <select faction="$Faction_Selected" tags="[$tagspawn]" />
+                                <loadout>
+                                    <level exact="1" />
+                                </loadout>
+                                <owner exact="faction.player" overridenpc="true" />
+                                <safepos min="1km" max="4km" />
+                            </create_ship>
+                            <set_owner object="$Fighter" faction="faction.player" overridenpc="true" />
+                            <set_value name="$Quantity" exact="1" operation="subtract" />
+                            <remove_value name="$tagspawn" />
+                        </do_all>
+                    </actions>
+                </library>
+            </cues>
+        </cue>
+    </cues>
+</mdscript>

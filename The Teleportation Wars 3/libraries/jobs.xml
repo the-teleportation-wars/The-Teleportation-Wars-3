@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<diff>
+<add sel="/jobs">
+
+
+  <job id="pirate_bio_trader_l" name="{20204,1301}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="bio"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="8" cluster="4"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_bio_trader_m" name="{20204,1401}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="bio"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="30" cluster="8" sector="6"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_food_trader_s" name="{20204,1801}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="food"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+    <quota galaxy="40" cluster="10" sector="5"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_energycell_trader_l" name="{20204,101}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="energycells"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="5" cluster="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_energycell_trader_m" name="{20204,201}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="energycells"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="25" cluster="7" sector="5"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  
+  <job id="pirate_energycell_trader_s" name="{20204,201}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="energycells"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+    <quota galaxy="5" cluster="1" />
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_equipment_trader_l" name="{20204,301}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="equipment"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="2" cluster="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_equipment_trader_m" name="{20204,401}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="equipment"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="10" cluster="3" sector="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_construction_trader_l" name="{20204,401}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="construction_stations"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="5" cluster="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_construction_trader_m" name="{20204,401}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="construction_stations"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="18" cluster="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_refinedgas_trader_l" name="{20204,501}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="refined_gas"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="2" cluster="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_refinedgas_trader_m" name="{20204,601}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="refined_gas"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="18" cluster="3" sector="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_refinedmineral_trader_l" name="{20204,501}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="refined_mineral"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="5" cluster="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_refinedmineral_trader_m" name="{20204,601}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="refined_mineral"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="15" cluster="3" sector="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_tech_trader_l" name="{20204,301}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="tech"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="5" cluster="2" sector="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_tech_trader_m" name="{20204,401}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="tech"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="5" cluster="3" sector="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  <job id="pirate_tech_trader_s" name="{20204,401}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="tech"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+    <quota galaxy="10" cluster="3" sector="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_s"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_water_trader_l" name="{20204,1501}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="water"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+    <quota galaxy="3" cluster="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_water_trader_m" name="{20204,1601}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="Middleman" default="true">
+        <param name="range" value="3"/>
+      </order>
+    </orders>
+    <basket basket="water"/>
+    <category faction="pirate" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+    <quota galaxy="10" cluster="4" sector="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[trader, container]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <!-- Mining Jobs -->
+  <job id="pirate_free_miner_l_liquid" name="{20204,5701}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="gases"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+    <quota galaxy="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="gases"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares multiple="true">
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+
+  <job id="pirate_free_miner_m_liquid" name="{20204,5701}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="gases"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+    <quota galaxy="8"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="gases"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares>
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+
+  <job id="pirate_free_miner_l_mineral" name="{20204,5601}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="minerals"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+    <quota galaxy="8"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares>
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+
+  <job id="pirate_free_miner_m_mineral" name="{20204,5601}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="minerals"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+    <quota galaxy="17"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares>
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+  <job id="pirate_free_miner_s_mineral" name="{20204,5601}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="1"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="minerals"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_s"/>
+    <quota galaxy="7"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares>
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+
+  <job id="pirate_free_miner_l_ice" name="{20204,2001}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="ice"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+    <quota galaxy="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="ice"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares>
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+
+  <job id="pirate_free_miner_m_ice" name="{20204,2001}">
+    <modifiers rebuild="true" commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <basket basket="ice"/>
+    <category faction="pirate" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+    <quota galaxy="7"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="ice"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+      <cargo>
+        <wares>
+          <fillpercent min="0" max="100" profile="inversebell"/>
+        </wares>
+      </cargo>
+    </ship>
+  </job>
+
+  <!-- pirate Combat Jobs -->
+  <!-- heavy, flexible front line and central coverage,
+        medium neutral border coverage,
+        light internal coverage. -->
+
+  <job id="pirate_carrier_patrol_xl_center_galaxy" name="{20204,3201}" comment="center - consider front line if center proves too deep">
+    <modifiers commandeerable="false"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[military, carrier]" size="ship_xl"/>
+    <quota galaxy="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"  />
+    <!--<location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" relation="self" comparison="ge"/>-->
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, carrier]" size="ship_xl"/>
+      <loadout>
+        <level min="0.7" max="1.0"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_destroyer_escort_l"/>
+    </subordinates>
+  </job>
+
+  <job id="pirate_destroyer_patrol_l_sector" name="{20204,3301}" comment="each sector">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.cluster"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, military, destroyer]" size="ship_l"/>
+    <quota galaxy="6" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"  />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, destroyer]" size="ship_l"/>
+      <loadout>
+        <level min="0.4" max="1.0"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_frigate_escort_m"/>
+    </subordinates>
+  </job>
+
+  <job id="pirate_destroyer_patrol_l_comp" name="{20204,3301}" comment="compression">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, military, destroyer]" size="ship_l"/>
+    <quota galaxy="3" maxgalaxy="12" cluster="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"  />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, destroyer]" size="ship_l"/>
+      <loadout>
+        <level min="0.4" max="1.0"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_frigate_patrol_m_sector_exp" name="{20204,2901}" comment="each sector, expansion">
+    <modifiers commandeerable="false"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, military, frigate]" size="ship_m"/>
+    <quota galaxy="44" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"  />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, frigate]" size="ship_m"/>
+      <loadout>
+        <level min="0.4" max="1.0"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_frigate"/>
+    </subordinates>
+  </job>
+
+  <job id="pirate_dronecarrier_patrol_m_sector" name="{20204,5001}" comment="each sector, concentrates">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, military, frigate]" size="ship_m"/>
+    <quota galaxy="12" maxgalaxy="24" sector="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"  />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, frigate]" size="ship_m"/>
+      <loadout>
+        <level min="0.4" max="1.0"/>
+      </loadout>
+      <units>
+        <unit category="unitcategory.defence" min="8" max="12"/>
+      </units>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_fighter_patrol_s_zone" name="{20204,2901}" comment="half of total zones">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, military, fighter]" size="ship_s"/>
+    <quota galaxy="25" maxgalaxy="50" zone="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[fighter, heavy]" size="ship_s"/>
+      <loadout>
+        <level min="0.4" max="1.0"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_patrol"/>
+    </subordinates>
+  </job>
+
+  <job id="pirate_scout_patrol_s" name="{20204,2801}" comment="each border sector * 2">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Recon" default="true"/>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, military, scout]" size="ship_s"/>
+    <quota galaxy="12" maxgalaxy="24" cluster="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[scout]" size="ship_s"/>
+      <loadout>
+        <level min="0.7" max="1.0"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  <job id="pirate_police_patrol_s" name="{20204,6101}" comment="each sector, expansion">
+    <modifiers commandeerable="false"/>
+    <orders>
+      <order order="Recon" default="true">
+        <param name="police" value="false"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic]" size="ship_s"/>
+    <quota galaxy="60" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[fighter, light]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <!-- pirate Escorts -->
+  <job id="pirate_destroyer_escort_l" name="{20204,3301}" startactive="false">
+    <orders>
+      <order order="Escort" default="true">
+        <param name="formation" value="formationshape.invvshape"/>
+        <!--<param name="formation" value="formationshape.pointguard"/>-->
+      </order>
+    </orders>
+    <category faction="pirate" tags="[military, destroyer]" size="ship_l"/>
+    <quota wing="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, destroyer]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_frigate_escort_m"/>
+      <!--<subordinate job="pirate_fighter_escort_s_frigate"/>-->
+    </subordinates>
+  </job>
+  <job id="pirate_frigate_escort_m" name="{20204,2901}" startactive="false">
+    <orders>
+      <order order="Escort" default="true">
+        <param name="formation" value="formationshape.dartvertical"/>
+        <!--<param name="formation" value="formationshape.invpointguard"/>-->
+        <param name="formationparam" value="2500m"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[military]" size="ship_m"/>
+    <quota wing="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, medium]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_frigate"/>
+    </subordinates>
+  </job>
+
+  <job id="pirate_fighter_escort_s_frigate" name="{20204,2901}" startactive="false">
+    <orders>
+      <order order="Escort" default="true">
+        <param name="formation" value="formationshape.pointguard"/>
+        <!--<param name="formationparam" value="200m"/>-->
+      </order>
+    </orders>
+    <quota wing="4"/>
+    <category faction="pirate" tags="[military, fighter]" size="ship_s"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, fighter, selection]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  <job id="pirate_fighter_escort_s_patrol" name="{20204,2901}" startactive="false">
+    <orders>
+      <order order="Escort" default="true">
+        <param name="formation" value="formationshape.pointguard"/>
+        <!--<param name="formationparam" value="300m"/>-->
+      </order>
+    </orders>
+    <category faction="pirate" tags="[military, fighter]" size="ship_s"/>
+    <quota wing="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, fighter, light]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_miningfleet_m_solid_small" name="{20204,5601}" startactive="false">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]" size="ship_m"/>
+    <quota wing="2" variation="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="minerals"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_miningfleet_m_liquid_small" name="{20204,5701}" startactive="false">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]" size="ship_m"/>
+    <quota wing="2" variation="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="gases"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid]" size="ship_m"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_miningfleet_ml_solid_large" name="{20204,5601}" startactive="false">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]"/>
+    <quota wing="3" variation="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="minerals"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid, mixed]"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_miningfleet_ml_liquid_large" name="{20204,5701}" startactive="false">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]"/>
+    <quota wing="3" variation="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="gases"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid, mixed]"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_fighter_escort_s_miningfleet" name="{20204,2901}" startactive="false">
+    <orders>
+      <order order="Escort" default="true">
+        <param name="formation" value="formationshape.pointguard"/>
+      </order>
+    </orders>
+    <quota wing="1" variation="1"/>
+    <category faction="pirate" tags="[military, fighter, deepspace]" size="ship_s"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro"/>
+    <environment buildatshipyard="true"/>
+    <modifiers subordinate="true"/>
+    <ship>
+      <select faction="pirate" tags="[military, fighter, selection]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <!--pirate Misc-->
+  <!--TODO @Owen distribute construction vessels around space with shipyard?-->
+  <job id="pirate_construction_vessel_xl" name="{20204,5101}">
+    <modifiers commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="FindBuildTasks" default="true">
+        <param name="maxjumps" value="3"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, builder]" size="ship_xl"/>
+    <quota galaxy="10" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[builder]" size="ship_xl"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <!--TEMP @Owen - remove once the mass-busy CVs issue is solved-->
+  <job id="pirate_construction_vessel_xl_playeronly" name="{20204,5101}">
+    <modifiers commandeerable="true"/>
+    <!--<expirationtime min="14400" max="21600" />-->
+    <orders>
+      <order order="FindBuildTasks" default="true">
+        <param name="maxjumps" value="3"/>
+        <param name="playeronly" value="true"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[factionlogic, builder]" size="ship_xl"/>
+    <quota galaxy="10" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[builder]" size="ship_xl"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  
+  <job id="pirate_resupplier_xl" name="{20204,5501}" disabled="true">
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <quota galaxy="10" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"  />
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="pirate" tags="[resupplier]"/>
+      <loadout>
+        <level min="0.4" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <!-- pirate Deep Space Jobs -->
+  <job id="pirate_resourcescout_s_deepspace_single" name="{20204,10049}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="deepspace" value="true"/>
+        <param name="resourcescout" value="true"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[scout, deepspace]" size="ship_s"/>
+    <quota galaxy="3" cluster="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"   regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="minerals"/>
+    <ship>
+      <select faction="pirate" tags="[scout]" size="ship_s"/>
+      <loadout>
+        <level min="0" max="0.4"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+
+  <job id="pirate_free_miner_ml_solid_deepspace_single" name="{20204,5601}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]"/>
+    <quota galaxy="1"/>
+    <time interval="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"   regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="minerals"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid, mixed]"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  <job id="pirate_free_miner_ml_liquid_deepspace_single" name="{20204,5701}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]"/>
+    <quota galaxy="1"/>
+    <time interval="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate" regionbasket="gases"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="gases"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid, mixed]"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+  </job>
+  <job id="pirate_free_miner_ml_solid_deepspace_smallgroup" name="{20204,5601}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]"/>
+    <quota galaxy="1"/>
+    <time interval="600"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"   regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="minerals"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid, mixed]"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_miningfleet_m_solid_small"/>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_free_miner_ml_liquid_deepspace_smallgroup" name="{20204,5701}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]"/>
+    <quota galaxy="1"/>
+    <time interval="600"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"   regionbasket="gases"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="gases"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid, mixed]"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_miningfleet_m_liquid_small"/>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_free_miner_l_solid_deepspace_largegroup" name="{20204,5601}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]" size="ship_l"/>
+    <quota galaxy="1"/>
+    <time interval="3600"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"   regionbasket="minerals"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="minerals"/>
+    <ship>
+      <select faction="pirate" tags="[miner, solid]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_miningfleet_ml_solid_large"/>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+  <job id="pirate_free_miner_l_liquid_deepspace_largegroup" name="{20204,5701}" comment="very few">
+    <orders>
+      <order order="MiningRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+    <category faction="pirate" tags="[freighter, miner, deepspace]" size="ship_l"/>
+    <quota galaxy="1"/>
+    <time interval="3600"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="pirate"   regionbasket="gases"/>
+    <environment buildatshipyard="true"/>
+    <basket basket="gases"/>
+    <ship>
+      <select faction="pirate" tags="[miner, liquid]" size="ship_l"/>
+      <loadout>
+        <level min="0" max="0.7"/>
+      </loadout>
+      <owner exact="pirate" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="pirate_miningfleet_ml_liquid_large"/>
+      <subordinate job="pirate_fighter_escort_s_miningfleet"/>
+    </subordinates>
+  </job>
+
+
+
+</add>
+</diff>

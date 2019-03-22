@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<diff>
+    <add sel="//theme[@id='painttheme_race_default']">
+        <group faction="meditech" paintmod="paintmod_0082" />
+    </add>
+    <add sel="//theme[@id='painttheme_race_default']">
+        <group faction="pirate" paintmod="paintmod_0030" />
+    </add>
+</diff>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <!-- ADD TRADEABLY WARES ONLY, 0 MIN/MAX SO THE TRADER DOESN'T SELL IT -->
+<diff>
+  <add sel="//stock[@id='pirate_trader']">
+    <ware ref="inv_slave1" min="0" max="0" />
+  </add>
+  <add sel="//stock[@id='default_shadyguy']">
+    <ware ref="inv_slave1" min="0" max="0" />
+  </add>
+  <add sel="//stock[@id='default_trader']">
+          <ware ref="inv_slave1" min="0" max="0" />
+          <ware ref="inv_forgottenresearch" min="0" max="0" />
+          <ware ref="inv_distressbeaconfreq" min="0" max="0" /> 
+          <ware ref="inv_battlelog" min="0" max="0" />
+          <ware ref="inv_prisonerzero" min="0" max="0" />
+          <ware ref="inv_prisoner1" min="0" max="0" />
+          <ware ref="inv_prisoner2" min="0" max="0" />
+          <ware ref="inv_prisoner3" min="0" max="0" />
+          <ware ref="inv_prisoner4" min="0" max="0" />
+          <ware ref="inv_sectorkey" min="0" max="0" />
+          <ware ref="inv_stellarmap" min="0" max="0" />
+          <ware ref="inv_stellarmapdevice" min="0" max="0" />
+          <ware ref="inv_tradenetworkkey" min="0" max="0" />
+          <ware ref="inv_treasuremap" min="0" max="0" />
+          <ware ref="inv_locationpiratehideout" min="0" max="0" />
+          <ware ref="inv_locationpiratebase" min="0" max="0" />
+          <ware ref="inv_cyborgparts" min="0" max="0" />
+          <ware ref="inv_gatemap" min="0" max="0" />
+  </add>
+</diff>

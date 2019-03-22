@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Last exported: 29.11.2018 06:11:29
+
+Default Relation Ranges:
+  self:          1.0  to  1.0
+  member:        0.1  to  1.0
+  friend:        0.01 to  1.0
+  neutral:      -0.01 to  0.01
+  enemy:        -1.0  to -0.01
+  killmilitary: -1.0  to -0.1
+  kill:         -1.0  to -0.32
+  nemesis:      -1.0  to -1.0
+
+UI value mapping (analogously for negative values):
+  1.0       = 30
+  0.32      = 25
+  0.1       = 20
+  0.032     = 15
+  0.01      = 10
+  0.0032    = 5
+These values are fixed. Between them, logarithmic interpolation is used. Approximate formulas:
+  uivalue = 10 * log10(relation * 1000)
+  relation = 10^(uivalue / 10) / 1000
+Between -0.0032 and +0.0032 (UI -5...+5) linear interpolation is used, and 0.00064 equates to one UI value step.
+
+Note: Relations defined here apply only to gamestart. Relations may change through gameplay and/or plot.
+-->
+
+<diff>
+    <add sel="/factions">
+        <faction id="pirate" name="Pirate" description="{20203,10102}" shortname="PRT" primaryrace="argon" behaviourset="default" known="1" tags="claimspace police protective watchdoguser privateloadout publicloadout privateship publicship">
+            <color r="128" g="77" b="0" />
+            <icon active="faction_criminal" inactive="faction_criminal" />
+            <licences>
+                <licence type="capitalequipment" name="{20207,2061}" icon="bse_star" minrelation="0.1" precursor="ceremonyally" price="0" />
+                <licence type="capitalship" name="{20207,3031}" icon="bse_star" minrelation="0.1" precursor="ceremonyally" price="0" />
+                <licence type="ceremonyally" name="{20207,5031}" minrelation="0.1" price="0" />
+                <licence type="ceremonyfriend" name="{20207,5021}" minrelation="0.01" price="0" />
+                <licence type="generaluseequipment" name="{20207,2241}" minrelation="-0.01" price="0" />
+                <licence type="generaluseship" name="{20207,2251}" minrelation="-0.01" price="0" />
+                <licence type="militaryequipment" name="{20207,2051}" icon="bse_star" minrelation="0.01" precursor="ceremonyfriend" price="0" />
+                <licence type="militaryship" name="{20207,3021}" icon="bse_star" minrelation="0.01" precursor="ceremonyfriend" price="0" />
+                <licence type="station_equip_lxl" name="{20207,7191}" minrelation="1" precursor="ceremonyally" price="500000000" hidden="1" />
+                <licence type="station_equip_sm" name="{20207,7181}" minrelation="0.5" precursor="ceremonyally" price="100000000" hidden="1" />
+                <licence type="station_gen_advanced" name="{20207,7331}" minrelation="0.1" precursor="ceremonyally" price="0" />
+                <licence type="station_gen_basic" name="{20207,7311}" minrelation="-0.01" price="0" />
+                <licence type="station_gen_intermediate" name="{20207,7321}" minrelation="0.01" precursor="ceremonyfriend" price="0" />
+                <licence type="tradesubscription" name="{20207,4011}" minrelation="0.1" precursor="ceremonyally" price="10000000" />
+                <licence type="capitalequipment" factions="argon" />
+                <licence type="generaluseequipment" factions="argon" />
+                <licence type="militaryequipment" factions="argon" />
+                <licence type="police" factions="argon" />
+            </licences>            
+            <relations locked="1">
+                <relation faction="player" relation="-1" />
+                <!-- <relation faction="player" relation="-1" /> -->
+                <relation faction="alliance" relation="0.0" />
+                <relation faction="antigone" relation="0.0" />
+                <relation faction="criminal" relation="0.0" />
+                <relation faction="holyorder" relation="0.0" />
+                <relation faction="khaak" relation="-1" />
+                <relation faction="scaleplate" relation="0.0" />
+                <relation faction="smuggler" relation="0.0" />
+                <relation faction="teladi" relation="0.0" />
+                <relation faction="argon" relation="0.0" />
+                <relation faction="xenon" relation="-1" />
+            </relations>
+        </faction>
+    </add>
+    <add sel="/factions/faction[@id='alliance']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='antigone']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='criminal']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='holyorder']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='khaak']">
+        <relations locked="-1">
+            <relation faction="pirate" relation="-0.5" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='scaleplate']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='smuggler']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='teladi']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='argon']">
+        <relations locked="1">
+            <relation faction="pirate" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='xenon']">
+        <relations locked="-1">
+            <relation faction="pirate" relation="-0.5" />
+        </relations>
+    </add>
+    
+    <add sel="/factions">
+        <faction id="meditech" name="Medi-tech" description="{20203,10102}" shortname="MED" primaryrace="argon" behaviourset="default" known="1" tags="claimspace police protective watchdoguser privateloadout publicloadout privateship publicship">
+            <color r="255" g="255" b="255" />
+            <icon active="faction_smuggler" inactive="faction_smuggler" />
+            <licences>
+                <licence type="capitalequipment" name="{20207,2061}" icon="bse_star" minrelation="0.1" precursor="ceremonyally" price="0" />
+                <licence type="capitalship" name="{20207,3031}" icon="bse_star" minrelation="0.1" precursor="ceremonyally" price="0" />
+                <licence type="ceremonyally" name="{20207,5031}" minrelation="0.1" price="0" />
+                <licence type="ceremonyfriend" name="{20207,5021}" minrelation="0.01" price="0" />
+                <licence type="generaluseequipment" name="{20207,2241}" minrelation="-0.01" price="0" />
+                <licence type="generaluseship" name="{20207,2251}" minrelation="-0.01" price="0" />
+                <licence type="militaryequipment" name="{20207,2051}" icon="bse_star" minrelation="0.01" precursor="ceremonyfriend" price="0" />
+                <licence type="militaryship" name="{20207,3021}" icon="bse_star" minrelation="0.01" precursor="ceremonyfriend" price="0" />
+                <licence type="station_equip_lxl" name="{20207,7191}" minrelation="1" precursor="ceremonyally" price="500000000" hidden="1" />
+                <licence type="station_equip_sm" name="{20207,7181}" minrelation="0.5" precursor="ceremonyally" price="100000000" hidden="1" />
+                <licence type="station_gen_advanced" name="{20207,7331}" minrelation="0.1" precursor="ceremonyally" price="0" />
+                <licence type="station_gen_basic" name="{20207,7311}" minrelation="-0.01" price="0" />
+                <licence type="station_gen_intermediate" name="{20207,7321}" minrelation="0.01" precursor="ceremonyfriend" price="0" />
+                <licence type="tradesubscription" name="{20207,4011}" minrelation="0.1" precursor="ceremonyally" price="10000000" />
+                <licence type="capitalequipment" factions="argon" />
+                <licence type="generaluseequipment" factions="argon" />
+                <licence type="militaryequipment" factions="argon" />
+                <licence type="police" factions="argon" />
+            </licences>            
+            <relations locked="1">
+                <relation faction="player" relation="-1" />
+                <relation faction="pirate" relation="0.0" />
+                <relation faction="alliance" relation="0.0" />
+                <relation faction="antigone" relation="0.0" />
+                <relation faction="criminal" relation="0.0" />
+                <relation faction="holyorder" relation="0.0" />
+                <relation faction="khaak" relation="0.0" />
+                <relation faction="scaleplate" relation="0.0" />
+                <relation faction="smuggler" relation="0.0" />
+                <relation faction="teladi" relation="0.0" />
+                <relation faction="argon" relation="0.0" />
+                <relation faction="xenon" relation="0.0" />
+            </relations>
+        </faction>
+    </add>
+
+    <add sel="/factions/faction[@id='alliance']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='antigone']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='criminal']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='holyorder']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='khaak']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='scaleplate']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='smuggler']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='teladi']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='argon']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='xenon']">
+        <relations locked="1" >
+            <relation faction="meditech" relation="0.0" />
+        </relations>
+    </add>
+<!-- 
+    <add sel="/factions/faction[@id='player']">
+        <relations locked="1">
+            <relation faction="argon" relation="1" />
+        </relations>
+    </add>
+    <add sel="/factions/faction[@id='argon']">
+        <relations locked="1">
+            <relation faction="player" relation="1" />
+        </relations>
+    </add> -->
+
+    
+</diff>

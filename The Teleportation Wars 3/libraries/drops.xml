@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<diff> 
+    <add sel="/droplists">
+
+<!-- adjust for pirate/meditech drops - this is based on large xenon drops, may need to be scaled back -->
+<!-- plus need droplists for the fancy lockboxes -->
+
+  <droplist id="stellar_cart_treasure">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="3" max="8">
+      <collectable>
+        <wares selection="random">
+          <select weight="20"><ware ware="inv_cyborgparts" min="1" max="5"/></select>
+          <select weight="19"><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select weight="19"><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select weight="11"><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select weight="7"><ware ware="inv_agidevice_01" min="1" max="2"/></select> <!-- 11.3% -->
+          <select weight="2"><ware ware="inv_decryptionmodule" amount="1"/></select> <!-- 31.8% -->
+          <select weight="2"><ware ware="inv_agidevice_02" amount="1"/></select> <!-- 31.8% -->
+          <select weight="2"><ware ware="inv_securitydecryptionsystem" amount="1"/></select> <!-- 31.8% -->
+          <select weight="1"><ware ware="inv_damagedsingularityengine" amount="1"/></select><!-- 4.5% -->
+		      <select weight="1"><ware ware="inv_fluxcapacitor" amount="1"/></select><!-- 4.5% -->
+          <select weight="2"><ware ware="inv_securitybypasssystem" min="1" max="2"/></select> <!-- 11.3% -->
+          <select weight="2"><ware ware="inv_agidevice_01" min="3" max="6"/></select> <!-- 11.3% -->
+          <select weight="2"><ware ware="inv_securityslicer" min="1" max="2"/></select> <!-- 11.3% -->
+          <select weight="2"><ware ware="inv_agidevice_03" min="1" max="2"/></select> <!-- 11.3% -->
+        </wares>
+      </collectable>
+    </drop>
+  </droplist>
+
+  <!-- <droplist id="stellar_cart_blueprint">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="3" max="8">
+      <collectable>
+        <wares selection="random">
+          <select weight="100"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="19"><ware ware="stellar_cartography_module" min="1" max="1"/></select> 
+          <select weight="100"><ware ware="inv_cyborgparts" min="1" max="5"/></select>
+
+        </wares>
+      </collectable>
+    </drop>
+  </droplist> -->
+
+  <droplist id="stellar_cart_crew">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="2" max="8">
+      <collectable>
+        <wares selection="random">
+          <select weight="100"><ware ware="inv_slave1" min="1" max="30"/></select> 
+          <select weight="10"><ware ware="inv_prisoner2" min="1" max="4"/></select> 
+          <select weight="2"><ware ware="inv_prisoner1" min="1" max="1"/></select> 
+          <select weight="20"><ware ware="inv_prisonerzero" min="1" max="10"/></select> 
+        </wares>
+      </collectable>
+    </drop>
+  </droplist>
+
+  <droplist id="ship_meditech">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="3" max="8">
+      <collectable>
+        <wares selection="random">
+          <select weight="19"><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select weight="19"><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select weight="11"><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select weight="7"><ware ware="inv_agidevice_01" min="1" max="2"/></select> <!-- 11.3% -->
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_wares_rare_01_macro" chance="30"  min="1" max="3">
+      <collectable>
+        <wares selection="random">
+          <select weight="7"><ware ware="inv_decryptionmodule" amount="1"/></select> <!-- 31.8% -->
+          <select weight="7"><ware ware="inv_agidevice_02" amount="1"/></select> <!-- 31.8% -->
+          <select weight="7"><ware ware="inv_securitydecryptionsystem" amount="1"/></select> <!-- 31.8% -->
+          <select weight="1"><ware ware="inv_damagedsingularityengine" amount="1"/></select><!-- 4.5% -->
+		      <select weight="1"><ware ware="inv_fluxcapacitor" amount="1"/></select><!-- 4.5% -->
+          <select weight="7"><ware ware="inv_securitybypasssystem" min="1" max="2"/></select> <!-- 11.3% -->
+          <select weight="7"><ware ware="inv_agidevice_01" min="3" max="6"/></select> <!-- 11.3% -->
+          <select weight="7"><ware ware="inv_securityslicer" min="1" max="2"/></select> <!-- 11.3% -->
+          <select weight="7"><ware ware="inv_agidevice_03" min="1" max="2"/></select> <!-- 11.3% -->
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_wpsmod_common_01_macro" chance="70">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="modpart_extendedfuelcontainer" min="1" max="2" /></select>
+          <select><ware ware="modpart_highenergycatalyst" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumcrystallite" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumoxide" min="1" max="2" /></select>
+          <select><ware ware="modpart_tuningsoftware" min="1" max="2" /></select>
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_wpsmod_rare_01_macro" chance="10">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="modpart_enginefuelinjector_t1" amount="1" /></select>
+          <select><ware ware="modpart_shieldgeneratorcoil_t1" amount="1" /></select>
+          <select><ware ware="modpart_shipnanoweave_t1" amount="1" /></select>
+          <select><ware ware="modpart_weaponchamber_t1" amount="1" /></select>
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_ammo_01_macro" chance="10">
+      <collectable>
+        <ammo selection="random">
+          <!-- dumbfire, guided, swarm, torpedo -->
+          <select macro="missile_torpedo_heavy_mk1_macro" weight="1" min="1" max="3"/>
+          <select macro="missile_torpedo_light_mk1_macro" weight="1" min="1" max="3"/>
+          <select macro="missile_cluster_heavy_mk1_macro" weight="2" min="2" max="4"/>
+          <select macro="missile_cluster_light_mk1_macro" weight="5" min="1" max="3"/>
+          <select macro="missile_swarm_heavy_mk1_macro" weight="3" min="1" max="3"/>
+          <select macro="missile_swarm_light_mk1_macro" weight="7" min="2" max="4"/>
+          <select macro="missile_emp_mk1_macro" weight="11" min="2" max="4"/>
+          <select macro="missile_smart_heavy_mk1_macro" weight="13" min="1" max="3"/>
+          <select macro="missile_smart_light_mk1_macro" weight="19" min="2" max="4"/>
+          <select macro="missile_guided_heavy_mk1_macro" weight="17" min="1" max="3"/>
+          <select macro="missile_guided_light_mk1_macro" weight="23" min="2" max="4"/>
+          <select macro="missile_heatseeker_heavy_mk1_macro" weight="19" min="1" max="3"/>
+          <select macro="missile_heatseeker_light_mk1_macro" weight="29" min="2" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk1_macro" weight="41" min="2" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk2_macro" weight="31" min="1" max="3"/>
+          <select macro="missile_dumbfire_light_mk1_macro" weight="43" min="2" max="4"/>
+          <select macro="missile_dumbfire_light_mk2_macro" weight="37" min="1" max="3"/>
+        </ammo>
+      </collectable>
+    </drop>
+  </droplist>
+  <droplist id="Pirate_Drop_Small">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="1" max="3">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_majaglit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securecontainer" min="1" max="10"/></select> <!-- 11.3% -->
+
+          <select><ware ware="inv_hallucinogenics" min="1" max="2"/></select>
+          <select><ware ware="inv_needle" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_bandages" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_sedative" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_decryptionmodule" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_agidevice_02" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_securitydecryptionsystem" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_damagedsingularityengine" amount="1"/></select><!-- 4.5% -->
+		      <select><ware ware="inv_fluxcapacitor" amount="1"/></select><!-- 4.5% -->
+          <select><ware ware="inv_securitybypasssystem" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="6"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securityslicer" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_03" min="1" max="2"/></select> <!-- 11.3% -->        
+          <select><ware ware="modpart_extendedfuelcontainer" min="1" max="2" /></select>
+          <select><ware ware="modpart_highenergycatalyst" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumcrystallite" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumoxide" min="1" max="2" /></select>
+          <select><ware ware="modpart_tuningsoftware" min="1" max="2" /></select>        
+          <select><ware ware="modpart_enginefuelinjector_t1" amount="1" /></select>
+          <select><ware ware="modpart_shieldgeneratorcoil_t1" amount="1" /></select>
+          <select><ware ware="modpart_shipnanoweave_t1" amount="1" /></select>
+          <select><ware ware="modpart_weaponchamber_t1" amount="1" /></select>
+<!-- ****************************************************************OUR DROPS***************************************************************************** -->
+          <select><ware ware="inv_slave1" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_forgottenresearch" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_distressbeaconfreq" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_battlelog" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_prisonerzero" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_sectorkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmapdevice" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_tradenetworkkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_treasuremap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratehideout" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratebase" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_cyborgparts" min="1" max="3"/></select> <!-- 11.3% -->
+          
+          <select><ware ware="inv_gatemap" min="1" max="3"/></select> <!-- 11.3% -->
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_powerup_wares_01_macro" chance="10">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_digitalseminar_boarding" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_engineering" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_management" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_morale" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_piloting" min="1" max="3"/></select> <!-- 12.5% -->
+        </wares>
+        <money min="5000" max="22000"/>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_ammo_01_macro" chance="10">
+      <collectable>
+        <ammo selection="random">
+          <!-- dumbfire, guided, swarm, torpedo -->
+          <select macro="missile_torpedo_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_torpedo_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_cluster_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_cluster_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_emp_mk1_macro" min="1" max="4"/>
+          <select macro="missile_smart_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_smart_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_guided_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_guided_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_heatseeker_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_heatseeker_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk2_macro" min="1" max="3"/>
+          <select macro="missile_dumbfire_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_light_mk2_macro" min="1" max="3"/>
+        </ammo>
+      </collectable>
+    </drop>
+  </droplist>
+
+<!-- DROP LIST MEDIUM -->
+  <droplist id="Pirate_Drop_Medium">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="2" max="4">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_majaglit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securecontainer" min="1" max="10"/></select> <!-- 11.3% -->
+          
+          <select><ware ware="inv_hallucinogenics" min="1" max="2"/></select>
+          <select><ware ware="inv_needle" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_bandages" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_sedative" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_decryptionmodule" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_agidevice_02" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_securitydecryptionsystem" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_damagedsingularityengine" amount="1"/></select><!-- 4.5% -->
+		      <select><ware ware="inv_fluxcapacitor" amount="1"/></select><!-- 4.5% -->
+          <select><ware ware="inv_securitybypasssystem" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="6"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securityslicer" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_03" min="1" max="2"/></select> <!-- 11.3% -->        
+          <select><ware ware="modpart_extendedfuelcontainer" min="1" max="2" /></select>
+          <select><ware ware="modpart_highenergycatalyst" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumcrystallite" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumoxide" min="1" max="2" /></select>
+          <select><ware ware="modpart_tuningsoftware" min="1" max="2" /></select>        
+          <select><ware ware="modpart_enginefuelinjector_t1" amount="1" /></select>
+          <select><ware ware="modpart_shieldgeneratorcoil_t1" amount="1" /></select>
+          <select><ware ware="modpart_shipnanoweave_t1" amount="1" /></select>
+          <select><ware ware="modpart_weaponchamber_t1" amount="1" /></select>
+<!-- ****************************************************************OUR DROPS***************************************************************************** -->
+          <select><ware ware="inv_slave1" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_forgottenresearch" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_distressbeaconfreq" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_battlelog" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_prisonerzero" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_sectorkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmapdevice" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_tradenetworkkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_treasuremap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratehideout" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratebase" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_cyborgparts" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_gatemap" min="1" max="3"/></select> <!-- 11.3% -->
+          
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_powerup_wares_01_macro" chance="10">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_digitalseminar_boarding" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_engineering" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_management" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_morale" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_piloting" min="1" max="3"/></select> <!-- 12.5% -->
+        </wares>
+        <money min="5000" max="22000"/>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_ammo_01_macro" chance="10">
+      <collectable>
+        <ammo selection="random">
+          <!-- dumbfire, guided, swarm, torpedo -->
+          <select macro="missile_torpedo_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_torpedo_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_cluster_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_cluster_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_emp_mk1_macro" min="1" max="4"/>
+          <select macro="missile_smart_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_smart_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_guided_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_guided_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_heatseeker_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_heatseeker_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk2_macro" min="1" max="3"/>
+          <select macro="missile_dumbfire_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_light_mk2_macro" min="1" max="3"/>
+        </ammo>
+      </collectable>
+    </drop>
+  </droplist>
+<!-- DROP LIST LARGE -->
+<!-- ADD CEO ADMIRAL CAPTAIN -->
+  <droplist id="Pirate_Drop_Large">
+    <drop macro="sm_gen_wares_common_01_macro" chance="70"  min="3" max="8">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_majaglit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securecontainer" min="1" max="10"/></select> <!-- 11.3% -->
+          
+          <select><ware ware="inv_hallucinogenics" min="1" max="2"/></select>
+          <select><ware ware="inv_needle" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_bandages" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_sedative" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_decryptionmodule" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_agidevice_02" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_securitydecryptionsystem" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_damagedsingularityengine" amount="1"/></select><!-- 4.5% -->
+		      <select><ware ware="inv_fluxcapacitor" amount="1"/></select><!-- 4.5% -->
+          <select><ware ware="inv_securitybypasssystem" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="6"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securityslicer" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_03" min="1" max="2"/></select> <!-- 11.3% -->        
+          <select><ware ware="modpart_extendedfuelcontainer" min="1" max="2" /></select>
+          <select><ware ware="modpart_highenergycatalyst" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumcrystallite" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumoxide" min="1" max="2" /></select>
+          <select><ware ware="modpart_tuningsoftware" min="1" max="2" /></select>        
+          <select><ware ware="modpart_enginefuelinjector_t1" amount="1" /></select>
+          <select><ware ware="modpart_shieldgeneratorcoil_t1" amount="1" /></select>
+          <select><ware ware="modpart_shipnanoweave_t1" amount="1" /></select>
+          <select><ware ware="modpart_weaponchamber_t1" amount="1" /></select>
+<!-- ****************************************************************OUR DROPS***************************************************************************** -->
+          <select><ware ware="inv_slave1" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_forgottenresearch" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_distressbeaconfreq" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_battlelog" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_prisonerzero" min="1" max="12"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_prisoner1" min="1" max="3"/></select>
+          <select><ware ware="inv_prisoner2" min="1" max="2"/></select>
+          <select><ware ware="inv_prisoner3" min="1" max="1"/></select>
+          <select><ware ware="inv_prisoner4" min="1" max="3"/></select>
+          <select><ware ware="inv_sectorkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmapdevice" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_tradenetworkkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_treasuremap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratehideout" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratebase" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_cyborgparts" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_gatemap" min="1" max="3"/></select> <!-- 11.3% -->
+          
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_powerup_wares_01_macro" chance="10">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_digitalseminar_boarding" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_engineering" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_management" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_morale" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_piloting" min="1" max="3"/></select> <!-- 12.5% -->
+        </wares>
+        <money min="5000" max="22000"/>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_ammo_01_macro" chance="10">
+      <collectable>
+        <ammo selection="random">
+          <!-- dumbfire, guided, swarm, torpedo -->
+          <select macro="missile_torpedo_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_torpedo_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_cluster_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_cluster_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_emp_mk1_macro" min="1" max="4"/>
+          <select macro="missile_smart_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_smart_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_guided_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_guided_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_heatseeker_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_heatseeker_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk2_macro" min="1" max="3"/>
+          <select macro="missile_dumbfire_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_light_mk2_macro" min="1" max="3"/>
+        </ammo>
+      </collectable>
+    </drop>
+  </droplist>
+<!-- DROP LIST MODULE -->
+<!-- ADD CEO ADMIRAL CAPTAIN -->
+  <droplist id="Pirate_Drop_Module">
+    <drop macro="sm_gen_wares_common_01_macro" chance="90"  min="20" max="40">
+      <collectable>
+        <wares selection="random">
+        <!-- MAKE PRODUCTION WARES -->
+          <select><ware ware="inv_majaglit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securecontainer" min="1" max="10"/></select> <!-- 11.3% -->
+          
+          <select><ware ware="inv_hallucinogenics" min="1" max="2"/></select>
+          <select><ware ware="inv_needle" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_bandages" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_sedative" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_interfaceunit" min="1" max="30"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_programmablefieldarray" min="1" max="1"/></select> <!-- 19.6% -->
+          <select><ware ware="inv_spaceflyeggs" min="1" max="10"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_decryptionmodule" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_agidevice_02" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_securitydecryptionsystem" amount="1"/></select> <!-- 31.8% -->
+          <select><ware ware="inv_damagedsingularityengine" amount="1"/></select><!-- 4.5% -->
+		      <select><ware ware="inv_fluxcapacitor" amount="1"/></select><!-- 4.5% -->
+          <select><ware ware="inv_securitybypasssystem" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_01" min="1" max="6"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_securityslicer" min="1" max="2"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_agidevice_03" min="1" max="2"/></select> <!-- 11.3% -->        
+          <select><ware ware="modpart_extendedfuelcontainer" min="1" max="2" /></select>
+          <select><ware ware="modpart_highenergycatalyst" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumcrystallite" min="1" max="2" /></select>
+          <select><ware ware="modpart_nividiumoxide" min="1" max="2" /></select>
+          <select><ware ware="modpart_tuningsoftware" min="1" max="2" /></select>        
+          <select><ware ware="modpart_enginefuelinjector_t1" amount="1" /></select>
+          <select><ware ware="modpart_shieldgeneratorcoil_t1" amount="1" /></select>
+          <select><ware ware="modpart_shipnanoweave_t1" amount="1" /></select>
+          <select><ware ware="modpart_weaponchamber_t1" amount="1" /></select>
+<!-- ****************************************************************OUR DROPS***************************************************************************** -->
+          <select><ware ware="inv_slave1" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_forgottenresearch" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_distressbeaconfreq" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_battlelog" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_prisonerzero" min="1" max="20"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_prisoner1" min="1" max="3"/></select>
+          <select><ware ware="inv_prisoner2" min="1" max="3"/></select>
+          <select><ware ware="inv_prisoner3" min="1" max="2"/></select>
+          <select><ware ware="inv_prisoner4" min="1" max="3"/></select>
+          <select><ware ware="inv_sectorkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_stellarmapdevice" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_tradenetworkkey" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_treasuremap" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratehideout" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_locationpiratebase" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_cyborgparts" min="1" max="3"/></select> <!-- 11.3% -->
+          <select><ware ware="inv_gatemap" min="1" max="3"/></select> <!-- 11.3% -->
+          
+        </wares>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_powerup_wares_01_macro" chance="90">
+      <collectable>
+        <wares selection="random">
+          <select><ware ware="inv_digitalseminar_boarding" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_engineering" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_management" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_morale" min="1" max="3"/></select> <!-- 12.5% -->
+          <select><ware ware="inv_digitalseminar_piloting" min="1" max="3"/></select> <!-- 12.5% -->
+        </wares>
+        <money min="5000" max="22000"/>
+      </collectable>
+    </drop>
+    <drop macro="sm_gen_ammo_01_macro" chance="90">
+      <collectable>
+        <ammo selection="random">
+          <!-- dumbfire, guided, swarm, torpedo -->
+          <select macro="missile_torpedo_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_torpedo_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_cluster_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_cluster_light_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_swarm_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_emp_mk1_macro" min="1" max="4"/>
+          <select macro="missile_smart_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_smart_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_guided_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_guided_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_heatseeker_heavy_mk1_macro" min="1" max="3"/>
+          <select macro="missile_heatseeker_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_heavy_mk2_macro" min="1" max="3"/>
+          <select macro="missile_dumbfire_light_mk1_macro" min="1" max="4"/>
+          <select macro="missile_dumbfire_light_mk2_macro" min="1" max="3"/>
+        </ammo>
+      </collectable>
+    </drop>
+  </droplist>
+
+</add>
+</diff>

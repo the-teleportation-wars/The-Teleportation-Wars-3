@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<diff>
+    <add sel="/ships">
+                <ship id="pirate_builder_xl" group="arg_builder_xl">
+                    <category tags="[builder, mission]" faction="pirate" size="ship_xl"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <drop ref="ship_large_civilian"/>
+                    <!--TODO @Owen #EntityTypes Implement a people defaults so we don't have to copy and paste the same stuff into every definition. Ship::Defaults?-->
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_resupplier_xl" group="arg_resupplier_xl">
+                    <category tags="[resupplier, mission]" faction="pirate" size="ship_xl"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <drop ref="ship_large_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+
+                <ship id="pirate_trader_container_l" group="arg_trader_container_l">
+                    <category tags="[trader, container, mission]" faction="pirate" size="ship_l"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="all_container"/>
+                    <drop ref="ship_large_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_trader_container_m" group="arg_trader_container_m">
+                    <category tags="[trader, container, mission]" faction="pirate" size="ship_m"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="all_container"/>
+                    <drop ref="ship_medium_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_trader_container_s" group="arg_trader_container_s">
+                    <category tags="[trader, container, mission]" faction="pirate" size="ship_s"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="all_container"/>
+                    <drop ref="ship_small_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+
+                <ship id="pirate_miner_solid_l" group="arg_miner_solid_l">
+                    <category tags="[miner, solid, mission]" faction="pirate" size="ship_l"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="minerals"/>
+                    <drop ref="ship_large_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_miner_liquid_l" group="arg_miner_liquid_l">
+                    <category tags="[miner, liquid, mission]" faction="pirate" size="ship_l"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="gases"/>
+                    <drop ref="ship_large_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_miner_solid_m" group="arg_miner_solid_m">
+                    <category tags="[miner, solid, mission]" faction="pirate" size="ship_m"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="minerals"/>
+                    <drop ref="ship_medium_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_miner_liquid_m" group="arg_miner_liquid_m">
+                    <category tags="[miner, liquid, mission]" faction="pirate" size="ship_m"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="gases"/>
+                    <drop ref="ship_medium_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_miner_solid_s" group="arg_miner_solid_s">
+                    <category tags="[miner, solid, mission]" faction="pirate" size="ship_s"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="minerals"/>
+                    <drop ref="ship_small_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_miner_solid_mixed"  group="arg_miner_solid_mixed">
+                    <category tags="[miner, solid, mixed]" faction="pirate"/>
+                    <owner exact="argon" overridenpc="true"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="minerals"/>
+                    <drop ref="ship_medium_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+                <ship id="pirate_miner_liquid_mixed"  group="arg_miner_liquid_mixed">
+                    <category tags="[miner, liquid, mixed]" faction="pirate"/>
+                    <owner exact="argon" overridenpc="true"/>
+                    <pilot>
+                        <select faction="pirate" tags="traderpilot"/>
+                    </pilot>
+                    <basket basket="gases"/>
+                    <drop ref="ship_medium_civilian"/>
+                    <people ref="argon_freighter_crew"/>
+                </ship>
+
+                <ship id="pirate_carrier_xl" group="arg_carrier_xl">
+                    <category tags="[military, carrier, mission]" faction="pirate" size="ship_xl"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_large_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>
+                <ship id="pirate_destroyer_l" group="arg_destroyer_l">
+                    <category tags="[military, destroyer, mission]" faction="pirate" size="ship_l"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_large_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>
+                <ship id="pirate_frigate_m" group="arg_frigate_m">
+                    <category tags="[military, medium, frigate, mission]" faction="pirate" size="ship_m"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_small_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>
+                <ship id="pirate_bomber_m" group="arg_bomber_m">
+                    <category tags="[military, medium, bomber, mission]" faction="pirate" size="ship_m"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_small_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>
+                <!--<ship id="pirate_fighter_s" group="arg_fighter_s">
+                    <category tags="[military, fighter, heavy, light, selection, mission]" faction="pirate" size="ship_s"/>
+                    <pilot>
+                    <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_small_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>-->
+                <ship id="pirate_fighter_heavy_s" group="arg_fighter_heavy_s">
+                    <category tags="[military, fighter, heavy, selection, mission]" faction="pirate" size="ship_s"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_small_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>
+                <ship id="pirate_fighter_light_s" group="arg_fighter_light_s">
+                    <category tags="[military, fighter, light, selection, mission]" faction="pirate" size="ship_s"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_small_military"/>
+                </ship>
+                <ship id="pirate_scout_s" group="arg_scout_s">
+                    <category tags="[military, scout, light, mission]" faction="pirate" size="ship_s"/>
+                    <pilot>
+                        <select faction="pirate" tags="fighterpilot"/>
+                    </pilot>
+                    <drop ref="ship_small_military"/>
+                    <people ref="argon_military_crew"/>
+                </ship>
+
+
+        <ship id="pirate_courier" group="pirate_couriers">
+            <category tags="[courierpirate]" faction="pirate" size="ship_s"/>
+            <pilot>
+                <select faction="pirate" tags="fighterpilot"/>
+            </pilot>
+            <drop ref="Pirate_Drop_Small"/>
+            <people ref="argon_military_crew"/>
+        </ship>
+
+        <ship id="pirate_fighter" group="pirate_fighters">
+            <category tags="[fighterpirate]" faction="pirate" size="ship_s"/>
+            <pilot>
+                <select faction="pirate" tags="fighterpilot"/>
+            </pilot>
+            <drop ref="Pirate_Drop_Small"/>
+            <people ref="argon_military_crew"/>
+        </ship>
+
+        <ship id="pirate_trader" group="pirate_traders">
+            <category tags="[traderpirate]" faction="pirate" size="ship_m"/>
+            <pilot>
+                <select faction="pirate" tags="traderpilot"/>
+            </pilot>
+            <basket basket="all_container"/>
+            <drop ref="Pirate_Drop_Medium"/>
+            <people ref="argon_freighter_crew"/>
+        </ship>
+
+        <ship id="pirate_freighter" group="pirate_freighters">
+            <category tags="[freighterpirate]" faction="pirate" size="ship_l"/>
+            <pilot>
+                <select faction="pirate" tags="traderpilot"/>
+            </pilot>
+            <drop ref="Pirate_Drop_Large"/>
+            <people ref="argon_freighter_crew"/>
+        </ship>
+
+        <ship id="pirate_frigate" group="pirate_frigates">
+            <category tags="[frigatepirate]" faction="pirate" size="ship_m"/>
+            <pilot>
+                <select faction="pirate" tags="fighterpilot"/>
+            </pilot>
+            <drop ref="Pirate_Drop_Medium"/>
+            <people ref="argon_military_crew"/>
+        </ship>
+
+        <ship id="pirate_destroyer" group="pirate_destroyers">
+            <category tags="[destroyerpirate]" faction="pirate" size="ship_l"/>
+            <pilot>
+                <select faction="pirate" tags="fighterpilot"/>
+            </pilot>
+            <drop ref="Pirate_Drop_Large"/>
+            <people ref="argon_military_crew"/>
+        </ship>
+
+        <ship id="pirate_carrier" group="pirate_carriers">
+            <category tags="[carrierpirate]" faction="pirate" size="ship_xl"/>
+            <pilot>
+                <select faction="pirate" tags="fighterpilot"/>
+            </pilot>
+            <drop ref="Pirate_Drop_Large"/>
+            <people ref="argon_military_crew"/>
+        </ship>
+
+    </add>
+</diff>

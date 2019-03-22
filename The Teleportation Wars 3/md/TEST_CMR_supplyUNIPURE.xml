@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="CMR_supply" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://utnas/~unitrader/XRebirthxsds/md.xsd">
+    <cues>
+        <cue name="Init" checktime="player.age + 10s" checkinterval="30s" instantiate="true">
+            <actions>
+                <find_ship groupname="global.$PlayerCarrier" space="player.galaxy" multiple="true" shiptype="shiptype.carrier" owner="faction.player"> 
+                    <match_loadout wares="[ware.software_tpwar_carrierresupply]" />
+                </find_ship>
+            </actions>
+        </cue>
+
+          
+        
+        <cue name="CMR_supply" instantiate="true" checktime="player.age + 10s" checkinterval="15s" namespace="this">
+
+            <actions>
+                <!-- <find_ship groupname="global.$PlayerCarrier" space="player.galaxy" multiple="true" shiptype="shiptype.carrier" owner="faction.player"> 
+                    <match_loadout wares="[ware.software_tpwar_carrierresupply]" />
+                </find_ship> -->
+                <do_all exact="global.$PlayerCarrier.count" counter="$c">
+
+                        <set_value name="$CMissilesFree" exact="global.$PlayerCarrier.{$c}.ammostorage.missile.free"/>
+                        <do_if value="$CMissilesFree gt 0">
+                            <!-- <do_all exact="$CMissilesFree / 200"> -->
+                            <do_all exact="1">
+                                <do_any>
+                                    <do_all>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalone">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavyclusterone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalone">
+                                            <set_value name="$MissileComponentsOne" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponentsOne gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_cluster_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponentsOne"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalone"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvaltwo">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightclusterone]" />
+                                        </check_object>
+                                        <do_if value="$resultvaltwo">
+                                            <set_value name="$MissileComponentsTwo" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponentsTwo gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_cluster_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponentsTwo"/>
+                                        </do_if>
+                                        <remove_value name="$resultvaltwo"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalthree">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavydumbone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalthree">
+                                            <set_value name="$MissileComponentsThree" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponentsThree gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponentsThree"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalthree"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalfour">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavydumbtwo]" />
+                                        </check_object>
+                                        <do_if value="$resultvalfour">
+                                            <set_value name="$MissileComponentsFour" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponentsFour gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_heavy_mk2_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponentsFour"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalfour"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalfive">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightdumbone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalfive">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalfive"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalsix">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightdumbtwo]" />
+                                        </check_object>
+                                        <do_if value="$resultvalsix">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_light_mk2_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalsix"/>
+
+                                    </do_all>
+                                    <do_all>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalseven">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightheatseekerone]"/>
+                                        </check_object>
+                                        <do_if value="$resultvalseven">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_heatseeker_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalseven"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvaleight">
+                                            <match_loadout wares="[ware.software_tpwar_prodempone]" />
+                                        </check_object>
+                                        <do_if value="$resultvaleight">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_emp_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvaleight"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalnine">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavyguideone]"/>
+                                        </check_object>
+                                        <do_if value="$resultvalnine">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_guided_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalnine"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalten">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightguideone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalten">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_guided_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalten"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvaleleven">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavyheatseekerone]" />
+                                        </check_object>
+                                        <do_if value="$resultvaleleven">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_heatseeker_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvaleleven"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvaltwelve">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavysmartone]" />
+                                        </check_object>
+                                        <do_if value="$resultvaltwelve">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_smart_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvaltwelve"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvaltthirteen">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightsmartone]" />
+                                        </check_object>
+                                        <do_if value="$resultvaltthirteen">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_smart_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvaltthirteen"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalfourteen">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavyswarmone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalfourteen">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_swarm_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalfourteen"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalfifteen">
+                                            <match_loadout wares="[ware.software_tpwar_prodlightswarmtone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalfifteen">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <do_if value="$MissileComponents gt 2">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_swarm_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="20" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalfifteen"/>
+
+                                    </do_all>
+                                    <do_all>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalsixteen">
+                                            <match_loadout wares="[ware.software_tpwar_prodheavytorpedoone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalsixteen">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <set_value name="$AntimatterCells" exact="global.$PlayerCarrier.{$c}.cargo.{ware.antimattercells}.count"/>
+                                            <do_if value="$MissileComponents ge 40 and $AntimatterCells ge 20">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_torpedo_heavy_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="40" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.antimattercells" exact="7" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                            <remove_value name="$AntimatterCells"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalsixteen"/>
+
+                                        <check_object object="global.$PlayerCarrier.{$c}" result="$resultvalseventeen">
+                                            <match_loadout wares="[ware.software_tpwar_prodlighttorpedotone]" />
+                                        </check_object>
+                                        <do_if value="$resultvalseventeen">
+                                            <set_value name="$MissileComponents" exact="global.$PlayerCarrier.{$c}.cargo.{ware.missilecomponents}.count"/>
+                                            <set_value name="$AntimatterCells" exact="global.$PlayerCarrier.{$c}.cargo.{ware.antimattercells}.count"/>
+                                            <do_if value="$MissileComponents ge 40 and $AntimatterCells ge 20">
+                                                <add_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_torpedo_light_mk1_macro" amount="20" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.missilecomponents" exact="40" />
+                                                <remove_cargo object="global.$PlayerCarrier.{$c}" ware="ware.antimattercells" exact="5" />
+                                            </do_if>
+                                            <remove_value name="$MissileComponents"/>
+                                            <remove_value name="$AntimatterCells"/>
+                                        </do_if>
+                                        <remove_value name="$resultvalseventeen"/>
+
+                                    </do_all>
+                                </do_any>
+                            </do_all>
+                        </do_if>
+
+            <!-- GIVE MISSILES TO DOCKED SHIPS -->
+<!-- IF DOCKED FIGHTERS SLOW, MAKE CARRIER AMMO STORAGE CHECK OUTSIDE AND USE DOIF TO CHECK IF CARRIER EVEN HAS ANY AMMO IT COULD GIVE -->
+
+                            <find_object_component groupname="$Dockedships" object="global.$PlayerCarrier.{$c}" multiple="true" docked="true" class="class.ship" includeobjects="true"/>
+                            <do_all exact="$Dockedships.count" counter="$d">
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_heatseeker_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_heatseeker_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_heatseeker_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_heatseeker_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_heatseeker_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_heatseeker_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_cluster_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_cluster_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_cluster_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_cluster_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_cluster_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_cluster_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_cluster_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_cluster_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_cluster_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_cluster_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_cluster_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_cluster_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_dumbfire_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_dumbfire_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_dumbfire_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_dumbfire_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_dumbfire_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_dumbfire_heavy_mk2" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_dumbfire_heavy_mk2_macro}.count"/>
+                                    <do_if value="$missile_dumbfire_heavy_mk2 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_dumbfire_heavy_mk2_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_dumbfire_heavy_mk2_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_heavy_mk2_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_dumbfire_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_dumbfire_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_dumbfire_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_dumbfire_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_dumbfire_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_dumbfire_light_mk2" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_dumbfire_light_mk2_macro}.count"/>
+                                    <do_if value="$missile_dumbfire_light_mk2 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_dumbfire_light_mk2_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_dumbfire_light_mk2_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_dumbfire_light_mk2_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_emp_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_emp_mk1_macro}.count"/>
+                                    <do_if value="$missile_emp_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_emp_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_emp_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_emp_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_guided_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_guided_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_guided_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_guided_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_guided_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_guided_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_guided_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_guided_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_guided_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_guided_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_guided_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_guided_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_heatseeker_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_heatseeker_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_heatseeker_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_heatseeker_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_heatseeker_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_heatseeker_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_smart_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_smart_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_smart_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_smart_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_smart_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_smart_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_smart_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_smart_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_smart_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_smart_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_smart_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_smart_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_swarm_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_swarm_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_swarm_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_swarm_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_swarm_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_swarm_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_swarm_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_swarm_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_swarm_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_swarm_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_swarm_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_swarm_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_torpedo_heavy_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_torpedo_heavy_mk1_macro}.count"/>
+                                    <do_if value="$missile_torpedo_heavy_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_torpedo_heavy_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_torpedo_heavy_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_torpedo_heavy_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                                <remove_value name="$MissilesFree" />
+                                <set_value name="$MissilesFree" exact="$Dockedships.{$d}.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <set_value name="$missile_torpedo_light_mk1" exact="global.$PlayerCarrier.{$c}.ammostorage.{macro.missile_torpedo_light_mk1_macro}.count"/>
+                                    <do_if value="$missile_torpedo_light_mk1 gt $MissilesFree">
+                                        <find_object_component groupname="$Weapons" object="$Dockedships.{$d}" multiple="true" class="class.weapon" includeobjects="true"/>
+                                        <do_all exact="$Weapons.count" counter="$w">
+                                            <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_torpedo_light_mk1_macro}">
+                                                <add_ammo object="$Dockedships.{$d}" macro="macro.missile_torpedo_light_mk1_macro" amount="$MissilesFree" />
+                                                <remove_ammo object="global.$PlayerCarrier.{$c}" macro="macro.missile_torpedo_light_mk1_macro" amount="$MissilesFree" />
+                                            </do_if>
+                                        </do_all>
+                                    </do_if>
+                                </do_if>
+                            </do_all>
+                    <!-- </do_if> -->
+                    <!-- <remove_value name="$resultval" /> -->
+                </do_all>      
+            </actions>
+        </cue>
+    </cues> 
+</mdscript>
+
+

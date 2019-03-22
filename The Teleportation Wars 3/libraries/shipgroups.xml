@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<diff>
+    <add sel="/groups">
+
+    <!-- COURIERS -->
+        <group name="pirate_couriers">
+            <select macro="ship_arg_s_trans_container_01_a_macro"/>
+            <select macro="ship_arg_s_trans_container_01_b_macro" />
+            <select macro="ship_arg_s_trans_container_02_a_macro" />
+            <select macro="ship_arg_s_trans_container_02_b_macro" />
+            <select macro="ship_par_s_trans_container_01_a_macro"/>
+            <select macro="ship_par_s_trans_container_01_b_macro"/>
+            <select macro="ship_tel_s_trans_container_01_a_macro"/>
+            <select macro="ship_tel_s_trans_container_01_b_macro"/>
+            <select macro="ship_arg_s_trans_container_01_a_macro" /> 
+            <select macro="ship_arg_s_trans_container_01_a_macro" />
+            <select macro="ship_arg_s_trans_container_02_a_macro"/>
+            <select macro="ship_arg_s_trans_container_02_b_macro"/>
+        </group>
+        
+    <!-- FIGHTERS -->
+        <group name="pirate_fighters">
+            <select macro="ship_arg_s_heavyfighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_01_a_macro" />
+            <select macro="ship_arg_s_fighter_01_b_macro" />
+            <select macro="ship_arg_s_fighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_02_b_macro" />
+            <select macro="ship_arg_s_fighter_04_a_macro" />
+            <select macro="ship_arg_s_heavyfighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_04_a_macro" />
+            <select macro="ship_arg_s_fighter_01_a_macro" />
+            <select macro="ship_arg_s_fighter_01_b_macro" />
+            <select macro="ship_arg_s_fighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_04_a_macro" />
+            <select macro="ship_arg_s_scout_01_a_macro" />
+            <select macro="ship_arg_s_scout_01_b_macro" />
+            <select macro="ship_arg_s_heavyfighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_01_b_macro" />
+            <select macro="ship_arg_s_fighter_01_a_macro" />
+            <select macro="ship_arg_s_fighter_02_b_macro" />
+            <select macro="ship_arg_s_fighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_03_a_macro" />
+            <select macro="ship_arg_s_heavyfighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_03_a_macro" />
+            <select macro="ship_arg_s_fighter_01_b_macro" />
+            <select macro="ship_arg_s_fighter_01_a_macro" />
+            <select macro="ship_arg_s_fighter_02_b_macro" />
+            <select macro="ship_arg_s_fighter_02_a_macro" />
+            <select macro="ship_arg_s_fighter_03_a_macro" />
+            <select macro="ship_arg_s_scout_01_b_macro" />
+            <select macro="ship_arg_s_scout_01_a_macro" />
+            <select macro="ship_par_s_fighter_01_a_macro" />
+            <select macro="ship_par_s_fighter_02_a_macro" />
+            <select macro="ship_par_s_scout_01_a_macro"/>
+            <select macro="ship_par_s_fighter_01_b_macro" />
+            <select macro="ship_par_s_fighter_02_b_macro" />
+            <select macro="ship_par_s_scout_01_b_macro"/>
+            <select macro="ship_tel_s_fighter_01_a_macro" />
+            <select macro="ship_tel_s_fighter_01_b_macro" />
+            <select macro="ship_tel_s_fighter_02_a_macro" />
+            <select macro="ship_tel_s_fighter_02_b_macro" />
+            <select macro="ship_tel_s_scout_01_a_macro"/>
+            <select macro="ship_tel_s_scout_01_b_macro"/>
+            <select macro="ship_tel_s_scout_02_a_macro"/>
+            <select macro="ship_tel_s_scout_02_b_macro"/>
+        </group>
+
+    <!-- TRADERS -->
+        <group name="pirate_traders">
+            <select macro="ship_arg_m_trans_container_01_a_macro" />
+            <select macro="ship_arg_m_trans_container_01_b_macro" />
+            <select macro="ship_arg_m_trans_container_02_a_macro" />
+            <select macro="ship_arg_m_trans_container_02_b_macro" />
+            <select macro="ship_arg_m_trans_container_01_b_macro" />
+            <select macro="ship_arg_m_trans_container_01_a_macro" />
+            <select macro="ship_arg_m_trans_container_02_b_macro" />
+            <select macro="ship_arg_m_trans_container_02_a_macro" />
+            <select macro="ship_par_m_trans_container_01_a_macro"/>
+            <select macro="ship_par_m_trans_container_02_a_macro"/>
+            <select macro="ship_par_m_trans_container_01_b_macro"/>
+            <select macro="ship_par_m_trans_container_02_b_macro"/>
+            <select macro="ship_tel_m_trans_container_01_a_macro"/>
+            <select macro="ship_tel_m_trans_container_01_b_macro"/>
+            <select macro="ship_tel_m_trans_container_02_a_macro"/>
+            <select macro="ship_tel_m_trans_container_02_b_macro"/>
+            <select macro="ship_arg_m_miner_solid_01_a_macro" />
+            <select macro="ship_arg_m_miner_solid_01_b_macro" />
+            <select macro="ship_arg_m_miner_liquid_01_a_macro" />
+            <select macro="ship_arg_m_miner_liquid_01_b_macro" />
+            <select macro="ship_arg_m_miner_solid_01_b_macro" />
+            <select macro="ship_arg_m_miner_solid_01_a_macro" />
+            <select macro="ship_arg_m_miner_liquid_01_b_macro" />
+            <select macro="ship_arg_m_miner_liquid_01_a_macro" />
+            <select macro="ship_par_m_miner_solid_01_a_macro"/>
+            <select macro="ship_par_m_miner_liquid_01_a_macro"/>
+            <select macro="ship_par_m_miner_solid_01_a_macro"/>
+            <select macro="ship_par_m_miner_solid_01_b_macro"/>
+            <select macro="ship_par_m_miner_liquid_01_b_macro"/>
+            <select macro="ship_tel_m_miner_solid_01_a_macro"/>
+            <select macro="ship_tel_m_miner_solid_01_b_macro"/>
+            <select macro="ship_tel_m_miner_liquid_01_a_macro"/>
+            <select macro="ship_tel_m_miner_liquid_01_b_macro"/>
+        </group>
+
+    <!-- FREIGHTERS -->
+        <group name="pirate_freighters">
+            <select macro="ship_arg_l_trans_container_01_a_macro" />
+            <select macro="ship_arg_l_trans_container_01_b_macro" />
+            <select macro="ship_arg_l_trans_container_02_a_macro" />
+            <select macro="ship_arg_l_trans_container_02_b_macro" />
+            <select macro="ship_arg_l_trans_container_03_a_macro" />
+            <select macro="ship_arg_l_trans_container_03_b_macro" />
+            <select macro="ship_arg_l_trans_container_04_a_macro" />
+            <select macro="ship_arg_l_trans_container_04_b_macro" />
+            <select macro="ship_arg_l_trans_container_05_a_macro" />
+            <select macro="ship_arg_l_trans_container_05_b_macro" />
+            <select macro="ship_arg_l_trans_container_01_b_macro" />
+            <select macro="ship_arg_l_trans_container_01_a_macro" />
+            <select macro="ship_arg_l_trans_container_02_b_macro" />
+            <select macro="ship_arg_l_trans_container_02_a_macro" />
+            <select macro="ship_arg_l_trans_container_03_b_macro" />
+            <select macro="ship_arg_l_trans_container_03_a_macro" />
+            <select macro="ship_arg_l_trans_container_04_b_macro" />
+            <select macro="ship_arg_l_trans_container_04_a_macro" />
+            <select macro="ship_arg_l_trans_container_05_b_macro" />
+            <select macro="ship_arg_l_trans_container_05_a_macro" />
+            <select macro="ship_par_l_trans_container_01_a_macro"/>
+            <select macro="ship_par_l_trans_container_02_a_macro"/>
+            <select macro="ship_par_l_trans_container_01_b_macro"/>
+            <select macro="ship_par_l_trans_container_02_b_macro"/>
+            <select macro="ship_tel_l_trans_container_01_a_macro"/>
+            <select macro="ship_tel_l_trans_container_01_b_macro"/>
+            <select macro="ship_tel_l_trans_container_02_a_macro"/>
+            <select macro="ship_tel_l_trans_container_02_b_macro"/>
+            <select macro="ship_arg_l_miner_solid_01_a_macro" />
+            <select macro="ship_arg_l_miner_solid_01_b_macro" />
+            <select macro="ship_arg_l_miner_liquid_01_a_macro" />
+            <select macro="ship_arg_l_miner_liquid_01_b_macro" />
+            <select macro="ship_arg_l_miner_solid_01_b_macro" />
+            <select macro="ship_arg_l_miner_solid_01_a_macro" />
+            <select macro="ship_arg_l_miner_liquid_01_b_macro" />
+            <select macro="ship_arg_l_miner_liquid_01_a_macro" />
+            <select macro="ship_par_l_miner_solid_01_a_macro"/>
+            <select macro="ship_par_l_miner_liquid_01_a_macro"/>
+            <select macro="ship_par_l_miner_solid_01_b_macro"/>
+            <select macro="ship_par_l_miner_liquid_01_b_macro"/>
+            <select macro="ship_tel_l_miner_solid_01_a_macro"/>
+            <select macro="ship_tel_l_miner_solid_01_b_macro"/>
+            <select macro="ship_tel_l_miner_liquid_01_a_macro"/>
+            <select macro="ship_tel_l_miner_liquid_01_b_macro"/>        
+        </group>
+
+    <!-- FRIGATES -->
+        <group name="pirate_frigates">
+            <select macro="ship_tel_m_frigate_01_a_macro"/>
+            <select macro="ship_tel_m_frigate_01_b_macro"/>
+            <select macro="ship_par_m_frigate_01_b_macro"/>
+            <select macro="ship_par_m_frigate_01_a_macro"/>
+            <select macro="ship_arg_m_frigate_01_b_macro"/>
+            <select macro="ship_arg_m_frigate_01_a_macro"/>
+            <select macro="ship_arg_m_bomber_01_a_macro"/>
+            <select macro="ship_arg_m_bomber_01_b_macro"/>
+            <select macro="ship_tel_m_bomber_01_a_macro"/>
+            <select macro="ship_tel_m_bomber_01_b_macro"/>
+            <select macro="ship_arg_m_bomber_02_a_macro" />
+            <select macro="ship_par_m_corvette_01_a_macro"/>
+            <select macro="ship_par_m_corvette_01_b_macro"/>
+        </group>
+
+    <!-- DESTROYERS -->
+        <group name="pirate_destroyers">
+            <select macro="ship_arg_l_destroyer_01_a_macro"/>
+            <select macro="ship_arg_l_destroyer_01_b_macro"/>
+            <select macro="ship_par_l_destroyer_01_a_macro"/>
+            <select macro="ship_par_l_destroyer_01_b_macro"/>
+            <select macro="ship_tel_l_destroyer_01_a_macro"/>
+            <select macro="ship_tel_l_destroyer_01_b_macro"/>
+        </group> 
+
+    <!-- CARRIERS -->
+        <group name="pirate_carriers">
+            <select macro="ship_arg_xl_carrier_01_a_macro"/>
+            <select macro="ship_arg_xl_carrier_01_b_macro"/>
+            <select macro="ship_par_xl_carrier_01_a_macro"/>
+            <select macro="ship_par_xl_carrier_01_b_macro"/>
+            <select macro="ship_tel_xl_carrier_01_a_macro"/>
+            <select macro="ship_tel_xl_carrier_01_b_macro"/>
+        </group>
+
+    </add>
+</diff>

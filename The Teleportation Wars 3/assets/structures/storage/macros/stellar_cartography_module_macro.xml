@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Florian (192.168.3.134) at 06.11.2018_14-49-24-->
+
+
+
+<macros>
+  <macro name="stellar_cartography_module_macro" class="storage">
+    <component ref="storage_arg_l_container_01" />
+    <properties>
+      <identification name="Stellar Cartography Module" shortname="Cartography" makerrace="argon" size="large" description="{20104,20302}" />
+      <cargo max="1000000" tags="container" />
+      <build>
+        <sets>
+          <set ref="factory" />
+          <set ref="headquarters_player" />
+          <set ref="piratebase" />
+        </sets>
+      </build>
+      <explosiondamage value="10000" />
+      <hull max="565000" />
+      <secrecy level="1" />
+    </properties>
+  </macro>
+</macros>

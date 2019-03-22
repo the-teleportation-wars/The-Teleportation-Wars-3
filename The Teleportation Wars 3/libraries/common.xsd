@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:simpleType name="factionlookup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="meditech">
+        <xs:annotation>
+          <xs:documentation>
+            Meditech Faction
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="factionexprlookup">
+    <xs:union memberTypes="expression">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="faction.meditech">
+            <xs:annotation>
+              <xs:documentation>
+                Meditech Faction
+              </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="factionlookup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pirate">
+        <xs:annotation>
+          <xs:documentation>
+            Pirate Faction
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="factionexprlookup">
+    <xs:union memberTypes="expression">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="faction.pirate">
+            <xs:annotation>
+              <xs:documentation>
+                Pirate Faction
+              </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>

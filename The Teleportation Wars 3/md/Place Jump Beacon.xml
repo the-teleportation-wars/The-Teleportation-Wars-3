@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Place_Jump_Beacon" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+    <cues>
+        <cue name="Jumping_Bacon">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart" />
+            </conditions>
+            <actions>
+                <find_sector groupname="$SectorGroup" space="player.galaxy" multiple="true"/>
+                <do_all exact="$SectorGroup.count" counter="$i" >
+                    <create_object name="$Beacon" macro="macro.tpwar_jump_beacon_t1_macro" owner="faction.player" sector="$SectorGroup.{$i}">
+                        <safepos min="10km" max="50km" />
+                    </create_object>
+                </do_all>
+            </actions>
+        </cue>
+    </cues>
+</mdscript>

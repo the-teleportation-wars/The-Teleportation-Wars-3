@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Find_OwnerLess_Scan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+    <cues>
+        <cue name="Find_Ownerless" instantiate="true" namespace="this">
+            <conditions>
+                <event_long_range_scan_sent object="player.entity"/>
+            </conditions>
+            <actions>
+                <find_object groupname="$ownerless" space="player.sector" owner="faction.ownerless" multiple="true"/>
+            </actions>
+
+            <cues>
+                <cue name="Find_Ownerless_Check_Loop">
+                    <delay exact="2ms"/>
+                    <actions>
+                        <find_object groupname="$Habmodulescan" space="player.galaxy" owner="faction.player" multiple="true" macro="macro.hab_arg_l_01_macro"/>
+                        <do_if value="not $Habmodulescan?">
+                            <find_object groupname="$Habmodulescan" space="player.galaxy" owner="faction.player" multiple="true" macro="macro.hab_tel_l_01_macro"/>
+                        </do_if>
+                        <do_if value="not $Habmodulescan?">
+                            <find_object groupname="$Habmodulescan" space="player.galaxy" owner="faction.player" multiple="true" macro="macro.hab_par_l_01_macro"/>
+                        </do_if>
+
+                        <do_if value="$Habmodulescan?" >
+                            <do_if value="$ownerless.count">
+                                <signal_cue_instantly cue="Find_Ownerless_Check_Search" param="$ownerless.{1}"/>
+                                <remove_from_group group="$ownerless" object="$ownerless.{1}"/>
+                                <remove_value name="$Habmodulescan"/>
+                                <reset_cue cue="this"/>
+                            </do_if>
+                            <do_else>
+                                <remove_value name="$ownerless"/>
+                            </do_else>
+                        </do_if>
+                        <do_else>
+                            <remove_value name="$ownerless"/>
+                        </do_else>                      
+                    </actions>
+                </cue>
+
+                <cue name="Find_Ownerless_Check_Search" instantiate="true" namespace="this">
+                    <conditions>
+                        <event_cue_signalled/>
+                    </conditions>
+                    <delay min="1s" max="10s"/>
+                    <actions>
+                        <set_value name="$ownerless" exact="event.param"/>
+
+                        <set_object_name object="$ownerless" name="'Unknown Contact'"/>
+
+                        <set_value name="$textHeader" exact="'Unknown Contact found in %1\n'.[$ownerless.sector.name]"/>
+                        <set_value name="$textBody" exact="'Contact Position: x=%1, y=%2, z=%3\n'.[$ownerless.zone.position.x, $ownerless.zone.position.y, $ownerless.zone.position.z]"/>
+
+                        <show_notification text="$textHeader + $textBody" timeout="10s"/>
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$ownerless" category="tips"/>
+
+                            <set_known object="$ownerless" known="true" updatesnapshot="true"/>
+                            <set_known object="$ownerless.zone" known="true"/>
+                            <set_known object="$ownerless.sector" known="true"/>
+                            <set_known object="$ownerless.cluster" known="true"/>
+
+                        <remove_value name="$ownerless"/>
+                        <remove_value name="$textHeader"/>
+                        <remove_value name="$textBody"/>
+                    </actions>
+                </cue>
+            </cues>
+        </cue>
+    </cues>    
+</mdscript>

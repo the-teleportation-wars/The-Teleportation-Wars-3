@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Michael (192.168.3.81) at 21.11.2018_21-27-31-->
+
+<!-- ZEUS SENTINEL -->
+
+<diff>
+    <add sel="/macros/macro/properties/software">
+
+        <software ware="software_tpwar_jumpdrive" compatible="1" />
+        <software ware="software_tpwar_ejumpdrive" compatible="1" />
+        <software ware="software_tpwar_carrierresupply" compatible="1" />
+        <software ware="software_tpwar_prodlightheatseekerone" compatible="1" />
+        <software ware="software_tpwar_prodheavyclusterone" compatible="1" />
+        <software ware="software_tpwar_prodlightclusterone" compatible="1" />
+        <software ware="software_tpwar_prodheavydumbone" compatible="1" />
+        <software ware="software_tpwar_prodheavydumbtwo" compatible="1" />
+        <software ware="software_tpwar_prodlightdumbone" compatible="1" />
+        <software ware="software_tpwar_prodlightdumbtwo" compatible="1" />
+        <software ware="software_tpwar_prodempone" compatible="1" />
+        <software ware="software_tpwar_prodheavyguideone" compatible="1" />
+        <software ware="software_tpwar_prodlightguideone" compatible="1" />
+        <software ware="software_tpwar_prodheavyheatseekerone" compatible="1" />
+        <software ware="software_tpwar_prodheavysmartone" compatible="1" />
+        <software ware="software_tpwar_prodlightsmartone" compatible="1" />
+        <software ware="software_tpwar_prodheavyswarmone" compatible="1" />
+        <software ware="software_tpwar_prodlightswarmtone" compatible="1" />
+        <software ware="software_tpwar_prodheavytorpedoone" compatible="1" />
+        <software ware="software_tpwar_prodlighttorpedotone" compatible="1" />
+
+    </add>
+</diff>

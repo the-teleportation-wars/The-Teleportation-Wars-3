@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<diff>
+    <add sel="/macros/macro[@name='XU_EP2_universe_macro']/connections">
+
+      <connection name="tppirate_Cluster_99_connection" ref="clusters">
+        <offset>
+          <position x="-75000000" y="0" z="77950000" />
+        </offset>
+        <macro ref="tppirate_Cluster_99_macro" connection="galaxy" />
+      </connection>  
+
+      <connection name="ClusterGate031ToTP99" ref="destination" path="../Cluster_31_connection/Cluster_31_Sector001_connection/Zone003_Cluster_31_Sector001_connection/connection_ClusterGate031ToTP99">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_99_connection/tppirate_Cluster_99_Sector001_connection/tppirate_Zone001_Cluster_99_Sector001_connection/connection_ClusterGateTP99To031" />
+      </connection>
+
+      <connection name="tppirate_Cluster_98_connection" ref="clusters">
+        <offset>
+          <position x="-75000000" y="0" z="95270000" />
+        </offset>
+        <macro ref="tppirate_Cluster_98_macro" connection="galaxy" />
+      </connection>  
+
+      <connection name="ClusterGateTP99ToTP98" ref="destination" path="../tppirate_Cluster_99_connection/tppirate_Cluster_99_Sector001_connection/tppirate_Zone004_Cluster_99_Sector001_connection/connection_ClusterGateTP99ToTP98">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_98_connection/tppirate_Cluster_98_Sector001_connection/tppirate_Zone001_Cluster_98_Sector001_connection/connection_ClusterGateTP98ToTP99" />
+      </connection>
+
+      <connection name="ClusterGateTP99ToTP96" ref="destination" path="../tppirate_Cluster_99_connection/tppirate_Cluster_99_Sector001_connection/tppirate_Zone002_Cluster_99_Sector001_connection/connection_ClusterGateTP99ToTP96">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_96_connection/tppirate_Cluster_96_Sector001_connection/tppirate_Zone002_Cluster_96_Sector001_connection/connection_ClusterGateTP96ToTP99" />
+      </connection>
+
+      <connection name="tppirate_Cluster_97_connection" ref="clusters">
+        <offset>
+          <position x="-90000000" y="0" z="86610000" />
+        </offset>
+        <macro ref="tppirate_Cluster_97_macro" connection="galaxy" />
+      </connection>  
+
+      <connection name="tppirate_Cluster_96_connection" ref="clusters">
+        <offset>
+          <position x="-90000000" y="0" z="69290000" />
+        </offset>
+        <macro ref="tppirate_Cluster_96_macro" connection="galaxy" />
+      </connection>  
+
+      <connection name="tppirate_Cluster_95_connection" ref="clusters">
+        <offset>
+          <position x="-105000000" y="0" z="60630000" />
+        </offset>
+        <macro ref="tppirate_Cluster_95_macro" connection="galaxy" />
+      </connection>  
+
+      <connection name="tppirate_Cluster_94_connection" ref="clusters">
+        <offset>
+          <position x="-105000000" y="0" z="77950000" />
+        </offset>
+        <macro ref="tppirate_Cluster_94_macro" connection="galaxy" />
+      </connection>        
+
+      <connection name="tppirate_Cluster_93_connection" ref="clusters">
+        <offset>
+          <position x="-105000000" y="0" z="95270000" />
+        </offset>
+        <macro ref="tppirate_Cluster_93_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_92_connection" ref="clusters">
+        <offset>
+          <position x="-90000000" y="0" z="103930000" />
+        </offset>
+        <macro ref="tppirate_Cluster_92_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_91_connection" ref="clusters">
+        <offset>
+          <position x="-75000000" y="0" z="112590000" />
+        </offset>
+        <macro ref="tppirate_Cluster_91_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_90_connection" ref="clusters">
+        <offset>
+          <position x="-60000000" y="0" z="103930000" />
+        </offset>
+        <macro ref="tppirate_Cluster_90_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_89_connection" ref="clusters">
+        <offset>
+          <position x="-60000000" y="0" z="121250000" />
+        </offset>
+        <macro ref="tppirate_Cluster_89_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_88_connection" ref="clusters">
+        <offset>
+          <position x="-75000000" y="0" z="129910000" />
+        </offset>
+        <macro ref="tppirate_Cluster_88_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_87_connection" ref="clusters">
+        <offset>
+          <position x="-90000000" y="0" z="121250000" />
+        </offset>
+        <macro ref="tppirate_Cluster_87_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_86_connection" ref="clusters">
+        <offset>
+          <position x="-105000000" y="0" z="129910000" />
+        </offset>
+        <macro ref="tppirate_Cluster_86_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_85_connection" ref="clusters">
+        <offset>
+          <position x="-105000000" y="0" z="112590000" />
+        </offset>
+        <macro ref="tppirate_Cluster_85_macro" connection="galaxy" />
+      </connection> 
+      
+      <connection name="tppirate_Cluster_84_connection" ref="clusters">
+        <offset>
+          <position x="-120000000" y="0" z="103930000" />
+        </offset>
+        <macro ref="tppirate_Cluster_84_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_83_connection" ref="clusters">
+        <offset>
+          <position x="-120000000" y="0" z="86610000" />
+        </offset>
+        <macro ref="tppirate_Cluster_83_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_82_connection" ref="clusters">
+        <offset>
+          <position x="-120000000" y="0" z="69290000" />
+        </offset>
+        <macro ref="tppirate_Cluster_82_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_81_connection" ref="clusters">
+        <offset>
+          <position x="-120000000" y="0" z="51970000" />
+        </offset>
+        <macro ref="tppirate_Cluster_81_macro" connection="galaxy" />
+      </connection> 
+
+      <connection name="tppirate_Cluster_80_connection" ref="clusters">
+        <offset>
+          <position x="-135000000" y="0" z="77950000" />
+        </offset>
+        <macro ref="tppirate_Cluster_80_macro" connection="galaxy" />
+      </connection> 
+
+<!-- Change 99 to starting sector number, and 96 to end sector number.  Set correct zone number as well. -->
+<!--       
+      <connection name="ClusterGateTP99ToTP96" ref="destination" path="../tppirate_Cluster_99_connection/tppirate_Cluster_99_Sector001_connection/tppirate_Zone002_Cluster_99_Sector001_connection/connection_ClusterGateTP99ToTP96">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_96_connection/tppirate_Cluster_96_Sector001_connection/tppirate_Zone002_Cluster_96_Sector001_connection/connection_ClusterGateTP96ToTP99" />
+      </connection>
+ -->
+
+      <connection name="ClusterGateTP99ToTP97" ref="destination" path="../tppirate_Cluster_99_connection/tppirate_Cluster_99_Sector001_connection/tppirate_Zone003_Cluster_99_Sector001_connection/connection_ClusterGateTP99ToTP97">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_97_connection/tppirate_Cluster_97_Sector001_connection/tppirate_Zone002_Cluster_97_Sector001_connection/connection_ClusterGateTP97ToTP99" />
+      </connection>
+
+<!-- fixed name from 99-97 to 97-92 -->
+      <connection name="ClusterGateTP97ToTP92" ref="destination" path="../tppirate_Cluster_97_connection/tppirate_Cluster_97_Sector001_connection/tppirate_Zone003_Cluster_97_Sector001_connection/connection_ClusterGateTP97ToTP92">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_92_connection/tppirate_Cluster_92_Sector001_connection/tppirate_Zone001_Cluster_92_Sector001_connection/connection_ClusterGateTP92ToTP97" />
+      </connection>
+
+      <connection name="ClusterGateTP87ToTP92" ref="destination" path="../tppirate_Cluster_87_connection/tppirate_Cluster_87_Sector001_connection/tppirate_Zone002_Cluster_87_Sector001_connection/connection_ClusterGateTP87ToTP92">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_92_connection/tppirate_Cluster_92_Sector001_connection/tppirate_Zone002_Cluster_92_Sector001_connection/connection_ClusterGateTP92ToTP87" />
+      </connection>
+
+      <connection name="ClusterGateTP87ToTP91" ref="destination" path="../tppirate_Cluster_87_connection/tppirate_Cluster_87_Sector001_connection/tppirate_Zone003_Cluster_87_Sector001_connection/connection_ClusterGateTP87ToTP91">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_91_connection/tppirate_Cluster_91_Sector001_connection/tppirate_Zone002_Cluster_91_Sector001_connection/connection_ClusterGateTP91ToTP87" />
+      </connection>
+
+      <connection name="ClusterGateTP91ToTP89" ref="destination" path="../tppirate_Cluster_91_connection/tppirate_Cluster_91_Sector001_connection/tppirate_Zone003_Cluster_91_Sector001_connection/connection_ClusterGateTP91ToTP89">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_89_connection/tppirate_Cluster_89_Sector001_connection/tppirate_Zone002_Cluster_89_Sector001_connection/connection_ClusterGateTP89ToTP91" />
+      </connection>
+
+      <connection name="ClusterGateTP89ToTP88" ref="destination" path="../tppirate_Cluster_89_connection/tppirate_Cluster_89_Sector001_connection/tppirate_Zone003_Cluster_89_Sector001_connection/connection_ClusterGateTP89ToTP88">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_88_connection/tppirate_Cluster_88_Sector001_connection/tppirate_Zone002_Cluster_88_Sector001_connection/connection_ClusterGateTP88ToTP89" />
+      </connection>
+
+      <connection name="ClusterGateTP89ToTP90" ref="destination" path="../tppirate_Cluster_89_connection/tppirate_Cluster_89_Sector001_connection/tppirate_Zone004_Cluster_89_Sector001_connection/connection_ClusterGateTP89ToTP90">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_90_connection/tppirate_Cluster_90_Sector001_connection/tppirate_Zone002_Cluster_90_Sector001_connection/connection_ClusterGateTP90ToTP89" />
+      </connection>
+
+      <connection name="ClusterGateTP90ToTP98" ref="destination" path="../tppirate_Cluster_90_connection/tppirate_Cluster_90_Sector001_connection/tppirate_Zone003_Cluster_90_Sector001_connection/connection_ClusterGateTP90ToTP98">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_98_connection/tppirate_Cluster_98_Sector001_connection/tppirate_Zone002_Cluster_98_Sector001_connection/connection_ClusterGateTP98ToTP90" />
+      </connection>
+
+      <connection name="ClusterGateTP87ToTP86" ref="destination" path="../tppirate_Cluster_87_connection/tppirate_Cluster_87_Sector001_connection/tppirate_Zone004_Cluster_87_Sector001_connection/connection_ClusterGateTP87ToTP86">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_86_connection/tppirate_Cluster_86_Sector001_connection/tppirate_Zone002_Cluster_86_Sector001_connection/connection_ClusterGateTP86ToTP87" />
+      </connection>
+
+      <connection name="ClusterGateTP87ToTP85" ref="destination" path="../tppirate_Cluster_87_connection/tppirate_Cluster_87_Sector001_connection/tppirate_Zone005_Cluster_87_Sector001_connection/connection_ClusterGateTP87ToTP85">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_85_connection/tppirate_Cluster_85_Sector001_connection/tppirate_Zone002_Cluster_85_Sector001_connection/connection_ClusterGateTP85ToTP87" />
+      </connection>
+
+      <connection name="ClusterGateTP86ToTP85" ref="destination" path="../tppirate_Cluster_86_connection/tppirate_Cluster_86_Sector001_connection/tppirate_Zone003_Cluster_86_Sector001_connection/connection_ClusterGateTP86ToTP85">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_85_connection/tppirate_Cluster_85_Sector001_connection/tppirate_Zone003_Cluster_85_Sector001_connection/connection_ClusterGateTP85ToTP86" />
+      </connection>
+
+      <connection name="ClusterGateTP92ToTP93" ref="destination" path="../tppirate_Cluster_92_connection/tppirate_Cluster_92_Sector001_connection/tppirate_Zone003_Cluster_92_Sector001_connection/connection_ClusterGateTP92ToTP93">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_93_connection/tppirate_Cluster_93_Sector001_connection/tppirate_Zone002_Cluster_93_Sector001_connection/connection_ClusterGateTP93ToTP92" />
+      </connection>
+
+<!-- removed because it's a duplicate -->
+      <!-- <connection name="ClusterGateTP92ToTP93" ref="destination" path="../tppirate_Cluster_92_connection/tppirate_Cluster_92_Sector001_connection/tppirate_Zone003_Cluster_92_Sector001_connection/connection_ClusterGateTP92ToTP93">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_93_connection/tppirate_Cluster_93_Sector001_connection/tppirate_Zone002_Cluster_93_Sector001_connection/connection_ClusterGateTP93ToTP92" />
+      </connection> -->
+
+      <connection name="ClusterGateTP93ToTP83" ref="destination" path="../tppirate_Cluster_93_connection/tppirate_Cluster_93_Sector001_connection/tppirate_Zone003_Cluster_93_Sector001_connection/connection_ClusterGateTP93ToTP83">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_83_connection/tppirate_Cluster_83_Sector001_connection/tppirate_Zone002_Cluster_83_Sector001_connection/connection_ClusterGateTP83ToTP93" />
+      </connection>
+
+      <connection name="ClusterGateTP83ToTP84" ref="destination" path="../tppirate_Cluster_83_connection/tppirate_Cluster_83_Sector001_connection/tppirate_Zone003_Cluster_83_Sector001_connection/connection_ClusterGateTP83ToTP84">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_84_connection/tppirate_Cluster_84_Sector001_connection/tppirate_Zone002_Cluster_84_Sector001_connection/connection_ClusterGateTP84ToTP83" />
+      </connection>
+
+      <connection name="ClusterGateTP83ToTP80" ref="destination" path="../tppirate_Cluster_83_connection/tppirate_Cluster_83_Sector001_connection/tppirate_Zone004_Cluster_83_Sector001_connection/connection_ClusterGateTP83ToTP80">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_80_connection/tppirate_Cluster_80_Sector001_connection/tppirate_Zone002_Cluster_80_Sector001_connection/connection_ClusterGateTP80ToTP83" />
+      </connection>
+
+      <connection name="ClusterGateTP83ToTP94" ref="destination" path="../tppirate_Cluster_83_connection/tppirate_Cluster_83_Sector001_connection/tppirate_Zone005_Cluster_83_Sector001_connection/connection_ClusterGateTP83ToTP94">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_94_connection/tppirate_Cluster_94_Sector001_connection/tppirate_Zone002_Cluster_94_Sector001_connection/connection_ClusterGateTP94ToTP83" />
+      </connection>
+
+      <connection name="ClusterGateTP94ToTP95" ref="destination" path="../tppirate_Cluster_94_connection/tppirate_Cluster_94_Sector001_connection/tppirate_Zone003_Cluster_94_Sector001_connection/connection_ClusterGateTP94ToTP95">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_95_connection/tppirate_Cluster_95_Sector001_connection/tppirate_Zone002_Cluster_95_Sector001_connection/connection_ClusterGateTP95ToTP94" />
+      </connection>
+
+      <connection name="ClusterGateTP95ToTP81" ref="destination" path="../tppirate_Cluster_95_connection/tppirate_Cluster_95_Sector001_connection/tppirate_Zone003_Cluster_95_Sector001_connection/connection_ClusterGateTP95ToTP81">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_81_connection/tppirate_Cluster_81_Sector001_connection/tppirate_Zone002_Cluster_81_Sector001_connection/connection_ClusterGateTP81ToTP95" />
+      </connection>
+
+      <connection name="ClusterGateTP81ToTP82" ref="destination" path="../tppirate_Cluster_81_connection/tppirate_Cluster_81_Sector001_connection/tppirate_Zone003_Cluster_81_Sector001_connection/connection_ClusterGateTP81ToTP82">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_82_connection/tppirate_Cluster_82_Sector001_connection/tppirate_Zone002_Cluster_82_Sector001_connection/connection_ClusterGateTP82ToTP81" />
+      </connection>
+
+      <connection name="ClusterGateTP82ToTP94" ref="destination" path="../tppirate_Cluster_82_connection/tppirate_Cluster_82_Sector001_connection/tppirate_Zone004_Cluster_82_Sector001_connection/connection_ClusterGateTP82ToTP94">
+        <macro connection="destination" path="../../../../../tppirate_Cluster_94_connection/tppirate_Cluster_94_Sector001_connection/tppirate_Zone003_Cluster_94_Sector001_connection/connection_ClusterGateTP94ToTP82" />
+      </connection>
+
+
+      <connection name="meditech_Cluster_01_connection" ref="clusters">
+        <offset>
+          <position x="15000000" y="0" z="-25980000" />
+        </offset>
+        <macro ref="meditech_Cluster_01_macro" connection="galaxy" />
+      </connection>  
+
+      <connection name="ClusterGate005ToM01" ref="destination" path="../Cluster_05_connection/Cluster_05_Sector001_connection/Zone002_Cluster_05_Sector001_connection/connection_ClusterGate005ToM01">
+        <macro connection="destination" path="../../../../../meditech_Cluster_01_connection/meditech_Cluster_01_Sector001_connection/meditech_Zone002_Cluster_01_Sector001_connection/connection_ClusterGateM01To005" />
+      </connection>
+
+    </add>
+</diff>
+

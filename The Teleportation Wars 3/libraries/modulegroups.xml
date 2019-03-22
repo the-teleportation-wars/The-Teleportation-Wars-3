@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/groups">
+        <group name="tpwar_countermeasure_factory">
+            <select macro="tpwar_countermeasure_flares_01_module_macro" />
+            <select macro="tpwar_engine_arg_l_allround_01_mk1_module_macro" />
+            <select macro="tpwar_engine_arg_l_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_l_allround_01_mk1_factory">
+            <select macro="tpwar_engine_arg_l_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_l_travel_01_mk1_factory">
+            <select macro="tpwar_engine_arg_l_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_allround_01_mk1_factory">
+            <select macro="tpwar_engine_arg_m_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_allround_01_mk2_factory">
+            <select macro="tpwar_engine_arg_m_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_allround_01_mk3_factory">
+            <select macro="tpwar_engine_arg_m_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_combat_01_mk1_factory">
+            <select macro="tpwar_engine_arg_m_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_combat_01_mk2_factory">
+            <select macro="tpwar_engine_arg_m_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_combat_01_mk3_factory">
+            <select macro="tpwar_engine_arg_m_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_travel_01_mk1_factory">
+            <select macro="tpwar_engine_arg_m_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_travel_01_mk2_factory">
+            <select macro="tpwar_engine_arg_m_travel_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_m_travel_01_mk3_factory">
+            <select macro="tpwar_engine_arg_m_travel_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_allround_01_mk1_factory">
+            <select macro="tpwar_engine_arg_s_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_allround_01_mk2_factory">
+            <select macro="tpwar_engine_arg_s_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_allround_01_mk3_factory">
+            <select macro="tpwar_engine_arg_s_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_combat_01_mk1_factory">
+            <select macro="tpwar_engine_arg_s_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_combat_01_mk2_factory">
+            <select macro="tpwar_engine_arg_s_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_combat_01_mk3_factory">
+            <select macro="tpwar_engine_arg_s_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_travel_01_mk1_factory">
+            <select macro="tpwar_engine_arg_s_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_travel_01_mk2_factory">
+            <select macro="tpwar_engine_arg_s_travel_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_s_travel_01_mk3_factory">
+            <select macro="tpwar_engine_arg_s_travel_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_xl_allround_01_mk1_factory">
+            <select macro="tpwar_engine_arg_xl_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_arg_xl_travel_01_mk1_factory">
+            <select macro="tpwar_engine_arg_xl_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_l_allround_01_mk1_factory">
+            <select macro="tpwar_engine_par_l_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_l_travel_01_mk1_factory">
+            <select macro="tpwar_engine_par_l_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_allround_01_mk1_factory">
+            <select macro="tpwar_engine_par_m_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_allround_01_mk2_factory">
+            <select macro="tpwar_engine_par_m_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_allround_01_mk3_factory">
+            <select macro="tpwar_engine_par_m_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_combat_01_mk1_factory">
+            <select macro="tpwar_engine_par_m_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_combat_01_mk2_factory">
+            <select macro="tpwar_engine_par_m_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_combat_01_mk3_factory">
+            <select macro="tpwar_engine_par_m_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_travel_01_mk1_factory">
+            <select macro="tpwar_engine_par_m_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_travel_01_mk2_factory">
+            <select macro="tpwar_engine_par_m_travel_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_m_travel_01_mk3_factory">
+            <select macro="tpwar_engine_par_m_travel_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_allround_01_mk1_factory">
+            <select macro="tpwar_engine_par_s_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_allround_01_mk2_factory">
+            <select macro="tpwar_engine_par_s_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_allround_01_mk3_factory">
+            <select macro="tpwar_engine_par_s_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_combat_01_mk1_factory">
+            <select macro="tpwar_engine_par_s_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_combat_01_mk2_factory">
+            <select macro="tpwar_engine_par_s_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_combat_01_mk3_factory">
+            <select macro="tpwar_engine_par_s_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_travel_01_mk1_factory">
+            <select macro="tpwar_engine_par_s_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_travel_01_mk2_factory">
+            <select macro="tpwar_engine_par_s_travel_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_s_travel_01_mk3_factory">
+            <select macro="tpwar_engine_par_s_travel_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_xl_allround_01_mk1_factory">
+            <select macro="tpwar_engine_par_xl_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_par_xl_travel_01_mk1_factory">
+            <select macro="tpwar_engine_par_xl_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_l_allround_01_mk1_factory">
+            <select macro="tpwar_engine_tel_l_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_l_travel_01_mk1_factory">
+            <select macro="tpwar_engine_tel_l_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_allround_01_mk1_factory">
+            <select macro="tpwar_engine_tel_m_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_allround_01_mk2_factory">
+            <select macro="tpwar_engine_tel_m_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_allround_01_mk3_factory">
+            <select macro="tpwar_engine_tel_m_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_combat_01_mk1_factory">
+            <select macro="tpwar_engine_tel_m_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_combat_01_mk2_factory">
+            <select macro="tpwar_engine_tel_m_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_combat_01_mk3_factory">
+            <select macro="tpwar_engine_tel_m_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_travel_01_mk1_factory">
+            <select macro="tpwar_engine_tel_m_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_travel_01_mk2_factory">
+            <select macro="tpwar_engine_tel_m_travel_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_m_travel_01_mk3_factory">
+            <select macro="tpwar_engine_tel_m_travel_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_allround_01_mk1_factory">
+            <select macro="tpwar_engine_tel_s_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_allround_01_mk2_factory">
+            <select macro="tpwar_engine_tel_s_allround_01_mk2_module_macro" />
+        </group>
+        <group name="ttpwar_engine_tel_s_allround_01_mk3_factory">
+            <select macro="tpwar_engine_tel_s_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_combat_01_mk1_factory">
+            <select macro="tpwar_engine_tel_s_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_combat_01_mk2_factory">
+            <select macro="tpwar_engine_tel_s_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_combat_01_mk3_factory">
+            <select macro="tpwar_engine_tel_s_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_travel_01_mk1_factory">
+            <select macro="tpwar_engine_tel_s_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_travel_01_mk2_factory">
+            <select macro="tpwar_engine_tel_s_travel_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_s_travel_01_mk3_factory">
+            <select macro="tpwar_engine_tel_s_travel_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_xl_allround_01_mk1_factory">
+            <select macro="tpwar_engine_tel_xl_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_engine_tel_xl_travel_01_mk1_factory">
+            <select macro="tpwar_engine_tel_xl_travel_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_cluster_heavy_mk1_factory">
+            <select macro="tpwar_missile_cluster_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_cluster_light_mk1_factory">
+            <select macro="tpwar_missile_cluster_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_dumbfire_heavy_mk1_factory">
+            <select macro="tpwar_missile_dumbfire_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_dumbfire_heavy_mk2_factory">
+            <select macro="tpwar_missile_dumbfire_heavy_mk2_module_macro" />
+        </group>
+        <group name="tpwar_missile_dumbfire_light_mk1_factory">
+            <select macro="tpwar_missile_dumbfire_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_dumbfire_light_mk2_factory">
+            <select macro="tpwar_missile_dumbfire_light_mk2_module_macro" />
+        </group>
+        <group name="tpwar_missile_emp_mk1_factory">
+            <select macro="tpwar_missile_emp_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_guided_heavy_mk1_factory">
+            <select macro="tpwar_missile_guided_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_guided_light_mk1_factory">
+            <select macro="tpwar_missile_guided_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_heatseeker_heavy_mk1_factory">
+            <select macro="tpwar_missile_heatseeker_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_heatseeker_light_mk1_factory">
+            <select macro="tpwar_missile_heatseeker_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_smart_heavy_mk1_factory">
+            <select macro="tpwar_missile_smart_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_smart_light_mk1_factory">
+            <select macro="tpwar_missile_smart_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_swarm_heavy_mk1_factory">
+            <select macro="tpwar_missile_swarm_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_swarm_light_mk1_factory">
+            <select macro="tpwar_missile_swarm_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_torpedo_heavy_mk1_factory">
+            <select macro="tpwar_missile_torpedo_heavy_mk1_module_macro" />
+        </group>
+        <group name="tpwar_missile_torpedo_light_mk1_factory">
+            <select macro="tpwar_missile_torpedo_light_mk1_module_macro" />
+        </group>
+        <group name="tpwar_resourceprobe_01_factory">
+            <select macro="tpwar_resourceprobe_01_module_macro" />
+        </group>
+        <group name="tpwar_satellite_mk1_factory">
+            <select macro="tpwar_satellite_mk1_module_macro" />
+        </group>
+        <group name="tpwar_satellite_mk2_factory">
+            <select macro="tpwar_satellite_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_l_standard_01_mk1_factory">
+            <select macro="tpwar_shield_arg_l_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_l_standard_01_mk2_factory">
+            <select macro="tpwar_shield_arg_l_standard_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_m_standard_02_mk1_factory">
+            <select macro="tpwar_shield_arg_m_standard_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_m_standard_02_mk2_factory">
+            <select macro="tpwar_shield_arg_m_standard_02_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_s_standard_01_mk1_factory">
+            <select macro="tpwar_shield_arg_s_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_s_standard_01_mk2_factory">
+            <select macro="tpwar_shield_arg_s_standard_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_s_standard_01_mk3_factory">
+            <select macro="tpwar_shield_arg_s_standard_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_shield_arg_xl_standard_01_mk1_factory">
+            <select macro="tpwar_shield_arg_xl_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_l_standard_01_mk1_factory">
+            <select macro="tpwar_shield_par_l_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_l_standard_01_mk2_factory">
+            <select macro="tpwar_shield_par_l_standard_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_m_standard_02_mk1_factory">
+            <select macro="tpwar_shield_par_m_standard_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_m_standard_02_mk2_factory">
+            <select macro="tpwar_shield_par_m_standard_02_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_s_standard_01_mk1_factory">
+            <select macro="tpwar_shield_par_s_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_s_standard_01_mk2_factory">
+            <select macro="tpwar_shield_par_s_standard_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_s_standard_01_mk3_factory">
+            <select macro="tpwar_shield_par_s_standard_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_shield_par_xl_standard_01_mk1_factory">
+            <select macro="tpwar_shield_par_xl_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_l_standard_01_mk1_factory">
+            <select macro="tpwar_shield_tel_l_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_l_standard_01_mk2_factory">
+            <select macro="tpwar_shield_tel_l_standard_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_m_standard_02_mk1_factory">
+            <select macro="tpwar_shield_tel_m_standard_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_m_standard_02_mk2_factory">
+            <select macro="tpwar_shield_tel_m_standard_02_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_s_standard_01_mk1_factory">
+            <select macro="tpwar_shield_tel_s_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_s_standard_01_mk2_factory">
+            <select macro="tpwar_shield_tel_s_standard_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_s_standard_01_mk3_factory">
+            <select macro="tpwar_shield_tel_s_standard_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_shield_tel_xl_standard_01_mk1_factory">
+            <select macro="tpwar_shield_tel_xl_standard_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_s_fightingdrone_01_a_factory">
+            <select macro="tpwar_ship_gen_s_fightingdrone_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_s_lasertower_01_a_factory">
+            <select macro="tpwar_ship_gen_s_lasertower_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_s_miningdrone_liquid_01_a_factory">
+            <select macro="tpwar_ship_gen_s_miningdrone_liquid_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_s_miningdrone_solid_01_a_factory">
+            <select macro="tpwar_ship_gen_s_miningdrone_solid_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_xs_buildingdrone_01_a_factory">
+            <select macro="tpwar_ship_gen_xs_buildingdrone_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_xs_cargodrone_empty_01_a_factory">
+            <select macro="tpwar_ship_gen_xs_cargodrone_empty_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_xs_lasertower_01_a_factory">
+            <select macro="tpwar_ship_gen_xs_lasertower_01_a_module_macro" />
+        </group>
+        <group name="tpwar_ship_gen_xs_repairdrone_01_a_factory">
+            <select macro="tpwar_ship_gen_xs_repairdrone_01_a_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_l_allround_01_mk1_factory">
+            <select macro="tpwar_thruster_gen_l_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_l_allround_01_mk2_factory">
+            <select macro="tpwar_thruster_gen_l_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_l_allround_01_mk3_factory">
+            <select macro="tpwar_thruster_gen_l_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_m_allround_01_mk1_factory">
+            <select macro="tpwar_thruster_gen_m_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_m_allround_01_mk2_factory">
+            <select macro="tpwar_thruster_gen_m_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_m_allround_01_mk3_factory">
+            <select macro="tpwar_thruster_gen_m_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_m_combat_01_mk1_factory">
+            <select macro="tpwar_thruster_gen_m_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_m_combat_01_mk2_factory">
+            <select macro="tpwar_thruster_gen_m_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_m_combat_01_mk3_factory">
+            <select macro="tpwar_thruster_gen_m_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_s_allround_01_mk1_factory">
+            <select macro="tpwar_thruster_gen_s_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_s_allround_01_mk2_factory">
+            <select macro="tpwar_thruster_gen_s_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_s_allround_01_mk3_factory">
+            <select macro="tpwar_thruster_gen_s_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_s_combat_01_mk1_factory">
+            <select macro="tpwar_thruster_gen_s_combat_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_s_combat_01_mk2_factory">
+            <select macro="tpwar_thruster_gen_s_combat_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_s_combat_01_mk3_factory">
+            <select macro="tpwar_thruster_gen_s_combat_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_xl_allround_01_mk1_factory">
+            <select macro="tpwar_thruster_gen_xl_allround_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_xl_allround_01_mk2_factory">
+            <select macro="tpwar_thruster_gen_xl_allround_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_thruster_gen_xl_allround_01_mk3_factory">
+            <select macro="tpwar_thruster_gen_xl_allround_01_mk3_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_l_beam_01_mk1_factory">
+            <select macro="tpwar_turret_arg_l_beam_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_l_dumbfire_01_mk1_factory">
+            <select macro="tpwar_turret_arg_l_dumbfire_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_l_guided_01_mk1_factory">
+            <select macro="tpwar_turret_arg_l_guided_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_l_laser_01_mk1_factory">
+            <select macro="tpwar_turret_arg_l_laser_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_l_mining_01_mk1_factory">
+            <select macro="tpwar_turret_arg_l_mining_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_l_plasma_01_mk1_factory">
+            <select macro="tpwar_turret_arg_l_plasma_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_beam_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_beam_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_dumbfire_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_dumbfire_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_gatling_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_gatling_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_guided_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_guided_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_laser_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_laser_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_mining_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_mining_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_plasma_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_plasma_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_arg_m_shotgun_02_mk1_factory">
+            <select macro="tpwar_turret_arg_m_shotgun_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_l_beam_01_mk1_factory">
+            <select macro="tpwar_turret_par_l_beam_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_l_dumbfire_01_mk1_factory">
+            <select macro="tpwar_turret_par_l_dumbfire_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_l_guided_01_mk1_factory">
+            <select macro="tpwar_turret_par_l_guided_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_l_laser_01_mk1_factory">
+            <select macro="tpwar_turret_par_l_laser_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_l_mining_01_mk1_factory">
+            <select macro="tpwar_turret_par_l_mining_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_l_plasma_01_mk1_factory">
+            <select macro="tpwar_turret_par_l_plasma_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_beam_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_beam_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_dumbfire_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_dumbfire_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_gatling_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_gatling_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_guided_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_guided_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_laser_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_laser_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_mining_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_mining_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_plasma_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_plasma_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_par_m_shotgun_02_mk1_factory">
+            <select macro="tpwar_turret_par_m_shotgun_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_l_beam_01_mk1_factory">
+            <select macro="tpwar_turret_tel_l_beam_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_l_dumbfire_01_mk1_factory">
+            <select macro="tpwar_turret_tel_l_dumbfire_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_l_guided_01_mk1_factory">
+            <select macro="tpwar_turret_tel_l_guided_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_l_laser_01_mk1_factory">
+            <select macro="tpwar_turret_tel_l_laser_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_l_mining_01_mk1_factory">
+            <select macro="tpwar_turret_tel_l_mining_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_l_plasma_01_mk1_factory">
+            <select macro="tpwar_turret_tel_l_plasma_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_beam_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_beam_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_dumbfire_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_dumbfire_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_gatling_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_gatling_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_guided_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_guided_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_laser_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_laser_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_mining_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_mining_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_plasma_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_plasma_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_turret_tel_m_shotgun_02_mk1_factory">
+            <select macro="tpwar_turret_tel_m_shotgun_02_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_arg_l_destroyer_01_mk1_factory">
+            <select macro="tpwar_weapon_arg_l_destroyer_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_arg_m_ion_01_mk1_factory">
+            <select macro="tpwar_weapon_arg_m_ion_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_arg_m_ion_01_mk2_factory">
+            <select macro="tpwar_weapon_arg_m_ion_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_arg_s_ion_01_mk1_factory">
+            <select macro="tpwar_weapon_arg_s_ion_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_arg_s_ion_01_mk2_factory">
+            <select macro="tpwar_weapon_arg_s_ion_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_mine_01_factory">
+            <select macro="tpwar_weapon_gen_mine_01_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_mine_03_factory">
+            <select macro="tpwar_weapon_gen_mine_03_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_beam_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_beam_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_beam_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_beam_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_dumbfire_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_dumbfire_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_dumbfire_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_dumbfire_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_gatling_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_gatling_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_gatling_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_gatling_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_guided_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_guided_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_guided_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_guided_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_laser_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_laser_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_laser_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_laser_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_mining_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_mining_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_mining_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_mining_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_plasma_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_plasma_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_plasma_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_plasma_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_shotgun_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_shotgun_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_shotgun_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_shotgun_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_torpedo_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_m_torpedo_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_m_torpedo_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_m_torpedo_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_beam_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_beam_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_beam_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_beam_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_dumbfire_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_dumbfire_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_dumbfire_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_dumbfire_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_gatling_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_gatling_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_gatling_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_gatling_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_guided_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_guided_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_guided_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_guided_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_laser_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_laser_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_laser_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_laser_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_mining_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_mining_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_mining_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_mining_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_plasma_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_plasma_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_plasma_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_plasma_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_shotgun_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_shotgun_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_shotgun_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_shotgun_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_torpedo_01_mk1_factory">
+            <select macro="tpwar_weapon_gen_s_torpedo_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_gen_s_torpedo_01_mk2_factory">
+            <select macro="tpwar_weapon_gen_s_torpedo_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_par_l_destroyer_01_mk1_factory">
+            <select macro="tpwar_weapon_par_l_destroyer_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_par_m_railgun_01_mk1_factory">
+            <select macro="tpwar_weapon_par_m_railgun_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_par_m_railgun_01_mk2_factory">
+            <select macro="tpwar_weapon_par_m_railgun_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_par_s_railgun_01_mk1_factory">
+            <select macro="tpwar_weapon_par_s_railgun_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_par_s_railgun_01_mk2_factory">
+            <select macro="tpwar_weapon_par_s_railgun_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_tel_l_destroyer_01_mk1_factory">
+            <select macro="tpwar_weapon_tel_l_destroyer_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_tel_m_charge_01_mk1_factory">
+            <select macro="tpwar_weapon_tel_m_charge_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_tel_m_charge_01_mk2_factory">
+            <select macro="tpwar_weapon_tel_m_charge_01_mk2_module_macro" />
+        </group>
+        <group name="tpwar_weapon_tel_s_charge_01_mk1_factory">
+            <select macro="tpwar_weapon_tel_s_charge_01_mk1_module_macro" />
+        </group>
+        <group name="tpwar_weapon_tel_s_charge_01_mk2_factory">
+            <select macro="tpwar_weapon_tel_s_charge_01_mk2_module_macro" />
+        </group>
+        <group name="stor_pirate">
+            <select macro="storage_arg_l_container_01_macro" />
+            <select macro="storage_arg_l_liquid_01_macro" />
+            <select macro="storage_arg_l_solid_01_macro" />
+            <select macro="storage_arg_m_container_01_macro" />
+            <select macro="storage_arg_m_liquid_01_macro" />
+            <select macro="storage_arg_m_solid_01_macro" />
+            <select macro="storage_arg_s_container_01_macro" />
+            <select macro="storage_arg_s_liquid_01_macro" />
+            <select macro="storage_arg_s_solid_01_macro" />
+            <select macro="storage_arg_l_tradestation_01_macro" />
+            <select macro="storage_par_l_container_01_macro" />
+            <select macro="storage_par_l_liquid_01_macro" />
+            <select macro="storage_par_l_solid_01_macro" />
+            <select macro="storage_par_m_container_01_macro" />
+            <select macro="storage_par_m_liquid_01_macro" />
+            <select macro="storage_par_m_solid_01_macro" />
+            <select macro="storage_par_s_container_01_macro" />
+            <select macro="storage_par_s_liquid_01_macro" />
+            <select macro="storage_par_s_solid_01_macro" />
+            <select macro="storage_tel_l_container_01_macro" />
+            <select macro="storage_tel_l_liquid_01_macro" />
+            <select macro="storage_tel_l_solid_01_macro" />
+            <select macro="storage_tel_m_container_01_macro" />
+            <select macro="storage_tel_m_liquid_01_macro" />
+            <select macro="storage_tel_m_solid_01_macro" />
+            <select macro="storage_tel_s_container_01_macro" />
+            <select macro="storage_tel_s_liquid_01_macro" />
+            <select macro="storage_tel_s_solid_01_macro" />
+        </group>
+        <group name="dockarea_pirate">
+            <select macro="dockarea_arg_m_station_01_macro" />
+            <select macro="dockarea_arg_m_station_02_macro" />
+            <select macro="dockarea_arg_m_02_tradestation_01_macro" />
+        </group>
+        <group name="dockarea_pirate_hightech">
+            <select macro="dockarea_arg_m_station_01_hightech_macro" />
+            <select macro="dockarea_arg_m_station_02_hightech_macro" />
+        </group>
+        <group name="dockarea_pirate_lowtech">
+            <select macro="dockarea_arg_m_station_01_lowtech_macro" />
+            <select macro="dockarea_arg_m_station_02_lowtech_macro" />
+        </group>
+        <group name="pier_base_pirate">
+            <select macro="pier_arg_harbor_01_macro" />
+            <select macro="pier_arg_harbor_03_macro" />
+            <select macro="pier_par_harbor_01_macro" />
+            <select macro="pier_par_harbor_03_macro" />
+            <select macro="pier_tel_harbor_01_macro" />
+            <select macro="pier_tel_harbor_03_macro" />
+            <select macro="pier_arg_single_01_tradestation_01_macro" />
+        </group>
+        <group name="pier_add_pirate">
+            <select macro="pier_arg_harbor_02_macro" />
+            <select macro="pier_par_harbor_02_macro" />
+            <select macro="pier_tel_harbor_02_macro" />
+        </group>
+        <group name="def_pirate">
+            <select macro="defence_arg_tube_01_macro" />
+            <select macro="defence_arg_disc_01_macro" />
+            <select macro="defence_par_tube_01_macro" />
+            <select macro="defence_par_disc_01_macro" />
+            <select macro="defence_tel_tube_01_macro" />
+            <select macro="defence_tel_disc_01_macro" />
+        </group>
+        <group name="claim_pirate">
+            <select macro="defence_arg_claim_01_macro" />
+        </group>
+        <!-- Argon Connection Module Groups-->
+        <group name="conn_pirate">
+            <select macro="struct_arg_base_01_macro" />
+            <select macro="struct_arg_base_02_macro" />
+            <select macro="struct_arg_base_03_macro" />
+            <select macro="struct_arg_cross_01_macro" />
+            <select macro="struct_arg_vertical_01_macro" />
+            <select macro="struct_arg_vertical_02_macro" />
+            <select macro="struct_par_cross_01_macro" />
+            <select macro="struct_par_cross_02_macro" />
+            <select macro="struct_par_cross_03_macro" />
+            <select macro="struct_par_base_01_macro" />
+            <select macro="struct_par_base_02_macro" />
+            <select macro="struct_par_base_03_macro" />
+            <select macro="struct_par_vertical_01_macro" />
+            <select macro="struct_par_vertical_02_macro" />
+            <select macro="struct_tel_base_01_macro" />
+            <select macro="struct_tel_base_02_macro" />
+            <select macro="struct_tel_base_03_macro" />
+            <select macro="struct_tel_cross_01_macro" />
+            <select macro="struct_tel_vertical_01_macro" />
+            <select macro="struct_tel_vertical_02_macro" />
+        </group>
+        <group name="stor_meditech">
+            <select macro="storage_arg_l_container_01_macro" />
+            <select macro="storage_arg_l_liquid_01_macro" />
+            <select macro="storage_arg_l_solid_01_macro" />
+            <select macro="storage_arg_m_container_01_macro" />
+            <select macro="storage_arg_m_liquid_01_macro" />
+            <select macro="storage_arg_m_solid_01_macro" />
+            <select macro="storage_arg_s_container_01_macro" />
+            <select macro="storage_arg_s_liquid_01_macro" />
+            <select macro="storage_arg_s_solid_01_macro" />
+            <select macro="storage_arg_l_tradestation_01_macro" />
+        </group>
+        <group name="dockarea_meditech">
+            <select macro="dockarea_arg_m_station_01_macro" />
+            <select macro="dockarea_arg_m_station_02_macro" />
+            <select macro="dockarea_arg_m_02_tradestation_01_macro" />
+        </group>
+        <group name="dockarea_meditech_hightech">
+            <select macro="dockarea_arg_m_station_01_hightech_macro" />
+            <select macro="dockarea_arg_m_station_02_hightech_macro" />
+        </group>
+        <group name="dockarea_meditech_lowtech">
+            <select macro="dockarea_arg_m_station_01_lowtech_macro" />
+            <select macro="dockarea_arg_m_station_02_lowtech_macro" />
+        </group>
+        <group name="pier_base_meditech">
+            <select macro="pier_arg_harbor_01_macro" />
+            <select macro="pier_arg_harbor_03_macro" />
+            <select macro="pier_arg_single_01_tradestation_01_macro" />
+        </group>
+        <group name="pier_add_meditech">
+            <select macro="pier_arg_harbor_02_macro" />
+        </group>
+        <group name="def_meditech">
+            <select macro="defence_arg_tube_01_macro" />
+            <select macro="defence_arg_disc_01_macro" />
+        </group>
+        <group name="claim_meditech">
+            <select macro="defence_arg_claim_01_macro" />
+        </group>
+        <!-- Argon Connection Module Groups-->
+        <group name="conn_meditech">
+            <select macro="struct_arg_base_01_macro" />
+            <select macro="struct_arg_base_02_macro" />
+            <select macro="struct_arg_base_03_macro" />
+            <select macro="struct_arg_cross_01_macro" />
+            <select macro="struct_arg_vertical_01_macro" />
+            <select macro="struct_arg_vertical_02_macro" />
+        </group>
+    </add>
+</diff>

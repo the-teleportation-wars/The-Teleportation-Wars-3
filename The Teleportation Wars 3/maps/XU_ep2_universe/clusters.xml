@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<diff>
+  <add sel="/macros">
+
+      <macro name="tppirate_Cluster_99_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_99_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_99_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="cluster_black"/>
+            </macro>
+          </connection>
+
+          <!-- <connection name="C31S01_Region001_connection" ref="regions">
+            <macro name="C31S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_Cluster_31_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection name="C31S01_Region002_connection" ref="regions">
+            <macro name="C31S01_Region002_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="audioregion_Cluster_31_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+           -->
+          <!-- 
+          <connection name="C99S01_Region003_connection" ref="regions">
+            <offset>
+              <position x="0" y="0" z="0" />
+            </offset>
+            <macro name="C99S01_Region003_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="p1_wreckfield_xenon_split_cluster32" />
+              </properties>
+            </macro>
+          </connection>
+           -->
+
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_98_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_98_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_98_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP95S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="55374" y="-2000" z="-64533" />
+            </offset>
+            <macro name="TP95S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region2_cluster_04_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_42"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_97_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_97_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_97_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="cluster_sm2_background"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_96_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_96_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_96_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="cluster_sm3_background"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_95_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_95_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_95_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP95S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="-155374" y="0" z="264533" />
+            </offset>
+            <macro name="TP95S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region2_cluster_04_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_47"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_94_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_94_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_94_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP94S01_Region002_connection" ref="regions">
+            <offset>
+              <position x="-69007" y="0" z="115812" />
+            </offset>
+            <macro name="TP94S01_Region002_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_46_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_01"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_93_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_93_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_93_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP93_Region006_connection" ref="regions">
+            <offset>
+              <position x="-312000" y="0" z="245000" />
+            </offset>
+            <macro name="TP93S02_Region006_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_01_sector_002_a" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_13"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_92_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_92_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_92_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP94S01_Region002_connection" ref="regions">
+            <offset>
+              <position x="169007" y="0" z="15812" />
+            </offset>
+            <macro name="TP94S01_Region002_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_46_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_12"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_91_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_91_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_91_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP91S01_Region001_connection" ref="regions">
+            <macro name="TP91S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_28_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_22"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_90_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_90_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_90_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP83S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="6213.6171875" y="0" z="56292.671875" />
+            </offset>
+            <macro name="TP83S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_14_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_35"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_89_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_89_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_89_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP89S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="-116213.6171875" y="0" z="156292.671875" />
+            </offset>
+            <macro name="TP89S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_02_sector_001b" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_26"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_88_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_88_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_88_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP88S01_Region001_connection" ref="regions">
+            <macro name="TP88S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region2_cluster_04_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_05"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_87_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_87_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_87_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP83S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="-46213.6171875" y="0" z="-156292.671875" />
+            </offset>
+            <macro name="TP83S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_14_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_18"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_86_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_86_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_86_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP86S01_Region001_connection" ref="regions">
+            <macro name="TP86S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region2_cluster_04_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_19"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_85_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_85_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_85_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP85S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="-146213.6171875" y="0" z="-156292.671875" />
+            </offset>
+            <macro name="TP85S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_02_sector_001b" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_20"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_84_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_84_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_84_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP95S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="95374" y="6000" z="-164533" />
+            </offset>
+            <macro name="TP95S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region2_cluster_04_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_32"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_83_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_83_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_83_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP83S01_Region001_connection" ref="regions">
+            <macro name="TP83S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_14_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_03"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_82_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_82_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_82_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP82S01_Region001_connection" ref="regions">
+            <macro name="TP82S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region2_cluster_04_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_09"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_81_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_81_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_81_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP81S01_Region001_connection" ref="regions">
+            <offset>
+              <position x="-116213.6171875" y="0" z="156292.671875" />
+            </offset>
+            <macro name="TP81S01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_02_sector_001b" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_24"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+      <macro name="tppirate_Cluster_80_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="tppirate_Cluster_80_Sector001_connection" ref="sectors">
+            <macro ref="tppirate_Cluster_80_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="TP80S01_Region000_connection" ref="regions">
+            <macro name="TP80S01_Region000_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_44_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_17"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+
+
+      <macro name="meditech_Cluster_01_macro" class="cluster">
+        <component ref="standardcluster" />
+        <connections>
+          <connection name="meditech_Cluster_01_Sector001_connection" ref="sectors">
+            <macro ref="meditech_Cluster_01_Sector001_macro" connection="cluster" />
+          </connection>
+          <connection name="MS01_Region004_connection" ref="regions">
+            <offset>
+              <position x="0" y="0" z="0" />
+            </offset>
+            <macro name="MS01_Region001_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_01_sector_001_a" />
+              </properties>
+            </macro>
+          </connection>
+          <connection name="MS01_Region005_connection" ref="regions">
+            <offset>
+              <position x="-100000" y="-1000" z="-300000" />
+            </offset>
+            <macro name="MS01_Region005_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="region_cluster_01_sector_001_b" />
+              </properties>
+            </macro>
+          </connection>
+          <connection name="MS01_Region007_connection" ref="regions">
+            <macro name="MS01_Region007_macro">
+              <component connection="cluster" ref="standardregion" />
+              <properties>
+                <region ref="audioregion_cluster_18_sector_001" />
+              </properties>
+            </macro>
+          </connection>
+          <connection ref="content">
+            <macro>
+              <component connection="space" ref="Cluster_01"/>
+            </macro>
+          </connection>
+        </connections>
+      </macro>
+  </add>
+</diff>
