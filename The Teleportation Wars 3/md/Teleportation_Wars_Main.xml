@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd"> -->
-<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd">
+<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+    <!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd"> -->
     <cues>
         <!-- 
         JUMPDRIVE
@@ -65,7 +65,7 @@
             <conditions>
                 <event_cue_signalled cue="md.Setup.GameStart" />
             </conditions>
-            <delay exact="10s" />
+            <!-- <delay exact="10s" /> -->
             <actions>
                 <!--******************************FIND*******************************  -->
                 <find_sector groupname="$TP_Sectors" space="player.galaxy" multiple="true" />
@@ -78,8 +78,51 @@
                 <find_sector groupname="$TP_Sectors_ownerless" space="player.galaxy" multiple="true" owner="faction.ownerless" />
                 <find_ship groupname="$TP_X_Ships" space="player.galaxy" multiple="true" owner="faction.xenon" />
                 <find_ship groupname="$TP_Player_Ships" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_ship groupname="$All_The_Fucking_Ships" space="player.galaxy" multiple="true" />
+         
                 <find_station groupname="$TP_X_Stations" space="player.galaxy" multiple="true" owner="faction.xenon" />
                 <find_station groupname="$TP_Player_Stations" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_ship groupname="$PlayerCarriers" space="player.galaxy" multiple="true" shiptype="shiptype.carrier" owner="faction.player">
+                    <match_loadout wares="[ware.software_tpwar_carrierresupply]" />
+                </find_ship>
+                <find_station groupname="$TP_All_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" />
+                <find_station groupname="$TP_Arg_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_station groupname="$TP_Ant_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_station groupname="$TP_Par_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_station groupname="$TP_Hol_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_station groupname="$TP_Tel_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_station groupname="$TP_Min_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_station groupname="$TP_Hat_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_station groupname="$TP_Sca_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_station groupname="$TP_Ali_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_station groupname="$TP_Pir_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_station groupname="$TP_Med_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_station groupname="$TP_Xen_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_station groupname="$TP_Civ_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_station groupname="$TP_Cri_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_station groupname="$TP_kha_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_station groupname="$TP_Unk_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_station groupname="$TP_Pla_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_station groupname="$TP_Smu_StationShipyard" shipyard="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <find_station groupname="$TP_All_StationWharf" wharf="true" space="player.galaxy" multiple="true" />
+                <find_station groupname="$TP_Arg_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_station groupname="$TP_Ant_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_station groupname="$TP_Par_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_station groupname="$TP_Hol_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_station groupname="$TP_Tel_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_station groupname="$TP_Min_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_station groupname="$TP_Hat_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.hatikvah" />
+                <find_station groupname="$TP_Sca_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.scaleplate" />
+                <find_station groupname="$TP_Ali_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.alliance" />
+                <find_station groupname="$TP_Pir_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.pirate" />
+                <find_station groupname="$TP_Med_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.meditech" />
+                <find_station groupname="$TP_Xen_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.xenon" />
+                <find_station groupname="$TP_Civ_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.civilian" />
+                <find_station groupname="$TP_Cri_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.criminal" />
+                <find_station groupname="$TP_kha_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.khaak" />
+                <find_station groupname="$TP_Unk_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <find_station groupname="$TP_Pla_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.player" />
+                <find_station groupname="$TP_Smu_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
                 <!--******************************FLEETTABLE*******************************  -->
                 <set_value name="$BeaconsTable" exact="table[
                     {1}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
@@ -1124,11 +1167,143 @@
                 </cue>
                 <!--    *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
+                        ****************************************************************CMRS*********************************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+                <!-- 
+                Derelict Spawner Must Add to $All_The_Fucking_Ships
+                Missile Loadout Priortiy
+                    software on fighters links to check object that links to profile 
+                    profile egine?
+                    OK! I have to express properties of all the things I want to put on ships
+
+                 -->
+                 <!-- <cue name="CMRS_Player_Carrier_Claim" instantiate="true">
+                    <conditions>
+                        <event_object_changed_owner group="$All_The_Fucking_Ships"/>
+                    </conditions>
+                    <actions>
+                        <do_if value="event.object.type == shiptype.carrier">
+                            <add_to_group groupname="$PlayerCarriers" object="event.object" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="CMRS_Missile" instantiate="true">
+                    <conditions>
+                        <event_object_docked_at group="$PlayerCarriers"/>
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param.commander == event.object">
+                            <set_value name="$MissilesFree" exact="event.param.ammostorage.missile.free"/>
+                                <do_if value="$MissilesFree gt 0">
+                                    <do_if value="$MissilePriority == $LightGuided">
+                                        <set_value name="$missile_heatseeker_light_mk1" exact="event.object.ammostorage.{macro.missile_heatseeker_light_mk1_macro}.count"/>
+                                        <do_if value="$missile_heatseeker_light_mk1 gt $MissilesFree">
+                                            <find_object_component groupname="$Weapons" object="event.param" multiple="true" class="class.weapon" includeobjects="true"/>
+                                            <do_all exact="$Weapons.count" counter="$w">
+                                                <do_if value="$Weapons.{$w}.ammo.iscompatible.{macro.missile_heatseeker_light_mk1_macro}">
+                                                    <add_ammo object="event.param" macro="macro.missile_heatseeker_light_mk1_macro" amount="$MissilesFree" />
+                                                    <remove_ammo object="event.object" macro="macro.missile_heatseeker_light_mk1_macro" amount="$MissilesFree" />
+                                                </do_if>
+                                            </do_all>
+                                        </do_if>
+                                    </do_if>
+                                </do_if>
+                            
+                        </do_if>
+                    </actions>
+                </cue> -->
+                <!-- <cue name="CMRS_Carrier_Claim_Pool" instantiate="true">
+                    <conditions>
+                        <event_object_claimed />
+                    </conditions>
+                    <actions>
+                        <do_all exact="$TP_Sectors.count" counter="$sector">
+                            <signal_cue_instantly cue="CMRS_Find_Carrier" param="$TP_Sectors.{$sector}" />
+                        </do_all>
+                    </actions>
+                </cue>
+                <cue name="CMRS_Carrier_Claim_Pool" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <do_all exact="$TP_Sectors.count" counter="$sector">
+                            <signal_cue_instantly cue="CMRS_Find_Carrier" param="$TP_Sectors.{$sector}" />
+                        </do_all>
+                    </actions>
+                </cue>  -->
+                <!-- <cue name="CMRS_Player_Carrier" instantiate="true" checkinterval="90s">
+                    <actions>
+                        <do_all exact="$TP_Sectors.count" counter="$sector">
+                            <signal_cue_instantly cue="CMRS_Find_Carrier" param="$TP_Sectors.{$sector}" />
+                        </do_all>
+                    </actions>
+                </cue>
+                <cue name="CMRS_Find_Carrier" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay min="3s" max="20s" />
+                    <actions>
+                        <find_ship groupname="$PlayerCarriers" space="event.param" owner="faction.argon" shiptype="shiptype.carrier" />
+                        <do_all exact="$PlayerCarriers.count" counter="$car">
+                            <debug_text text="'CARRIER TEST THING ' + $PlayerCarriers.{$car}.knownname" />
+                            <debug_text text="'CARRIER TEST THING ' + $PlayerCarriers.{$car}.sector.knownname" />
+                        </do_all>
+                    </actions>
+                </cue> -->
+                <!-- <cue name="CMRS_Subordinate" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <find_ship space=""></find_ship>
+                    </actions>
+                </cue>
+                <cue name="CMRS_Missile" instantiate="true">
+                    <conditions>
+                        <event_object_docked group="" />
+                    </conditions>
+                    <actions>
+                        <do_all exact="$ThisStation.count" counter="$station">
+                            <debug_text text="'tradware list' + $ThisStation.{$station}.tradewares.list" />
+                            <do_all exact="$ThisStation.{$station}.tradewares.list.count" counter="$trade">
+                                <set_value name="$ware" exact="$ThisStation.{$station}.tradewares.list.{$trade}" />
+                                <debug_text text="'tradware list' + $ware" />
+                                <debug_text text="'tradware list' + $ThisStation.{$station}.cargo.{$ware}.count" />
+                                <do_if value="$ThisStation.{$station}.cargo.{$ware}.count lt 50">
+                                    <set_value name="$RandomFeel" min="0" max="12" />
+                                    <add_cargo object="$ThisStation.{$station}" ware="$ware" exact="$RandomFeel" />
+                                </do_if>
+                            </do_all>
+                        </do_all>
+                    </actions>
+                </cue>
+                <cue name="CMRS_Equip" instantiate="true">
+                    <conditions>
+                        <event_object_docked group="" />
+                    </conditions>
+                    <actions>
+                        <do_all exact="$ThisStation.count" counter="$station">
+                            <debug_text text="'tradware list' + $ThisStation.{$station}.tradewares.list" />
+                            <do_all exact="$ThisStation.{$station}.tradewares.list.count" counter="$trade">
+                                <set_value name="$ware" exact="$ThisStation.{$station}.tradewares.list.{$trade}" />
+                                <debug_text text="'tradware list' + $ware" />
+                                <debug_text text="'tradware list' + $ThisStation.{$station}.cargo.{$ware}.count" />
+                                <do_if value="$ThisStation.{$station}.cargo.{$ware}.count lt 50">
+                                    <set_value name="$RandomFeel" min="0" max="12" />
+                                    <add_cargo object="$ThisStation.{$station}" ware="$ware" exact="$RandomFeel" />
+                                </do_if>
+                            </do_all>
+                        </do_all>
+                    </actions>
+                </cue> -->
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
                         ****************************************************************ANOMALIES****************************************************************
                         *****************************************************************************************************************************************
                         *****************************************************************************************************************************************  -->
-
-
                 <!-- <cue name="Place_Anomalies" instantiate="true" >
                     <conditions>
 
@@ -1150,8 +1325,6 @@
                         </cue>
                     </cues>
                 </cue> -->
-
-
                 <!--    *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
                         ***********************************************************STELLAR CART, FOS, TRS********************************************************
@@ -1425,6 +1598,64 @@
                         ***********************************************************EVENT UPDATE******************************************************************
                         *****************************************************************************************************************************************
                         ***************************************************************************************************************************************** -->
+                <cue name="EVENT_Ship_Built_Monitor" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_build_finished group="$TP_All_StationShipyard" />
+                            <event_build_finished group="$TP_Arg_StationShipyard" />
+                            <event_build_finished group="$TP_Ant_StationShipyard" />
+                            <event_build_finished group="$TP_Par_StationShipyard" />
+                            <event_build_finished group="$TP_Hol_StationShipyard" />
+                            <event_build_finished group="$TP_Tel_StationShipyard" />
+                            <event_build_finished group="$TP_Min_StationShipyard" />
+                            <event_build_finished group="$TP_Hat_StationShipyard" />
+                            <event_build_finished group="$TP_Sca_StationShipyard" />
+                            <event_build_finished group="$TP_Ali_StationShipyard" />
+                            <event_build_finished group="$TP_Pir_StationShipyard" />
+                            <event_build_finished group="$TP_Med_StationShipyard" />
+                            <event_build_finished group="$TP_Xen_StationShipyard" />
+                            <event_build_finished group="$TP_Civ_StationShipyard" />
+                            <event_build_finished group="$TP_Cri_StationShipyard" />
+                            <event_build_finished group="$TP_kha_StationShipyard" />
+                            <event_build_finished group="$TP_Unk_StationShipyard" />
+                            <event_build_finished group="$TP_Pla_StationShipyard" />
+                            <event_build_finished group="$TP_Smu_StationShipyard" />
+                            <event_build_finished group="$TP_All_StationWharf" />
+                            <event_build_finished group="$TP_Arg_StationWharf" />
+                            <event_build_finished group="$TP_Ant_StationWharf" />
+                            <event_build_finished group="$TP_Par_StationWharf" />
+                            <event_build_finished group="$TP_Hol_StationWharf" />
+                            <event_build_finished group="$TP_Tel_StationWharf" />
+                            <event_build_finished group="$TP_Min_StationWharf" />
+                            <event_build_finished group="$TP_Hat_StationWharf" />
+                            <event_build_finished group="$TP_Sca_StationWharf" />
+                            <event_build_finished group="$TP_Ali_StationWharf" />
+                            <event_build_finished group="$TP_Pir_StationWharf" />
+                            <event_build_finished group="$TP_Med_StationWharf" />
+                            <event_build_finished group="$TP_Xen_StationWharf" />
+                            <event_build_finished group="$TP_Civ_StationWharf" />
+                            <event_build_finished group="$TP_Cri_StationWharf" />
+                            <event_build_finished group="$TP_kha_StationWharf" />
+                            <event_build_finished group="$TP_Unk_StationWharf" />
+                            <event_build_finished group="$TP_Pla_StationWharf" />
+                            <event_build_finished group="$TP_Smu_StationWharf" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <!-- ALL -->
+                        <add_to_group groupname="$All_The_Fucking_Ships" object="event.param3.buildobject" />
+                        <!-- CMRS -->
+                        <do_if value="event.param3.buildobject.owner == faction.player and event.param3.buildobject.type == shiptype.carrier">
+                            <add_to_group groupname="$PlayerCarriers" object="event.param3.buildobject" />
+                        </do_if>
+                        <!--DEBUG  -->
+                        <debug_text text="'CARRIER TEST THING ' + event.param3.buildobject.knownname" />
+                        <debug_text text="'CARRIER TEST THING ' + event.param3.buildobject.type" />
+                        <debug_text text="'CARRIER TEST THING ' + event.param3.buildobject.job" />
+                        <debug_text text="'CARRIER TEST THING ' + event.param3.buildobject.class" />
+                        <debug_text text="'All_The_Fucking_Ships ' + $All_The_Fucking_Ships.count" />
+                    </actions>
+                </cue>
                 <!-- Beaconpass -->
                 <!-- <cue name="Maintain_Globals_Beacons" instantiate="true">
                     <conditions>
