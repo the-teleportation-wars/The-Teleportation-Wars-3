@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+<!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd"> -->
+<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd">
     <cues>
         <!-- 
         JUMPDRIVE
@@ -1121,6 +1122,36 @@
                         </do_all>
                     </actions>
                 </cue>
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ****************************************************************ANOMALIES****************************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+
+
+                <cue name="Place_Anomalies" instantiate="true" >
+                    <conditions>
+
+                    </conditions>
+                    <actions>
+
+                    </actions>
+                    <cues>
+                        <cue name="Player_Use_Anomalies">
+                            <conditions>
+                                <check_any>
+                                    <event_object_entered_anomaly />
+                                    <event_player_entered_anomaly />
+                                </check_any>
+                            </conditions>
+                            <actions>
+
+                            </actions>
+                        </cue>
+                    </cues>
+                </cue>
+
+
                 <!--    *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
                         ***********************************************************STELLAR CART, FOS, TRS********************************************************
