@@ -1145,7 +1145,7 @@
                                 </check_any>
                             </conditions>
                             <actions>
-
+                                <warp object=""></warp>
                             </actions>
                         </cue>
                     </cues>
