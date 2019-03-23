@@ -1344,6 +1344,14 @@
                         </do_if>
                     </actions>
                 </cue>
+                <!-- ***********************************************************VALUES SECTION****************************************************************** -->
+                <!-- Pirate Treasure 
+                        $SectorGroup
+                        $Crate stellar_cart_lockbox_treasure_macro
+                    BLUEPRINTS
+                        $SectorGroup
+                        $Crate BLUEPRINT CRATE
+                 -->
                 <!-- ***********************************************************INVENTORY CONTROL****************************************************************** 
                 1. Set Known 
                     a. new wares for all the sectors
@@ -1593,6 +1601,49 @@
                         <signal_cue_instantly cue="Stellar_Cartography_Inventory_Check" />
                     </actions>
                 </cue>
+                <!-- *********************************************************** FIND OWNERLESS SCAN ************************************************************** -->
+                <!-- <cue name="Find_Ownerless_Scan" instantiate="true">
+                    <conditions>
+                        <event_long_range_scan_sent object="player.entity" />
+                    </conditions>
+                    <actions>
+                        <check_object object="" result=""></check_object>
+                        <do_if value="">
+                            <signal_cue_instantly cue="Find_Ownerless_Find" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="Find_Ownerless_Find" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <find_object groupname="$ownerless" space="player.sector" owner="faction.ownerless" multiple="true" />
+                        <do_all exact="$ownerless.count" counter="$o">
+                            <signal_cue_instantly cue="Find_Ownerless_Report" param="$ownerless.{$o}"/>
+                        </do_all>
+                    </actions>
+                </cue>
+                <cue name="Find_Ownerless_Report" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <set_value name="$ownerless" exact="event.param" />
+                        <set_object_name object="$ownerless" name="'Unknown Contact'" />
+                        <set_value name="$textHeader" exact="'Unknown Contact found in %1\n'.[$ownerless.sector.name]" />
+                        <set_value name="$textBody" exact="'Contact Position: x=%1, y=%2, z=%3\n'.[$ownerless.zone.position.x, $ownerless.zone.position.y, $ownerless.zone.position.z]" />
+                        <show_notification text="$textHeader + $textBody" timeout="10s" />
+                        <write_to_logbook title="$textHeader" text="$textBody" interaction="guidance" object="$ownerless" category="tips" />
+                        <set_known object="$ownerless" known="true" updatesnapshot="true" />
+                        <set_known object="$ownerless.zone" known="true" />
+                        <set_known object="$ownerless.sector" known="true" />
+                        <set_known object="$ownerless.cluster" known="true" />
+                        <remove_value name="$ownerless" />
+                        <remove_value name="$textHeader" />
+                        <remove_value name="$textBody" />
+                    </actions>
+                </cue> -->
                 <!--   *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
                         ***********************************************************EVENT UPDATE******************************************************************
