@@ -1645,6 +1645,7 @@
                 </cue> -->
                 <!-- *********************************************************** TRADE RECEIVER SATS ************************************************************** -->
                 <!-- PLEASE HANDLE THE EVENT OF STATIONS BEING CREATED -->
+                <!-- ADD SAT DECAY -->
                 <!-- <cue name="EVENT_TRS_Launch" instantiate="true">
                     <conditions>
                         <event_satellite_launched space="player.galaxy" />
