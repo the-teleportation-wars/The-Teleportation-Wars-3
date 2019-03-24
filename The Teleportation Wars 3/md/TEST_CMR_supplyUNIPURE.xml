@@ -1,4 +1,4 @@
-<!-- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <mdscript name="CMR_supply" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://utnas/~unitrader/XRebirthxsds/md.xsd">
     <cues>
         <cue name="Init" checktime="player.age + 10s" checkinterval="30s" instantiate="true">
@@ -11,7 +11,7 @@
 
           
         
-        <cue name="CMR_supply" instantiate="true" checktime="player.age + 10s" checkinterval="15s" namespace="this"> -->
+        <cue name="CMR_supply" instantiate="true" checktime="player.age + 10s" checkinterval="15s" namespace="this">
 
             <actions>
                 <!-- <find_ship groupname="global.$PlayerCarrier" space="player.galaxy" multiple="true" shiptype="shiptype.carrier" owner="faction.player"> 

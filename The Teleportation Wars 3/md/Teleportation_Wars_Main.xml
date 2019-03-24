@@ -1644,8 +1644,9 @@
                     </actions>
                 </cue> -->
                 <!-- *********************************************************** TRADE RECEIVER SATS ************************************************************** -->
-                <!-- PLEASE HANDLE THE EVENT OF STATIONS BEING CREATED -->
-                <!-- ADD SAT DECAY -->
+                <!--    PLEASE HANDLE THE EVENT OF STATIONS BEING CREATED 
+                        HANDLE MULTIPLE SATELLITE PLACEMENT
+                 -->
                 <!-- <cue name="EVENT_TRS_Launch" instantiate="true">
                     <conditions>
                         <event_satellite_launched space="player.galaxy" />
@@ -1662,17 +1663,6 @@
                                         <add_trade_subscription object="$stations.{$j}" />
                                     </do_if>
                                 </do_all>
-                            </do_if>
-                            <do_if value="event.param2.macro == macro.eq_arg_satellite_09_macro">
-                                <find_station groupname="$stations" multiple="true" space="event.param2.sector">
-                                    <match owner="faction.player" negate="true" />
-                                </find_station>
-                                <do_all exact="$stations.count" counter="$j">
-                                    <do_if value="$stations.{$j}.relationto.{faction.player} ge 0 and not $stations.{$j}.haspermanenttradesubscription">
-                                        <add_trade_subscription object="$stations.{$j}" />
-                                    </do_if>
-                                </do_all>
-                                <remove_value name="$stations" />
                             </do_if>
                         </do_if>
                     </actions>
@@ -1694,6 +1684,91 @@
                             <remove_value name="$stations" />
                         </do_if>
                     </actions>
+                </cue> -->
+                <!-- <cue name="EVENT_TRS_Launch_Unstable" instantiate="true">
+                    <conditions>
+                        <event_satellite_launched space="player.galaxy" />
+                    </conditions>
+                    <actions>
+                        <check_object object="" result="$result"></check_object>
+                        <do_if value="$result == true">
+                            <do_if value="event.param2.macro == macro.eq_arg_satellite_09_macro">
+                                <find_station groupname="$stations" multiple="true" space="event.param2.sector">
+                                    <match owner="faction.player" negate="true" />
+                                </find_station>
+                                <do_all exact="$stations.count" counter="$j">
+                                    <do_if value="$stations.{$j}.relationto.{faction.player} ge 0 and not $stations.{$j}.haspermanenttradesubscription">
+                                        <add_trade_subscription object="$stations.{$j}" />
+                                    </do_if>
+                                </do_all>
+                                <remove_value name="$stations" />
+                                <add_to_group groupname="$UnstableSats" object="event.param2" />
+                                <set_value name="$delay" exact="150h" />
+                                <do_all exact="$UnstableSats.count">
+                                    <set_value name="$delay" operation="subtract" exact="$delay / 2.2f" />
+                                </do_all>
+                                <signal_cue_instantly cue="EVENT_TRS_Decay_Signalled" param="[event.param2, $delay, $UnstableSats]" />
+                            </do_if>
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="EVENT_TRS_Decay_Signalled" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay exact="event.param.{2}"/>
+                    <actions>
+                        <destroy_object object="event.param.{3}.random" />
+                    </actions>
+                </cue> -->
+                <!-- <cue name="EVENT_TRS_Decay_Signalled" instantiate="true" checkinterval="30s">
+                    <actions>
+                        <set_value name="$UnstableSats" exact="8" />
+                        <set_value name="$delay" exact="150h" />
+                        <do_all exact="$UnstableSats">
+                            <set_value name="$delay" operation="subtract" exact="$delay / 2.2f" />
+                            <debug_text text="'DelayTest1 ' + $delay" />
+                        </do_all>
+                        <debug_text text="'DelayTest2 ' + $delay" />
+                    </actions>
+                </cue> -->
+                <!-- <cue name="Satellite_Decay" instantiate="true">
+                    <actions>
+                        <set_value name="$SatDecayTable" exact="table[]" />
+                        <find_ship groupname="$SatDecayShips" space="player.galaxy" owner="faction.argon" multiple="true"></find_ship>
+                    </actions>
+                    <cues>
+                        <cue name="Satellite_Decay_Check" instantiate="true" >
+                            <actions>
+                                <do_all exact="$SatDecayShips.count" counter="$sat">
+                                    <set_value name="$SatDecayTable.{$sat}" exact="table[]" />
+                                    <set_value name="$SatDecayTable.{$sat}.$starttime" exact="player.age" />
+                                    <set_value name="$SatDecayTable.{$sat}.$ship" exact="$SatDecayShips.random"/>
+                                </do_all>
+                                <debug_text text="'TRSDecayTable1 ' + $SatDecayTable" />
+                                <debug_text text="'TRSDecayTable2 ' + $SatDecayTable.{1}.$starttime" />
+                                <debug_text text="'TRSDecayTable3 ' + $SatDecayTable.{1}.$ship" />
+                                <debug_text text="'TRSDecayTable4 ' + $SatDecayTable.keys.list" />
+                            </actions>
+                        </cue>
+                        <cue name="Satellite_Decay_Destroy" instantiate="true" checkinterval="46s" checktime="10s">
+                            <actions>
+                                <debug_text text="'TRSDecayShipCount1 ' + $SatDecayShips.count" />
+                                <do_all exact="$SatDecayTable.keys.count" counter="$sat">
+                                    <do_if value="(player.age - $SatDecayTable.{$sat}.$startime) gt 1min">
+                                        <debug_text text="'TRSDecay This Should Appear In The Log ' + $SatDecayTable.{$sat}.$ship" />
+                                        <destroy_object object="$SatDecayTable.{$sat}.$ship" />
+                                        <remove_value name="$SatDecayTable.{$sat}" />
+                                    </do_if>
+                                </do_all>
+                                <debug_text text="'TRSDecayShipCount2 ' + $SatDecayShips.count" />
+                                <debug_text text="'TRSDecayTable1 ' + $SatDecayTable" />
+                                <debug_text text="'TRSDecayTable2 ' + $SatDecayTable.{1}.$starttime" />
+                                <debug_text text="'TRSDecayTable3 ' + $SatDecayTable.{1}.$ship" />
+                                <debug_text text="'TRSDecayTable4 ' + $SatDecayTable.keys.list" />
+                            </actions>
+                        </cue>
+                    </cues>
                 </cue> -->
                 <!--   *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
