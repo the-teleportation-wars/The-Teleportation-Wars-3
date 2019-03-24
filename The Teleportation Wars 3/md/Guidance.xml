@@ -3,7 +3,7 @@
 <diff>
     <add sel="/mdscript/cues/cue[@name='Start']/cues/cue[@name='NewTarget']/actions/set_value[@name='$Target']" pos="after">
         <!-- <set_value name="$Pasta" exact="objective.guidance" /> -->
-        <do_if value="$Target.macro == macro.test_jump_beacon_t1_macro" > 
+        <do_if value="$Target.macro == macro.tpwar_jump_beacon_t1_macro" > 
         <!-- $Target.macro == macro.test_jump_beacon_t1_macro"  $Target.isclass.navbeacon -->
             <!-- <find_zone name="$Start_Zone" macro="macro.zone002_cluster_01_sector001_macro" required="true"/> -->
             <do_if value="player.zone != $Target.zone">

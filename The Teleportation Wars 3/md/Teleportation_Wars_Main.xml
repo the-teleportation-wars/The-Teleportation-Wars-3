@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd"> -->
-<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd">
+<mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+    <!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd"> -->
     <cues>
         <!-- 
         JUMPDRIVE
@@ -1324,6 +1324,24 @@
                         </cue>
                     </cues>
                 </cue> -->
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
+                        ****************************************************************SALVAGE******************************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+                <cue name="EVENT_Salvage_Beacon" instantiate="true">
+                    <conditions>
+                        <event_navbeacon_launched space="player.galaxy" />
+                    </conditions>
+                    <actions>
+                        <do_if value="event.param2.macro == ">
+                            <find_ship groupname="$MarkedWrecks" multiple="true" checkoperational="componentstate.wreck" space="event.param2.zone" />
+                        </do_if>
+                        <do_all exact="$MarkedWrecks" counter="$m">
+                            <write_to_logbook category="general" title="" />
+                        </do_all>
+                    </actions>
+                </cue>
                 <!--    *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
                         ***********************************************************STELLAR CART, FOS, TRS********************************************************
