@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
-    <!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd"> -->
+<!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd"> -->
     <cues>
         <!-- 
         JUMPDRIVE
@@ -123,6 +123,8 @@
                 <find_station groupname="$TP_Unk_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.ownerless" />
                 <find_station groupname="$TP_Pla_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.player" />
                 <find_station groupname="$TP_Smu_StationWharf" wharf="true" space="player.galaxy" multiple="true" owner="faction.smuggler" />
+                <!--*********************************SALVAGE*******************************  -->
+                <set_value name="$SalvageTable" exact="table[]" />
                 <!--******************************FLEETTABLE*******************************  -->
                 <set_value name="$BeaconsTable" exact="table[
                     {1}  = table[ $Active = false, $FleetHop = false, $PirateHop = false, $PlayerAttack = false, $Invasion = false, $Startime = 0, $Ships = []],
@@ -1327,6 +1329,12 @@
                 </cue> -->
                 <!--    *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
+                        ****************************************************************Player HQ****************************************************************
+                        *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************  -->
+                <!-- PLAY THE DAMN EFFECT (ADD_EFFECt AND USE EFFECTS.XML) -->
+                <!--    *****************************************************************************************************************************************
+                        *****************************************************************************************************************************************
                         ****************************************************************SALVAGE******************************************************************
                         *****************************************************************************************************************************************
                         *****************************************************************************************************************************************  -->
@@ -1337,12 +1345,101 @@
                     <actions>
                         <do_if value="event.param2.macro == ">
                             <find_ship groupname="$MarkedWrecks" multiple="true" checkoperational="componentstate.wreck" space="event.param2.zone" />
-                        </do_if>
+                            <do_all exact="$WreckTable.keys.count" counter="$key">
+                                <do_if value="$WreckTable.{$key}.$ships.count == 0">
+                                    <destroy_object object="$WreckTable.{$key}.$beacon" />
+                                    <remove_value name="$WreckTable.{$key}.$beacon" />
+                                </do_if>
+                            </do_all>
+                            <set_value name="$NewEntry" exact="$WreckTable.keys.list.max + 1" />
+                            <set_value name="$WreckTable.{$NewEntry}" exact="table[]" />
+                            <set_value name="$WreckTable.{$NewEntry}.$ships" exact="$MarkedWrecks.list"/>
+                            <set_value name="$WreckTable.{$NewEntry}.$beacon" exact="event.param2"/>
+                            <do_all exact="$WreckTable.{$NewEntry}.$ships.count" counter="$thisship">
+                                <create_list name="$ShipData" />
+                                <append_to_list name="$ShipData" exact="$WreckTable.{$NewEntry}.$ships.{$thisship}.macro"/>
+                                <find_object_component object=""></find_object_component>
+                                <append_to_list name="$ShipData" exact=""/>
+                                <set_value name="$WreckTable.{$NewEntry}.$ships.{$thisship}" exact="$ShipData"/>
+                                <clear_list list="$ShipData" />
+                            </do_all> -->
+                <!-- monkey's version, so as not to ruin the original -->
+                <!-- <cue name="EVENT_Salvage_Beacon" instantiate="true">
+                    <conditions>
+                        <event_navbeacon_launched space="player.galaxy" />
+                    </conditions>
+                    <actions>
+                        <find_ship groupname="$MarkedWrecks" multiple="true" space="player.sector"></find_ship>
+                        <set_value name="$NewEntry" exact="$SalvageTable.keys.list.max + 1" />
+                        <debug_text text="'MonkeyTest KeysMax ' + $SalvageTable.keys.list.max" />
+                        <set_value name="$SalvageTable.{$NewEntry}" exact="table[
+                                $beacon = event.param2,
+                                $ships = table[]
+                                ]" />
+                        <do_all exact="$MarkedWrecks.count" counter="$thisship">
+                            <find_object_component groupname="$Components" multiple="true" object="$MarkedWrecks.{$thisship}"></find_object_component>
+                            <set_value name="$SalvageTable.{$NewEntry}.$ships.{$thisship}" exact="table[
+                                    $shipname = $MarkedWrecks.{$thisship}.knownname,
+                                    $macro = $MarkedWrecks.{$thisship}.macro,
+                                    $components = $Components
+                                    ]" />
+                        </do_all>
+                        <debug_text text="'MonkeyTest Ship Count ' + $MarkedWrecks.count" />
+                        <debug_text text="'MonkeyTest N plus 1 ' + $NewEntry" />
+                        <debug_text text="'MonkeyTest SalvageTable ' + $SalvageTable" />
+                        <debug_text text="'MonkeyTest SalvageTable Key Count ' + $SalvageTable.keys.count" />
+                        <debug_text text="'MonkeyTest SalvageTable Key List ' + $SalvageTable.keys.list" />
+                        <debug_text text="'MonkeyTest SalvageTable 1st Key ' + $SalvageTable.{1}" />
+                        <debug_text text="'MonkeyTest SalvageTable Beacon ' + $SalvageTable.{1}.$beacon" />
+                        <debug_text text="'MonkeyTest SalvageTable ShipsTable ' + $SalvageTable.{1}.$ships" />
+                        <debug_text text="'MonkeyTest SalvageTable Ship Name ' + $SalvageTable.{1}.$ships.{1}.$shipname" />
+                        <debug_text text="'MonkeyTest SalvageTable Ship Macro ' + $SalvageTable.{1}.$ships.{1}.$macro" />
+                        <debug_text text="'MonkeyTest SalvageTable Ship Comp ' + $SalvageTable.{1}.$ships.{1}.$components" />
+                        <debug_text text="'MonkeyTest SalvageTable 1st Key ' + $SalvageTable.{2}" />
+                        <debug_text text="'MonkeyTest SalvageTable Beacon ' + $SalvageTable.{2}.$beacon" />
+                        <debug_text text="'MonkeyTest SalvageTable ShipsTable ' + $SalvageTable.{2}.$ships" />
+                        <debug_text text="'MonkeyTest SalvageTable Ship Name ' + $SalvageTable.{2}.$ships.{2}.$shipname" />
+                        <debug_text text="'MonkeyTest SalvageTable Ship Macro ' + $SalvageTable.{2}.$ships.{2}.$macro" />
+                        <debug_text text="'MonkeyTest SalvageTable Ship Comp ' + $SalvageTable.{2}.$ships.{2}.$components" />
+                        <clear_group group="$MarkedWrecks" />
+                        <remove_value name="$NewEntry" />
+                    </actions>
+                </cue> -->
+                <!-- end monkey's version, so as not to ruin the original -->
+                <!-- </do_if>
+                        <do_all exact="$.count" counter="$sat">
+                            <set_value name="$WreckTable.{$sat}" exact="table[]" />
+                            <set_value name="$WreckTable.{$sat}" exact="table[]" />
+                            <set_value name="$WreckTable.{$sat}.$starttime" exact="player.age" />
+                            <set_value name="$WreckTable.{$sat}.$ship" exact="$SatDecayShips.random" />
+                        </do_all>
                         <do_all exact="$MarkedWrecks" counter="$m">
                             <write_to_logbook category="general" title="" />
                         </do_all>
                     </actions>
                 </cue> -->
+                
+                <!-- <cue name="Satellite_Decay" instantiate="true">
+                    <actions>
+                        <set_value name="$SatDecayTable" exact="table[]" />
+                        <find_ship groupname="$SatDecayShips" space="player.galaxy" owner="faction.argon" multiple="true"></find_ship>
+                    </actions>
+                    <cues>
+                        <cue name="Satellite_Decay_Check" instantiate="true">
+                            <actions>
+                                <do_all exact="$SatDecayShips.count" counter="$sat">
+                                    <set_value name="$SatDecayTable.{$sat}" exact="table[]" />
+                                    <set_value name="$SatDecayTable.{$sat}.$starttime" exact="player.age" />
+                                    <set_value name="$SatDecayTable.{$sat}.$ship" exact="$SatDecayShips.random" />
+                                </do_all>
+                                <debug_text text="'TRSDecayTable1 ' + $SatDecayTable" />
+                                <debug_text text="'TRSDecayTable2 ' + $SatDecayTable.{1}.$starttime" />
+                                <debug_text text="'TRSDecayTable3 ' + $SatDecayTable.{1}.$ship" />
+                                <debug_text text="'TRSDecayTable4 ' + $SatDecayTable.keys.list" />
+                            </actions>
+                        </cue> 
+                    </cues>
+                </cue>  -->
                 <!--    *****************************************************************************************************************************************
                         *****************************************************************************************************************************************
                         ***********************************************************STELLAR CART, FOS, TRS********************************************************
