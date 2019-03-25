@@ -67,6 +67,7 @@
             </conditions>
             <!-- <delay exact="10s" /> -->
             <actions>
+                
                 <!--******************************FIND*******************************  -->
                 <find_sector groupname="$TP_Sectors" space="player.galaxy" multiple="true" />
                 <find_sector groupname="$TP_Sectors_Argon" space="player.galaxy" multiple="true" owner="faction.argon" />
