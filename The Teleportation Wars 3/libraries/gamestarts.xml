@@ -229,7 +229,7 @@
     				<ammunition>
                 <ammunition macro="eq_arg_satellite_01_macro" exact="10" optional="true" />
                 <ammunition macro="eq_arg_satellite_10_macro" exact="10" optional="true" /> 
-                <ammunition macro="test_jump_beacon_t1_macro" exact="5" optional="true"/>   
+                <ammunition macro="env_deco_nav_beacon_t1_macro" exact="5" optional="true"/>   
                 <ammunition macro="missile_guided_heavy_mk1_macro" exact="100" optional="1" />       
                 <ammunition macro="missile_heatseeker_heavy_mk1_macro" exact="100" optional="1" />   
                 <ammunition macro="missile_dumbfire_light_mk1_macro" exact="100" optional="1" />   

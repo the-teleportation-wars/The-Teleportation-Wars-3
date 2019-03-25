@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Exported by: Markus (192.168.3.139) at 23.10.2018_15-50-29-->
-<macros>
+<macros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/UNIxsdfiles/x4_macro.xsd">
   <macro name="tpwar_jump_beacon_t1_macro" class="navbeacon">
     <component ref="env_deco_nav_beacon_t1" />
     <properties>
