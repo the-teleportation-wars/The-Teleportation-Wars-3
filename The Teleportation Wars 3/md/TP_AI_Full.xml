@@ -2,10 +2,11 @@
 <mdscript name="TP_AI_Full" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
     <cues>
         <!-- 
-        delay
         storage
-        exchange
+        exchange might work
         math
+        check case mismatch
+        
          -->
         <cue name="Init_AI" instantiate="true">
             <conditions>
@@ -18,7 +19,7 @@
                 <find_sector groupname="$TP_Sectors_Teladi" space="player.galaxy" multiple="true" owner="faction.teladi" />
                 <find_sector groupname="$TP_Sectors_Paranid" space="player.galaxy" multiple="true" owner="faction.paranid" />
                 <find_sector groupname="$TP_Sectors_antigone" space="player.galaxy" multiple="true" owner="faction.antigone" />
-                <find_sector groupname="$TP_Sectors_ministry" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_sector groupname="$TP_Sectors_ministry" space="player.galaxy" multiple="true" owner="faction.teladi" />
                 <find_sector groupname="$TP_Sectors_holyorder" space="player.galaxy" multiple="true" owner="faction.holyorder" />
                 <find_sector groupname="$TP_Sectors_ownerless" space="player.galaxy" multiple="true" owner="faction.ownerless" />
                 <!-- group -->
@@ -26,7 +27,7 @@
                 <create_group groupname="$SpawnedStationGroup" />
                 <create_group groupname="$SpawnedFactoriesGroup" />
                 <create_group groupname="$TeleportationBeacons" />
-                <create_group groupname="$CurrentInvasionStation" />
+                <create_group groupname="$TeleportationStations" />
                 <create_group groupname="$SpawnedStationGroup" />
                 <!-- modules -->
                 <create_list name="$Prod" />
@@ -41,7 +42,7 @@
                 <set_value name="$FleetTable" exact="table[]" />
                 <!-- xenonai -->
                 <set_value name="$ForcePool" exact="50" />
-                <set_value name="$ConstantFleethop" exact="10f" />
+                <set_value name="$ConstantFleetHop" exact="2f" />
                 <set_value name="$ConstantPlayerAttack" exact="1f" />
                 <set_value name="$ConstantInvasion" exact="10f" />
                 <set_value name="$BeaconRate" exact="2f" />
@@ -50,15 +51,73 @@
                 <set_value name="$Time" exact="(player.age)f + 20" />
                 <set_value name="$DeltaTime" exact="$Time" />
                 <!--******************************CALC VALUES*******************************  -->
-                <set_value name="$Fleethop" exact="1000" />
-                <set_value name="$Invasion" exact="1000" />
-                <set_value name="$PlayerAttack" exact="1000" />
-                <set_value name="$Piratehop" exact="1000" />
-                <set_value name="$XenonSuccess" exact="10f" />
+                <set_value name="$FleetHop" exact="2" />
+                <set_value name="$Invasion" exact="2" />
+                <set_value name="$PlayerAttack" exact="2" />
+                <set_value name="$Piratehop" exact="2" />
+                <set_value name="$XenonForce" exact="2" />
+                <set_value name="$XenonSuccess" exact="2f" />
                 <set_value name="$PlayerSuccess" exact="1f" />
                 <!--  ******************************xenonactions*******************************   -->
+                <set_value name="$FleetHopSelected" exact="false" />
+                <set_value name="$InvasionSelected" exact="false" />
+                <set_value name="$InvasionStart" exact="false" />
+                <set_value name="$InvasionStations" exact="0" />
+                <!--  ******************************spawn*******************************   -->
+                <set_value name="$MediumSearchComplete" exact="false" />
+                <set_value name="$SearchComplete" exact="false" />
+                <set_value name="$LargeSearchComplete" exact="false" />
             </actions>
             <cues>
+                <cue name="TP_Report" instantiate="true" checktime="45s" checkinterval="60s">
+                    <actions>
+                        <!-- report -->
+                        <set_value name="$ReportCount" exact="1" operation="add" />
+                        <debug_to_file text="'Report: ' + $ReportCount" name="'TP_Report.log'" />
+                        <debug_to_file text="'FleetHop ' + $FleetHop" name="'TP_Report.log'" />
+                        <debug_to_file text="'PlayerAttack ' + $PlayerAttack" name="'TP_Report.log'" />
+                        <debug_to_file text="'Invasion ' + $Invasion" name="'TP_Report.log'" />
+                        <debug_to_file text="'ForcePool ' + $ForcePool" name="'TP_Report.log'" />
+                        <debug_to_file text="'DeltaTime ' + $DeltaTime" name="'TP_Report.log'" />
+                        <debug_to_file text="'Utilization ' + $Utilization" name="'TP_Report.log'" />
+                        <debug_to_file text="'Fleet Report '" name="'TP_Report.log'" />
+                        <debug_to_file text="'Total Fleets ' + $FleetTable.keys.count" name="'TP_Report.log'" />
+                        <do_all exact="$FleetTable.keys.count" counter="$thisfleet">
+                            <debug_to_file text="'Active Fleet? ' + $FleetTable.{$thisfleet}.$Active" name="'TP_Report.log'" />
+                            <debug_to_file text="'FleetShips ' + $FleetTable.{$thisfleet}.$FleetShips.count" name="'TP_Report.log'" />
+                            <debug_to_file text="'INVASION ' + $FleetTable.{$thisfleet}.$Invasion" name="'TP_Report.log'" />
+                            <debug_to_file text="'FleetHop ' + $FleetTable.{$thisfleet}.$FleetHop" name="'TP_Report.log'" />
+                            <debug_to_file text="'PLAYERATTACK ' + $FleetTable.{$thisfleet}.$PlayerAttack" name="'TP_Report.log'" />
+                            <debug_to_file text="'Startime ' + $FleetTable.{$thisfleet}.$Startime" name="'TP_Report.log'" />
+                            <!-- fix me -->
+                            <do_all exact="$FleetTable.{$thisfleet}.$FleetShips.count" counter="$ship">
+                                <debug_to_file text="'FleetShipNames ' + $FleetTable.{$thisfleet}.{$FleetShips.{$ship}}.knownname" name="'TP_Report.log'" />
+                            </do_all>
+                        </do_all>
+                        <debug_to_file text="'Factory Report '" name="'TP_Report.log'" />
+                        <debug_to_file text="'Factory Count ' + $SpawnedFactoriesGroup.count" name="'TP_Report.log'" />
+                        <do_all exact="$SpawnedFactoriesGroup.count" counter="$thisfactory">
+                            <debug_to_file text="'Factory Name ' + $SpawnedFactoriesGroup.{$thisfactory}.knowname" name="'TP_Report.log'" />
+                            <debug_to_file text="'All Posts ' + $SpawnedFactoriesGroup.{$thisfactory}.controlposts.all" name="'TP_Report.log'" />
+                            <debug_to_file text="'Empty Posts ' + $SpawnedFactoriesGroup.{$thisfactory}.controlposts.free" name="'TP_Report.log'" />
+                            <debug_to_file text="'TradeWares ' + $SpawnedFactoriesGroup.{$thisfactory}.tradewares" name="'TP_Report.log'" />
+                            <do_all exact="$SpawnedFactoriesGroup.{$thisfactory}.productions.count" counter="$product">
+                                <debug_to_file text="'Products ' + $SpawnedFactoriesGroup.{$thisfactory}.productions.{$product}.knownname" name="'TP_Report.log'" />
+                            </do_all>
+                        </do_all>
+                        <debug_to_file text="'Station Report '" name="'TP_Report.log'" />
+                        <debug_to_file text="'Station Count ' + $SpawnedStationGroup.count" name="'TP_Report.log'" />
+                        <do_all exact="$SpawnedStationGroup.count" counter="$thisfactory">
+                            <debug_to_file text="'Station Name ' + $SpawnedStationGroup.{$thisfactory}.knowname" name="'TP_Report.log'" />
+                            <debug_to_file text="'All Posts ' + $SpawnedStationGroup.{$thisfactory}.controlposts.all" name="'TP_Report.log'" />
+                            <debug_to_file text="'Empty Posts ' + $SpawnedStationGroup.{$thisfactory}.controlposts.free" name="'TP_Report.log'" />
+                            <debug_to_file text="'TradeWares ' + $SpawnedStationGroup.{$thisfactory}.tradewares" name="'TP_Report.log'" />
+                            <do_all exact="$SpawnedStationGroup.{$thisfactory}.productions.count" counter="$product">
+                                <debug_to_file text="'Products ' + $SpawnedStationGroup.{$thisfactory}.productions.{$product}.knownname" name="'TP_Report.log'" />
+                            </do_all>
+                        </do_all>
+                    </actions>
+                </cue>
                 <cue name="BeaconRate" instantiate="true" checkinterval="60s">
                     <actions>
                         <create_object groupname="$TeleportationBeacons" macro="macro.env_deco_nav_beacon_t1_macro" sector="$TP_Sectors.random" owner="faction.ownerless">
@@ -67,6 +126,7 @@
                     </actions>
                 </cue>
                 <cue name="SpawnTradeStation" instantiate="true">
+                    <delay exact="3s" />
                     <actions>
                         <do_any>
                             <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Argon.random" />
@@ -91,21 +151,25 @@
                     <conditions>
                         <event_cue_signalled />
                     </conditions>
+                    <delay exact="20s" />
                     <actions>
                         <set_value name="$SectorToSpawnIn" exact="$TP_Sectors.random" />
                         <set_value name="$StationMacro" exact="macro.station_arg_tradestation_base_01_macro" />
                         <set_value name="$ConstructionPlan" exact="'arg_tradestation'" />
-                        <set_value name="$ConstructionFaction" exact="facton.xenon" />
+                        <set_value name="$ConstructionFaction" exact="faction.xenon" />
                         <include_actions ref="SpawnStationLIB" />
                         <remove_value name="$SectorToSpawnIn" />
                         <remove_value name="$StationMacro" />
                         <remove_value name="$ConstructionPlan" />
                         <remove_value name="$ConstructionFaction" />
-                        <add_to_group groupname="$CurrentInvasionStation" object="$StationSpawned" />
+                        <add_to_group groupname="$TeleportationStations" object="$StationSpawned" />
                         <set_owner object="$StationSpawned" faction="faction.player" overridenpc="true" />
+                        <signal_cue_instantly cue="XenonInvasion" />
+                        <debug_to_file text="'INVASTION STATION CUE SIGNALED INVASION '" name="'AIvalue.log'" />
                     </actions>
                 </cue>
                 <cue name="SpawnFactory" instantiate="true">
+                    <delay exact="6s" />
                     <actions>
                         <do_any>
                             <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Argon.random" />
@@ -136,55 +200,138 @@
                         <set_owner object="$FactorySpawned" faction="faction.player" overridenpc="true" />
                     </actions>
                 </cue>
-                <cue name="AI_Force" instantiate="true" checktime="30s" checkinterval="15min">
+                <cue name="AI_Force" instantiate="true" checktime="30s" checkinterval="10min">
                     <actions>
                         <set_value name="$DeltaTime" exact="($Time * 1.03f)" operation="add" />
                         <set_value name="$Utilization" exact="$XenonForce / ($XenonForce  + $Time  + $XenonSuccess )" />
                         <!-- calc -->
-                        <set_value name="$Fleethop" exact="$ConstantFleethop * ((( $XenonSuccess/$PlayerSuccess ) * ($BeaconRate * $DeltaTime)) /  $Utilization)" />
+                        <set_value name="$FleetHop" exact="$ConstantFleetHop * ((( $XenonSuccess/$PlayerSuccess ) * ($BeaconRate * $DeltaTime)) /  $Utilization)" />
                         <set_value name="$PlayerAttack" exact="$ConstantPlayerAttack * ((( $PlayerSuccess/$XenonSuccess ) * ($PHQ * $DeltaTime)) /  $Utilization)" />
                         <set_value name="$Invasion" exact="$ConstantInvasion * ((($XenonSuccess - $Time ) * $Utilization) + $DeltaTime)" />
-                        <set_value name="$ForcePool" exact="($Fleethop + $PlayerAttack + $Invasion) / 100" />
-                        <debug_to_file text="'Fleethop ' + $Fleethop" name="'AIvalue.log'" />
+                        <set_value name="$ForcePool" exact="($FleetHop + $PlayerAttack + $Invasion) / 100" />
+                        <debug_to_file text="'FleetHop ' + $FleetHop" name="'AIvalue.log'" />
                         <debug_to_file text="'PlayerAttack ' + $PlayerAttack" name="'AIvalue.log'" />
                         <debug_to_file text="'Invasion ' + $Invasion" name="'AIvalue.log'" />
                         <debug_to_file text="'ForcePool ' + $ForcePool" name="'AIvalue.log'" />
                         <debug_to_file text="'DeltaTime ' + $DeltaTime" name="'AIvalue.log'" />
                         <debug_to_file text="'Utilization ' + $Utilization" name="'AIvalue.log'" />
                         <!-- exchange -->
-                        <do_if value="$InvastionStart == false">
-                            <do_if value="$Fleethop gt $Invasion">
-                                <set_value name="$FleetHopSelected" exact="true" />
+                        <do_if value="$InvasionStart == false">
+                            <do_if value="$FleetHop gt $Invasion and $FleetHop gt $PlayerAttack">
                                 <set_value name="$InvasionSelected" exact="false" />
+                                <set_value name="$PlayerAttackSelected" exact="false" />
+                                <set_value name="$FleetHopSelected" exact="true" />
+                                <debug_to_file text="'FleetHop SELECTED '" name="'AIvalue.log'" />
                             </do_if>
-                            <do_if value="$Fleethop lt $Invasion">
+                            <do_if value="$Invasion gt $FleetHop and $Invasion gt $PlayerAttack">
                                 <set_value name="$FleetHopSelected" exact="false" />
+                                <set_value name="$PlayerAttackSelected" exact="false" />
                                 <set_value name="$InvasionSelected" exact="true" />
+                                <debug_to_file text="'INVASION SELECTED '" name="'AIvalue.log'" />
                             </do_if>
                         </do_if>
                         <do_if value="$FleetHopSelected == true">
                             <signal_cue_instantly cue="XenonFleetHop" />
+                            <debug_to_file text="'FleetHop SIGNAL '" name="'AIvalue.log'" />
                         </do_if>
                         <do_if value="$InvasionSelected == true">
+                            <set_value name="$InvasionStart" exact="true" />
                             <signal_cue_instantly cue="XenonInvasion" />
+                            <debug_to_file text="'INVASION SIGNAL '" name="'AIvalue.log'" />
                         </do_if>
-                        <do_if value="InvasionStations == 0">
+                        <do_if value="$InvasionStations gt 0">
+                            <set_value name="$InvasionStart" exact="false" />
+                            <debug_to_file text="'INVASION START SIGNAL '" name="'AIvalue.log'" />
+                        </do_if>
+                        <debug_to_file text="'INVASION START SIGNAL ' + $InvasionStart" name="'AIvalue.log'" />
+                        <debug_to_file text="'INVASION START SIGNAL ' + $InvasionStations" name="'AIvalue.log'" />
+                        <do_if value="$InvasionStations == 0">
+                            <debug_to_file text="'STEP ONE '" name="'AIvalue.log'" />
                             <do_if value="$InvasionSelected == true">
-                                <set_value name="$InvasionStations" exact="1" operation="add" />
-                                <signal_cue_instantly cue="SpawnInvasionStation" />
+                                <debug_to_file text="'STEP TWO '" name="'AIvalue.log'" />
+                                <do_if value="$InvasionStart == true">
+                                    <debug_to_file text="'STEP THREE '" name="'AIvalue.log'" />
+                                    <set_value name="$InvasionStations" exact="1" operation="add" />
+                                    <signal_cue_instantly cue="SpawnInvasionStation" />
+                                    <debug_to_file text="'INVASION STATION SIGNAL '" name="'AIvalue.log'" />
+                                </do_if>
                             </do_if>
                         </do_if>
+                    </actions>
+                </cue>
+                <cue name="ReturnHome" instantiate="true" checkinterval="5min">
+                    <actions>
+                        <!-- <set_value name="$NewEntry" exact="$FleetTable.keys.list.max + 1" />
+                            <debug_text text="'MonkeyTest KeysMax ' + $FleetTable.keys.list.max" />
+                            <set_value name="$FleetTable.{$NewEntry}" exact="table[
+                                    $Beacon = $ShipSpawnZone,
+                                    $Active = true,
+                                    $FleetHop = true,
+                                    $PirateHop = false,
+                                    $PlayerAttack = false,
+                                    $Invasion = false,
+                                    $Startime = player.age,
+                                    $Quant = $ForcePool,
+                                    $FleetShips = [$FleetHop]
+                                    ]" /> -->
+                        <do_all exact="$FleetTable.keys.count" counter="$a">
+                            <do_if value="$FleetTable.{$a}.$Active == true">
+                                <do_if value="$FleetTable.{$a}.$FleetHop == true">
+                                    <do_if value="(player.age - $FleetTable.{$a}.$Startime) gt 3min">
+                                        <debug_text text="$FleetTable.{$a}.$FleetShips" />
+                                        <add_to_group groupname="$EndShips" list="$FleetTable.{$a}.$FleetShips" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$FleetTable.{$a}.$FleetShips" />
+                                        <set_value name="$FleetTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$FleetTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$FleetTable.{$a}.$FleetHop" exact="false" />
+                                    </do_if>
+                                </do_if>
+                                <do_if value="$FleetTable.{$a}.$PirateHop == true">
+                                    <do_if value="(player.age - $FleetTable.{$a}.$Startime) gt 3min">
+                                        <debug_text text="$FleetTable.{$a}.$FleetShips" />
+                                        <add_to_group groupname="$EndShips" list="$FleetTable.{$a}.$FleetShips" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$FleetTable.{$a}.$FleetShips" />
+                                        <set_value name="$FleetTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$FleetTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$FleetTable.{$a}.$PirateHop" exact="false" />
+                                    </do_if>
+                                </do_if>
+                                <do_if value="$FleetTable.{$a}.$PlayerAttack == true">
+                                    <do_if value="(player.age - $FleetTable.{$a}.$Startime) gt 3min">
+                                        <debug_text text="$FleetTable.{$a}.$FleetShips" />
+                                        <add_to_group groupname="$EndShips" list="$FleetTable.{$a}.$FleetShips" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$FleetTable.{$a}.$FleetShips" />
+                                        <set_value name="$FleetTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$FleetTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$FleetTable.{$a}.$PlayerAttack" exact="false" />
+                                    </do_if>
+                                </do_if>
+                                <do_if value="$FleetTable.{$a}.$Invasion == true">
+                                    <do_if value="(player.age - $FleetTable.{$a}.$Startime) gt 3min">
+                                        <debug_text text="$FleetTable.{$a}.$FleetShips" />
+                                        <add_to_group groupname="$EndShips" list="$FleetTable.{$a}.$FleetShips" />
+                                        <destroy_group group="$EndShips" />
+                                        <clear_list list="$FleetTable.{$a}.$FleetShips" />
+                                        <set_value name="$FleetTable.{$a}.$Active" exact="false" />
+                                        <set_value name="$FleetTable.{$a}.$Startime" exact="0" />
+                                        <set_value name="$FleetTable.{$a}.$Invasion" exact="false" />
+                                    </do_if>
+                                </do_if>
+                            </do_if>
+                        </do_all>
                     </actions>
                 </cue>
                 <cue name="XenonFleetHop" instantiate="true">
                     <conditions>
                         <event_cue_signalled />
                     </conditions>
-                    <delay exact="$Delay" />
+                    <delay exact="3s" />
                     <actions>
                         <set_value name="$FactionSelected" exact="faction.xenon" />
                         <set_value name="$Owner" exact="faction.player" />
-                        <set_value name="$Delay" exact="3s" />
                         <set_value name="$FighterWeight" exact="50" />
                         <set_value name="$MWeight" exact="10" />
                         <set_value name="$UWeight" exact="2" />
@@ -250,13 +397,13 @@
                             <set_value name="$FleetTable.{$NewEntry}" exact="table[
                                     $Beacon = $ShipSpawnZone,
                                     $Active = true,
-                                    $Fleethop = true,
+                                    $FleetHop = true,
                                     $PirateHop = false,
                                     $PlayerAttack = false,
                                     $Invasion = false,
                                     $Startime = player.age,
                                     $Quant = $ForcePool,
-                                    $Fleetships = [$SpawnedShip]
+                                    $FleetShips = [$SpawnedShip]
                                     ]" />
                             <remove_value name="$SpawnedShip" />
                             <remove_value name="$LeaderSelected" />
@@ -267,8 +414,8 @@
                             <!-- <cancel_cue cue="this" /> -->
                         </do_if>
                         <debug_text text="'MonkeyTest FleetTable Beacon ' + $FleetTable.{1}.$Beacon" />
-                        <debug_text text="'MonkeyTest FleetTable ShipsTable ' + $FleetTable.{1}.$Fleetships" />
-                        <debug_text text="'MonkeyTest FleetTable Ship Name ' + $FleetTable.{1}.$Fleethop" />
+                        <debug_text text="'MonkeyTest FleetTable ShipsTable ' + $FleetTable.{1}.$FleetShips" />
+                        <debug_text text="'MonkeyTest FleetTable Ship Name ' + $FleetTable.{1}.$FleetHop" />
                         <debug_text text="'$ForcePool test' + $ForcePool" />
                         <do_if value="$ForcePool ge 1">
                             <signal_cue_instantly cue="SignallerXenonFleetHop" />
@@ -287,11 +434,11 @@
                     <conditions>
                         <event_cue_signalled />
                     </conditions>
-                    <delay exact="$Delay" />
+                    <delay exact="3s" />
                     <actions>
+                        <debug_to_file text="'INVASTION FLEET SIGNALLED '" name="'AIvalue.log'" />
                         <set_value name="$FactionSelected" exact="faction.xenon" />
                         <set_value name="$Owner" exact="faction.player" />
-                        <set_value name="$Delay" exact="3s" />
                         <set_value name="$FighterWeight" exact="50" />
                         <set_value name="$MWeight" exact="10" />
                         <set_value name="$UWeight" exact="2" />
@@ -357,13 +504,13 @@
                             <set_value name="$FleetTable.{$NewEntry}" exact="table[
                                     $Beacon = $ShipSpawnZone,
                                     $Active = true,
-                                    $Fleethop = false,
+                                    $FleetHop = false,
                                     $PirateHop = false,
                                     $PlayerAttack = false,
                                     $Invasion = true,
                                     $Startime = player.age,
                                     $Quant = $ForcePool,
-                                    $Fleetships = [$SpawnedShip]
+                                    $FleetShips = [$SpawnedShip]
                                     ]" />
                             <remove_value name="$SpawnedShip" />
                             <remove_value name="$LeaderSelected" />
@@ -374,8 +521,8 @@
                             <!-- <cancel_cue cue="this" /> -->
                         </do_if>
                         <debug_text text="'MonkeyTest FleetTable Beacon ' + $FleetTable.{1}.$Beacon" />
-                        <debug_text text="'MonkeyTest FleetTable ShipsTable ' + $FleetTable.{1}.$Fleetships" />
-                        <debug_text text="'MonkeyTest FleetTable Ship Name ' + $FleetTable.{1}.$Fleethop" />
+                        <debug_text text="'MonkeyTest FleetTable ShipsTable ' + $FleetTable.{1}.$FleetShips" />
+                        <debug_text text="'MonkeyTest FleetTable Ship Name ' + $FleetTable.{1}.$FleetHop" />
                         <debug_text text="'$ForcePool test' + $ForcePool" />
                         <do_if value="$ForcePool ge 1">
                             <signal_cue_instantly cue="SignallerXenonInvasion" />
