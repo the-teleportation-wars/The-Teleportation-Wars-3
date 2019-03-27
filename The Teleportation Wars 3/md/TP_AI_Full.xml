@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="TP_AI_Full" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
+    <cues>
+        <!-- 
+        delay
+        storage
+        exchange
+        math
+         -->
+        <cue name="Init_AI" instantiate="true">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart" />
+            </conditions>
+            <actions>
+                <!-- find -->
+                <find_sector groupname="$TP_Sectors" space="player.galaxy" multiple="true" />
+                <find_sector groupname="$TP_Sectors_Argon" space="player.galaxy" multiple="true" owner="faction.argon" />
+                <find_sector groupname="$TP_Sectors_Teladi" space="player.galaxy" multiple="true" owner="faction.teladi" />
+                <find_sector groupname="$TP_Sectors_Paranid" space="player.galaxy" multiple="true" owner="faction.paranid" />
+                <find_sector groupname="$TP_Sectors_antigone" space="player.galaxy" multiple="true" owner="faction.antigone" />
+                <find_sector groupname="$TP_Sectors_ministry" space="player.galaxy" multiple="true" owner="faction.ministry" />
+                <find_sector groupname="$TP_Sectors_holyorder" space="player.galaxy" multiple="true" owner="faction.holyorder" />
+                <find_sector groupname="$TP_Sectors_ownerless" space="player.galaxy" multiple="true" owner="faction.ownerless" />
+                <!-- group -->
+                <create_group groupname="$SpawnedShip" />
+                <create_group groupname="$SpawnedStationGroup" />
+                <create_group groupname="$SpawnedFactoriesGroup" />
+                <create_group groupname="$TeleportationBeacons" />
+                <create_group groupname="$CurrentInvasionStation" />
+                <create_group groupname="$SpawnedStationGroup" />
+                <!-- modules -->
+                <create_list name="$Prod" />
+                <create_list name="$Con" />
+                <create_list name="$Stor" />
+                <get_module_definition tags="[tag.production]" faction="faction.argon" macro="$Resultprod" multiple="true" />
+                <get_module_definition tags="[tag.connection]" faction="faction.argon" macro="$Resultcon" multiple="true" />
+                <get_module_definition tags="[tag.storage]" faction="faction.argon" macro="$Resultstorage" multiple="true" />
+                <!-- make a faction for all the tradwares? -->
+                <get_ware_definition faction="faction.argon" result="$AllWares" />
+                <!-- tables -->
+                <set_value name="$FleetTable" exact="table[]" />
+                <!-- xenonai -->
+                <set_value name="$ForcePool" exact="50" />
+                <set_value name="$ConstantFleethop" exact="10f" />
+                <set_value name="$ConstantPlayerAttack" exact="1f" />
+                <set_value name="$ConstantInvasion" exact="10f" />
+                <set_value name="$BeaconRate" exact="2f" />
+                <!--******************************VALUES*******************************  -->
+                <set_value name="$PHQ" exact="1f" />
+                <set_value name="$Time" exact="(player.age)f + 20" />
+                <set_value name="$DeltaTime" exact="$Time" />
+                <!--******************************CALC VALUES*******************************  -->
+                <set_value name="$Fleethop" exact="1000" />
+                <set_value name="$Invasion" exact="1000" />
+                <set_value name="$PlayerAttack" exact="1000" />
+                <set_value name="$Piratehop" exact="1000" />
+                <set_value name="$XenonSuccess" exact="10f" />
+                <set_value name="$PlayerSuccess" exact="1f" />
+                <!--  ******************************xenonactions*******************************   -->
+            </actions>
+            <cues>
+                <cue name="BeaconRate" instantiate="true" checkinterval="60s">
+                    <actions>
+                        <create_object groupname="$TeleportationBeacons" macro="macro.env_deco_nav_beacon_t1_macro" sector="$TP_Sectors.random" owner="faction.ownerless">
+                            <safepos min="300km" max="600km" />
+                        </create_object>
+                    </actions>
+                </cue>
+                <cue name="SpawnTradeStation" instantiate="true">
+                    <actions>
+                        <do_any>
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Argon.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Teladi.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Paranid.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_antigone.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_ministry.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_holyorder.random" />
+                        </do_any>
+                        <set_value name="$StationMacro" exact="macro.station_arg_tradestation_base_01_macro" />
+                        <set_value name="$ConstructionPlan" exact="'arg_tradestation'" />
+                        <set_value name="$ConstructionFaction" exact="$SectorToSpawnIn.owner" />
+                        <include_actions ref="SpawnStationLIB" />
+                        <remove_value name="$SectorToSpawnIn" />
+                        <remove_value name="$StationMacro" />
+                        <remove_value name="$ConstructionPlan" />
+                        <remove_value name="$ConstructionFaction" />
+                        <set_owner object="$StationSpawned" faction="faction.player" overridenpc="true" />
+                    </actions>
+                </cue>
+                <cue name="SpawnInvasionStation" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <set_value name="$SectorToSpawnIn" exact="$TP_Sectors.random" />
+                        <set_value name="$StationMacro" exact="macro.station_arg_tradestation_base_01_macro" />
+                        <set_value name="$ConstructionPlan" exact="'arg_tradestation'" />
+                        <set_value name="$ConstructionFaction" exact="facton.xenon" />
+                        <include_actions ref="SpawnStationLIB" />
+                        <remove_value name="$SectorToSpawnIn" />
+                        <remove_value name="$StationMacro" />
+                        <remove_value name="$ConstructionPlan" />
+                        <remove_value name="$ConstructionFaction" />
+                        <add_to_group groupname="$CurrentInvasionStation" object="$StationSpawned" />
+                        <set_owner object="$StationSpawned" faction="faction.player" overridenpc="true" />
+                    </actions>
+                </cue>
+                <cue name="SpawnFactory" instantiate="true">
+                    <actions>
+                        <do_any>
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Argon.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Teladi.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_Paranid.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_antigone.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_ministry.random" />
+                            <set_value name="$SectorToSpawnIn" exact="$TP_Sectors_holyorder.random" />
+                        </do_any>
+                        <get_module_definition tags="[tag.production]" faction="$SectorToSpawnIn.owner" macro="$Resultprod" multiple="true" />
+                        <get_module_definition tags="[tag.connection]" faction="$SectorToSpawnIn.owner" macro="$Resultcon" multiple="true" />
+                        <get_module_definition tags="[tag.storage]" faction="$SectorToSpawnIn.owner" macro="$Resultstorage" multiple="true" />
+                        <do_all exact="10">
+                            <append_to_list name="$Prod" exact="$Resultprod.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Con" exact="$Resultcon.random" />
+                        </do_all>
+                        <do_all exact="20">
+                            <append_to_list name="$Stor" exact="$Resultstorage.random" />
+                        </do_all>
+                        <set_value name="$StationMacro" exact="macro.station_gen_factory_base_01_macro" />
+                        <set_value name="$ConstructionFaction" exact="$SectorToSpawnIn.owner" />
+                        <include_actions ref="SpawnFactoryLIB" />
+                        <remove_value name="$SectorToSpawnIn" />
+                        <remove_value name="$StationMacro" />
+                        <remove_value name="$ConstructionFaction" />
+                        <set_owner object="$FactorySpawned" faction="faction.player" overridenpc="true" />
+                    </actions>
+                </cue>
+                <cue name="AI_Force" instantiate="true" checktime="30s" checkinterval="15min">
+                    <actions>
+                        <set_value name="$DeltaTime" exact="($Time * 1.03f)" operation="add" />
+                        <set_value name="$Utilization" exact="$XenonForce / ($XenonForce  + $Time  + $XenonSuccess )" />
+                        <!-- calc -->
+                        <set_value name="$Fleethop" exact="$ConstantFleethop * ((( $XenonSuccess/$PlayerSuccess ) * ($BeaconRate * $DeltaTime)) /  $Utilization)" />
+                        <set_value name="$PlayerAttack" exact="$ConstantPlayerAttack * ((( $PlayerSuccess/$XenonSuccess ) * ($PHQ * $DeltaTime)) /  $Utilization)" />
+                        <set_value name="$Invasion" exact="$ConstantInvasion * ((($XenonSuccess - $Time ) * $Utilization) + $DeltaTime)" />
+                        <set_value name="$ForcePool" exact="($Fleethop + $PlayerAttack + $Invasion) / 100" />
+                        <debug_to_file text="'Fleethop ' + $Fleethop" name="'AIvalue.log'" />
+                        <debug_to_file text="'PlayerAttack ' + $PlayerAttack" name="'AIvalue.log'" />
+                        <debug_to_file text="'Invasion ' + $Invasion" name="'AIvalue.log'" />
+                        <debug_to_file text="'ForcePool ' + $ForcePool" name="'AIvalue.log'" />
+                        <debug_to_file text="'DeltaTime ' + $DeltaTime" name="'AIvalue.log'" />
+                        <debug_to_file text="'Utilization ' + $Utilization" name="'AIvalue.log'" />
+                        <!-- exchange -->
+                        <do_if value="$InvastionStart == false">
+                            <do_if value="$Fleethop gt $Invasion">
+                                <set_value name="$FleetHopSelected" exact="true" />
+                                <set_value name="$InvasionSelected" exact="false" />
+                            </do_if>
+                            <do_if value="$Fleethop lt $Invasion">
+                                <set_value name="$FleetHopSelected" exact="false" />
+                                <set_value name="$InvasionSelected" exact="true" />
+                            </do_if>
+                        </do_if>
+                        <do_if value="$FleetHopSelected == true">
+                            <signal_cue_instantly cue="XenonFleetHop" />
+                        </do_if>
+                        <do_if value="$InvasionSelected == true">
+                            <signal_cue_instantly cue="XenonInvasion" />
+                        </do_if>
+                        <do_if value="InvasionStations == 0">
+                            <do_if value="$InvasionSelected == true">
+                                <set_value name="$InvasionStations" exact="1" operation="add" />
+                                <signal_cue_instantly cue="SpawnInvasionStation" />
+                            </do_if>
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="XenonFleetHop" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay exact="$Delay" />
+                    <actions>
+                        <set_value name="$FactionSelected" exact="faction.xenon" />
+                        <set_value name="$Owner" exact="faction.player" />
+                        <set_value name="$Delay" exact="3s" />
+                        <set_value name="$FighterWeight" exact="50" />
+                        <set_value name="$MWeight" exact="10" />
+                        <set_value name="$UWeight" exact="2" />
+                        <set_value name="$DWeight" exact="4" />
+                        <set_value name="$CWeight" exact="1" />
+                        <do_any>
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $MWeight" exact="tag.medium" />
+                            <set_value name="$TagSelected" weight="1 + $UWeight" exact="tag.miner" />
+                            <set_value name="$TagSelected" weight="1 + $DWeight" exact="tag.destroyer" />
+                            <set_value name="$TagSelected" weight="1 + $CWeight" exact="tag.carrier" />
+                        </do_any>
+                        <do_if value="not $ShipSpawnZone.exists">
+                            <set_value name="$ShipSpawnZone" exact="$TeleportationBeacons.random" />
+                        </do_if>
+                        <set_value name="$tagspawn" exact="$TagSelected" />
+                        <!-- lib -->
+                        <include_actions ref="SpawnShipsLIB" />
+                        <set_value name="$ForcePool" exact="1" operation="subtract" />
+                        <do_if value="$ForcePool ge 0 and $ForcePool le 1">
+                            <do_all exact="$SpawnedShip.count" counter="$current">
+                                <do_if value="$SearchComplete == false">
+                                    <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_xl]">
+                                        <set_value name="$SearchComplete" exact="true" />
+                                        <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                    </do_if>
+                                    <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_l]">
+                                        <set_value name="$LargeSearchComplete" exact="true" />
+                                        <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                    </do_if>
+                                    <do_if value="$LargeSearchComplete == false">
+                                        <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_m]">
+                                            <set_value name="$MediumSearchComplete" exact="true" />
+                                            <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                        </do_if>
+                                        <do_if value="$MediumSearchComplete == false">
+                                            <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_s]">
+                                                <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                            </do_if>
+                                        </do_if>
+                                    </do_if>
+                                </do_if>
+                            </do_all>
+                            <set_object_commander object="$LeaderSelected" commander="$LeaderSelected" />
+                            <create_order id="'Patrol'" object="$LeaderSelected" default="true">
+                                <param name="space" value="$SectorSelected" />
+                            </create_order>
+                            <remove_from_group group="$SpawnedShip" object="$LeaderSelected" />
+                            <do_all exact="$SpawnedShip.count" counter="$follower">
+                                <set_object_commander object="$SpawnedShip.{$follower}" commander="$LeaderSelected" />
+                                <create_order id="'Escort'" object="$SpawnedShip.{$follower}" default="true">
+                                    <param name="target" value="$LeaderSelected" />
+                                    <param name="formation" value="formationshape.pointguard" />
+                                    <param name="formationparam" value="200m" />
+                                </create_order>
+                            </do_all>
+                            <add_to_group groupname="$SpawnedShip" object="$LeaderSelected" />
+                            <set_value name="$NewEntry" exact="$FleetTable.keys.list.max + 1" />
+                            <debug_text text="'MonkeyTest KeysMax ' + $FleetTable.keys.list.max" />
+                            <set_value name="$FleetTable.{$NewEntry}" exact="table[
+                                    $Beacon = $ShipSpawnZone,
+                                    $Active = true,
+                                    $Fleethop = true,
+                                    $PirateHop = false,
+                                    $PlayerAttack = false,
+                                    $Invasion = false,
+                                    $Startime = player.age,
+                                    $Quant = $ForcePool,
+                                    $Fleetships = [$SpawnedShip]
+                                    ]" />
+                            <remove_value name="$SpawnedShip" />
+                            <remove_value name="$LeaderSelected" />
+                            <remove_value name="$MediumSearchComplete" />
+                            <remove_value name="$SearchComplete" />
+                            <remove_value name="$LargeSearchComplete" />
+                            <remove_value name="$ShipSpawnZone" />
+                            <!-- <cancel_cue cue="this" /> -->
+                        </do_if>
+                        <debug_text text="'MonkeyTest FleetTable Beacon ' + $FleetTable.{1}.$Beacon" />
+                        <debug_text text="'MonkeyTest FleetTable ShipsTable ' + $FleetTable.{1}.$Fleetships" />
+                        <debug_text text="'MonkeyTest FleetTable Ship Name ' + $FleetTable.{1}.$Fleethop" />
+                        <debug_text text="'$ForcePool test' + $ForcePool" />
+                        <do_if value="$ForcePool ge 1">
+                            <signal_cue_instantly cue="SignallerXenonFleetHop" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="SignallerXenonFleetHop" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <signal_cue_instantly cue="XenonFleetHop" />
+                    </actions>
+                </cue>
+                <cue name="XenonInvasion" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <delay exact="$Delay" />
+                    <actions>
+                        <set_value name="$FactionSelected" exact="faction.xenon" />
+                        <set_value name="$Owner" exact="faction.player" />
+                        <set_value name="$Delay" exact="3s" />
+                        <set_value name="$FighterWeight" exact="50" />
+                        <set_value name="$MWeight" exact="10" />
+                        <set_value name="$UWeight" exact="2" />
+                        <set_value name="$DWeight" exact="4" />
+                        <set_value name="$CWeight" exact="1" />
+                        <do_any>
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $FighterWeight" exact="tag.fighter" />
+                            <set_value name="$TagSelected" weight="1 + $MWeight" exact="tag.medium" />
+                            <set_value name="$TagSelected" weight="1 + $UWeight" exact="tag.miner" />
+                            <set_value name="$TagSelected" weight="1 + $DWeight" exact="tag.destroyer" />
+                            <set_value name="$TagSelected" weight="1 + $CWeight" exact="tag.carrier" />
+                        </do_any>
+                        <do_if value="not $ShipSpawnZone.exists">
+                            <set_value name="$ShipSpawnZone" exact="$TeleportationStations.random" />
+                        </do_if>
+                        <set_value name="$tagspawn" exact="$TagSelected" />
+                        <!-- lib -->
+                        <include_actions ref="SpawnShipsLIB" />
+                        <set_value name="$ForcePool" exact="1" operation="subtract" />
+                        <do_if value="$ForcePool ge 0 and $ForcePool le 1">
+                            <do_all exact="$SpawnedShip.count" counter="$current">
+                                <do_if value="$SearchComplete == false">
+                                    <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_xl]">
+                                        <set_value name="$SearchComplete" exact="true" />
+                                        <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                    </do_if>
+                                    <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_l]">
+                                        <set_value name="$LargeSearchComplete" exact="true" />
+                                        <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                    </do_if>
+                                    <do_if value="$LargeSearchComplete == false">
+                                        <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_m]">
+                                            <set_value name="$MediumSearchComplete" exact="true" />
+                                            <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                        </do_if>
+                                        <do_if value="$MediumSearchComplete == false">
+                                            <do_if value="$SpawnedShip.{$current}.isclass.[class.ship_s]">
+                                                <set_value name="$LeaderSelected" exact="$SpawnedShip.{$current}" />
+                                            </do_if>
+                                        </do_if>
+                                    </do_if>
+                                </do_if>
+                            </do_all>
+                            <set_object_commander object="$LeaderSelected" commander="$LeaderSelected" />
+                            <create_order id="'Patrol'" object="$LeaderSelected" default="true">
+                                <param name="space" value="$SectorSelected" />
+                            </create_order>
+                            <remove_from_group group="$SpawnedShip" object="$LeaderSelected" />
+                            <do_all exact="$SpawnedShip.count" counter="$follower">
+                                <set_object_commander object="$SpawnedShip.{$follower}" commander="$LeaderSelected" />
+                                <create_order id="'Escort'" object="$SpawnedShip.{$follower}" default="true">
+                                    <param name="target" value="$LeaderSelected" />
+                                    <param name="formation" value="formationshape.pointguard" />
+                                    <param name="formationparam" value="200m" />
+                                </create_order>
+                            </do_all>
+                            <add_to_group groupname="$SpawnedShip" object="$LeaderSelected" />
+                            <set_value name="$NewEntry" exact="$FleetTable.keys.list.max + 1" />
+                            <debug_text text="'MonkeyTest KeysMax ' + $FleetTable.keys.list.max" />
+                            <set_value name="$FleetTable.{$NewEntry}" exact="table[
+                                    $Beacon = $ShipSpawnZone,
+                                    $Active = true,
+                                    $Fleethop = false,
+                                    $PirateHop = false,
+                                    $PlayerAttack = false,
+                                    $Invasion = true,
+                                    $Startime = player.age,
+                                    $Quant = $ForcePool,
+                                    $Fleetships = [$SpawnedShip]
+                                    ]" />
+                            <remove_value name="$SpawnedShip" />
+                            <remove_value name="$LeaderSelected" />
+                            <remove_value name="$MediumSearchComplete" />
+                            <remove_value name="$SearchComplete" />
+                            <remove_value name="$LargeSearchComplete" />
+                            <remove_value name="$ShipSpawnZone" />
+                            <!-- <cancel_cue cue="this" /> -->
+                        </do_if>
+                        <debug_text text="'MonkeyTest FleetTable Beacon ' + $FleetTable.{1}.$Beacon" />
+                        <debug_text text="'MonkeyTest FleetTable ShipsTable ' + $FleetTable.{1}.$Fleetships" />
+                        <debug_text text="'MonkeyTest FleetTable Ship Name ' + $FleetTable.{1}.$Fleethop" />
+                        <debug_text text="'$ForcePool test' + $ForcePool" />
+                        <do_if value="$ForcePool ge 1">
+                            <signal_cue_instantly cue="SignallerXenonInvasion" />
+                        </do_if>
+                    </actions>
+                </cue>
+                <cue name="SignallerXenonInvasion" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <signal_cue_instantly cue="XenonInvasion" />
+                    </actions>
+                </cue>
+                <library name="SpawnShipsLIB" instantiate="true">
+                    <actions>
+                        <create_ship name="$ShipSpawned" groupname="$SpawnedShip" zone="$ShipSpawnZone.zone">
+                            <select faction="$FactionSelected" tags="[$tagspawn]" />
+                            <loadout>
+                                <level exact="1" />
+                            </loadout>
+                            <owner exact="$Owner" overridenpc="true" />
+                            <safepos min="1km" max="4km" />
+                        </create_ship>
+                    </actions>
+                </library>
+                <library name="SpawnStationLIB" instantiate="true">
+                    <actions>
+                        <create_station groupname="$SpawnedStationGroup" name="$StationSpawned" macro="$StationMacro" sector="$SectorToSpawnIn" constructionplan="'$ConstructionPlan'" owner="$ConstructionFaction" state="componentstate.operational">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$StationSpawned" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$StationSpawned" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$StationSpawned" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <add_workforce object="$StationSpawned" race="race.argon" exact="500" />
+                        <set_object_docking_enabled object="$StationSpawned" enabled="true" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_to_file text="'StationSpawned ' + $StationSpawned.knownname" name="'SpawnStationLIB.log'" />
+                        <debug_to_file text="'StationSpawned - productions ' + $StationSpawned.productions" name="'SpawnStationLIB.log'" />
+                        <debug_to_file text="'StationSpawned - cargofree' + $StationSpawned.cargo.free" name="'SpawnStationLIB.log'" />
+                        <debug_to_file text="'StationSpawned - controlposts' + $StationSpawned.controlposts.all" name="'SpawnStationLIB.log'" />
+                        <debug_to_file text="'StationSpawned - controlpostsfree' + $StationSpawned.controlposts.free" name="'SpawnStationLIB.log'" />
+                    </actions>
+                </library>
+                <library name="SpawnFactoryLIB" instantiate="true">
+                    <actions>
+                        <find_zone groupname="$zones" multiple="true" space="$SectorToSpawnIn" />
+                        <create_station groupname="$SpawnedFactoriesGroup" name="$FactorySpawned" state="componentstate.operational" macro="macro.station_gen_factory_base_01_macro" zone="$zones.random" owner="faction.argon">
+                            <safepos min="-100km" max="100km" />
+                        </create_station>
+                        <extend_build_plot object="$FactorySpawned" negx="10km" negz="10km" negy="10km" posy="10km" posx="10km" posz="10km" />
+                        <get_suitable_storage_modules macros="$Stor" production="$Prod" result="$Storage" />
+                        <do_all exact="$Storage.count" counter="$thisstor">
+                            <append_to_list name="$Prod" exact="$Storage.{$thisstor}" />
+                        </do_all>
+                        <create_construction_sequence station="$FactorySpawned" connectors="$Con" macros="$Prod">
+                            <immediate result="$Sequen" />
+                        </create_construction_sequence>
+                        <apply_construction_sequence station="$FactorySpawned" sequence="$Sequen" />
+                        <create_cue_actor cue="this" name="$Manager">
+                            <select race="race.teladi" tags="controlpost.manager.tag" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Def">
+                            <select race="race.drone" tags="tag.defence" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <create_cue_actor cue="this" name="$Eng">
+                            <select race="race.drone" tags="tag.engineer" />
+                            <owner exact="faction.argon" />
+                            <skills>
+                                <skill type="management" exact="1" />
+                            </skills>
+                        </create_cue_actor>
+                        <debug_text text="$Manager.knownname" />
+                        <assign_control_entity object="$FactorySpawned" actor="$Manager" post="controlpost.manager" transfer="true" />
+                        <assign_control_entity object="$FactorySpawned" actor="$Def" post="controlpost.defence" transfer="true" />
+                        <assign_control_entity object="$FactorySpawned" actor="$Eng" post="controlpost.engineer" transfer="true" />
+                        <set_object_docking_enabled object="$FactorySpawned" enabled="true" />
+                        <add_workforce object="$FactorySpawned" race="race.argon" exact="500" />
+                        <remove_value name="$zones" />
+                        <remove_value name="$Prod" />
+                        <remove_value name="$Con" />
+                        <remove_value name="$Stor" />
+                        <remove_value name="$Manager" />
+                        <remove_value name="$Def" />
+                        <remove_value name="$Eng" />
+                        <debug_to_file text="'FactorySpawned ' + $FactorySpawned.knownname" name="'SpawnFactoryLIB.log'" />
+                        <debug_to_file text="'FactorySpawned - productions ' + $FactorySpawned.productions" name="'SpawnFactoryLIB.log'" />
+                        <debug_to_file text="'FactorySpawned - cargofree' + $FactorySpawned.cargo.free" name="'SpawnFactoryLIB.log'" />
+                        <debug_to_file text="'FactorySpawned - controlposts' + $FactorySpawned.controlposts.all" name="'SpawnFactoryLIB.log'" />
+                        <debug_to_file text="'FactorySpawned - controlpostsfree' + $FactorySpawned.controlposts.free" name="'SpawnFactoryLIB.log'" />
+                    </actions>
+                </library>
+            </cues>
+        </cue>
+    </cues>
+</mdscript>

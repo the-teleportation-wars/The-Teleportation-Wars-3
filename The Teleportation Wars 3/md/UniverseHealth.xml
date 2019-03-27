@@ -15,8 +15,8 @@
          -->
         <cue name="InitUH" instantiate="true">
             <conditions>
-                <event_long_range_scan_sent object="player.entity" />
-                <!-- <event_cue_signalled cue="md.Setup.GameStart" /> -->
+                <!-- <event_long_range_scan_sent object="player.entity" /> -->
+                <event_cue_signalled cue="md.Setup.GameStart" />
             </conditions>
             <actions>
                 <debug_text text="'WHERE AM I?' + player.entity.galaxy.position" />
@@ -229,6 +229,15 @@
                         <event_object_attacked group="$UH_All_Ships" />
                     </conditions>
                     <actions>
+                        <find_object_component groupname="$Stuffinside" object="event.object" surfaceelement="true" recursive="true">
+
+                        </find_object_component>
+                        <do_all exact="$Stuffinside.count" counter="$stuff">
+                            <debug_to_file text="'playerhull' + $Stuffinside.{$stuff}.knownname"  name="'stuffdamage.log'" />
+                            <debug_to_file text="'playerhull' + $Stuffinside.{$stuff}.hull" name="'stuffdamage.log'" />
+                            <debug_to_file text="'playerhull' + $Stuffinside.{$stuff}.maxhull" name="'stuffdamage.log'" />
+                            <debug_to_file text="'playerhull' + $Stuffinside.{$stuff}.isfunctional" name="'stuffdamage.log'" />
+                        </do_all>
                         <set_value name="$hull" exact="event.object.hull" />
                         <set_value name="$shield" exact="event.object.shield" />
                         <set_value name="$maxhull" exact="event.object.maxhull" />

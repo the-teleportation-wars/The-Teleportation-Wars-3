@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/md.xsd">
-<!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd"> -->
+    <!-- <mdscript name="Teleportation_Wars_Main" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:/Mod Stuff/X4 Extracted/2.0beta/libraries/md.xsd"> -->
     <cues>
         <!-- 
         JUMPDRIVE
@@ -67,7 +67,6 @@
             </conditions>
             <!-- <delay exact="10s" /> -->
             <actions>
-                
                 <!--******************************FIND*******************************  -->
                 <find_sector groupname="$TP_Sectors" space="player.galaxy" multiple="true" />
                 <find_sector groupname="$TP_Sectors_Argon" space="player.galaxy" multiple="true" owner="faction.argon" />
@@ -1418,7 +1417,6 @@
                         </do_all>
                     </actions>
                 </cue> -->
-                
                 <!-- <cue name="Satellite_Decay" instantiate="true">
                     <actions>
                         <set_value name="$SatDecayTable" exact="table[]" />
@@ -1949,6 +1947,38 @@
                         <debug_text text="'All_The_Fucking_Ships ' + $All_The_Fucking_Ships.count" />
                     </actions>
                 </cue>
+                <cue name="EVENT_God_Monitor" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_god_created_station space="player.galaxy" />
+                            <event_god_created_object space="player.galaxy" />
+                            <event_god_created_factory space="player.galaxy" />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <debug_text text="'WHAT AM I? ' + event.param.knownname" />
+                    </actions>
+                </cue>
+                <cue name="EVENT_JOB_Monitor" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_job_ship_activated />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <debug_text text="'WHAT is my job? ' + event.param.knownname" />
+                    </actions>
+                </cue>
+                <!-- <cue name="EVENT_JOB_Monitor" instantiate="true">
+                    <conditions>
+                        <check_any>
+                    
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <debug_text text="'WHAT is my job? ' + event.param.knownname" />
+                    </actions>
+                </cue> -->
                 <!-- Beaconpass -->
                 <!-- <cue name="Maintain_Globals_Beacons" instantiate="true">
                     <conditions>
@@ -2097,6 +2127,11 @@
                 </cue>
                 <!-- check -->
                 <!-- 
+                SPREADMATH
+                find coordiantes
+                find median x+x/xcount
+                zero plane 
+                n+1 math for spread
                 INVASION AI
                 1. Sector Macro list
                 2. Define Sector tiers
