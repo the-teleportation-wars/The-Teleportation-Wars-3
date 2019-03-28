@@ -42,6 +42,7 @@
                 <set_value name="$FleetTable" exact="table[]" />
                 <!-- xenonai -->
                 <set_value name="$ForcePool" exact="50" />
+                <set_value name="$OldForcePool" exact="0"/>
                 <set_value name="$ConstantFleetHop" exact="2f" />
                 <set_value name="$ConstantPlayerAttack" exact="1f" />
                 <set_value name="$ConstantInvasion" exact="10f" />
@@ -91,7 +92,7 @@
                             <debug_to_file text="'Startime ' + $FleetTable.{$thisfleet}.$Startime" name="'TP_Report.log'" />
                             <!-- fix me -->
                             <do_all exact="$FleetTable.{$thisfleet}.$FleetShips.count" counter="$ship">
-                                <debug_to_file text="'FleetShipNames ' + $FleetTable.{$thisfleet}.{$FleetShips.{$ship}}.knownname" name="'TP_Report.log'" />
+                                <debug_to_file text="'FleetShipNames ' + $FleetTable.{$thisfleet}.$FleetShips.{$ship}.knownname" name="'TP_Report.log'" />
                             </do_all>
                         </do_all>
                         <debug_to_file text="'Factory Report '" name="'TP_Report.log'" />
@@ -208,7 +209,8 @@
                         <set_value name="$FleetHop" exact="$ConstantFleetHop * ((( $XenonSuccess/$PlayerSuccess ) * ($BeaconRate * $DeltaTime)) /  $Utilization)" />
                         <set_value name="$PlayerAttack" exact="$ConstantPlayerAttack * ((( $PlayerSuccess/$XenonSuccess ) * ($PHQ * $DeltaTime)) /  $Utilization)" />
                         <set_value name="$Invasion" exact="$ConstantInvasion * ((($XenonSuccess - $Time ) * $Utilization) + $DeltaTime)" />
-                        <set_value name="$ForcePool" exact="($FleetHop + $PlayerAttack + $Invasion) / 100" />
+                        <set_value name="$ForcePool" exact="(($FleetHop + $PlayerAttack + $Invasion) / 100) - $OldForcePool" />
+                        <set_value name="$OldForcePool" exact="$ForcePool" operation="add"/>
                         <debug_to_file text="'FleetHop ' + $FleetHop" name="'AIvalue.log'" />
                         <debug_to_file text="'PlayerAttack ' + $PlayerAttack" name="'AIvalue.log'" />
                         <debug_to_file text="'Invasion ' + $Invasion" name="'AIvalue.log'" />
@@ -403,7 +405,7 @@
                                     $Invasion = false,
                                     $Startime = player.age,
                                     $Quant = $ForcePool,
-                                    $FleetShips = [$SpawnedShip]
+                                    $FleetShips = $SpawnedShip
                                     ]" />
                             <remove_value name="$SpawnedShip" />
                             <remove_value name="$LeaderSelected" />
@@ -510,7 +512,7 @@
                                     $Invasion = true,
                                     $Startime = player.age,
                                     $Quant = $ForcePool,
-                                    $FleetShips = [$SpawnedShip]
+                                    $FleetShips = $SpawnedShip
                                     ]" />
                             <remove_value name="$SpawnedShip" />
                             <remove_value name="$LeaderSelected" />
