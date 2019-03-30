@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<components>
+	<component name="shield_arg_l_standard_01_mk1" class="shieldgenerator">
+		<source geometry="assets\props\SurfaceElements\shield_arg_l_standard_01_mk1_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0"/>
+			<connection name="position" tags="position" value="1"/>
+			<connection name="Connection01" tags="part skipexport  ">
+				<offset>
+					<position x="0.192116" y="0" z="0.1324992"/>
+					<quaternion qx="-0" qy="-1" qz="-0" qw="-7.54979E-08"/>
+				</offset>
+				<parts>
+					<part name="m_shield">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hullpattern"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="0.4" y="0.4" z="0.8"/>
+							<center x="-1.937151E-07" y="16" z="5.215406E-07"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part nocollision forceoutline detail_l  ">
+				<offset>
+					<position x="0.6680661" y="13.64451" z="3.258886"/>
+				</offset>
+				<parts>
+					<part name="detail_l_decals">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="p1paint.paint_p1_decal_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="11.54525" y="4.611703" z="23.49831"/>
+							<center x="-0.6680685" y="-3.931171" z="-0.3402033"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part detail_l nocollision forceoutline  ">
+				<offset>
+					<position x="-0.1063084" y="5.83734" z="-21.45638"/>
+				</offset>
+				<parts>
+					<part name="detail_l_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hulltexture"/>
+									<material id="2" ref="generic.generic_p1_fx"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="11.42917" y="5.814018" z="9.777033"/>
+							<center x="3.874302E-07" y="4.768372E-07" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part animation nocollision detail_xl forceoutline  ">
+				<offset>
+					<position x="-0.106309" y="10.48738" z="-20.64706"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="200"/>
+				</animations>
+				<parts>
+					<part name="detail_xl_anim">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hulltexture"/>
+									<material id="2" ref="generic.generic_p1_fx"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3.116596" y="0.4194989" z="3.116596"/>
+							<center x="8.940697E-08" y="-0.4194946" z="0"/>
+						</size>
+						<size_raw>
+							<max x="3.109774" y="0.838994" z="3.116596"/>
+							<center x="8.940697E-08" y="-0.4194946" z="-1.907349E-06"/>
+						</size_raw>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection05" tags="part  ">
+				<offset>
+					<position x="-8.642673E-07" y="0" z="2.413988E-06"/>
+				</offset>
+				<parts>
+					<part name="part_main" wreck="part_main_wreck">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hulltexture"/>
+									<material id="2" ref="generic.generic_p1_fx"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hulltexture"/>
+									<material id="2" ref="generic.generic_p1_fx"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hulltexture"/>
+									<material id="2" ref="generic.generic_p1_fx"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="generic.generic_p1_hulltexture"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="14.83385" y="7.157624" z="31.12124"/>
+							<center x="8.642673E-07" y="7.156543" z="0.1121697"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="small_Con_shieldgen_01" tags="large shield component">
+				<offset/>
+			</connection>
+		</connections>
+	</component>
+</components>
