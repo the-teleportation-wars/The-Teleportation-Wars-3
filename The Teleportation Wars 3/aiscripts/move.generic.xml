@@ -24,7 +24,7 @@
         </do_else>
 
         <do_if value="$JumpDistance gt 0 and $FuelAvailable gt $JumpFuelCost">
-          <find_object groupname="$Beacons" macro="macro.test_jump_beacon_t1_macro" space="$EndPosition" multiple="true" />
+          <find_object groupname="$Beacons" macro="macro.tpwar_jump_beacon_t1_macro" space="$EndPosition" multiple="true" />
           <do_if value="$Beacons.count">
             <warp object="this.ship" zone="$Beacons.{1}.zone">
               <safepos x="11297" y="12523" z="28994" radius="this.ship.size / 2" />
@@ -49,7 +49,7 @@
 <!-- <diff>
     <add sel="//move_to[@destination='$positionspace'][@travel='not $noboost']" pos="before">
             <do_if value="this.ship.gatedistance.{$destination} != 0">  
-              <find_object groupname="$Beacons" macro="macro.test_jump_beacon_t1_macro" space="player.galaxy" multiple="true"/>
+              <find_object groupname="$Beacons" macro="macro.tpwar_jump_beacon_t1_macro" space="player.galaxy" multiple="true"/>
               <do_all exact="$Beacons.count" counter="$BeaconCounter">
                 <do_if value="$Beacons.{$BeaconCounter}.gatedistance.{$positionspace} == 0">
                   <warp object="this.ship" zone="$Beacons.{$BeaconCounter}.zone">
@@ -62,7 +62,7 @@
     </add>
     <add sel="//move_to[@destination='$destination'][@travel='not $noboost']" pos="before">
             <do_if value="this.ship.gatedistance.{$destination} != 0">                
-              <find_object groupname="$Beacons" macro="macro.test_jump_beacon_t1_macro" space="player.galaxy" multiple="true"/>
+              <find_object groupname="$Beacons" macro="macro.tpwar_jump_beacon_t1_macro" space="player.galaxy" multiple="true"/>
               <do_all exact="$Beacons.count" counter="$BeaconCounter">
                 <do_if value="$Beacons.{$BeaconCounter}.gatedistance.{$destination} == 0">
                   <warp object="this.ship" zone="$Beacons.{$BeaconCounter}.zone">

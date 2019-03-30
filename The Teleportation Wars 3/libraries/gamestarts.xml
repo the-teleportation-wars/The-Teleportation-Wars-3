@@ -27,7 +27,7 @@
             <ammunition>
               <ammunition macro="eq_arg_satellite_01_macro" exact="10" optional="true" />
               <ammunition macro="eq_arg_satellite_10_macro" exact="10" optional="true" />
-              <ammunition macro="test_jump_beacon_t1_macro" exact="5" optional="true" />
+              <ammunition macro="tpwar_jump_beacon_t1_macro" exact="5" optional="true" />
               <ammunition macro="missile_dumbfire_light_mk1_macro" exact="5" optional="1" />
             </ammunition>
             <software>
@@ -93,7 +93,7 @@
             <ammunition>
               <ammunition macro="eq_arg_satellite_01_macro" exact="10" optional="true" />
               <ammunition macro="eq_arg_satellite_10_macro" exact="10" optional="true" />
-              <ammunition macro="test_jump_beacon_t1_macro" exact="5" optional="true" />
+              <ammunition macro="tpwar_jump_beacon_t1_macro" exact="5" optional="true" />
             </ammunition>
             <software>
               <software ware="software_dockmk2" />

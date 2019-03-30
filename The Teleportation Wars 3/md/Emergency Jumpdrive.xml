@@ -39,7 +39,7 @@
                                 <check_value value="$E_Jump_ShipSelected.hullpercentage le 98" />
                             </conditions>
                             <actions>
-                                <find_object groupname="$Jump_Beacons" space="player.galaxy" multiple="true" macro="macro.test_jump_beacon_t1_macro"/>
+                                <find_object groupname="$Jump_Beacons" space="player.galaxy" multiple="true" macro="macro.tpwar_jump_beacon_t1_macro"/>
                                 <set_value name="$FieldCoils" exact="$E_Jump_ShipSelected.cargo.{ware.fieldcoils}.count"/>
                                                     
                                 <do_all exact="1"> 
