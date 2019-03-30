@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/index">
+        <entry name="jump_beacon_macro" value="extensions\TPWar Assets\assets\TPWar Assets\Deployables\Jump Beacon\jump_beacon_macro"/>
+        <entry name="L_a_shields_macro" value="extensions\TPWar Assets\assets\TPWar Assets\Equipment\Shields\L_a_shields_macro"/>
+        <entry name="L_a_ship_XXXX_macro" value="extensions\TPWar Assets\assets\TPWar Assets\Ships\L_a_ship_XXXX_macro"/>
+    </add>
+</diff>
