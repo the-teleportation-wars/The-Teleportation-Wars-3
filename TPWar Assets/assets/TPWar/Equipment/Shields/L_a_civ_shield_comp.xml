@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <components>
-	<component name="shield_arg_l_standard_01_mk1" class="shieldgenerator">
+	<component name="L_a_civ_shield_comp" class="shieldgenerator">
 		<source geometry="assets\props\SurfaceElements\shield_arg_l_standard_01_mk1_data"/>
 		<layers>
 			<layer>
@@ -139,9 +139,12 @@
 					</part>
 				</parts>
 			</connection>
-			<connection name="small_Con_shieldgen_01" tags="large shield component">
+			<!-- <connection name="small_Con_shieldgen_01" tags="large shield component">
 				<offset/>
-			</connection>
+			</connection> -->
+			<connection name="small_Con_shieldgen_02" tags="pasta">
+				<offset/>
+			</connection>		
 		</connections>
 	</component>
 </components>
