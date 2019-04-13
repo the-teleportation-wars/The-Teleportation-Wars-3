@@ -689,7 +689,7 @@
                 <!-- *****************************************************************************************************************************************
 ***********************************************************BEACONS********************************************************
 ***************************************************************************************************************************************** -->
-                <cue name="BeaconJump" instantiate="true">
+                <cue name="BeaconJump" >
                     <actions>
                         <do_all exact="$TP_Sectors_FactionSpace.count" counter="$factionsector">
                             <set_value name="$Macro" exact="macro.tpwar_jump_beacon_t1_macro" />
@@ -715,7 +715,7 @@
                         <remove_value name="$BeaconSpawned" />
                     </actions>
                 </cue>
-                <library name="SpawnBeaconLIB" instantiate="true">
+                <library name="SpawnBeaconLIB" >
                     <actions>
                         <create_object name="$BeaconSpawned" macro="$Macro" owner="$Owner" sector="$Sector">
                             <safepos min="$min" max="$max" />
@@ -1484,14 +1484,14 @@
                         <remove_value name="$LockboxSpawned" />
                     </actions>
                 </cue>
-                <library name="SpawnLockboxLIB" instantiate="true">
+                <library name="SpawnLockboxLIB" >
                     <actions>
                         <create_object name="$LockboxSpawned" macro="$Macro" owner="$Owner" sector="$Sector">
                             <safepos min="$min" max="$max" />
                         </create_object>
                     </actions>
                 </library>
-                <library name="SetKnownLIB" instantiate="true">
+                <library name="SetKnownLIB" >
                     <actions>
                         <set_known object="$KnownObject" known="$KnownState" updatesnapshot="$KnownDetails" />
                         <set_known object="$KnownObject.zone" known="$KnownState" updatesnapshot="$KnownDetails" />
@@ -1727,6 +1727,7 @@
                         <remove_value name="$addWaresAmount" />
                         <remove_value name="$removeWaresAmount" />
                         <do_all exact="$WARE_Stations.count" counter="$thisstation">
+                            <set_value name="$thiswarestation" exact="$WARE_Stations.{$thisstation}" />
                             <do_all exact="$WARE_Stations.{$thisstation}.resources.list.count" counter="$k">
                                 <set_value name="$ware" exact="$WARE_Stations.{$thisstation}.resources.list.{$k}" />
                                 <set_value name="$waresAmount" exact="$WARE_Stations.{$thisstation}.cargo.{$ware}.count" />
@@ -1760,7 +1761,7 @@
                 <library name="AddShipMod">
                     <actions>
                         <do_if value="$TradeOrNot == 1">
-                            <set_value name="$Owner" exact="$WARE_Stations.{$thisstation}.owner" />
+                            <set_value name="$Owner" exact="$thiswarestation.owner" />
                         </do_if>
                         <do_if value="$TradeOrNot == 2">
                             <set_value name="$Owner" exact="$Tradestations.{$tradesta}.owner" />
@@ -2323,7 +2324,7 @@
 *****************************************************************************************************************************************
 **********************************************************SPAWNFLEETS********************************************************
 ***************************************************************************************************************************************** -->
-                <library name="SpawnStationLIB" instantiate="true">
+                <library name="SpawnStationLIB" >
                     <actions>
                         <create_station groupname="$SpawnedStationGroup" name="$StationSpawned" macro="$StationMacro" sector="$SectorToSpawnIn" constructionplan="'$ConstructionPlan'" owner="$ConstructionFaction" state="componentstate.operational">
                             <safepos min="-100km" max="100km" />
@@ -2408,7 +2409,7 @@
                         </warp>
                     </actions>
                     <cues>
-                        <cue name="SpreadTakeover" instantiate="true">
+                        <cue name="SpreadTakeover" >
                             <delay exact="5min" />
                             <actions>
                                 <set_value name="$SpreadDistance" exact="5km" operation="add" />
@@ -2724,7 +2725,7 @@
                         </do_if>
                     </actions>
                 </cue>
-                <library name="SpawnFleet" instantiate="true">
+                <library name="SpawnFleet" >
                     <actions>
                         <do_if value="$PatrolActivated == true">
                             <include_actions ref="Leader_Select" />
@@ -2866,7 +2867,7 @@
                         <signal_cue_instantly cue="Start_Spread" param="$InvasionShipYard" />
                     </actions>
                 </library>
-                <library name="Create_Ship" instantiate="true">
+                <library name="Create_Ship" >
                     <delay exact="6s" />
                     <actions>
                         <create_ship groupname="$SpawnedShipGroup" name="$SpawnedShip" zone="$BeaconSelected.zone">

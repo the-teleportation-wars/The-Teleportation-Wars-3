@@ -5267,7 +5267,7 @@
         <select ware="tpwar_turret_tel_m_gatling_02_mk1" race="teladi" faction="teladi"/>
       </module>
     </product>
-    <product id="teladi_tpwar_turret_tel_m_guided_02_mk1" ware="tpwar_turret_tel_m_guided_02_mk1" owner="teladi" type="factory">
+    <product id="teladi_tpwar_turret_tel_m_guided_01_mk1" ware="tpwar_turret_tel_m_guided_02_mk1" owner="teladi" type="factory">
       <quotas>
         <quota galaxy="2" />
       </quotas>

@@ -1,5 +1,5 @@
 <diff>
-    <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if/do_if[@value='$modulesets.indexof.{'tradestation_argon'}']/set_value[@name='$tradestation']" pos="after">
+    <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$modulesets.indexof.{'tradestation_argon'}']/set_value[@name='$tradestation']" pos="after">
         <do_any exact="5">
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_heavy_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_light_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
