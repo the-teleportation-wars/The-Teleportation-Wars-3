@@ -3,8 +3,6 @@
     <add sel="/groups">
         <group name="tpwar_countermeasure_factory">
             <select macro="tpwar_countermeasure_flares_01_module_macro" />
-            <select macro="tpwar_engine_arg_l_allround_01_mk1_module_macro" />
-            <select macro="tpwar_engine_arg_l_travel_01_mk1_module_macro" />
         </group>
         <group name="tpwar_engine_arg_l_allround_01_mk1_factory">
             <select macro="tpwar_engine_arg_l_allround_01_mk1_module_macro" />

@@ -2,7 +2,7 @@
 <diff>
   <add sel="/modules">
     <module id="tpwar_countermeasure_factory" group="tpwar_countermeasure_factory">
-      <category ware="tpwar_engine_arg_l_allround_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <category ware="tpwar_countermeasure_flares_01" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
       <compatibilities>
         <limits production="1" />
         <production ware="tpwar_countermeasure_flares_01" chance="65" />
@@ -18,7 +18,7 @@
     </module>
     <!-- god -->
     <module id="tpwar_engine_arg_l_travel_01_mk1_factory" group="tpwar_engine_arg_l_travel_01_mk1_factory">
-      <category ware="tpwar_countermeasure_flares_01" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
+      <category ware="tpwar_engine_arg_l_travel_01_mk1" tags="[production, module]" race="[argon, paranid, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, ministry, hatikvah, alliance, scaleplate]" />
       <compatibilities>
         <limits production="1" />
         <production ware="tpwar_engine_arg_l_travel_01_mk1" chance="65" />

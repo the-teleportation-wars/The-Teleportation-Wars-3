@@ -1,5 +1,7 @@
 <diff>
-    <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$modulesets.indexof.{'tradestation_argon'}']/set_value[@name='$tradestation']" pos="after">
+    <!-- <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if/do_if[4]" pos="after"> -->
+    <add sel="//add_tradeware[@ware='ware.foodrations']" pos="before">
+        <!-- /mdscript/cues/library[7]/actions/do_if/do_if[4]/@value -->
         <do_any exact="5">
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_heavy_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_light_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
@@ -136,7 +138,8 @@
             <add_tradeware object="$controllable" ware="ware.tpwar_weapon_gen_s_torpedo_01_mk2" allowbuy="true" allowsell="true" lockavgprice="true" />
         </do_any>
     </add>
-    <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if/do_if[@value='$modulesets.indexof.{'tradestation_paranid'}']/set_value[@name='$tradestation']" pos="after">
+    <!-- <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if/do_if[5]" pos="after"> -->
+    <add sel="//add_tradeware[@ware='ware.sojahusk']" pos="before">
         <do_any exact="5">
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_heavy_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_light_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
@@ -273,7 +276,8 @@
             <add_tradeware object="$controllable" ware="ware.tpwar_weapon_par_s_railgun_01_mk2" allowbuy="true" allowsell="true" lockavgprice="true" />
         </do_any>
     </add>
-    <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if/do_if[@value='$modulesets.indexof.{'tradestation_teladi'}']/set_value[@name='$tradestation']" pos="after">
+    <!-- <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if/do_if[6]" pos="after"> -->
+    <add sel="//add_tradeware[@ware='ware.nostropoil']" pos="before">
         <do_any exact="5">
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_heavy_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
             <add_tradeware object="$controllable" ware="ware.tpwar_missile_cluster_light_mk1" allowbuy="true" allowsell="true" lockavgprice="true" />
