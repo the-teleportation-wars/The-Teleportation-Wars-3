@@ -5278,21 +5278,7 @@
         <level exact="1.0" />
       </loadout>
       <module>
-        <select ware="tpwar_turret_tel_m_guided_02_mk1" race="teladi" faction="teladi"/>
-      </module>
-    </product>
-    <product id="teladi_tpwar_turret_tel_m_guided_02_mk1" ware="tpwar_turret_tel_m_guided_02_mk1" owner="teladi" type="factory">
-      <quotas>
-        <quota galaxy="2" />
-      </quotas>
-      <location class="galaxy" macro="xu_ep2_universe_macro" faction="teladi" relation="self" comparison="ge">
-        <economy max="0.75" maxbound="false" />
-      </location>
-      <loadout>
-        <level exact="1.0" />
-      </loadout>
-      <module>
-        <select ware="tpwar_turret_tel_m_guided_02_mk1" race="teladi" faction="teladi"/>
+        <select ware="tpwar_turret_tel_m_guided_01_mk1" race="teladi" faction="teladi"/>
       </module>
     </product>
     <product id="teladi_tpwar_turret_tel_m_guided_02_mk1" ware="tpwar_turret_tel_m_guided_02_mk1" owner="teladi" type="factory">

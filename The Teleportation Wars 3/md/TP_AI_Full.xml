@@ -1692,6 +1692,7 @@
                         </do_all>
                         <do_all exact="$Tradestations.count" counter="$tradesta">
                             <do_all exact="$Tradestations.{$tradesta}.tradewares.list.count" counter="$j">
+                                <set_value name="$TradeOrNot" exact="0"/>
                                 <set_value name="$ware" exact="$Tradestations.{$tradesta}.tradewares.list.{$j}" />
                                 <set_value name="$waresAmount" exact="$Tradestations.{$tradesta}.cargo.{$ware}.count" />
                                 <set_value name="$maxWaresAmount" exact="$Tradestations.{$tradesta}.cargo.{$ware}.target" />
@@ -1715,7 +1716,8 @@
                                 </do_if>
                                 <do_if value="$removeWaresAmount gt 0">
                                     <remove_cargo object="$Tradestations.{$tradesta}" ware="$ware" exact="$removeWaresAmount" />
-                                    <set_value name="$TradeOrNot" exact="1"/>
+                                    <set_value name="$thistradestation" exact="$Tradestations.{$tradesta}"/>
+                                    <set_value name="$TradeOrNot" exact="2"/>
                                     <include_actions ref="AddShipMod" />
                                 </do_if>
                                 <!-- tpdebug -->
@@ -1729,6 +1731,7 @@
                         <do_all exact="$WARE_Stations.count" counter="$thisstation">
                             <set_value name="$thiswarestation" exact="$WARE_Stations.{$thisstation}" />
                             <do_all exact="$WARE_Stations.{$thisstation}.resources.list.count" counter="$k">
+                                <set_value name="$TradeOrNot" exact="0"/>
                                 <set_value name="$ware" exact="$WARE_Stations.{$thisstation}.resources.list.{$k}" />
                                 <set_value name="$waresAmount" exact="$WARE_Stations.{$thisstation}.cargo.{$ware}.count" />
                                 <set_value name="$maxWaresAmount" exact="$WARE_Stations.{$thisstation}.cargo.{$ware}.target" />
@@ -1764,7 +1767,7 @@
                             <set_value name="$Owner" exact="$thiswarestation.owner" />
                         </do_if>
                         <do_if value="$TradeOrNot == 2">
-                            <set_value name="$Owner" exact="$Tradestations.{$tradesta}.owner" />
+                            <set_value name="$Owner" exact="$thistradestation.owner" />
                         </do_if>
                         <find_ship name="$Ship" multiple="false" space="player.galaxy" validjobship="true" owner="$Owner">
                             <match class="[class.ship_l, class.ship_xl]" />
