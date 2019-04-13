@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/index">
+        <!-- <entry name="tpwar_Arg_D_test_comp" value="extensions\The Teleportation Wars 3\assets\tpmacrotest\tpwar_Arg_D_test_comp"/>
+        <entry name="recharge_test_comp" value="extensions\The Teleportation Wars 3\assets\tpmacrotest\filetreeshields\recharge_test_comp"/> -->
+    </add>
+</diff>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<aiscript name="Wrecksalvage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/x4 extract 2.0b1/libraries/aiscripts.xsd">
+    
+    <attention min="unknown">
+        <actions>
+            <debug_to_file text="'orderhappened ' + this.ship.knownname" name="'eventwreck.log'" />
+            <stop_moving object="this.ship" />
+            <stop_boost object="this.ship" />
+            <leave_formation object="this.ship" />
+            <move_to object="this.ship" destination="player.ship" />
+            <wait>
+                <interrupt>
+                    <conditions>
+                        <event_object_attacked object="this.ship" />
+                    </conditions>
+                </interrupt>
+            </wait>
+        </actions>
+    </attention>
+</aiscript>

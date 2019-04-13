@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Markus (192.168.3.139) at 23.10.2018_15-50-29-->
+<macros>
+  <macro name="tpwar_teleportation_beacon_t1_macro" class="navbeacon">
+    <component ref="env_deco_nav_beacon_t1" />
+    <properties>
+      <identification name="Teleportation Beacon" description="Place for Xenon attack" deployable="1" icon="mapob_poi" />
+      <explosiondamage max="50000" />
+      <explosioneffect strength="500" />
+      <hull max="150000" />
+      <effects>
+        <explosion ref="explosion_props_wps_mine_01" />
+      </effects>
+    </properties>
+  </macro>
+</macros>

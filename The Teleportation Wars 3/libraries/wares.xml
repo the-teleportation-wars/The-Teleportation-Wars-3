@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
   <add sel="/wares">
+    <!-- <ware id="recharge_test_ware" name="rechargetestware" description="{20106,3012}" group="shields" transport="equipment" volume="1" tags="equipment shield pasta">
+      <price min="42166" average="46851" max="51536" />
+      <production time="20" amount="1" method="default" name="{20206,101}">
+        <primary>
+          <ware ware="energycells" amount="50" />
+          <ware ware="fieldcoils" amount="13" />
+          <ware ware="shieldcomponents" amount="10" />
+        </primary>
+      </production>
+      <component ref="recharge_test" amount="1" />
+      <restriction licence="generaluseequipment" />
+      <use threshold="0.8" />
+      <owner faction="argon" />
+    </ware>
+    <ware id="tpwar_Arg_D_test_ware" name="test ship d" description="{20101,11012}" group="ships_argon" transport="ship" volume="1" tags="ship">
+      <price min="50000" average="50000" max="50000" />
+      <production time="182" amount="1" method="default" name="{20206,101}">
+        <primary>
+          <ware ware="energycells" amount="1008" />
+          <ware ware="hullparts" amount="4433" />
+        </primary>
+      </production>
+      <component ref="tpwar_Arg_D_test" amount="1" />
+      <restriction licence="capitalship" />
+      <owner faction="argon" />
+      <owner faction="hatikvah" />
+      <owner faction="scaleplate" />
+    </ware> -->
     <!-- WARE CATEGORIES TO SPAWN PRODUCTION -->
     <ware id="soysauce" name="Soy Sauce" description="{20201,4802}" factoryname="{20201,4804}" group="shiptech" transport="container" volume="20" tags="container economy">
       <price min="586" average="733" max="879" />
@@ -8474,6 +8502,7 @@
       <owner faction="paranid" />
       <owner faction="teladi" />
     </ware>
+    <!-- TRS -->
     <ware id="satellite_mk09" name="Unstable Trade Receiver Satellite" description="Receive trade subscriptions from every station in the sector. Decays over time." transport="equipment" volume="1" tags="equipment satellite">
       <price min="25000" average="30000" max="35000" />
       <production time="120" amount="1" method="default" name="{20206,101}">
@@ -8498,6 +8527,7 @@
       <component ref="eq_arg_satellite_10_macro" amount="1" />
       <use threshold="0" />
     </ware>
+    <!-- StellarCart -->
     <ware id="stellar_cartography_module" name="Stellar Cartography Module" description="{20104,20302}" transport="container" volume="1" tags="module">
       <price min="1625503" average="1735886" max="1846269" />
       <production time="896" amount="1" method="default" name="{20206,101}">
@@ -8540,7 +8570,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_distressbeaconfreq" name="Encrypted Distress Beacon" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_distressbeaconfreq" name="Encrypted Distress Beacon" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="8548" average="10056" max="11565" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8548,7 +8578,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_battlelog" name="Encrypted Battle Log" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_battlelog" name="Encrypted Battle Log" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="8548" average="10056" max="11565" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8556,7 +8586,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_prisonerzero" name="Prisoner" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_prisonerzero" name="Prisoner" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="25000" average="31000" max="55000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8564,7 +8594,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_prisoner1" name="Pirate Admiral" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_prisoner1" name="Pirate Admiral" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="800548" average="1000056" max="1300565" />
       <container ref="sm_gen_wares_rare_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8572,7 +8602,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_prisoner2" name="Pirate Captain" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_prisoner2" name="Pirate Captain" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="80548" average="100056" max="170565" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8580,7 +8610,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_prisoner3" name="Medi-tech CEO" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_prisoner3" name="Medi-tech CEO" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="8000548" average="10000056" max="17500065" />
       <container ref="sm_gen_wares_rare_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8588,7 +8618,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_prisoner4" name="Teladi Company Representative" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_prisoner4" name="Teladi Company Representative" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="1" average="1" max="1" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8596,7 +8626,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_sectorkey" name="Sector Key" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_sectorkey" name="Sector Key" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="25000" average="31000" max="55000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8604,7 +8634,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_stellarmap" name="Stellar Map" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_stellarmap" name="Stellar Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="25000" average="31000" max="55000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8612,7 +8642,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_stellarmapdevice" name="Stellar Map Device" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_stellarmapdevice" name="Stellar Map Device" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="250000" average="310000" max="550000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8620,7 +8650,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_tradenetworkkey" name="Trade Network Key" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_tradenetworkkey" name="Trade Network Key" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="2500000" average="3010000" max="5500000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8628,7 +8658,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_treasuremap" name="Encrypted Treasure Map" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_treasuremap" name="Encrypted Treasure Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="8548" average="10056" max="11565" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8636,7 +8666,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_gatemap" name="Gate Map" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_gatemap" name="Gate Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="25000" average="31000" max="75000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8644,7 +8674,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_locationpiratehideout" name="Pirate Hideout Location" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_locationpiratehideout" name="Pirate Hideout Location" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="250000" average="310000" max="750000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8652,7 +8682,7 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
-    <ware id="inv_locationpiratebase" name="Pirate Base Location" description="{20201,15202}" transport="inventory" volume="1" tags="inventory tradeonly">
+    <ware id="inv_locationpiratebase" name="Pirate Base Location" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
       <price min="2500000" average="3100000" max="7500000" />
       <container ref="sm_gen_wares_common_01_macro" />
       <icon video="ware_inventory_generic_macro" />
@@ -8668,6 +8698,1051 @@
         <source type="{20224,1}" />
       </sources>
     </ware>
+    <!-- trs device -->
+    <ware id="trs_device" name="Trade Reciever Computer" description="Long-range link to Trade Module" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <!-- find ownerless scan -->
+    <ware id="fos_device" name="Stellar Astrolabe" description="Long-range link to the Stellar Carography Module" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+
+    <!-- sectors as inventory -->
+    <ware id="sector_inv_1" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_2" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_3" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_4" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_5" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_6" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_7" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_8" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_9" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_10" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_11" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_12" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_13" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_14" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_15" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_16" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_17" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_18" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_19" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_20" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_21" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_22" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_23" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_24" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_25" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_26" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_27" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_28" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_29" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_30" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_31" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_32" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_33" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_34" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_35" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_36" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_37" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_38" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_39" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_40" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_41" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_42" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_43" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_44" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_45" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_46" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_47" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_48" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_49" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_50" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_51" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_52" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_53" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_54" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_55" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_56" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_57" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_58" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_59" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_60" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_61" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_62" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_63" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_64" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_65" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_66" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_67" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_68" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_69" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_70" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_71" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_72" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_73" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_74" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_75" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_76" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_77" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_78" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_79" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_80" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_81" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_82" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_83" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_84" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_85" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_86" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_87" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_88" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_89" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_90" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_91" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_92" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_93" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_94" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_95" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_96" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_97" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_98" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_99" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_100" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_101" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_102" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_103" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_104" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_105" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_106" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_107" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_108" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_109" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_110" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_111" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_112" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_113" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_114" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_115" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_116" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_117" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_118" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_119" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_120" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_121" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_122" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_123" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_124" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_125" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_126" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_127" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    <ware id="sector_inv_128" name="Unknown Sector Map" description="A dubious set of coordinates" transport="inventory" volume="1" tags="inventory tradeonly">
+      <price min="8548" average="10056" max="110565" />
+      <container ref="sm_gen_wares_common_01_macro" />
+      <icon video="ware_inventory_generic_macro" />
+      <sources>
+        <source type="{20224,1}" />
+      </sources>
+    </ware>
+    
     <!-- jumpdrive -->
     <ware id="tpwar_jump_beacon_t1" name="Jump Beacon" description="Set Guidance to jump to beacon" transport="equipment" volume="1" tags="equipment navbeacon">
       <price min="500000" average="750000" max="1200000" />
@@ -8680,6 +9755,29 @@
       <component ref="tpwar_jump_beacon_t1_macro" amount="1" />
       <use threshold="0" />
     </ware>
+    <ware id="tpwar_salvage_beacon_t1" name="Jump Beacon" description="Set Guidance to jump to beacon" transport="equipment" volume="1" tags="equipment navbeacon">
+      <price min="500000" average="750000" max="1200000" />
+      <production time="60" amount="1" method="default" name="{20206,101}">
+        <primary>
+          <ware ware="energycells" amount="1" />
+          <ware ware="hullparts" amount="1" />
+        </primary>
+      </production>
+      <component ref="tpwar_salvage_beacon_t1_macro" amount="1" />
+      <use threshold="0" />
+    </ware>
+    <ware id="tpwar_teleportation_beacon_t1" name="Jump Beacon" description="Set Guidance to jump to beacon" transport="equipment" volume="1" tags="equipment navbeacon">
+      <price min="500000" average="750000" max="1200000" />
+      <production time="60" amount="1" method="default" name="{20206,101}">
+        <primary>
+          <ware ware="energycells" amount="1" />
+          <ware ware="hullparts" amount="1" />
+        </primary>
+      </production>
+      <component ref="tpwar_teleportation_beacon_t1_macro" amount="1" />
+      <use threshold="0" />
+    </ware>
+
     <ware id="software_tpwar_jumpdrive" name="Jump Drive" description="{20108,3002}" factoryname="Jump Drive" group="software" transport="software" volume="1" tags="equipment software">
       <price min="6144" average="8192" max="10240" />
       <production time="10" amount="1" method="default" name="{20206,101}" />

@@ -383,5 +383,13 @@
         <entry name="tppirate_Zone002_Cluster_80_Sector001_macro" value="maps\XU_ep2_universe\zones"/>
         <!-- jumpdrive -->
         <entry name="tpwar_jump_beacon_t1_macro" value="extensions\The Teleportation Wars 3\assets\environments\deco\macros\tpwar_jump_beacon_t1_macro" />
+        <entry name="tpwar_salvage_beacon_t1_macro" value="extensions\The Teleportation Wars 3\assets\environments\deco\macros\tpwar_salvage_beacon_t1_macro" />
+        <entry name="tpwar_teleportation_beacon_t1_macro" value="extensions\The Teleportation Wars 3\assets\environments\deco\macros\tpwar_teleportation_beacon_t1_macro" />
+
+        <!-- macrotest -->
+         <!-- <entry name="recharge_test" value="extensions\The Teleportation Wars 3\assets\tpmacrotest\filetreeshields\recharge_test" />
+         <entry name="tpwar_Arg_D_test" value="extensions\The Teleportation Wars 3\assets\tpmacrotest\macros\tpwar_Arg_D_test" />
+         <entry name="cockpitest" value="extensions\The Teleportation Wars 3\assets\tpmacrotest\macros\cockpitest" />
+         <entry name="storagetest" value="extensions\The Teleportation Wars 3\assets\tpmacrotest\macros\storagetest" /> -->
     </add>
 </diff>
