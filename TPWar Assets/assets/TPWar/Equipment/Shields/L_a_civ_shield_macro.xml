@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: nick (192.168.3.120) at 22.01.2019_16-07-27-->
+<macros>
+  <macro name="L_a_civ_shield_macro" class="shieldgenerator">
+    <component ref="L_a_civ_shield_comp" />
+    <properties>
+      <identification name="Monkey Test Shield" basename="{20106,3001}" shortname="{20106,3005}" makerrace="argon" description="{20106,3002}" mk="1" />
+      <recharge max="38844" rate="173" delay="0.57" />
+      <hull max="2000" threshold="0.2" />
+    </properties>
+  </macro>
+</macros>

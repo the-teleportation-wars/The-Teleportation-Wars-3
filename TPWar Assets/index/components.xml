@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/index">
+<!-- 
+        <entry name="jump_beacon_comp" value="extensions\TPWar Assets\assets\TPWar Assets\Deployables\Jump Beacon\jump_beacon_comp"/>
+        <entry name="L_a_shields_comp" value="extensions\TPWar Assets\assets\TPWar Assets\Equipment\Shields\L_a_shields_comp"/>
+        <entry name="L_a_ship_XXXX_comp" value="extensions\TPWar Assets\assets\TPWar Assets\Ships\L_a_ship_XXXX_comp"/>
+ -->
+        <entry name="L_a_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\L_a_civ_shield_comp"/>
+        <entry name="L_a_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\L_a_mil_shield_comp"/>
+        <entry name="L_b_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\L_b_civ_shield_comp"/>
+        <entry name="L_b_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\L_b_mil_shield_comp"/>
+        <entry name="L_c_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\L_c_civ_shield_comp"/>
+        <entry name="L_c_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\L_c_mil_shield_comp"/>
+        <entry name="M_a_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\M_a_civ_shield_comp"/>
+        <entry name="M_a_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\M_a_mil_shield_comp"/>
+        <entry name="M_b_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\M_b_civ_shield_comp"/>
+        <entry name="M_b_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\M_b_mil_shield_comp"/>
+        <entry name="M_c_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\M_c_civ_shield_comp"/>
+        <entry name="M_c_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\M_c_mil_shield_comp"/>
+        <entry name="S_a_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\S_a_civ_shield_comp"/>
+        <entry name="S_a_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\S_a_mil_shield_comp"/>
+        <entry name="S_b_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\S_b_civ_shield_comp"/>
+        <entry name="S_b_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\S_b_mil_shield_comp"/>
+        <entry name="S_c_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\S_c_civ_shield_comp"/>
+        <entry name="S_c_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\S_c_mil_shield_comp"/>
+        <entry name="XL_a_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\XL_a_civ_shield_comp"/>
+        <entry name="XL_a_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\XL_a_mil_shield_comp"/>
+        <entry name="XL_b_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\XL_b_civ_shield_comp"/>
+        <entry name="XL_b_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\XL_b_mil_shield_comp"/>
+        <entry name="XL_c_civ_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\XL_c_civ_shield_comp"/>
+        <entry name="XL_c_mil_shield_comp" value="extensions\TPWar Assets\assets\TPWar\Equipment\Shields\XL_c_mil_shield_comp"/>
+
+        <entry name="L_a_ship_destroyer_comp" value="extensions\TPWar Assets\assets\TPWar\Ships\L_a_ship_destroyer_comp"/>
+
+    </add>
+</diff>
